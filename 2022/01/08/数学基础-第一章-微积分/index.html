@@ -180,12 +180,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>2.4k Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>2.1k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>10 Mins</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>8 Mins</span>
         </span>
     
     
@@ -204,7 +204,7 @@
             <p>本章介绍微积分中的函数、极限、导数、梯度及积分等基本概念。</p>
 <h2 id="函数和极限">1 函数和极限</h2>
 <h3 id="函数的定义">1.1 函数的定义</h3>
-<p>设 <span class="math inline">\(A\)</span>，<span class="math inline">\(B\)</span> 都是非空的数的集合，<span class="math inline">\(f:x \rightarrow y\)</span> 是从 <span class="math inline">\(A\)</span> 到 <span class="math inline">\(B\)</span> 到一个对应法则，那么从 <span class="math inline">\(A\)</span> 到 <span class="math inline">\(B\)</span> 的映射<span class="math inline">\(f:x \rightarrow y\)</span> 就叫做函数，记作 <span class="math inline">\(y=f(x)\)</span> ，其中 $x A ，y B $ .</p>
+<p>设 <span class="math inline">\(A\)</span>，<span class="math inline">\(B\)</span> 都是非空的数的集合，<span class="math inline">\(f:x \rightarrow y\)</span> 是从 <span class="math inline">\(A\)</span> 到 <span class="math inline">\(B\)</span> 到一个对应法则，那么从 <span class="math inline">\(A\)</span> 到 <span class="math inline">\(B\)</span> 的映射<span class="math inline">\(f:x \rightarrow y\)</span> 就叫做函数，记作 <span class="math inline">\(y=f(x)\)</span> ，其中 <span class="math inline">\(x \in A\)</span>，<span class="math inline">\(y \in B\)</span> .</p>
 <h3 id="反函数">1.2 反函数</h3>
 <p>设函数 $ y =f(x) $ 的定义域是 <span class="math inline">\(D\)</span>，值域是 <span class="math inline">\(f(D)\)</span> 。如果对于值域 <span class="math inline">\(f(D)\)</span> 中的每一个 <span class="math inline">\(y\)</span> ，在 <span class="math inline">\(D\)</span> 中有且仅有一个 <span class="math inline">\(x\)</span> 使得 <span class="math inline">\(g(y)=x\)</span> ，则按此对应法则得到了一个定义在 <span class="math inline">\(f(D)\)</span> 上的函数，并把该函数称为函数 <span class="math inline">\(y=f(x)\)</span> 的反函数，记作 <span class="math inline">\(x=f^{-1}(y)\)</span>，<span class="math inline">\(y \in f(D)\)</span> .</p>
 <h3 id="复合函数">1.3 复合函数</h3>
@@ -240,7 +240,7 @@
 <li>第二类间断点：左右极限不全有定义</li>
 </ul>
 <h3 id="习题">习题</h3>
-<p>利用 <span class="math inline">\(SymPy^{[1]}\)</span> 库实现 $ _{a }$ 和 <span class="math inline">\(\lim\limits_{n\rightarrow\infty}\large(\frac{n+3}{n+2})^n\)</span> 的求解。</p>
+<p>利用 <span class="math inline">\(SymPy^{[1]}\)</span> 库实现 <span class="math inline">\(\lim\limits_{a\rightarrow 0}\large\frac{sin(a)}{a}\)</span> 和 <span class="math inline">\(\lim\limits_{n\rightarrow\infty}\large(\frac{n+3}{n+2})^n\)</span> 的求解。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding:utf-8</span></span><br><span class="line"><span class="keyword">import</span> sympy</span><br><span class="line">sympy.init_printing()</span><br><span class="line"><span class="keyword">from</span> sympy <span class="keyword">import</span> oo</span><br><span class="line"><span class="comment"># 1.求sin(a) / a在a=0处的极限</span></span><br><span class="line">a = sympy.Symbol(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">b = sympy.sin(a) / a</span><br><span class="line">result = sympy.limit(b,a,<span class="number">0</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;sin(a) / a在a趋近于0处的极限:&#x27;</span>,result)</span><br><span class="line"></span><br><span class="line"><span class="comment">#2.求[(n+3)/(n+2)]^n ,n趋紧无穷大时的极值</span></span><br><span class="line">n = sympy.Symbol(<span class="string">&#x27;n&#x27;</span>)</span><br><span class="line">y = ((n+<span class="number">3</span>)/(n+<span class="number">2</span>))**n</span><br><span class="line"><span class="built_in">print</span> ( <span class="string">&#x27;[(n+3)/(n+2)]^n ,n趋紧无穷大的极值：&#x27;</span>,sympy.limit(y, n, sympy.oo) )</span><br></pre></td></tr></table></figure>
 <h2 id="导数">2 导数</h2>
 <h3 id="导数的概念">2.1 导数的概念</h3>
@@ -270,25 +270,8 @@
 <p>带有方向（极值方向，一般是取最大值的方向）的导数。</p>
 <h3 id="雅可比矩阵与近视问题">3.3 雅可比矩阵与近视问题</h3>
 <p><strong>详见：</strong>雅可比矩阵和雅可比行列式：https://zhuanlan.zhihu.com/p/39762178</p>
-<p>设 <img src="https://www.zhihu.com/equation?tex=f+%3A+%5Cmathbb%7BR%7D_n+%5Cto%5Cmathbb%7BR%7D_m" alt="[公式]" /> 是一个函数，它的输入是向量 <img src="https://www.zhihu.com/equation?tex=%5Cmathbf+x+%5Cin%5Cmathbb%7BR%7D_n" alt="[公式]" /> ，输出是向量 <img src="https://www.zhihu.com/equation?tex=%5Cmathbf+y%3Df%28%5Cmathbf+x%29%5Cin%5Cmathbb%7BR%7D_m" alt="[公式]" /> :</p>
-<figure>
-<img src="https://www.zhihu.com/equation?tex=%5Cbegin%7Bcases%7D+y_1%3Df_1%28x_1%2C%5Cdots%2Cx_n%29%5C%5C+y_2%3Df_2%28x_1%2C%5Cdots%2Cx_n%29%5C%5C%5Cdots%5C%5C+y_m%3Df_m%28x_1%2C%5Cdots%2Cx_n%29%5Cend%7Bcases%7D" alt="" /><figcaption>[公式]</figcaption>
-</figure>
-<p>那么雅可比矩阵是一个m×n矩阵：</p>
-<figure>
-<img src="https://www.zhihu.com/equation?tex=%7B%5Cdisplaystyle%5Cmathbf%7BJ%7D+%3D%7B%5Cbegin%7Bbmatrix%7D%7B%5Cdfrac%7B%5Cpartial%5Cmathbf%7Bf%7D%7D%7B%5Cpartial+x_%7B1%7D%7D%7D%26%5Ccdots+%26%7B%5Cdfrac%7B%5Cpartial%5Cmathbf%7Bf%7D%7D%7B%5Cpartial+x_%7Bn%7D%7D%7D%5Cend%7Bbmatrix%7D%7D%3D%7B%5Cbegin%7Bbmatrix%7D%7B%5Cdfrac%7B%5Cpartial+f_%7B1%7D%7D%7B%5Cpartial+x_%7B1%7D%7D%7D%26%5Ccdots+%26%7B%5Cdfrac%7B%5Cpartial+f_%7B1%7D%7D%7B%5Cpartial+x_%7Bn%7D%7D%7D%5C%5C%5Cvdots+%26%5Cddots+%26%5Cvdots%5C%5C%7B%5Cdfrac%7B%5Cpartial+f_%7Bm%7D%7D%7B%5Cpartial+x_%7B1%7D%7D%7D%26%5Ccdots+%26%7B%5Cdfrac%7B%5Cpartial+f_%7Bm%7D%7D%7B%5Cpartial+x_%7Bn%7D%7D%7D%5Cend%7Bbmatrix%7D%7D%7D" alt="" /><figcaption>[公式]</figcaption>
-</figure>
-<p><strong>由于矩阵描述了向量空间中的运动——变换，而雅可比矩阵看作</strong>是将点 <img src="https://www.zhihu.com/equation?tex=%28x_1%2C%5Cdots%2Cx_n%29" alt="[公式]" /> 转化到点 <img src="https://www.zhihu.com/equation?tex=%28y_1%2C%5Cdots%2Cy_m%29" alt="[公式]" /> ，或者说是从一个n维的欧式空间转换到m维的欧氏空间。</p>
-<p>如果m = n， 可以定义雅可比矩阵 <img src="https://www.zhihu.com/equation?tex=%5Cmathbf%7BJ%7D" alt="[公式]" /> 的行列式，也就是<strong>雅可比行列式（Jacobian determinant）</strong>。</p>
-<p><strong>在微积分换元中，也就是给出了 从x到y的n维体积的比率</strong></p>
-<figure>
-<img src="https://www.zhihu.com/equation?tex=%5Crm+dy_1...dy_n%3D%7CJ%7C+%5C%2C%5C%2C+dx_1...dx_n+" alt="" /><figcaption>[公式]</figcaption>
-</figure>
 <h3 id="黑塞矩阵">3.4 黑塞矩阵</h3>
 <p>二阶偏导数矩阵就是黑塞矩阵（Hessian Matrix）。它是一个自变量为向量的实值函数的二阶偏导数组成的方阵。</p>
-![{ ={
-<span class="math display">\[\begin{bmatrix}{\frac {\partial ^{2}f}{\partial x_{1}^{2}}}&amp;{\frac {\partial ^{2}f}{\partial x_{1}\,\partial x_{2}}}&amp;\cdots &amp;{\frac {\partial ^{2}f}{\partial x_{1}\,\partial x_{n}}}\\\\{\frac {\partial ^{2}f}{\partial x_{2}\,\partial x_{1}}}&amp;{\frac {\partial ^{2}f}{\partial x_{2}^{2}}}&amp;\cdots &amp;{\frac {\partial ^{2}f}{\partial x_{2}\,\partial x_{n}}}\\\\\vdots &amp;\vdots &amp;\ddots &amp;\vdots \\\\{\frac {\partial ^{2}f}{\partial x_{n}\,\partial x_{1}}}&amp;{\frac {\partial ^{2}f}{\partial x_{n}\,\partial x_{2}}}&amp;\cdots &amp;{\frac {\partial ^{2}f}{\partial x_{n}^{2}}}\end{bmatrix}\]</span>
-<p>},}](https://wikimedia.org/api/rest_v1/media/math/render/svg/23f4db415be866163432946603c07edbc4a21a41)</p>
 <ul>
 <li>如果H(M)是 <a class="link"   target="_blank" rel="noopener" href="http://baike.baidu.com/view/686970.htm" >正定矩阵<i class="fas fa-external-link-alt"></i></a>，则临界点M处是一个局部的极小值。</li>
 <li>如果H(M)是 <a class="link"   target="_blank" rel="noopener" href="http://baike.baidu.com/view/1776583.htm" >负定矩阵<i class="fas fa-external-link-alt"></i></a>，则临界点M处是一个局部的极大值。</li>
@@ -303,7 +286,7 @@
 <h3 id="求不定积分的方法">4.2 求不定积分的方法</h3>
 <p><strong>一些懒得敲公式的知识概念：积分基本公式、换元法、分部积分法</strong></p>
 <h3 id="定积分">4.3 定积分</h3>
-<p>一些懒得敲公式的知识概念：定积分定义、性质（和差、与常数乘积、单调性、极值）、积分中值定理</p>
+<p><strong>一些懒得敲公式的知识概念：定积分定义、性质（和差、与常数乘积、单调性、极值）、积分中值定理</strong></p>
 
         </div>
 
@@ -528,5 +511,20 @@
 
 
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
