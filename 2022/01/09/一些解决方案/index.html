@@ -188,9 +188,11 @@
         
 
         <div class="article-content markdown-body">
-            <p>关于Hexo添加Mathjax相关问题及解决方法：https://d-veda.top/2018/11/11/Hexo-with-Mathjax/</p>
-<p>markdown中希腊字母加粗：https://blog.csdn.net/qq_28714865/article/details/103717900</p>
-<p>让公式中的某些数学符号加粗显示，可以使用"​"，比如 <span class="math inline">\(\mathbf{0123456789}\)</span> . 加粗希腊字母（比如书写向量或者矩阵时），使用""，比如 <span class="math inline">\(\pmb{\lambda}\)</span> .</p>
+            <ul>
+<li><p>关于Hexo添加Mathjax相关问题及解决方法：https://d-veda.top/2018/11/11/Hexo-with-Mathjax/</p></li>
+<li><p>markdown中希腊字母加粗：https://blog.csdn.net/qq_28714865/article/details/103717900</p>
+<p>让公式中的某些数学符号加粗显示，可以使用"​"，比如 <span class="math inline">\(\mathbf{0123456789}\)</span> . 加粗希腊字母（比如书写向量或者矩阵时），使用""，比如 <span class="math inline">\(\pmb{\lambda}\)</span> .</p></li>
+</ul>
 
         </div>
 
@@ -429,6 +431,22 @@
 </div>
 
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </body>
 </html>
