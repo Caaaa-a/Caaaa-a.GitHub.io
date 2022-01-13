@@ -178,12 +178,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>1.5k Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>2.5k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>6 Mins</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>10 Mins</span>
         </span>
     
     
@@ -271,9 +271,82 @@ t=t_1+t_2+\dots+t_n=\sum_{i=1}^nt_i
 <p><strong>正交向量组的定义</strong>：如果向量组中任意两个向量都正交且不含零向量，则称为正交向量组，并且正交向量组是线性无关的。</p>
 <p><strong>标准正交向量</strong>：向量组内向量彼此之间的点积为 <span class="math inline">\(0\)</span>，与自身的点积为 <span class="math inline">\(1\)</span>。</p>
 <p><strong>施密特正交化详见：</strong></p>
-<p>如何理解施密特（Schmidt）正交化：https://zhuanlan.zhihu.com/p/136627868</p>
+<p>如何理解施密特（Schmidt）正交化：https://zhuanlan.zhihu.com/p/136627868。</p>
 <h3 id="范数">3.3 范数</h3>
-<p>向量范数的定义</p>
+<p><strong>向量范数的定义</strong>：如果向量 <span class="math inline">\(\pmb{a} \in \pmb{R}^n\)</span> 的某个实值函数 $f()=|||| $ 满足</p>
+<ul>
+<li>非负性：<span class="math inline">\(||\pmb{a}||\geq 0\)</span> ，且<span class="math inline">\(||\pmb{a}||=0\)</span> 当且仅当 <span class="math inline">\(\pmb{a}=0\)</span></li>
+<li>齐次性：对于任意实数 <span class="math inline">\(\lambda\)</span>，都有 <span class="math inline">\(||\lambda\pmb{a}||=|\lambda|||\pmb{a}||\)</span></li>
+<li>三角不等式：对于任意 <span class="math inline">\(\pmb{a,b}\in\pmb{R}^n\)</span>，都有 <span class="math inline">\(||\pmb{a+b}||\leq||\pmb{a}||+||\pmb{b}||\)</span></li>
+</ul>
+<p>常用的向量范数有 $ 1$ -范数、<span class="math inline">\(2\)</span> -范数和 <span class="math inline">\(\infty\)</span> -范数。</p>
+<ul>
+<li><p>$ 1$ -范数：也称为曼哈顿距离 <span class="math display">\[
+  ||\pmb{a}||_1=\sum_i^n|\pmb{a}_i|
+  \]</span></p></li>
+<li><p><span class="math inline">\(2\)</span> -范数：也称为欧几里得范数</p></li>
+</ul>
+<p><span class="math display">\[
+||\pmb{a}||_2=\sqrt{\sum_{i=1}^n\pmb{a}_i^2}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\infty\)</span> -范数：所有向量元素中的最大值 <span class="math display">\[
+  ||\pmb{a}||_\infty=\max_i|a_i|
+  \]</span></li>
+</ul>
+<p><strong>矩阵范数的定义</strong>：如果矩阵 <span class="math inline">\(\pmb{A} \in \pmb{R}^{n\times n}\)</span> ，若按某一确定的法则对应于一个非负实数 $|||| $ 满足</p>
+<ul>
+<li>非负性：<span class="math inline">\(||\pmb{A}||\geq 0\)</span> ，且<span class="math inline">\(||\pmb{A}||=0\)</span> 当且仅当 <span class="math inline">\(\pmb{A}=0\)</span></li>
+<li>齐次性：对于任意实数 <span class="math inline">\(\lambda\)</span>，都有 <span class="math inline">\(||\lambda\pmb{A}||=|\lambda|||\pmb{A}||\)</span></li>
+<li>三角不等式：对于任意 <span class="math inline">\(\pmb{A，B}\in\pmb{R}^{n\times n}\)</span>，都有 <span class="math inline">\(||\pmb{A+B}||\leq||\pmb{A}||+||\pmb{B}||\)</span></li>
+<li>相容性：对于任意的 <span class="math inline">\(\pmb{A，B}\in\pmb{R}^{n\times n}\)</span>，都有 <span class="math inline">\(||\pmb{AB}||\leq||\pmb{A}||||\pmb{B}||\)</span></li>
+</ul>
+<p>常用的矩阵范数有 $ 1$ -范数、<span class="math inline">\(2\)</span> -范数、 <span class="math inline">\(\infty\)</span> -范数和 <span class="math inline">\(F\)</span> -范数。</p>
+<ul>
+<li><p>$ 1$ -范数：又称为列和范数。顾名思义，即矩阵列向量中绝对值之和的最大值。 <span class="math display">\[
+  ||\pmb{A}||_1=\max_j\sum_i^m|a_{ij}|
+  \]</span></p></li>
+<li><p><span class="math inline">\(2\)</span> -范数：又称为谱范数，计算方法为 <span class="math inline">\(\pmb{A^TA}\)</span> 矩阵的最大特征值开平方。</p></li>
+</ul>
+<p><span class="math display">\[
+||\pmb{A}||_2=\sqrt{\lambda_1}
+\]</span></p>
+<ul>
+<li><p><span class="math inline">\(\infty\)</span> -范数：又称为行和范数。顾名思义，即矩阵行向量中绝对值之和的最大值。 <span class="math display">\[
+  ||\pmb{A}||_\infty=\max_i\sum_j^n|a_{ij}|
+  \]</span></p></li>
+<li><p><span class="math inline">\(F\)</span> -范数：又称为Frobenius范数，计算方法为矩阵元素的绝对值的平方和再开方。 <span class="math display">\[
+||\pmb{A}||_F=\sqrt{\sum_{i=1}^m\sum_{j=1}^n|a_{ij}|}
+\]</span></p></li>
+</ul>
+<h3 id="习题python编程实现求向量范数和矩阵范数">习题——Python编程实现求向量范数和矩阵范数。</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a=np.array([<span class="number">2</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">8</span>,-<span class="number">3</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;向量a：&#x27;</span>,a)</span><br><span class="line"><span class="built_in">print</span> (<span class="string">&#x27;向量a的1-范数:&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.linalg.norm(a,<span class="built_in">ord</span>=<span class="number">1</span>))</span><br><span class="line"><span class="built_in">print</span> (<span class="string">&#x27;向量a的2-范数:&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.linalg.norm(a,<span class="built_in">ord</span>=<span class="number">2</span>))</span><br><span class="line"><span class="built_in">print</span> (<span class="string">&#x27;向量a的∞-范数:&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.linalg.norm(a,<span class="built_in">ord</span>=np.inf))</span><br><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">A=np.arange(<span class="number">3</span>,<span class="number">15</span>).reshape(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;矩阵A：&#x27;</span>,A)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;矩阵A的1-范数:&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.linalg.norm(A,<span class="built_in">ord</span>=<span class="number">1</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;矩阵A的2-范数:&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.linalg.norm(A,<span class="built_in">ord</span>=<span class="number">2</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;矩阵的∞-范数:&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.linalg.norm(A,<span class="built_in">ord</span>=np.inf))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;矩阵A的F-范数:&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.linalg.norm(A,<span class="built_in">ord</span>=<span class="string">&#x27;fro&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;矩阵A列向量的2-范数:&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.linalg.norm(A,<span class="built_in">ord</span>=<span class="number">2</span>,axis=<span class="number">0</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;矩阵A行向量的2-范数:&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.linalg.norm(A,<span class="built_in">ord</span>=<span class="number">2</span>,axis=<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+<h2 id="矩阵和线性变换">4 矩阵和线性变换</h2>
+<h3 id="矩阵及其运算">4.1 矩阵及其运算</h3>
+<p>一些不想敲的概念：</p>
+<ul>
+<li>矩阵的定义。</li>
+<li>特殊的矩阵：行矩阵（也叫行向量）、列矩阵（也叫列向量）、方阵（<span class="math inline">\(\pmb{A}_n\)</span>），三角矩阵、单位矩阵、对称矩阵、对角矩阵、实对称矩阵、零矩阵、正交矩阵。</li>
+<li>矩阵的运算：加法、数乘、乘法、转置、行列式（<span class="math inline">\(|\pmb{A}|\)</span> 或 <span class="math inline">\(det(\pmb{A})\)</span>).</li>
+</ul>
+<h3 id="逆矩阵">4.2 逆矩阵</h3>
+<p>对于 <span class="math inline">\(n\)</span> 阶矩阵 <span class="math inline">\(\pmb{A}\)</span> ，如果有一个 <span class="math inline">\(n\)</span> 阶矩阵 <span class="math inline">\(\pmb{B}\)</span> ，使得 <span class="math inline">\(\pmb{AB=BA=E}\)</span>，则称矩阵 <span class="math inline">\(\pmb{A}\)</span> 是可逆的，并把矩阵 <span class="math inline">\(\pmb{B}\)</span> 称为 <span class="math inline">\(\pmb{A}\)</span> 的逆矩阵，记作 <span class="math inline">\(\pmb{A}^{-1}\)</span> .</p>
+<ul>
+<li>若矩阵 <span class="math inline">\(\pmb{A}\)</span> 可逆，则 <span class="math inline">\(|\pmb{A}| \neq 0\)</span> .</li>
+<li>若 <span class="math inline">\(|\pmb{A}| \neq 0\)</span>，则矩阵 <span class="math inline">\(\pmb{A}\)</span> 可逆，且 <span class="math inline">\(\pmb{A}^{-1}=\frac{1}{|\pmb{A}|}\pmb{A}^*\)</span>，其中 <span class="math inline">\(\pmb{A}^*\)</span> 为矩阵 <span class="math inline">\(\pmb{A}\)</span> 的伴随矩阵。</li>
+</ul>
+<h3 id="矩阵的初等变换">4.3 矩阵的初等变换</h3>
+<ul>
+<li>对调两行</li>
+<li>数乘</li>
+<li>数乘再相加</li>
+</ul>
+<h3 id="标量对向量的导数最小二乘法">4.4 标量对向量的导数、最小二乘法</h3>
+<p><img src="/img/xxds.png" /></p>
+<p><strong>详见：</strong></p>
+<p>系列：<a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/69027474" >机器学习中的矩阵向量求导<i class="fas fa-external-link-alt"></i></a></p>
+<p>单列一个：<a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/pinard/p/10773942.html" >机器学习中的矩阵向量求导(二) 矩阵向量求导之定义法<i class="fas fa-external-link-alt"></i></a></p>
+<p>最小二乘法及python代码：<a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/38128785" >最小二乘法（least sqaure method）<i class="fas fa-external-link-alt"></i></a></p>
 
         </div>
 
@@ -434,7 +507,7 @@ t=t_1+t_2+\dots+t_n=\sum_{i=1}^nt_i
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-text">1 行列式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E9%98%B6%E4%B8%8E%E4%B8%89%E9%98%B6%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-text">1.1 二阶与三阶行列式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%A8%E6%8E%92%E5%88%97%E5%92%8C%E5%AF%B9%E6%8D%A2"><span class="nav-text">1.2 全排列和对换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#n%E9%98%B6%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-text">1.3 n阶行列式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%A0%E7%A7%8D%E7%89%B9%E6%AE%8A%E8%A1%8C%E5%88%97%E5%BC%8F%E7%9A%84%E5%80%BC"><span class="nav-text">1.4 几种特殊行列式的值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#n%E9%98%B6%E8%A1%8C%E5%88%97%E5%BC%8F%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-text">1.5 n阶行列式的性质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E5%90%91%E9%87%8F%E6%8F%8F%E8%BF%B0%E7%A9%BA%E9%97%B4"><span class="nav-text">2 用向量描述空间</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E5%8F%8A%E5%85%B6%E8%BF%90%E7%AE%97"><span class="nav-text">2.1 向量及其运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%BB%84%E7%9A%84%E7%BA%BF%E6%80%A7%E7%BB%84%E5%90%88"><span class="nav-text">2.2 向量组的线性组合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%BB%84%E7%9A%84%E7%BA%BF%E6%80%A7%E7%9B%B8%E5%85%B3%E6%80%A7"><span class="nav-text">2.3 向量组的线性相关性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E7%A7%AF%E6%AD%A3%E4%BA%A4%E5%90%91%E9%87%8F%E7%BB%84%E5%92%8C%E8%8C%83%E6%95%B0"><span class="nav-text">3 内积、正交向量组和范数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E7%A7%AF"><span class="nav-text">3.1 内积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E4%BA%A4%E5%90%91%E9%87%8F%E7%BB%84%E5%92%8C%E6%96%BD%E5%AF%86%E7%89%B9%E6%AD%A3%E4%BA%A4%E5%8C%96"><span class="nav-text">3.2 正交向量组和施密特正交化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8C%83%E6%95%B0"><span class="nav-text">3.3 范数</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-text">1 行列式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E9%98%B6%E4%B8%8E%E4%B8%89%E9%98%B6%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-text">1.1 二阶与三阶行列式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%A8%E6%8E%92%E5%88%97%E5%92%8C%E5%AF%B9%E6%8D%A2"><span class="nav-text">1.2 全排列和对换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#n%E9%98%B6%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-text">1.3 n阶行列式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%A0%E7%A7%8D%E7%89%B9%E6%AE%8A%E8%A1%8C%E5%88%97%E5%BC%8F%E7%9A%84%E5%80%BC"><span class="nav-text">1.4 几种特殊行列式的值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#n%E9%98%B6%E8%A1%8C%E5%88%97%E5%BC%8F%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-text">1.5 n阶行列式的性质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E5%90%91%E9%87%8F%E6%8F%8F%E8%BF%B0%E7%A9%BA%E9%97%B4"><span class="nav-text">2 用向量描述空间</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E5%8F%8A%E5%85%B6%E8%BF%90%E7%AE%97"><span class="nav-text">2.1 向量及其运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%BB%84%E7%9A%84%E7%BA%BF%E6%80%A7%E7%BB%84%E5%90%88"><span class="nav-text">2.2 向量组的线性组合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%BB%84%E7%9A%84%E7%BA%BF%E6%80%A7%E7%9B%B8%E5%85%B3%E6%80%A7"><span class="nav-text">2.3 向量组的线性相关性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E7%A7%AF%E6%AD%A3%E4%BA%A4%E5%90%91%E9%87%8F%E7%BB%84%E5%92%8C%E8%8C%83%E6%95%B0"><span class="nav-text">3 内积、正交向量组和范数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E7%A7%AF"><span class="nav-text">3.1 内积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E4%BA%A4%E5%90%91%E9%87%8F%E7%BB%84%E5%92%8C%E6%96%BD%E5%AF%86%E7%89%B9%E6%AD%A3%E4%BA%A4%E5%8C%96"><span class="nav-text">3.2 正交向量组和施密特正交化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8C%83%E6%95%B0"><span class="nav-text">3.3 范数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B9%A0%E9%A2%98python%E7%BC%96%E7%A8%8B%E5%AE%9E%E7%8E%B0%E6%B1%82%E5%90%91%E9%87%8F%E8%8C%83%E6%95%B0%E5%92%8C%E7%9F%A9%E9%98%B5%E8%8C%83%E6%95%B0"><span class="nav-text">习题——Python编程实现求向量范数和矩阵范数。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E5%92%8C%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2"><span class="nav-text">4 矩阵和线性变换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E5%8F%8A%E5%85%B6%E8%BF%90%E7%AE%97"><span class="nav-text">4.1 矩阵及其运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%86%E7%9F%A9%E9%98%B5"><span class="nav-text">4.2 逆矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E5%88%9D%E7%AD%89%E5%8F%98%E6%8D%A2"><span class="nav-text">4.3 矩阵的初等变换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E9%87%8F%E5%AF%B9%E5%90%91%E9%87%8F%E7%9A%84%E5%AF%BC%E6%95%B0%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95"><span class="nav-text">4.4 标量对向量的导数、最小二乘法</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
