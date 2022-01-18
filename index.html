@@ -158,12 +158,13 @@
 
                 <div class="home-article-content markdown-body">
                     
-                        栈（Stack）栈对数据 “存” 和 “取” 的过程有特殊的要求：
+                        栈（Stack）
+栈对数据 "存" 和 "取" 的过程有特殊的要求：
 
 栈只能从表的一端存取数据，另一端是封闭的。
-在栈中，无论是存数据还是取数据，都必须遵循”先进后出”的原则，即最先进栈的元素最后出栈。
+在栈中，无论是存数据还是取数据，都必须遵循"先进后出"的原则，即最先进栈的元素最后出栈。
 
-因此，我们可以给栈下一个定义，即栈是一种只能...
+因此，我们可以给栈下一个定义，即栈是一种只...
                     
                 </div>
 
@@ -555,6 +556,22 @@ markdown中希腊字母加粗：https://blog.csdn.net/qq_28714865/...
 </div>
 
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </body>
 </html>
