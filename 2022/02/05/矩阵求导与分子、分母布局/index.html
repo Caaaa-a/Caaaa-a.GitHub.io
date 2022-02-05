@@ -178,12 +178,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>1.6k Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.9k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>7 Mins</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>8 Mins</span>
         </span>
     
     
@@ -305,6 +305,20 @@ f(x_1,x_2,x_3)=x_1^2+x_1x_2+x_2x_3
 <h3 id="矩阵求导结果的布局">3 矩阵求导结果的布局</h3>
 <p><strong>不严谨</strong>地说，从<strong>直观</strong>上看：<strong>分子布局</strong>，就是分子是<strong>列向量</strong>形式，分母是<strong>行向量</strong>形式；<strong>分母布局</strong>，就是分母是<strong>列向量</strong>形式，分子是<strong>行向量</strong>形式。</p>
 <p>不同类型的<strong>变元</strong>，<strong>严谨</strong>的布局说明见原文：<a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/263777564" >矩阵求导的本质与分子布局、分母布局的本质（矩阵求导——本质篇）<i class="fas fa-external-link-alt"></i></a></p>
+<h4 id="补充来自机器学习中的矩阵和向量的求导"><strong>补充：来自<a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/75713455" >机器学习中的矩阵和向量的求导<i class="fas fa-external-link-alt"></i></a></strong></h4>
+<p><strong>x</strong>表示n维向量，<strong>X</strong>表示m×n维度的矩阵,<strong>y</strong>表示m维向量，<strong>Y</strong>表示p×q 维度的矩阵。</p>
+<center>
+<img src="https://pic4.zhimg.com/80/v2-951ea8b36f12a37e80ece1a6eda220a3_1440w.jpg" alt="image"  />
+</center>
+<p><strong>解释几点：</strong></p>
+<ol type="1">
+<li><p>对于一个复杂的变量求导的时候，比如复合函数求导涉及到后面要讲的链式求导时候，只能选一种求导布局，不能同时出现分子布局和分母布局,分子布局与分母布局算出的结果只相差一个转置</p></li>
+<li><p>列向量<strong>y</strong>对列向量<strong>x</strong>的求导的分子布局形式可以理解为，分子向量<strong>y</strong>对分母向量<strong>x</strong>的第一个标量元素求导后排在第一列，对第二个标量元素求导后排在第二列，以此类推，排成一个m×n的矩阵。 也被称为雅克比矩阵：</p>
+<center>
+<p><img src="https://pic3.zhimg.com/80/v2-bd2b5fd60bfd8f60a69fa93c1259a9ea_1440w.jpg" alt="image" /></p>
+</center></li>
+<li><p>图中的默认布局是指常用的布局形式(向量和矩阵在分子上就用分子布局，否则用分母布局)，也是符合大家习惯的写法。</p></li>
+</ol>
 <h3 id="分子布局分母布局的本质">4 分子布局、分母布局的本质</h3>
 <p><strong>总结：</strong></p>
 <p><strong>1、分子布局的本质</strong>：分子是<strong>标量</strong>、<strong>列向量</strong>、矩阵向量化后的<strong>列向量</strong>；分母是<strong>标量</strong>、列向量<strong>转置</strong>后的<strong>行向量</strong>、矩阵的<strong>转置矩阵</strong>、矩阵向量化后的列向量<strong>转置</strong>后的<strong>行向量</strong>。</p>
@@ -470,7 +484,7 @@ f(x_1,x_2,x_3)=x_1^2+x_1x_2+x_2x_3
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E4%B8%8E%E6%A0%87%E9%87%8F%E5%90%91%E9%87%8F%E7%9F%A9%E9%98%B5"><span class="nav-text">1 函数与标量、向量、矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#function-%E6%98%AF%E4%B8%80%E4%B8%AA%E6%A0%87%E9%87%8F"><span class="nav-text">1、 \(function\) 是一个标量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#input-%E6%98%AF%E4%B8%80%E4%B8%AA%E6%A0%87%E9%87%8F"><span class="nav-text">1.1 \(input\) 是一个标量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#input-%E6%98%AF%E4%B8%80%E4%B8%AA%E5%90%91%E9%87%8F"><span class="nav-text">1.2 \(input\) 是一个向量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#input-%E6%98%AF%E4%B8%80%E4%B8%AA%E7%9F%A9%E9%98%B5"><span class="nav-text">1.3 \(input\) 是一个矩阵</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#function-%E6%98%AF%E4%B8%80%E4%B8%AA%E5%90%91%E9%87%8F"><span class="nav-text">2、\(function\) 是一个向量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%A0%87%E9%87%8F%E5%8F%98%E5%85%83"><span class="nav-text">2.1 标量变元</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E5%8F%98%E5%85%83"><span class="nav-text">2.2 向量变元</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E5%8F%98%E5%85%83"><span class="nav-text">2.3 矩阵变元</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#function-%E6%98%AF%E4%B8%80%E4%B8%AA%E7%9F%A9%E9%98%B5"><span class="nav-text">3、\(function\) 是一个矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%A0%87%E9%87%8F%E5%8F%98%E5%85%83-1"><span class="nav-text">3.1 标量变元</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E5%8F%98%E5%85%83-1"><span class="nav-text">3.2 向量变元</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E5%8F%98%E5%85%83-1"><span class="nav-text">3.3 矩阵变元</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">4、总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E6%B1%82%E5%AF%BC%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="nav-text">2 矩阵求导的本质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E6%B1%82%E5%AF%BC%E7%BB%93%E6%9E%9C%E7%9A%84%E5%B8%83%E5%B1%80"><span class="nav-text">3 矩阵求导结果的布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E5%AD%90%E5%B8%83%E5%B1%80%E5%88%86%E6%AF%8D%E5%B8%83%E5%B1%80%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="nav-text">4 分子布局、分母布局的本质</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E4%B8%8E%E6%A0%87%E9%87%8F%E5%90%91%E9%87%8F%E7%9F%A9%E9%98%B5"><span class="nav-text">1 函数与标量、向量、矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#function-%E6%98%AF%E4%B8%80%E4%B8%AA%E6%A0%87%E9%87%8F"><span class="nav-text">1、 \(function\) 是一个标量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#input-%E6%98%AF%E4%B8%80%E4%B8%AA%E6%A0%87%E9%87%8F"><span class="nav-text">1.1 \(input\) 是一个标量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#input-%E6%98%AF%E4%B8%80%E4%B8%AA%E5%90%91%E9%87%8F"><span class="nav-text">1.2 \(input\) 是一个向量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#input-%E6%98%AF%E4%B8%80%E4%B8%AA%E7%9F%A9%E9%98%B5"><span class="nav-text">1.3 \(input\) 是一个矩阵</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#function-%E6%98%AF%E4%B8%80%E4%B8%AA%E5%90%91%E9%87%8F"><span class="nav-text">2、\(function\) 是一个向量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%A0%87%E9%87%8F%E5%8F%98%E5%85%83"><span class="nav-text">2.1 标量变元</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E5%8F%98%E5%85%83"><span class="nav-text">2.2 向量变元</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E5%8F%98%E5%85%83"><span class="nav-text">2.3 矩阵变元</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#function-%E6%98%AF%E4%B8%80%E4%B8%AA%E7%9F%A9%E9%98%B5"><span class="nav-text">3、\(function\) 是一个矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%A0%87%E9%87%8F%E5%8F%98%E5%85%83-1"><span class="nav-text">3.1 标量变元</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E5%8F%98%E5%85%83-1"><span class="nav-text">3.2 向量变元</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E5%8F%98%E5%85%83-1"><span class="nav-text">3.3 矩阵变元</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">4、总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E6%B1%82%E5%AF%BC%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="nav-text">2 矩阵求导的本质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E6%B1%82%E5%AF%BC%E7%BB%93%E6%9E%9C%E7%9A%84%E5%B8%83%E5%B1%80"><span class="nav-text">3 矩阵求导结果的布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A5%E5%85%85%E6%9D%A5%E8%87%AA%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E7%9F%A9%E9%98%B5%E5%92%8C%E5%90%91%E9%87%8F%E7%9A%84%E6%B1%82%E5%AF%BC"><span class="nav-text">补充：来自机器学习中的矩阵和向量的求导</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E5%AD%90%E5%B8%83%E5%B1%80%E5%88%86%E6%AF%8D%E5%B8%83%E5%B1%80%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="nav-text">4 分子布局、分母布局的本质</span></a></li></ol>
     </div>
 </div>
         </aside>
