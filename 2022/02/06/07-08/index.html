@@ -178,7 +178,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>630 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>629 Words</span>
         </span>
     
     
@@ -199,27 +199,17 @@
         
 
         <div class="article-content markdown-body">
-            <h3 id="筛选的qa">筛选的Q&amp;A</h3>
-<h4 id="为什么深度学习中一般对标量求导而不是对矩阵或者向量">1、为什么深度学习中一般对标量求导而不是对矩阵或者向量？</h4>
-<p>因为loss通常是一个标量，精度和loss在机器学习中都是一个标量。如果loss变成一个向量，那就会很麻烦。而且向量关于矩阵的loss就会变成一个矩阵，那么，矩阵再往下走，就会变成一个四维矩阵，那么神经网络一深，那就会变成一个特别特别大的张量，就算不出来了，所以loss通常是一个标量。</p>
-<h4 id="多个loss分别反向的时候是不是要累计梯度">2、多个loss分别反向的时候是不是要累计梯度？</h4>
-<p>是的，假设在之后的神经网络有多个损失函数的话，是需要累积梯度的。也是为什么torch是默认累计梯度的。</p>
-<h4 id="为什么获取grad前需要backward">3、为什么获取grad前需要backward？</h4>
-<p>不做backward的话不会去计算梯度，计算梯度是很贵的一件事情（时间和内存上）。</p>
-<h4 id="求导过程一般来说是不是有向图有没有环状的图结构">4、求导过程一般来说是不是有向图？有没有环状的图结构？</h4>
-<p>循环神经网络，但是计算上还是会展开，虽然逻辑上是有环的图。</p>
-<h4 id="为什么用平方损失而不用绝对差值呢">5、为什么用平方损失而不用绝对差值呢？</h4>
-<p>因为绝对差值不可导。</p>
-<h4 id="为什么机器学习优化算法都采用梯度下降而不采用牛顿法收敛速度更快一般能算出一阶导二阶导也能算">6、为什么机器学习优化算法都采用梯度下降，而不采用牛顿法？收敛速度更快，一般能算出一阶导，二阶导也能算。</h4>
-<p>首先，二阶导不好算，不是总是能算出来的。 统计模型（损失函数），优化模型（我用什么算法优化），所以说把统计模型的最优解求出来的意义并不大，收敛快不快不那么关心。关心的是收敛导哪个地方，泛化性不一定比梯度下降好，不一定更实用。</p>
-<h4 id="detach是什么作用">7、detach是什么作用</h4>
-<p>告诉程序不用算梯度了。</p>
-<h4 id="每次都随机取出一部分怎么保证最后所有数据都被拿过了">8、每次都随机取出一部分，怎么保证最后所有数据都被拿过了？</h4>
-<p>bootstraping采样。次数多的情况下会遇到所有的数据，数据多的话也没必要所有的数据都用到。</p>
-<h4 id="如果样本大小不是批量数的整数倍那需要随机剔除多余的样本吗">9、如果样本大小不是批量数的整数倍，那需要随机剔除多余的样本吗？</h4>
-<ol type="1">
-<li>改batch_size，使得epoch迭代完整</li>
-<li>忽略最后一次epoch的迭代</li>
+            <h3 id="筛选的Q-amp-A"><a href="#筛选的Q-amp-A" class="headerlink" title="筛选的Q&amp;A"></a>筛选的Q&amp;A</h3><h4 id="1、为什么深度学习中一般对标量求导而不是对矩阵或者向量？"><a href="#1、为什么深度学习中一般对标量求导而不是对矩阵或者向量？" class="headerlink" title="1、为什么深度学习中一般对标量求导而不是对矩阵或者向量？"></a>1、为什么深度学习中一般对标量求导而不是对矩阵或者向量？</h4><p>因为loss通常是一个标量，精度和loss在机器学习中都是一个标量。如果loss变成一个向量，那就会很麻烦。而且向量关于矩阵的loss就会变成一个矩阵，那么，矩阵再往下走，就会变成一个四维矩阵，那么神经网络一深，那就会变成一个特别特别大的张量，就算不出来了，所以loss通常是一个标量。</p>
+<h4 id="2、多个loss分别反向的时候是不是要累计梯度？"><a href="#2、多个loss分别反向的时候是不是要累计梯度？" class="headerlink" title="2、多个loss分别反向的时候是不是要累计梯度？"></a>2、多个loss分别反向的时候是不是要累计梯度？</h4><p>是的，假设在之后的神经网络有多个损失函数的话，是需要累积梯度的。也是为什么torch是默认累计梯度的。</p>
+<h4 id="3、为什么获取grad前需要backward？"><a href="#3、为什么获取grad前需要backward？" class="headerlink" title="3、为什么获取grad前需要backward？"></a>3、为什么获取grad前需要backward？</h4><p>不做backward的话不会去计算梯度，计算梯度是很贵的一件事情（时间和内存上）。</p>
+<h4 id="4、求导过程一般来说是不是有向图？有没有环状的图结构？"><a href="#4、求导过程一般来说是不是有向图？有没有环状的图结构？" class="headerlink" title="4、求导过程一般来说是不是有向图？有没有环状的图结构？"></a>4、求导过程一般来说是不是有向图？有没有环状的图结构？</h4><p>循环神经网络，但是计算上还是会展开，虽然逻辑上是有环的图。</p>
+<h4 id="5、为什么用平方损失而不用绝对差值呢？"><a href="#5、为什么用平方损失而不用绝对差值呢？" class="headerlink" title="5、为什么用平方损失而不用绝对差值呢？"></a>5、为什么用平方损失而不用绝对差值呢？</h4><p>因为绝对差值不可导。</p>
+<h4 id="6、为什么机器学习优化算法都采用梯度下降，而不采用牛顿法？收敛速度更快，一般能算出一阶导，二阶导也能算。"><a href="#6、为什么机器学习优化算法都采用梯度下降，而不采用牛顿法？收敛速度更快，一般能算出一阶导，二阶导也能算。" class="headerlink" title="6、为什么机器学习优化算法都采用梯度下降，而不采用牛顿法？收敛速度更快，一般能算出一阶导，二阶导也能算。"></a>6、为什么机器学习优化算法都采用梯度下降，而不采用牛顿法？收敛速度更快，一般能算出一阶导，二阶导也能算。</h4><p>首先，二阶导不好算，不是总是能算出来的。 统计模型（损失函数），优化模型（我用什么算法优化），所以说把统计模型的最优解求出来的意义并不大，收敛快不快不那么关心。关心的是收敛导哪个地方，泛化性不一定比梯度下降好，不一定更实用。</p>
+<h4 id="7、detach是什么作用"><a href="#7、detach是什么作用" class="headerlink" title="7、detach是什么作用"></a>7、detach是什么作用</h4><p>告诉程序不用算梯度了。</p>
+<h4 id="8、每次都随机取出一部分，怎么保证最后所有数据都被拿过了？"><a href="#8、每次都随机取出一部分，怎么保证最后所有数据都被拿过了？" class="headerlink" title="8、每次都随机取出一部分，怎么保证最后所有数据都被拿过了？"></a>8、每次都随机取出一部分，怎么保证最后所有数据都被拿过了？</h4><p>bootstraping采样。次数多的情况下会遇到所有的数据，数据多的话也没必要所有的数据都用到。</p>
+<h4 id="9、如果样本大小不是批量数的整数倍，那需要随机剔除多余的样本吗？"><a href="#9、如果样本大小不是批量数的整数倍，那需要随机剔除多余的样本吗？" class="headerlink" title="9、如果样本大小不是批量数的整数倍，那需要随机剔除多余的样本吗？"></a>9、如果样本大小不是批量数的整数倍，那需要随机剔除多余的样本吗？</h4><ol>
+<li>改batch_size，使得epoch迭代完整 </li>
+<li>忽略最后一次epoch的迭代 </li>
 <li>不足部分从原有数据中抽出差额补齐</li>
 </ol>
 <p><a class="link"   target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1PX4y1g7KC?p=5&amp;t=1455.0" >08 线性回归 + 基础优化算法【动手学深度学习v2】<i class="fas fa-external-link-alt"></i></a></p>
@@ -398,7 +388,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%9B%E9%80%89%E7%9A%84qa"><span class="nav-text">筛选的Q&amp;A</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%AD%E4%B8%80%E8%88%AC%E5%AF%B9%E6%A0%87%E9%87%8F%E6%B1%82%E5%AF%BC%E8%80%8C%E4%B8%8D%E6%98%AF%E5%AF%B9%E7%9F%A9%E9%98%B5%E6%88%96%E8%80%85%E5%90%91%E9%87%8F"><span class="nav-text">1、为什么深度学习中一般对标量求导而不是对矩阵或者向量？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E4%B8%AAloss%E5%88%86%E5%88%AB%E5%8F%8D%E5%90%91%E7%9A%84%E6%97%B6%E5%80%99%E6%98%AF%E4%B8%8D%E6%98%AF%E8%A6%81%E7%B4%AF%E8%AE%A1%E6%A2%AF%E5%BA%A6"><span class="nav-text">2、多个loss分别反向的时候是不是要累计梯度？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%8E%B7%E5%8F%96grad%E5%89%8D%E9%9C%80%E8%A6%81backward"><span class="nav-text">3、为什么获取grad前需要backward？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B1%82%E5%AF%BC%E8%BF%87%E7%A8%8B%E4%B8%80%E8%88%AC%E6%9D%A5%E8%AF%B4%E6%98%AF%E4%B8%8D%E6%98%AF%E6%9C%89%E5%90%91%E5%9B%BE%E6%9C%89%E6%B2%A1%E6%9C%89%E7%8E%AF%E7%8A%B6%E7%9A%84%E5%9B%BE%E7%BB%93%E6%9E%84"><span class="nav-text">4、求导过程一般来说是不是有向图？有没有环状的图结构？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E7%94%A8%E5%B9%B3%E6%96%B9%E6%8D%9F%E5%A4%B1%E8%80%8C%E4%B8%8D%E7%94%A8%E7%BB%9D%E5%AF%B9%E5%B7%AE%E5%80%BC%E5%91%A2"><span class="nav-text">5、为什么用平方损失而不用绝对差值呢？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95%E9%83%BD%E9%87%87%E7%94%A8%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E8%80%8C%E4%B8%8D%E9%87%87%E7%94%A8%E7%89%9B%E9%A1%BF%E6%B3%95%E6%94%B6%E6%95%9B%E9%80%9F%E5%BA%A6%E6%9B%B4%E5%BF%AB%E4%B8%80%E8%88%AC%E8%83%BD%E7%AE%97%E5%87%BA%E4%B8%80%E9%98%B6%E5%AF%BC%E4%BA%8C%E9%98%B6%E5%AF%BC%E4%B9%9F%E8%83%BD%E7%AE%97"><span class="nav-text">6、为什么机器学习优化算法都采用梯度下降，而不采用牛顿法？收敛速度更快，一般能算出一阶导，二阶导也能算。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#detach%E6%98%AF%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8"><span class="nav-text">7、detach是什么作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AF%8F%E6%AC%A1%E9%83%BD%E9%9A%8F%E6%9C%BA%E5%8F%96%E5%87%BA%E4%B8%80%E9%83%A8%E5%88%86%E6%80%8E%E4%B9%88%E4%BF%9D%E8%AF%81%E6%9C%80%E5%90%8E%E6%89%80%E6%9C%89%E6%95%B0%E6%8D%AE%E9%83%BD%E8%A2%AB%E6%8B%BF%E8%BF%87%E4%BA%86"><span class="nav-text">8、每次都随机取出一部分，怎么保证最后所有数据都被拿过了？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E6%A0%B7%E6%9C%AC%E5%A4%A7%E5%B0%8F%E4%B8%8D%E6%98%AF%E6%89%B9%E9%87%8F%E6%95%B0%E7%9A%84%E6%95%B4%E6%95%B0%E5%80%8D%E9%82%A3%E9%9C%80%E8%A6%81%E9%9A%8F%E6%9C%BA%E5%89%94%E9%99%A4%E5%A4%9A%E4%BD%99%E7%9A%84%E6%A0%B7%E6%9C%AC%E5%90%97"><span class="nav-text">9、如果样本大小不是批量数的整数倍，那需要随机剔除多余的样本吗？</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%9B%E9%80%89%E7%9A%84Q-amp-A"><span class="nav-text">筛选的Q&amp;A</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1%E3%80%81%E4%B8%BA%E4%BB%80%E4%B9%88%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%AD%E4%B8%80%E8%88%AC%E5%AF%B9%E6%A0%87%E9%87%8F%E6%B1%82%E5%AF%BC%E8%80%8C%E4%B8%8D%E6%98%AF%E5%AF%B9%E7%9F%A9%E9%98%B5%E6%88%96%E8%80%85%E5%90%91%E9%87%8F%EF%BC%9F"><span class="nav-text">1、为什么深度学习中一般对标量求导而不是对矩阵或者向量？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2%E3%80%81%E5%A4%9A%E4%B8%AAloss%E5%88%86%E5%88%AB%E5%8F%8D%E5%90%91%E7%9A%84%E6%97%B6%E5%80%99%E6%98%AF%E4%B8%8D%E6%98%AF%E8%A6%81%E7%B4%AF%E8%AE%A1%E6%A2%AF%E5%BA%A6%EF%BC%9F"><span class="nav-text">2、多个loss分别反向的时候是不是要累计梯度？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3%E3%80%81%E4%B8%BA%E4%BB%80%E4%B9%88%E8%8E%B7%E5%8F%96grad%E5%89%8D%E9%9C%80%E8%A6%81backward%EF%BC%9F"><span class="nav-text">3、为什么获取grad前需要backward？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4%E3%80%81%E6%B1%82%E5%AF%BC%E8%BF%87%E7%A8%8B%E4%B8%80%E8%88%AC%E6%9D%A5%E8%AF%B4%E6%98%AF%E4%B8%8D%E6%98%AF%E6%9C%89%E5%90%91%E5%9B%BE%EF%BC%9F%E6%9C%89%E6%B2%A1%E6%9C%89%E7%8E%AF%E7%8A%B6%E7%9A%84%E5%9B%BE%E7%BB%93%E6%9E%84%EF%BC%9F"><span class="nav-text">4、求导过程一般来说是不是有向图？有没有环状的图结构？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5%E3%80%81%E4%B8%BA%E4%BB%80%E4%B9%88%E7%94%A8%E5%B9%B3%E6%96%B9%E6%8D%9F%E5%A4%B1%E8%80%8C%E4%B8%8D%E7%94%A8%E7%BB%9D%E5%AF%B9%E5%B7%AE%E5%80%BC%E5%91%A2%EF%BC%9F"><span class="nav-text">5、为什么用平方损失而不用绝对差值呢？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6%E3%80%81%E4%B8%BA%E4%BB%80%E4%B9%88%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95%E9%83%BD%E9%87%87%E7%94%A8%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%EF%BC%8C%E8%80%8C%E4%B8%8D%E9%87%87%E7%94%A8%E7%89%9B%E9%A1%BF%E6%B3%95%EF%BC%9F%E6%94%B6%E6%95%9B%E9%80%9F%E5%BA%A6%E6%9B%B4%E5%BF%AB%EF%BC%8C%E4%B8%80%E8%88%AC%E8%83%BD%E7%AE%97%E5%87%BA%E4%B8%80%E9%98%B6%E5%AF%BC%EF%BC%8C%E4%BA%8C%E9%98%B6%E5%AF%BC%E4%B9%9F%E8%83%BD%E7%AE%97%E3%80%82"><span class="nav-text">6、为什么机器学习优化算法都采用梯度下降，而不采用牛顿法？收敛速度更快，一般能算出一阶导，二阶导也能算。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7%E3%80%81detach%E6%98%AF%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8"><span class="nav-text">7、detach是什么作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8%E3%80%81%E6%AF%8F%E6%AC%A1%E9%83%BD%E9%9A%8F%E6%9C%BA%E5%8F%96%E5%87%BA%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E6%80%8E%E4%B9%88%E4%BF%9D%E8%AF%81%E6%9C%80%E5%90%8E%E6%89%80%E6%9C%89%E6%95%B0%E6%8D%AE%E9%83%BD%E8%A2%AB%E6%8B%BF%E8%BF%87%E4%BA%86%EF%BC%9F"><span class="nav-text">8、每次都随机取出一部分，怎么保证最后所有数据都被拿过了？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9%E3%80%81%E5%A6%82%E6%9E%9C%E6%A0%B7%E6%9C%AC%E5%A4%A7%E5%B0%8F%E4%B8%8D%E6%98%AF%E6%89%B9%E9%87%8F%E6%95%B0%E7%9A%84%E6%95%B4%E6%95%B0%E5%80%8D%EF%BC%8C%E9%82%A3%E9%9C%80%E8%A6%81%E9%9A%8F%E6%9C%BA%E5%89%94%E9%99%A4%E5%A4%9A%E4%BD%99%E7%9A%84%E6%A0%B7%E6%9C%AC%E5%90%97%EF%BC%9F"><span class="nav-text">9、如果样本大小不是批量数的整数倍，那需要随机剔除多余的样本吗？</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
