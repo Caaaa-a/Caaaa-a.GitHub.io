@@ -251,7 +251,7 @@ posterior=\frac{prior \times likelihood}{evidence} \rightarrow P(Y|X)=\frac{P(Y)
 <p>这些模型使用<strong>概率估计</strong>和<strong>可能性</strong>对数据点进行建模，并区分数据集中存在的不同类别标签。<strong>与判别模型不同，这些模型还能够生成新的数据点。</strong></p>
 <p>但是，它们也有一个主要缺点——如果数据集中存在异常值，那么它会在很大程度上影响这些类型的模型。</p>
 <h4 id="生成模型中涉及的数学问题"><strong>生成模型中涉及的数学问题</strong></h4>
-<p>‌训练生成分类器涉及估计函数 <span class="math inline">\(f: X -&gt; Y\)</span>或概率 <span class="math inline">\(P(Y|X)\)</span></p>
+<p>‌训练生成分类器涉及估计函数 <span class="math inline">\(f: X \rightarrow Y\)</span>或概率 <span class="math inline">\(P(Y|X)\)</span></p>
 <ul>
 <li>假设概率的某种函数形式，例如 <span class="math inline">\(P(Y), P(X|Y)\)</span></li>
 <li>借助训练数据，我们估计 <span class="math inline">\(P(X|Y)、P(Y)\)</span>的参数</li>
@@ -520,22 +520,6 @@ posterior=\frac{prior \times likelihood}{evidence} \rightarrow P(Y|X)=\frac{P(Y)
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </body>
 </html>
