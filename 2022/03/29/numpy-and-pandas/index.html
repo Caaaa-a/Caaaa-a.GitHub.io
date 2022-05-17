@@ -178,12 +178,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>1.1k Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.3k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>4 Mins</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>6 Mins</span>
         </span>
     
     
@@ -274,6 +274,19 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.array(df)</span><br></pre></td></tr></table></figure>
 <h4 id="打印整个-pandas-seriesdataframe">打印整个 Pandas Series/DataFrame</h4>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">df = pd.DataFrame(np.random.randn(<span class="number">5</span>, <span class="number">10</span>))</span><br><span class="line">pd.set_option(<span class="string">&#x27;display.max_rows&#x27;</span>, <span class="literal">None</span>)</span><br><span class="line">pd.set_option(<span class="string">&#x27;display.max_columns&#x27;</span>, <span class="literal">None</span>)</span><br><span class="line">pd.set_option(<span class="string">&#x27;display.width&#x27;</span>, <span class="literal">None</span>)</span><br><span class="line"><span class="built_in">print</span>(df)</span><br></pre></td></tr></table></figure>
+<h4 id="python-计算df中每一列行的非缺失值数量">python 计算df中每一列/行的非缺失值数量</h4>
+<p>df.count(axis=0) # 统计每列的缺失值</p>
+<p>df.count(axis=1) # 统计每行的缺失值</p>
+<p>缺失值个数</p>
+<p>df.shape[0] - df.count()</p>
+<h4 id="pandas.parser.cparsererror-error-tokenizing-data.-c-error-expected-2-fields-in-line-3-saw-12">pandas.parser.CParserError: Error tokenizing data. C error: Expected 2 fields in line 3, saw 12</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除该行</span></span><br><span class="line">data = pd.read_csv(<span class="string">&#x27;file1.csv&#x27;</span>, on_bad_lines=<span class="string">&#x27;skip&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定最多列</span></span><br><span class="line">col_names = [<span class="string">&quot;col1&quot;</span>, <span class="string">&quot;col2&quot;</span>, <span class="string">&quot;col3&quot;</span>, ...]</span><br><span class="line"><span class="comment">#col_names = [i for i in range(maxcol)]</span></span><br><span class="line">df = pd.read_csv(filename, names=col_names)</span><br></pre></td></tr></table></figure>
+<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43596927/article/details/89019884" >python怎么写多列长度不等的csv文件<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/u011253318/article/details/122377473?spm=1001.2101.3001.6661.1&amp;utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1.pc_relevant_paycolumn_v3&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1.pc_relevant_paycolumn_v3&amp;utm_relevant_index=1" >生成的数据集，csv文件列数不同，无法正常读取的解决方法<i class="fas fa-external-link-alt"></i></a></p>
+<h4 id="pandas中关于dataframe行列显示不完全">pandas中关于DataFrame行，列显示不完全</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#显示所有列</span><br><span class="line">pd.set_option(&#x27;display.max_columns&#x27;, None)</span><br><span class="line">#显示所有行</span><br><span class="line">pd.set_option(&#x27;display.max_rows&#x27;, None)</span><br><span class="line">#设置value的显示长度为100，默认为50</span><br><span class="line">pd.set_option(&#x27;max_colwidth&#x27;,100)</span><br></pre></td></tr></table></figure>
+<h4 id="拼接多列的字符串的方法">拼接多列的字符串的方法</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[&#x27;f4&#x27;]= [&#x27;&#x27;.join(i) for i in df.values]</span><br></pre></td></tr></table></figure>
 
         </div>
 
@@ -449,7 +462,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#sort"><span class="nav-text">sort</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pandas%E6%89%80%E6%94%AF%E6%8C%81%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">Pandas所支持的数据类型:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">查看数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pandas-%E8%AF%BB%E5%8F%96csv%E6%96%87%E4%BB%B6-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E5%8C%96-%E5%AD%97%E7%AC%A6%E5%8F%98%E6%88%90%E4%BA%86%E6%95%B0%E5%AD%97"><span class="nav-text">pandas 读取csv文件 数据类型转化 字符变成了数字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#array%E4%B8%8Elist%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2"><span class="nav-text">array与list相互转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dataframe%E6%88%96series%E8%BD%AC%E6%8D%A2%E6%88%90list"><span class="nav-text">dataframe或series转换成list</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#df-%E6%9F%A5%E6%89%BE"><span class="nav-text">Df 查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pd.read_csv-to_csv"><span class="nav-text">pd.read_csv() 、to_csv()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dataframe%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA-df.empty-bool"><span class="nav-text">dataframe是否为空 : df.empty (bool)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#df%E8%BD%ACnumpy"><span class="nav-text">Df转numpy</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%93%E5%8D%B0%E6%95%B4%E4%B8%AA-pandas-seriesdataframe"><span class="nav-text">打印整个 Pandas Series&#x2F;DataFrame</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#sort"><span class="nav-text">sort</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pandas%E6%89%80%E6%94%AF%E6%8C%81%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">Pandas所支持的数据类型:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">查看数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pandas-%E8%AF%BB%E5%8F%96csv%E6%96%87%E4%BB%B6-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E5%8C%96-%E5%AD%97%E7%AC%A6%E5%8F%98%E6%88%90%E4%BA%86%E6%95%B0%E5%AD%97"><span class="nav-text">pandas 读取csv文件 数据类型转化 字符变成了数字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#array%E4%B8%8Elist%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2"><span class="nav-text">array与list相互转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dataframe%E6%88%96series%E8%BD%AC%E6%8D%A2%E6%88%90list"><span class="nav-text">dataframe或series转换成list</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#df-%E6%9F%A5%E6%89%BE"><span class="nav-text">Df 查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pd.read_csv-to_csv"><span class="nav-text">pd.read_csv() 、to_csv()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dataframe%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA-df.empty-bool"><span class="nav-text">dataframe是否为空 : df.empty (bool)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#df%E8%BD%ACnumpy"><span class="nav-text">Df转numpy</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%93%E5%8D%B0%E6%95%B4%E4%B8%AA-pandas-seriesdataframe"><span class="nav-text">打印整个 Pandas Series&#x2F;DataFrame</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#python-%E8%AE%A1%E7%AE%97df%E4%B8%AD%E6%AF%8F%E4%B8%80%E5%88%97%E8%A1%8C%E7%9A%84%E9%9D%9E%E7%BC%BA%E5%A4%B1%E5%80%BC%E6%95%B0%E9%87%8F"><span class="nav-text">python 计算df中每一列&#x2F;行的非缺失值数量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pandas.parser.cparsererror-error-tokenizing-data.-c-error-expected-2-fields-in-line-3-saw-12"><span class="nav-text">pandas.parser.CParserError: Error tokenizing data. C error: Expected 2 fields in line 3, saw 12</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pandas%E4%B8%AD%E5%85%B3%E4%BA%8Edataframe%E8%A1%8C%E5%88%97%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%AE%8C%E5%85%A8"><span class="nav-text">pandas中关于DataFrame行，列显示不完全</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8B%BC%E6%8E%A5%E5%A4%9A%E5%88%97%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-text">拼接多列的字符串的方法</span></a></li></ol>
     </div>
 </div>
         </aside>
@@ -512,22 +525,6 @@
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </body>
 </html>
