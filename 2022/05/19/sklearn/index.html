@@ -178,7 +178,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>963 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>1k Words</span>
         </span>
     
     
@@ -266,6 +266,7 @@ W～U[-\frac{\sqrt{6}}{\sqrt{n_j+n_{j+1}}},\frac{\sqrt{6}}{\sqrt{n_j+n_{j+1}}}]
 \]</span> <img src="/Users/linyi/Downloads/pw/hexo-site/source/img/sklearn-mlp-weights.png" alt="image-20220525194508355" style="zoom:50%;" /></p>
 <h3 id="带有-sgd-训练的线性分类器-sgdclassifier">带有 SGD 训练的线性分类器： <a href="https：//scikit-learn.org/stable/modules/generated/sklearn.linear_model.SGDClassifier.html">SGDClassifier</a></h3>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">sklearn</span>.<span class="title">linear_model</span>.<span class="title">SGDClassifier</span>(<span class="params">loss=<span class="string">&#x27;hinge&#x27;</span>, *, penalty=<span class="string">&#x27;l2&#x27;</span>, alpha=<span class="number">0.0001</span>, l1_ratio=<span class="number">0.15</span>, fit_intercept=<span class="literal">True</span>, max_iter=<span class="number">1000</span>, tol=<span class="number">0.001</span>, shuffle=<span class="literal">True</span>, verbose=<span class="number">0</span>, epsilon=<span class="number">0.1</span>, n_jobs=<span class="literal">None</span>, random_state=<span class="literal">None</span>, learning_rate=<span class="string">&#x27;optimal&#x27;</span>, eta0=<span class="number">0.0</span>, power_t=<span class="number">0.5</span>, early_stopping=<span class="literal">False</span>, validation_fraction=<span class="number">0.1</span>, n_iter_no_change=<span class="number">5</span>, class_weight=<span class="literal">None</span>, warm_start=<span class="literal">False</span>, average=<span class="literal">False</span></span>)</span></span><br></pre></td></tr></table></figure>
+<p>该类实现了用SGD方法进行训练的线性分类器（比如线性SVM，逻辑回归等）。模型每次使用一个样本来估计损失函数梯度。模型的学习速率会随着迭代地进行而减小。</p>
 <h4 id="scoring的参数模型评估规则"><a href="https：//scikit-learn.org/stable/modules/model_evaluation.html#scoring-parameter">scoring的参数（模型评估规则）</a></h4>
 <h3 id="plotting-learning-curves"><a class="link"   target="_blank" rel="noopener" href="https://scikit-learn.org/stable/auto_examples/model_selection/plot_learning_curve.html" >Plotting Learning Curves<i class="fas fa-external-link-alt"></i></a></h3>
 
