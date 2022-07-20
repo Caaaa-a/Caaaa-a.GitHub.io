@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<link rel="dns-prefetch" href="//cdn.bootcss.com" />
+	<link rel="dns-prefetch" href="//cdn.mathjax.org" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Caaaaa">
+    
+    <title>
+        
+            如何理解python的类与对象？——改自知乎答案 |
+        
+        Caaaaa
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/logo.png","favicon":"/images/logo.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"To be a slash youth."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Caaaaa
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">如何理解python的类与对象？——改自知乎答案</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/logo.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Caaaaa</span>
+                        
+                            <span class="author-label">Lv4</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-02-25 10:46:57</span>
+        <span class="mobile">2022-02-25 10:46</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>2.3k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>9 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h3 id="python教程">python教程</h3>
+<p>来源：<a class="link"   target="_blank" rel="noopener" href="https://www.zhihu.com/question/27699413/answer/327777872" >知乎答案<i class="fas fa-external-link-alt"></i></a></p>
+<ol type="1">
+<li><p>类、对象在实际编程中有啥好处，为啥要用它们</p></li>
+<li><p>再给你解释怎么去理解它们</p></li>
+</ol>
+<h4 id="类的好处">1 类的好处</h4>
+<ul>
+<li>方便复用（如果你用函数写，就要复制整块代码，增加了代码量，增加了出错率）</li>
+<li>方便扩展（函数写段代码，若要升级、扩展，都十分复杂，容易出错，用类来扩展，则方便清晰）</li>
+<li>方便维护（因为类是把抽象的东西映射成我们常见的，摸得到的东西，容易理解，维护也方便）</li>
+</ul>
+<hr />
+<h5 id="举几个例子"><strong>举几个例子</strong></h5>
+<h5 id="制作鸭子"><strong>制作鸭子</strong></h5>
+<p>比如你是玩具厂的工程师，你要<strong>制作一个机器</strong>，可以批量制作<strong>鸭子形状</strong>的玩具，也许你的思路如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">makeDuckMouth</span>():</span></span><br><span class="line">    <span class="comment">#这里可以放其他制作细节</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;鸭子嘴巴制作完毕&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">makeDuckEar</span>():</span></span><br><span class="line">    <span class="comment">#这里可以放其他制作细节</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;鸭耳朵制作完毕&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">makeDuckEye</span>():</span></span><br><span class="line">    <span class="comment">#这里可以放其他制作细节</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;鸭眼睛制作完毕&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">makeDuckHead</span>():</span></span><br><span class="line">    <span class="comment">#这里可以放其他制作细节</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;鸭头制作完毕&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">makeDuckWing</span>():</span></span><br><span class="line">    <span class="comment">#这里可以放其他制作细节</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;鸭翅膀制作完毕&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">makeDuckBody</span>():</span></span><br><span class="line">    <span class="comment">#这里可以放其他制作细节</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;鸭身体制作完毕&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">makeDuckFoot</span>():</span></span><br><span class="line">    <span class="comment">#这里可以放其他制作细节</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;鸭脚制作完毕&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">makeDuckMerge</span>():</span></span><br><span class="line">    <span class="comment">#这里可以放其他制作细节</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;鸭子组装完毕&#x27;</span>)</span><br><span class="line"></span><br><span class="line">makeDuckMoth() <span class="comment">#制作鸭嘴巴</span></span><br><span class="line">makeDuckEar() <span class="comment">#制作鸭耳朵</span></span><br><span class="line">makeDuckEye() <span class="comment">#制作鸭眼睛</span></span><br><span class="line">makeDuckHead() <span class="comment">#制作鸭头</span></span><br><span class="line">makeDuckWing()  <span class="comment">#制作鸭翅膀，注意，猪是没有翅膀的</span></span><br><span class="line">makeDuckBody() <span class="comment">#制作鸭身体</span></span><br><span class="line">makeDuckFoot() <span class="comment">#制作鸭脚</span></span><br><span class="line">makeDuckMerge() <span class="comment">#合并鸭子的各个部位，组装成最终鸭子</span></span><br></pre></td></tr></table></figure>
+<p>你发现，自己好厉害，居然学会了整个鸭子的制作流程</p>
+<h5 id="制作猪"><strong>制作猪</strong></h5>
+<p>第二天，老板让你，制作<strong>猪形状</strong>的玩具，难道你的代码如下？</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">makePigMouth</span>():</span></span><br><span class="line">    <span class="comment">#这里可以放其他制作细节</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;猪嘴巴制作完毕&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">makePigEar</span>():</span></span><br><span class="line">    <span class="comment">#这里可以放其他制作细节</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;猪耳朵制作完毕&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">makePigEye</span>():</span></span><br><span class="line">    <span class="comment">#这里可以放其他制作细节</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;猪眼睛制作完毕&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">makePigHead</span>():</span></span><br><span class="line">    <span class="comment">#这里可以放其他制作细节</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;猪头制作完毕&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">makePigBody</span>():</span></span><br><span class="line">    <span class="comment">#这里可以放其他制作细节</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;猪身体制作完毕&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">makePigHand</span>():</span></span><br><span class="line">    <span class="comment">#这里可以放其他制作细节</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;猪手制作完毕&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">makePigFoot</span>():</span></span><br><span class="line">    <span class="comment">#这里可以放其他制作细节</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;4只猪脚制作完毕&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">makePigMerge</span>():</span></span><br><span class="line">    <span class="comment">#这里可以放其他制作细节</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;猪组装完毕&#x27;</span>)</span><br><span class="line"></span><br><span class="line">makePigMoth() <span class="comment">#制作猪嘴巴</span></span><br><span class="line">makePigEar() <span class="comment">#制作猪耳朵</span></span><br><span class="line">makePigEye() <span class="comment">#制作猪眼睛</span></span><br><span class="line">makePigHead() <span class="comment">#制作猪头</span></span><br><span class="line">makePigBody() <span class="comment">#制作猪身体</span></span><br><span class="line">makePigFoot() <span class="comment">#制作4只猪脚</span></span><br><span class="line">makePigMerge() <span class="comment">#合并猪的各个部位，组装成最终猪</span></span><br></pre></td></tr></table></figure>
+<p>这样来，你确实完成了工作，但有没有觉得 有点累？</p>
+<p><strong>是不是觉得，猪和鸭子有很多相似之处？</strong></p>
+<h4 id="如何去理解类">2 如何去理解类</h4>
+<p>类就像是<strong>基因的制造图纸</strong>，我们人类，生的小孩，也是两只手，两只脚，一个嘴巴，除非变异，否则不会多出一只脚的，之所以这样有序的发展，是因为我们身体里，有<strong>基因这张图纸</strong>控制着我们的繁衍。</p>
+<h5 id="animal"><strong>Animal</strong></h5>
+<p>现在我们给上面例子中的制作 <strong>鸭子、猪</strong> 建立一个通用的制作基因表，利用他们相似制作流程建立基因表。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    猪和鸭子的基类（基因图纸表）</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, name</span>):</span> <span class="comment"># 实例化的时候传入要制作的东西名字，如猪、鸭子</span></span><br><span class="line">        self.name = name </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">makeMouth</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="comment">#这里可以放其他制作细节  </span></span><br><span class="line">        <span class="built_in">print</span>(self.name+<span class="string">&#x27;的嘴巴 制作完毕&#x27;</span>) <span class="comment">#这里的self.name就是获取我们传入的name</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">makeEar</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="comment">#这里可以放其他制作细节  </span></span><br><span class="line">        <span class="built_in">print</span>(self.name+<span class="string">&#x27;的耳朵 制作完毕&#x27;</span>) </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">makeEye</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="comment">#这里可以放其他制作细节  </span></span><br><span class="line">        <span class="built_in">print</span>(self.name+<span class="string">&#x27;的眼睛 制作完毕&#x27;</span>) </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">makeHead</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="comment">#这里可以放其他制作细节  </span></span><br><span class="line">        <span class="built_in">print</span>(self.name+<span class="string">&#x27;的头 制作完毕&#x27;</span>) </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">makeBody</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="comment">#这里可以放其他制作细节  </span></span><br><span class="line">        <span class="built_in">print</span>(self.name+<span class="string">&#x27;的身体 制作完毕&#x27;</span>) </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">makeFoot</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="comment">#这里可以放其他制作细节  </span></span><br><span class="line">        <span class="built_in">print</span>(self.name+<span class="string">&#x27;的脚 制作完毕&#x27;</span>) </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">makeMerge</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="comment">#这里可以放其他制作细节  </span></span><br><span class="line">        <span class="built_in">print</span>(self.name+<span class="string">&#x27;合并完毕&#x27;</span>) </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">makeAll</span>(<span class="params">self</span>):</span> </span><br><span class="line">        <span class="comment"># 一条龙。直接跑完整个流水线</span></span><br><span class="line">        self.makeMoth()</span><br><span class="line">        self.makeEar()</span><br><span class="line">        self.makeEye()</span><br><span class="line">        self.makeHead()</span><br><span class="line">        self.makeBody()</span><br><span class="line">        self.makeFoot()</span><br><span class="line">        self.makeMerge()</span><br></pre></td></tr></table></figure>
+<p>你可以看到，上面的图纸里，我们没有放 makeWing() #制作翅膀，那是因为猪不会飞，我们只放猪和鸭子共有的、相同的东西。</p>
+<h5 id="pig"><strong>Pig</strong></h5>
+<p>接下来，用这个类，继承给Pig，代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Pig</span>(<span class="params">Animal</span>):</span>  <span class="comment"># 括号里写Animal，意思是Pig继承Animal的所有特性，类似你继承你老爸的基因</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">makeMoth</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="comment">#这里加详细的猪嘴巴制作流程，如长嘴巴，有两个孔  </span></span><br><span class="line">        <span class="built_in">print</span>(self.name+<span class="string">&#x27;的嘴巴 制作完毕&#x27;</span>) </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">makeEar</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="comment">#耳朵大大的</span></span><br><span class="line">        <span class="built_in">print</span>(self.name+<span class="string">&#x27;的耳朵 制作完毕&#x27;</span>) </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">makeEye</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="comment">#眼睛小小的 </span></span><br><span class="line">        <span class="built_in">print</span>(self.name+<span class="string">&#x27;的眼睛 制作完毕&#x27;</span>) </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">makeHead</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="comment">#很大的头 </span></span><br><span class="line">        <span class="built_in">print</span>(self.name+<span class="string">&#x27;的头 制作完毕&#x27;</span>) </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">makeBody</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="comment">#略 </span></span><br><span class="line">        <span class="built_in">print</span>(self.name+<span class="string">&#x27;的身体 制作完毕&#x27;</span>) </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">makeFoot</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="comment">#略  </span></span><br><span class="line">        <span class="built_in">print</span>(self.name+<span class="string">&#x27;的脚 制作完毕&#x27;</span>) </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">makeMerge</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="comment">#略  </span></span><br><span class="line">        <span class="built_in">print</span>(self.name+<span class="string">&#x27;合并完毕&#x27;</span>) </span><br></pre></td></tr></table></figure>
+<p>在class Pig中，如 makeMoth里面，只加入详细制作猪嘴巴的代码，不要把制作猪头的代码放这里哦</p>
+<p>你发现，class Pig中 没有了这2段代码，这是因为，如果你继承别的对象，如Animal后，若完全不修改某些方法属性，就可以不写出来（实际还是存在Pig中的）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, name</span>):</span></span><br><span class="line">      self.name = name </span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">makeAll</span>(<span class="params">self</span>):</span> </span><br><span class="line">      <span class="comment"># 一条龙。直接跑完整个流水线</span></span><br><span class="line">      self.makeMoth()</span><br><span class="line">      self.makeEar()</span><br><span class="line">      self.makeEye()</span><br><span class="line">      self.makeHead()</span><br><span class="line">      self.makeBody()</span><br><span class="line">      self.makeFoot()</span><br><span class="line">      self.makeMerge()</span><br></pre></td></tr></table></figure>
+<p>写出来意味着，你要覆盖以前代码块里的行为，如 我们写出了makeMoth，makeEar ...</p>
+<p>意味着我们要把makeMoth里的制作细节改成我们想要的，</p>
+<p>猪和鸭子的嘴巴长得不一样，制作细节肯定不同，对吧？</p>
+<p>最后我们用以下代码，让机器开始造猪</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pig1 = Pig(<span class="string">&#x27;猪&#x27;</span>)  <span class="comment">#实例化，相当于怀孕</span></span><br><span class="line">pig1.makeAll()  <span class="comment"># 开始造猪，相当于在子宫里形成整体</span></span><br></pre></td></tr></table></figure>
+<h5 id="duck"><strong>Duck</strong></h5>
+<p>现在开始造鸭子的图纸，继承Animal，覆盖某些代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Duck</span>(<span class="params">Animal</span>):</span>  <span class="comment"># </span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">makeMoth</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="comment">#这里加详细的鸭子嘴巴制作流程，如长嘴巴，嘴巴硬 </span></span><br><span class="line">        <span class="built_in">print</span>(self.name+<span class="string">&#x27;的嘴巴 制作完毕&#x27;</span>) </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">makeEar</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="comment">#耳朵很小</span></span><br><span class="line">        <span class="built_in">print</span>(self.name+<span class="string">&#x27;的耳朵 制作完毕&#x27;</span>) </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">makeEye</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="comment">#眼睛小小的 </span></span><br><span class="line">        <span class="built_in">print</span>(self.name+<span class="string">&#x27;的眼睛 制作完毕&#x27;</span>) </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">makeHead</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="comment">#头很小 </span></span><br><span class="line">        <span class="built_in">print</span>(self.name+<span class="string">&#x27;的头 制作完毕&#x27;</span>) </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">makeBody</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="comment">#略 </span></span><br><span class="line">        <span class="built_in">print</span>(self.name+<span class="string">&#x27;的身体 制作完毕&#x27;</span>) </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">makeFoot</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="comment">#略  </span></span><br><span class="line">        <span class="built_in">print</span>(self.name+<span class="string">&#x27;的脚 制作完毕&#x27;</span>)     </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">makeMerge</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="comment">#略  </span></span><br><span class="line">        <span class="built_in">print</span>(self.name+<span class="string">&#x27;合并完毕&#x27;</span>) </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">makeWing</span>(<span class="params">self</span>):</span> <span class="comment">#增加翅膀的制作流程</span></span><br><span class="line">        <span class="comment">#略  </span></span><br><span class="line">        <span class="built_in">print</span>(self.name+<span class="string">&#x27;的翅膀 制作完毕&#x27;</span>) </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">makeAll</span>(<span class="params">self</span>):</span> <span class="comment">#因为增加了翅膀，所以要覆写这个函数      </span></span><br><span class="line">        self.makeMoth()</span><br><span class="line">        self.makeEar()</span><br><span class="line">        self.makeEye()</span><br><span class="line">        self.makeHead()</span><br><span class="line">        self.makeBody()</span><br><span class="line">        self.makeFoot()</span><br><span class="line">        self.makeWing()  <span class="comment">#插入翅膀制作流程</span></span><br><span class="line">        self.makeMerge()</span><br></pre></td></tr></table></figure>
+<p>然后用以下代码实例化，开始做鸭子</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">duck1 = Duck(<span class="string">&#x27;鸭子&#x27;</span>)</span><br><span class="line">duck1.makeAll()</span><br></pre></td></tr></table></figure>
+<p>以后我们要狗、牛、企鹅，都可以从Animal继承， Animal给我们提供了一个框架，我们只需要在这个框架上，扩展，延伸 就可以很方便的做出任何东西，这就是类的魅力</p>
+<h5 id="other"><strong>Other</strong></h5>
+<p>如果你要做个别的咋办？</p>
+<p>可以建立一个 <strong>足够通用基类</strong>，慢慢扩展， 类似人类的老祖宗，最开始是微生物，后来是猴子。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Weishengwu</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;假设一开始的老祖宗只会吃东西&#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, name</span>):</span> </span><br><span class="line">        self.name = name </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">eat</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;吃东西&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#开始进化成鱼类</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fish</span>(<span class="params">Weishengwu</span>):</span></span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;在老祖宗只会吃的基础上，学会了移动&#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">move</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;移动&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#开始进化成猴子</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Houzi</span>(<span class="params">Fish</span>):</span></span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;在鱼的基础上学会了爬树&#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, name, love</span>):</span>  <span class="comment"># 以前只有名字，现在有了爱好，或许是吃桃子、或许是荡秋千</span></span><br><span class="line">        self.name = name </span><br><span class="line">        self.love = love </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">eat</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="comment">#覆写，因为吃东西的方式可能和鱼类不一样了</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;牙齿吃东西&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">move</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="comment">#覆写，不是在水里移动了，是陆地上移动</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;脚移动&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">Pashu</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;爬树&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#你可以继续进化，继续给他增加任何功能</span></span><br></pre></td></tr></table></figure>
+<p>在python中，一个对象的特征也称为属性（attribute）。它所具有的行为也称为方法（method）。</p>
+<p><strong>结论：对象=属性（特征）+方法（行为）</strong></p>
+<p><strong>类</strong>：在python中，把具有相同属性和方法的对象归为一个类（class）。比如人类，动物，植物等等，这些都是类的概念。</p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：如何理解python的类与对象？——改自知乎答案</li>
+        <li>Post author：Caaaaa</li>
+        <li>Create time：2022-02-25 10:46:57</li>
+        <li>
+            Post link：https://caaaa-a.github.io/2022/02/25/数据结构-如何理解python的类与对象？——改自知乎答案/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/02/28/Knowledge%20Tracing-%E4%BB%8E%E6%95%B0%E6%8D%AE%E8%A7%86%E8%A7%92%E9%80%8F%E6%9E%90%E8%AE%A4%E7%9F%A5%E8%BF%BD%E8%B8%AA-%E6%A1%86%E6%9E%B6%E3%80%81%E9%97%AE%E9%A2%98%E5%8F%8A%E5%90%AF%E7%A4%BA/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">从数据视角透析认知追踪：框架、问题及启示</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/02/25/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">面向对象 —— 数据结构 Python语言描述</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Caaaaa</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#python%E6%95%99%E7%A8%8B"><span class="nav-text">python教程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B1%BB%E7%9A%84%E5%A5%BD%E5%A4%84"><span class="nav-text">1 类的好处</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%B8%BE%E5%87%A0%E4%B8%AA%E4%BE%8B%E5%AD%90"><span class="nav-text">举几个例子</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%B6%E4%BD%9C%E9%B8%AD%E5%AD%90"><span class="nav-text">制作鸭子</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%B6%E4%BD%9C%E7%8C%AA"><span class="nav-text">制作猪</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%8E%BB%E7%90%86%E8%A7%A3%E7%B1%BB"><span class="nav-text">2 如何去理解类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#animal"><span class="nav-text">Animal</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#pig"><span class="nav-text">Pig</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#duck"><span class="nav-text">Duck</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#other"><span class="nav-text">Other</span></a></li></ol></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+</body>
+</html>

@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<link rel="dns-prefetch" href="//cdn.bootcss.com" />
+	<link rel="dns-prefetch" href="//cdn.mathjax.org" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Caaaaa">
+    
+    <title>
+        
+            矩阵求导与分子、分母布局 |
+        
+        Caaaaa
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/logo.png","favicon":"/images/logo.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"To be a slash youth."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Caaaaa
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">矩阵求导与分子、分母布局</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/logo.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Caaaaa</span>
+                        
+                            <span class="author-label">Lv4</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-02-05 23:12:03</span>
+        <span class="mobile">2022-02-05 23:12</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/">数学基础</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.9k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>8 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>原文见：<a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/263777564" >矩阵求导的本质与分子布局、分母布局的本质（矩阵求导——本质篇）<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="函数与标量向量矩阵">1 函数与标量、向量、矩阵</h3>
+<p>考虑一个函数 <span class="math display">\[
+\text{function}(\text{input})
+\]</span></p>
+<p>针对 <span class="math inline">\(function\)</span> 的类型、<span class="math inline">\(input\)</span> 的类型，我们可以将这个函数分为 <span class="math inline">\(function\)</span> 不同的种类。</p>
+<h4 id="function-是一个标量"><strong>1、</strong> <span class="math inline">\(function\)</span> 是一个<strong>标量</strong></h4>
+<p>我们称 <span class="math inline">\(function\)</span> 是一个<strong>实值标量函数。</strong>用细体小写字母 <span class="math inline">\(f\)</span> 表示。</p>
+<h5 id="input-是一个标量"><strong>1.1</strong> <span class="math inline">\(input\)</span> 是一个<strong>标量</strong></h5>
+<p>我们称 <span class="math inline">\(function\)</span> 的<strong>变元</strong>是<strong>标量。</strong>用细体小写字母 <span class="math inline">\(x\)</span> 表示。</p>
+<p><strong>例1：</strong> <span class="math display">\[
+f(x)=x+2
+\]</span></p>
+<h5 id="input-是一个向量"><strong>1.2</strong> <span class="math inline">\(input\)</span> 是一个<strong>向量</strong></h5>
+<p>我们称 <span class="math inline">\(function\)</span> 的<strong>变元</strong>是<strong>向量。</strong>用<strong>粗体</strong>小写字母 <span class="math inline">\(\pmb{x}\)</span> 表示。</p>
+<p><strong>例2：</strong>设 <span class="math inline">\(\pmb{x}=[x_1,x_2,x_3]^T\)</span> <span class="math display">\[
+f(\pmb{x})=a_1x_1^2+a_2x_2^2+a_3x_3^2+a_4x_1x_2
+\]</span></p>
+<h5 id="input-是一个矩阵"><strong>1.3</strong> <span class="math inline">\(input\)</span> 是一个<strong>矩阵</strong></h5>
+<p>我们称 <span class="math inline">\(function\)</span> 的<strong>变元</strong>是<strong>矩阵。</strong>用<strong>粗体</strong>大写字母 <span class="math inline">\(\pmb{X}\)</span> 表示。</p>
+<p><strong>例3：</strong>设 <span class="math inline">\(\pmb{X}_{3\times 2}=(x_{ij})_{i=1,j=1}^{3,2}\)</span><img src="https://www.zhihu.com/equation?tex=" alt="[公式]" /> <span class="math display">\[
+f(\pmb{X})=a_1x_{11}^2+a_2x_{12}^2+a_3x_{21}^2+a_4x_{22}^2+a_5x_{31}^2+a_6x_{32}^2
+\]</span></p>
+<p><span class="math display">\[
+\left\{ \begin{align*} \frac{\partial f}{\partial x_1} &amp; = 2x_1+x_2 \\\\ \frac{\partial f}{\partial x_2} &amp; = x_1+x_3 \\\\ \frac{\partial f}{\partial x_3} &amp; = x_2 \end{align*} \right.
+\]</span></p>
+<h4 id="function-是一个向量">2、<span class="math inline">\(function\)</span> 是一个向量</h4>
+<p>我们称 <span class="math inline">\(function\)</span> 是一个<strong>实向量函数</strong> 。用<strong>粗体</strong>小写字母表 <span class="math inline">\(\pmb{f}\)</span> 示。</p>
+<p><strong>含义</strong>： <span class="math inline">\(\pmb{f}\)</span> 是由若干个 <span class="math inline">\(f\)</span> 组成的一个<strong>向量</strong>。</p>
+<p>同样地，变元分三种：<strong>标量、向量、矩阵</strong>。这里的符号仍与上面相同。</p>
+<h5 id="标量变元"><strong>2.1 标量变元</strong></h5>
+<p><strong>例4：</strong> <span class="math display">\[
+\pmb{f}_{3\times1}(x)= \left[ \matrix{ f_1(x)\\ f_2(x)\\ f_3(x)\\ } \right] = \left[  \matrix{ x+1\\ 2x+1\\ 3x^2+1 } \right]
+\]</span></p>
+<h5 id="向量变元"><strong>2.2 向量变元</strong></h5>
+<p><strong>例5：</strong>设 <span class="math inline">\(\pmb{x}=[x_1,x_2,x_3]^T\)</span> <span class="math display">\[
+\pmb{f}_{3\times1}(\pmb{x})= \left[ \matrix{ f_1(\pmb{x})\\ f_2(\pmb{x})\\ f_3(\pmb{x})\\ } \right] = \left[  \matrix{ x_{1}+x_{2}+x_{3}\\ x_{1}^2+2x_{2}+2x_{3}\\ x_{1}x_{2}+x_{2}+x_{3} } \right] 
+\]</span></p>
+<h5 id="矩阵变元"><strong>2.3 矩阵变元</strong></h5>
+<p><strong>例6：</strong>设 <span class="math inline">\(\pmb{X}_{3\times 2}=(x_{ij})_{i=1,j=1}^{3,2}\)</span> <span class="math display">\[
+\pmb{f}_{3\times1}(\pmb{X})= \left[ \matrix{ f_1(\pmb{X})\\ f_2(\pmb{X})\\ f_3(\pmb{X})\\ } \right] = \left[  \matrix{ x_{11}+x_{12}+x_{21}+x_{22}+x_{31}+x_{32}\\ x_{11}+x_{12}+x_{21}+x_{22}+x_{31}+x_{32}+x_{11}x_{12}\\ 2x_{11}+x_{12}+x_{21}+x_{22}+x_{31}+x_{32}+x_{11}x_{12} } \right]
+\]</span></p>
+<h4 id="function-是一个矩阵">3、<span class="math inline">\(function\)</span> 是一个矩阵</h4>
+<p>我们称 <span class="math inline">\(function\)</span> 是一个<strong>实矩阵函数</strong> 。用<strong>粗体</strong>大写字母 <span class="math inline">\(\pmb{F}\)</span> 表示。</p>
+<p><strong>含义</strong>： <span class="math inline">\(\pmb{F}\)</span> 是由若干个 <span class="math inline">\(f\)</span> 组成的一个<strong>矩阵</strong>。</p>
+<p>同样地，变元分三种：<strong>标量、向量、矩阵</strong>。这里的符号仍与上面相同。</p>
+<h5 id="标量变元-1"><strong>3.1 标量变元</strong></h5>
+<p><strong>例7：</strong> <span class="math display">\[
+\pmb{F}_{3\times2}(x)= \left[ \matrix{ f_{11}(x) &amp; f_{12}(x)\\ f_{21}(x) &amp; f_{22}(x)\\ f_{31}(x) &amp; f_{32}(x)\\ } \right] = \left[  \matrix{ x+1 &amp; 2x+2\\ x^2+1 &amp; 2x^2+1\\ x^3+1 &amp; 2x^3+1 } \right]
+\]</span></p>
+<h5 id="向量变元-1"><strong>3.2 向量变元</strong></h5>
+<p><strong>例8：</strong>设 <span class="math inline">\(\pmb{x}=[x_1,x_2,x_3]^T\)</span> <span class="math display">\[
+\pmb{F}_{3\times2}(\pmb{x})= \left[ \matrix{ f_{11}(\pmb{x}) &amp; f_{12}(\pmb{x})\\ f_{21}(\pmb{x}) &amp; f_{22}(\pmb{x})\\ f_{31}(\pmb{x}) &amp; f_{32}(\pmb{x})\\ } \right] = \left[  \matrix{ 2x_{1}+x_{2}+x_{3} &amp; 2x_{1}+2x_{2}+x_{3} \\ 2x_{1}+2x_{2}+x_{3} &amp; x_{1}+2x_{2}+x_{3} &amp; \\ 2x_{1}+x_{2}+2x_{3} &amp; x_{1}+2x_{2}+2x_{3} &amp; } \right]
+\]</span></p>
+<h5 id="矩阵变元-1"><strong>3.3 矩阵变元</strong></h5>
+<p><strong>例9：</strong>设 <span class="math inline">\(\pmb{X}_{3\times 2}=(x_{ij})_{i=1,j=1}^{3,2}\)</span> <span class="math display">\[
+\begin{align*} \pmb{F}_{3\times2}(\pmb{X})&amp;= \left[ \matrix{ f_{11}(\pmb{X}) &amp; f_{12}(\pmb{X})\\ f_{21}(\pmb{X}) &amp; f_{22}(\pmb{X})\\ f_{31}(\pmb{X}) &amp; f_{32}(\pmb{X})\\ } \right]\\\\ &amp;= \left[  \matrix{ x_{11}+x_{12}+x_{21}+x_{22}+x_{31}+x_{32} &amp; 2x_{11}+x_{12}+x_{21}+x_{22}+x_{31}+x_{32}\\ 3x_{11}+x_{12}+x_{21}+x_{22}+x_{31}+x_{32} &amp; 4x_{11}+x_{12}+x_{21}+x_{22}+x_{31}+x_{32}\\ 5x_{11}+x_{12}+x_{21}+x_{22}+x_{31}+x_{32} &amp; 6x_{11}+x_{12}+x_{21}+x_{22}+x_{31}+x_{32} } \right] \end{align*}
+\]</span></p>
+<h4 id="总结"><strong>4、总结</strong></h4>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Function\input</th>
+<th style="text-align: center;">标量变元</th>
+<th style="text-align: center;">向量变元</th>
+<th style="text-align: center;">矩阵变元</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">实值标量函数</td>
+<td style="text-align: center;"><span class="math inline">\(f(x)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(f(\pmb{x})\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(f(\pmb{X})\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">实向量函数</td>
+<td style="text-align: center;"><span class="math inline">\(\pmb{f}(x)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\pmb{f}(\pmb{x})\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\pmb{f}(\pmb{X})\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">实矩阵函数</td>
+<td style="text-align: center;"><span class="math inline">\(\pmb{F}(x)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\pmb{F}(\pmb{x})\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\pmb{F}(\pmb{X})\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="矩阵求导的本质">2 矩阵求导的本质</h3>
+<p>对于一个多元函数</p>
+<p><strong>例10：</strong> <span class="math display">\[
+f(x_1,x_2,x_3)=x_1^2+x_1x_2+x_2x_3
+\]</span> 我们可以将 <span class="math inline">\(f\)</span> 对 <span class="math inline">\(x_1,x_2,x_3\)</span> <strong>偏导</strong>分别求出来<strong>，即：</strong> <span class="math display">\[
+\left\{ \begin{align*} \frac{\partial f}{\partial x_1} &amp; = 2x_1+x_2 \\\\ \frac{\partial f}{\partial x_2} &amp; = x_1+x_3 \\\\ \frac{\partial f}{\partial x_3} &amp; = x_2 \end{align*} \right. 
+\]</span></p>
+<p>矩阵求导也是一样的，<strong>本质就是</strong> <span class="math inline">\(function\)</span> 中的<strong>每个 <span class="math inline">\(f\)</span> 分别对变元中的每个元素逐个求偏导，只不过写成了向量、矩阵形式而已。</strong></p>
+<p>我们把得出的3个结果写成<strong>列向量</strong>形式： <span class="math display">\[
+\frac{\partial f(\pmb{x})}{\partial \pmb{x}_{3\times1}}= \left[ \matrix{ \frac{\partial f}{\partial x_1}\\ \frac{\partial f}{\partial x_2}\\ \frac{\partial f}{\partial x_3}\\ } \right] = \left[  \matrix{ 2x_1+x_2\\ x_1+x_3\\ x_2 } \right]
+\]</span> 一个矩阵求导<strong>以列向量形式展开</strong>的雏形就出现了。</p>
+<p>当然我们也可以以<strong>行向量形式展开：</strong> <span class="math display">\[
+\frac{\partial f(\pmb{x})}{\partial \pmb{x}_{3\times1}^T}=  \left[  \frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}, \frac{\partial f}{\partial x_3}  \right]  =  \left[   2x_1+x_2, x_1+x_3, x_2  \right]
+\]</span> 所以，如果 <span class="math inline">\(function\)</span> 中有 <span class="math inline">\(m\)</span> 个 <span class="math inline">\(f\)</span> ，变元中有 <span class="math inline">\(n\)</span> 个元素，那么，每个 <span class="math inline">\(f\)</span> 对变元中的每个元素逐个求偏导后，我们就会产生 <span class="math inline">\(m\times n\)</span> 个结果。至于结果的布局，是写成行向量，还是写成列向量，还是写成矩阵，就是我们接下来要讨论的事情。</p>
+<h3 id="矩阵求导结果的布局">3 矩阵求导结果的布局</h3>
+<p><strong>不严谨</strong>地说，从<strong>直观</strong>上看：<strong>分子布局</strong>，就是分子是<strong>列向量</strong>形式，分母是<strong>行向量</strong>形式；<strong>分母布局</strong>，就是分母是<strong>列向量</strong>形式，分子是<strong>行向量</strong>形式。</p>
+<p>不同类型的<strong>变元</strong>，<strong>严谨</strong>的布局说明见原文：<a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/263777564" >矩阵求导的本质与分子布局、分母布局的本质（矩阵求导——本质篇）<i class="fas fa-external-link-alt"></i></a></p>
+<h4 id="补充来自机器学习中的矩阵和向量的求导"><strong>补充：来自<a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/75713455" >机器学习中的矩阵和向量的求导<i class="fas fa-external-link-alt"></i></a></strong></h4>
+<p><strong>x</strong>表示n维向量，<strong>X</strong>表示m×n维度的矩阵,<strong>y</strong>表示m维向量，<strong>Y</strong>表示p×q 维度的矩阵。</p>
+<center>
+<img src="https://pic4.zhimg.com/80/v2-951ea8b36f12a37e80ece1a6eda220a3_1440w.jpg" alt="image"  />
+</center>
+<p><strong>解释几点：</strong></p>
+<ol type="1">
+<li><p>对于一个复杂的变量求导的时候，比如复合函数求导涉及到后面要讲的链式求导时候，只能选一种求导布局，不能同时出现分子布局和分母布局,分子布局与分母布局算出的结果只相差一个转置</p></li>
+<li><p>列向量<strong>y</strong>对列向量<strong>x</strong>的求导的分子布局形式可以理解为，分子向量<strong>y</strong>对分母向量<strong>x</strong>的第一个标量元素求导后排在第一列，对第二个标量元素求导后排在第二列，以此类推，排成一个m×n的矩阵。 也被称为雅克比矩阵：</p>
+<center>
+<p><img src="https://pic3.zhimg.com/80/v2-bd2b5fd60bfd8f60a69fa93c1259a9ea_1440w.jpg" alt="image" /></p>
+</center></li>
+<li><p>图中的默认布局是指常用的布局形式(向量和矩阵在分子上就用分子布局，否则用分母布局)，也是符合大家习惯的写法。</p></li>
+</ol>
+<h3 id="分子布局分母布局的本质">4 分子布局、分母布局的本质</h3>
+<p><strong>总结：</strong></p>
+<p><strong>1、分子布局的本质</strong>：分子是<strong>标量</strong>、<strong>列向量</strong>、矩阵向量化后的<strong>列向量</strong>；分母是<strong>标量</strong>、列向量<strong>转置</strong>后的<strong>行向量</strong>、矩阵的<strong>转置矩阵</strong>、矩阵向量化后的列向量<strong>转置</strong>后的<strong>行向量</strong>。</p>
+<p><strong>2、分母布局的本质</strong>：分子是<strong>标量</strong>、列向量<strong>转置</strong>后的<strong>行向量</strong>、矩阵向量化后的列向量<strong>转置</strong>后的<strong>行向量</strong>；分母是<strong>标量</strong>、<strong>列向量</strong>、<strong>矩阵自己</strong>、矩阵向量化后的<strong>列向量</strong>。</p>
+<p>思考一下，其实可以再简洁一些：<strong>谁转置了，就是另一方的布局</strong>。分子转置了，就是分母布局；分母转置了，就是分子布局。</p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：矩阵求导与分子、分母布局</li>
+        <li>Post author：Caaaaa</li>
+        <li>Create time：2022-02-05 23:12:03</li>
+        <li>
+            Post link：https://caaaa-a.github.io/2022/02/05/数学基础-矩阵求导与分子、分母布局/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/02/06/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0v2-07-08/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">07自动求导至08线性回归+基础优化算法</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/01/24/%E9%A2%98%E8%A7%A3-pyschools%E4%B8%ADwhile-9-13/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">pyschools while 9-13</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Caaaaa</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E4%B8%8E%E6%A0%87%E9%87%8F%E5%90%91%E9%87%8F%E7%9F%A9%E9%98%B5"><span class="nav-text">1 函数与标量、向量、矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#function-%E6%98%AF%E4%B8%80%E4%B8%AA%E6%A0%87%E9%87%8F"><span class="nav-text">1、 \(function\) 是一个标量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#input-%E6%98%AF%E4%B8%80%E4%B8%AA%E6%A0%87%E9%87%8F"><span class="nav-text">1.1 \(input\) 是一个标量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#input-%E6%98%AF%E4%B8%80%E4%B8%AA%E5%90%91%E9%87%8F"><span class="nav-text">1.2 \(input\) 是一个向量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#input-%E6%98%AF%E4%B8%80%E4%B8%AA%E7%9F%A9%E9%98%B5"><span class="nav-text">1.3 \(input\) 是一个矩阵</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#function-%E6%98%AF%E4%B8%80%E4%B8%AA%E5%90%91%E9%87%8F"><span class="nav-text">2、\(function\) 是一个向量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%A0%87%E9%87%8F%E5%8F%98%E5%85%83"><span class="nav-text">2.1 标量变元</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E5%8F%98%E5%85%83"><span class="nav-text">2.2 向量变元</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E5%8F%98%E5%85%83"><span class="nav-text">2.3 矩阵变元</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#function-%E6%98%AF%E4%B8%80%E4%B8%AA%E7%9F%A9%E9%98%B5"><span class="nav-text">3、\(function\) 是一个矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%A0%87%E9%87%8F%E5%8F%98%E5%85%83-1"><span class="nav-text">3.1 标量变元</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E5%8F%98%E5%85%83-1"><span class="nav-text">3.2 向量变元</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E5%8F%98%E5%85%83-1"><span class="nav-text">3.3 矩阵变元</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">4、总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E6%B1%82%E5%AF%BC%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="nav-text">2 矩阵求导的本质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E6%B1%82%E5%AF%BC%E7%BB%93%E6%9E%9C%E7%9A%84%E5%B8%83%E5%B1%80"><span class="nav-text">3 矩阵求导结果的布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A5%E5%85%85%E6%9D%A5%E8%87%AA%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E7%9F%A9%E9%98%B5%E5%92%8C%E5%90%91%E9%87%8F%E7%9A%84%E6%B1%82%E5%AF%BC"><span class="nav-text">补充：来自机器学习中的矩阵和向量的求导</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E5%AD%90%E5%B8%83%E5%B1%80%E5%88%86%E6%AF%8D%E5%B8%83%E5%B1%80%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="nav-text">4 分子布局、分母布局的本质</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+</body>
+</html>

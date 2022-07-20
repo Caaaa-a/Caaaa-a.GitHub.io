@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<link rel="dns-prefetch" href="//cdn.bootcss.com" />
+	<link rel="dns-prefetch" href="//cdn.mathjax.org" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Caaaaa">
+    
+    <title>
+        
+            流程图与伪代码 |
+        
+        Caaaaa
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/logo.png","favicon":"/images/logo.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"To be a slash youth."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Caaaaa
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">流程图与伪代码</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/logo.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Caaaaa</span>
+                        
+                            <span class="author-label">Lv4</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-02-11 19:52:41</span>
+        <span class="mobile">2022-02-11 19:52</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%BC%96%E7%A8%8B%E6%80%9D%E7%BB%B4/">编程思维</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>2.2k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>9 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h3 id="流程图-flowchart">流程图 Flowchart</h3>
+<h4 id="what-is-flowchart">What is flowchart?</h4>
+<p>A flowchart is a schematic representation of an algorithm or process that tell how to complete a task.</p>
+<p>程序流程图又称程序框图，是用统一规定的标准符号描述程序运行具体步骤的图形表示。</p>
+<h4 id="how-to-use-flowchartsymbol">How to use flowchart?——symbol</h4>
+<center>
+<img src="/img/fc1.png" alt="image" width=70% />
+</center>
+<center>
+<img src="/img/fc2.png" alt="image" width=90% />
+</center>
+<h4 id="how-to-use-flowchartstructure">How to use flowchart?——structure</h4>
+<p><strong>1）顺序结构</strong></p>
+<p>这种结构最简单，各个步骤是按先后顺序执行的。如图，A、B、C是三个连续的步骤，它们是按顺序执行的，即完成上一个框中指定的操作才能再执行下一个动作。</p>
+<center>
+<img src="/img/fc3.png" alt="image" width=30% />
+</center>
+<p><strong>2） 选择结构</strong></p>
+<p>选择结构又称分支结构，用于判断给定的条件，根据判断的结果判断某些条件，根据判断的结果来控制程序的流程。</p>
+<center>
+<img src="/img/fc4.png" alt="image" width=60% />
+</center>
+<p><strong>3）循环结构</strong></p>
+<p>循环结构又称为重复结构，指在程序中需要反复执行某个功能而设置的一种程序结构。它由循环体中的条件，判断继续执行某个功能还是退出循环。</p>
+<p>根据判断条件，循环结构又可细分为以下两种形式：先判断后执行的循环结构（当型结构），和先执行后判断的循环结构（直到型结构）。</p>
+<center>
+<img src="/img/fc5.png" alt="image" width=80% />
+</center>
+<h4 id="how-to-use-flowchartpatharrow">How to use flowchart?——path/arrow</h4>
+<p>除了符号规划、结构规划，绘制流程图过程中还要注意一些约定俗成的路径规划，比如</p>
+<p>1）绘制流程图时，为了提高流程图的逻辑性，应<strong>遵循从左到右、从上到下的顺序排列</strong>。</p>
+<p>2）一个流程从开始符开始，以结束符结束。开始符号只能出现一次，而结束符号可出现多次。若流程足够清晰，可省略开始、结束符号。</p>
+<p>3）同一流程图内，符号大小需要保持一致，同时连接线不能交叉，连接线不能无故弯曲。</p>
+<p>4）流程处理关系为并行关系的，需要将流程放在同一高度。</p>
+<p>5）处理流程须以单一入口和单一出口绘制，<strong>同一路径的指示箭头应只有一个</strong>。</p>
+<center>
+<img src="/img/fc6.png" alt="image" width=80% />
+</center>
+<h4 id="annotation">Annotation</h4>
+<center>
+<img src="/img/fc7.png" alt="image" width=55% />
+</center>
+<h4 id="parallel">Parallel</h4>
+<center>
+<img src="/img/fc8.png" alt="image" width=85% />
+</center>
+<h4 id="example">Example</h4>
+<center>
+<img src="/img/fc10.png" alt="image" width=30% />
+</center>
+<p><strong>制作软件</strong></p>
+<ul>
+<li>visio</li>
+<li>processon</li>
+</ul>
+<h3 id="伪代码-pseudocode">伪代码 Pseudocode</h3>
+<h4 id="what-is-pseudocode">What is Pseudocode?</h4>
+<p>Pseudocode is a simpler version of a programming code in plain English before it is implemented in a specific programming language. Pseudocode is often referred to as a syntactical representation of a program and it doesn't have a strict syntax since it only represents the way we're thinking.</p>
+<blockquote>
+<p>伪代码是在以特定编程语言实现之前的简单英语编程代码的更简单版本。 伪代码通常被称为程序的语法表示，它没有严格的语法，因为它只表示我们的思维方式。</p>
+</blockquote>
+<h4 id="why-use-pseudocode">Why use pseudocode?</h4>
+<p>Pseudocode abstracts away syntax to let you focus on solving the problem in front of you. So instead of getting bogged down in the exact syntax of a language, pseudocode allows you to work almost impure programming logic. This way you don't actually have to know what exact built-in functions a programming language provides, you can simply write down in plain English what it is you're trying to do.</p>
+<blockquote>
+<p>伪代码抽象出语法，让您专注于解决您面前的问题。 因此，伪代码可以让您使用几乎不纯的编程逻辑，而不是陷入语言的确切语法中。 这样，您实际上不必知道编程语言提供了哪些确切的内置函数。 您可以简单地用日常的英语写下您想要做什么。</p>
+</blockquote>
+<p>It essentially helps us break down large problems into smaller manageable pieces through this. Running pseudocode allows you to think through a problem with some foresight and lets you anticipate important questions before they arise. It is actually saving some time and headaches along the way and breaking things down with pure programming logic, and then googling or researching what you need to look for will essentially help you in becoming a better programmer.</p>
+<blockquote>
+<p>它本质上帮助我们把大问题分解成更小的可管理的部分。 运行伪代码可以让您有远见地思考问题，并在重要问题出现之前预测它们。 它实际上节省了一些时间和痛苦，并用纯编程逻辑分解事情，然后谷歌搜索或研究你需要寻找的内容将帮助你成为一个更好的程序员。</p>
+</blockquote>
+<h4 id="how-to-write-pseudocode">How to write pseudocode?</h4>
+<ol type="1">
+<li><strong>Capitalize key commands (IF numbers is &gt; 10 THEN) <span class="math inline">\(\rightarrow\)</span>​ create code blocks and actually spots some of the logic</strong></li>
+<li><strong>Write one statement per line</strong></li>
+<li><strong>Use indentation keep <span class="math inline">\(\rightarrow\)</span> different components of your pseudocode isolated</strong></li>
+<li><strong>Be specific</strong></li>
+<li><strong>Keep it simple <span class="math inline">\(\rightarrow\)</span> even for a layman or a client</strong></li>
+</ol>
+<h4 id="example-1">Example</h4>
+<p>Write a program that prints the number from 1 to 20 . For multiples of three print "Fizz" instead of the number. For the multples of five print "Buzz" instead of the number. For numbers which are multiples of both three and five print "FizzBuzz". For numbers not divisible by 3, or 5, or both, print the number as is.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">FOR LOOP:</span><br><span class="line">Set counter to 1</span><br><span class="line">Break when counter reaches 20</span><br><span class="line">Increment counter by 1</span><br><span class="line">	IF number MOD 15  == 0</span><br><span class="line">		print &#x27;FizzBuzz&#x27;</span><br><span class="line">	ELSE IF number MOD 3 == 0</span><br><span class="line">		print &#x27;Fizz&#x27;</span><br><span class="line">	ELSE IF number MOD 5 == 0</span><br><span class="line">		print&#x27;Buzz&#x27;</span><br><span class="line">	ELSE</span><br><span class="line">		print number</span><br></pre></td></tr></table></figure>
+<h4 id="another-version">Another version</h4>
+<p><strong>规则：</strong></p>
+<ul>
+<li>在伪代码中，每一条指令占一行(else if 例外)，指令后不跟任何符号；</li>
+<li>“缩进”表示程序中的分支程序结构（同一模块的语句有相同的缩进量，次一级模块的语句相对与其父级模块的语句缩进）；</li>
+<li>通常每个算法开始时都要描述它的输入和输出，而且算法中的每一行都给编上行号，在解释算法的过程中会经常使用算法步骤中的行号来指代算法的步骤；</li>
+<li>每一行可以加上编号（也可不加）。</li>
+</ul>
+<p><strong>1.变量的声明</strong></p>
+<p>算法中出现的数组、变量可以是以下类型：整数、实数、字符、字符串或指针。定义变量的语句不用写出来，但必须在注释中给出。</p>
+<p><strong>2.指令的表示</strong></p>
+<p>在算法中的某些指令或子任务可以用文字来叙述，例如，”设x是A中的最大项”，这里A是一个数组；或者”将x插入L中”，这里L是一个链表。这样做的目的是为了避免因那些与主要问题无关的细节使算法本身杂乱无章。</p>
+<p><strong>3.表达式</strong></p>
+<p>算术表达式可以使用通常的算术运算符（+，-，*，/，以及表示幂的^）。逻辑表达式可以使用关系运算符 = 、≠、&lt;、&gt;、≤ 和 ≥，以及逻辑运算符与(and)、或（or）、非（not）。</p>
+<p><strong>4.赋值语句</strong></p>
+<p>赋值语句是如下形式的语句：<code>a←b</code>。 这里a是变量、数组项，b是算术表达式、逻辑表达式或指针表达式。语句的含义是将b的值赋给a。</p>
+<p>变量交换：若a和b都是变量、数组项，那么记号a&lt;-&gt;b 表示a和b的内容进行交换。</p>
+<p><strong>5.goto语句</strong></p>
+<p>goto语句具有形式：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">goto</span> label（<span class="keyword">goto</span>标号）</span><br></pre></td></tr></table></figure>
+<p>它将导致转向具有指定标号的语句。</p>
+<p><strong>6.分支结构</strong></p>
+<p>条件语句：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> i=<span class="number">10</span></span><br><span class="line">    then xxxx</span><br><span class="line">    <span class="keyword">else</span> xxxx <span class="comment">//else 和 then 要对齐</span></span><br><span class="line">       </span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line"><span class="keyword">if</span> i=<span class="number">10</span></span><br><span class="line">    then xxxx <span class="comment">//if 后面必定跟上then，else后面不用跟then</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> i=<span class="number">9</span> <span class="comment">//elseif 要连在一起写</span></span><br><span class="line">        then xxxx</span><br><span class="line">        yyyy</span><br><span class="line">    <span class="keyword">else</span>  xxxx <span class="comment">//else 跟在 elseif 的 then 对齐</span></span><br></pre></td></tr></table></figure>
+<p><strong>7.循环结构</strong></p>
+<p>有两种循环指令：while和for。</p>
+<p>while语句的形式是：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> time&lt;<span class="number">10</span></span><br><span class="line">    <span class="keyword">do</span>  xxxxx <span class="comment">//while后面必定要紧跟缩进的do</span></span><br><span class="line">    xxxxx</span><br><span class="line">    end</span><br></pre></td></tr></table></figure>
+<p>for语句的形式是：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> var init to limit by incr </span><br><span class="line">	<span class="keyword">do</span> s</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p>这里var是变量，init、limit和incr都是算术表达式，而s是由一个或多个语句组成的语句串。初始时，var被赋予init的值。假若<code>incr≥0</code>，则只要<code>var≤limit</code>，就执行s并且将incr加到var上。（假若<code>incr&lt;0</code>，则只要<code>var≥limit</code>，就执行s并且将incr加到var上）。incr的符号不能由s来该改变。</p>
+<p><strong>8.程序的结束</strong></p>
+<p>exit语句可以在通常的结束条件满足之前，被用来结束while循环或者for循环的执行。exit导致转向到紧接在包含exit的（最内层）while或者for循环后面的一个语句。</p>
+<p>return用来指出一个算法执行的终点；如果算法在最后一条指令之后结束，它通常是被省略的；它被用得最多的场合是检测到不合需要的条件时。return的后面可以紧接被括在引号的信息。</p>
+<p><strong>9.注释风格</strong></p>
+<p>算法中的注释被括在 /* */ 之中。</p>
+<p><strong>10.函数的编写</strong></p>
+<p>函数的伪代码格式例子为：search（A，name）， 参数类型可以不给出，但必须在注释中说明。</p>
+<p><strong>Example</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//伪代码</span></span><br><span class="line">x ← <span class="number">0</span></span><br><span class="line">y ← <span class="number">0</span></span><br><span class="line">z ← <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> x &lt; N</span><br><span class="line"><span class="keyword">do</span> x ← x + <span class="number">1</span></span><br><span class="line">y ← x + y</span><br><span class="line"><span class="keyword">for</span> t ← <span class="number">0</span> to <span class="number">10</span></span><br><span class="line"><span class="keyword">do</span> z ← ( z + x * y ) / <span class="number">100</span></span><br><span class="line">repeat</span><br><span class="line">y ← y + <span class="number">1</span></span><br><span class="line">z ← z - y</span><br><span class="line">until z &lt; <span class="number">0</span></span><br><span class="line">z ← x * y</span><br><span class="line"></span><br><span class="line">y ← y / <span class="number">2</span></span><br><span class="line">  </span><br><span class="line"><span class="comment">//代码</span></span><br><span class="line">x = y = z = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>( z &lt; N )</span><br><span class="line">&#123;</span><br><span class="line">   x ++;</span><br><span class="line">　　y += x;</span><br><span class="line">　　<span class="keyword">for</span>( t = <span class="number">0</span>; t &lt; <span class="number">10</span>; t++ )</span><br><span class="line">　　&#123;</span><br><span class="line">　　     z = ( z + x * y ) / <span class="number">100</span>;</span><br><span class="line">　　     <span class="keyword">do</span> </span><br><span class="line">　　     &#123;</span><br><span class="line">			y ++;</span><br><span class="line">			z -= y;</span><br><span class="line">　　     &#125; <span class="keyword">while</span>( z &gt;= <span class="number">0</span> );</span><br><span class="line">    &#125;</span><br><span class="line">　　z = x * y;</span><br><span class="line">&#125;</span><br><span class="line">y /= <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="参考自">参考自</h3>
+<ul>
+<li><p><strong>Youtube：<a class="link"   target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=SWRDqTx8d4k" >Introduction to Creating Flowcharts<i class="fas fa-external-link-alt"></i></a></strong></p></li>
+<li><p><strong>专栏：<a class="link"   target="_blank" rel="noopener" href="https://www.zhihu.com/column/c_1391048704577732609" >知乎专栏：流程图绘制<i class="fas fa-external-link-alt"></i></a></strong></p></li>
+<li><p><strong>YouTube:</strong> <a class="link"   target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=PwGA4Lm8zuE" >What is pseudocode and how do you use it?<i class="fas fa-external-link-alt"></i></a></p></li>
+<li><p><strong>博客：<a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/linuxAndMcu/p/11242905.html" >学会写伪代码<i class="fas fa-external-link-alt"></i></a></strong></p></li>
+<li><p><strong>博客：<a class="link"   target="_blank" rel="noopener" href="https://shuzang.github.io/2021/pseudocode-specification/" >科研基础3-伪代码规范-latex<i class="fas fa-external-link-alt"></i></a></strong></p></li>
+</ul>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：流程图与伪代码</li>
+        <li>Post author：Caaaaa</li>
+        <li>Create time：2022-02-11 19:52:41</li>
+        <li>
+            Post link：https://caaaa-a.github.io/2022/02/11/编程思维-流程图与伪代码/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/02/13/%E6%9C%89%E6%AF%92%E7%9A%84%E9%80%BB%E8%BE%91-%E7%AC%AC1%E7%AB%A0-%E6%97%A5%E5%B8%B8%E7%94%A8%E8%AF%AD%E7%9A%84%E9%AA%97%E5%B1%80/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">第1章 日常用语的骗局</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/02/09/%E7%88%AC%E8%99%AB-%E7%94%B5%E5%AD%90%E9%98%85%E8%AF%BB%E6%9D%83%E9%99%90%E4%BF%9D%E5%AD%98%E7%94%B5%E5%AD%90%E4%B9%A6/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">爬虫：电子阅读权限保存电子书</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Caaaaa</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%81%E7%A8%8B%E5%9B%BE-flowchart"><span class="nav-text">流程图 Flowchart</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#what-is-flowchart"><span class="nav-text">What is flowchart?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#how-to-use-flowchartsymbol"><span class="nav-text">How to use flowchart?——symbol</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#how-to-use-flowchartstructure"><span class="nav-text">How to use flowchart?——structure</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#how-to-use-flowchartpatharrow"><span class="nav-text">How to use flowchart?——path&#x2F;arrow</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#annotation"><span class="nav-text">Annotation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#parallel"><span class="nav-text">Parallel</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#example"><span class="nav-text">Example</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%AA%E4%BB%A3%E7%A0%81-pseudocode"><span class="nav-text">伪代码 Pseudocode</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#what-is-pseudocode"><span class="nav-text">What is Pseudocode?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#why-use-pseudocode"><span class="nav-text">Why use pseudocode?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#how-to-write-pseudocode"><span class="nav-text">How to write pseudocode?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#example-1"><span class="nav-text">Example</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#another-version"><span class="nav-text">Another version</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%87%AA"><span class="nav-text">参考自</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+</body>
+</html>
