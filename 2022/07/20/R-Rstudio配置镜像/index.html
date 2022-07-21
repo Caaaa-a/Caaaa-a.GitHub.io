@@ -11,7 +11,7 @@
     
     <title>
         
-            torch |
+            Rstudio配置镜像 |
         
         Caaaaa
     </title>
@@ -139,7 +139,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">torch</span>
+            <span class="title-hover-animation">Rstudio配置镜像</span>
         </div>
 
         
@@ -158,8 +158,8 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2022-05-11 18:25:04</span>
-        <span class="mobile">2022-05-11 18:25</span>
+        <span class="pc">2022-07-20 16:11:41</span>
+        <span class="mobile">2022-07-20 16:11</span>
     </span>
     
         <span class="article-categories article-meta-item">
@@ -167,7 +167,7 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/tools%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">tools解决方案</a>&nbsp;
+                        <a href="/categories/R/">R</a>&nbsp;
                     </li>
                 
             </ul>
@@ -178,12 +178,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>548 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>108 Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>2 Mins</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>1 Mins</span>
         </span>
     
     
@@ -199,19 +199,25 @@
         
 
         <div class="article-content markdown-body">
-            <h4 id="nn.embedding">nn.Embedding</h4>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">from</span> torch <span class="keyword">import</span> nn</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;生成5行3列的一个table&#x27;</span></span><br><span class="line">embedding=nn.Embedding(<span class="number">5</span>, <span class="number">3</span>)</span><br><span class="line"><span class="comment"># Embedding(5, 3)</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;服从N(0,1)取点，填充table的weight&#x27;</span></span><br><span class="line">embedding.weight</span><br><span class="line"><span class="comment">#Parameter containing:</span></span><br><span class="line"><span class="comment">#tensor([[ 0.3625, -0.7382, -1.2715],</span></span><br><span class="line"><span class="comment">#        [-0.4616, -0.8950, -0.0341],</span></span><br><span class="line"><span class="comment">#        [ 0.2797, -2.0152, -0.1537],</span></span><br><span class="line"><span class="comment">#        [ 0.9470, -0.1691,  0.8290],</span></span><br><span class="line"><span class="comment">#        [ 0.3921, -2.2116, -0.5891]], requires_grad=True)</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;输出的type就是input的type，其中的值就是刚才weight中索引，</span></span><br><span class="line"><span class="string">比如0就是第一行：[ 0.3625, -0.7382, -1.2715]，按照input的格式排列&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="built_in">input</span> = torch.LongTensor([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>],[<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>]])</span><br><span class="line">embedding(<span class="built_in">input</span>)</span><br><span class="line"><span class="comment"># tensor([[[-0.4616, -0.8950, -0.0341],</span></span><br><span class="line"><span class="comment">#          [ 0.2797, -2.0152, -0.1537],</span></span><br><span class="line"><span class="comment">#          [ 0.3921, -2.2116, -0.5891]],</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#         [[ 0.3921, -2.2116, -0.5891],</span></span><br><span class="line"><span class="comment">#          [ 0.9470, -0.1691,  0.8290],</span></span><br><span class="line"><span class="comment">#          [ 0.2797, -2.0152, -0.1537]]], grad_fn=&lt;EmbeddingBackward0&gt;)</span></span><br></pre></td></tr></table></figure>
-<h4 id="nn.linear">nn.Linear</h4>
-<p>PyTorch的<code>nn.Linear（）</code>是用于设置网络中的<strong>全连接层的</strong>，<strong>需要注意在二维图像处理的任务中，全连接层的输入与输出一般都设置为二维张量，形状通常为<code>[batch_size, size]</code>，不同于卷积层要求输入输出是四维张量</strong>。其用法与形参说明如下：</p>
-<p>对输入数据应用线性变换： <span class="math inline">\(y=xA^T+b\)</span> ，支持浮点数。</p>
-<p><code>torch.nn.Linear(in_features, out_features, bias=True, device=None, dtype=None)</code></p>
-<ul>
-<li><strong>in_features</strong> – size of each input sample，指的是输入的二维张量的大小，即输入的[batch_size, size]中的size。</li>
-<li><strong>out_features</strong> – size of each output sample，指的是输出的二维张量的大小，即输出的二维张量的形状为[batch_size，output_size]，当然，它也代表了该全连接层的神经元个数。</li>
-<li><strong>bias</strong> – If set to <code>False</code>, the layer will not learn an additive bias. Default: <code>True</code></li>
+            <h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><ul>
+<li>安装package时指定镜像</li>
+<li>修改默认镜像</li>
 </ul>
-<p>从输入输出的张量的shape角度来理解，相当于一个输入为[batch_size, in_features]的张量变换成了[batch_size, out_features]的输出张量</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch <span class="keyword">as</span> t</span><br><span class="line"><span class="keyword">from</span> torch <span class="keyword">import</span> nn</span><br><span class="line"></span><br><span class="line"><span class="comment"># in_features由输入张量的形状决定，out_features则决定了输出张量的形状 </span></span><br><span class="line">connected_layer = nn.Linear(in_features = <span class="number">64</span>*<span class="number">64</span>*<span class="number">3</span>, out_features = <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 假定输入的图像形状为[64,64,3]</span></span><br><span class="line"><span class="built_in">input</span> = t.randn(<span class="number">1</span>,<span class="number">64</span>,<span class="number">64</span>,<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将四维张量转换为二维张量之后，才能作为全连接层的输入</span></span><br><span class="line"><span class="built_in">input</span> = <span class="built_in">input</span>.view(<span class="number">1</span>,<span class="number">64</span>*<span class="number">64</span>*<span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">input</span>.shape)</span><br><span class="line">output = connected_layer(<span class="built_in">input</span>) <span class="comment"># 调用全连接层</span></span><br><span class="line"><span class="built_in">print</span>(output.shape)</span><br><span class="line"></span><br><span class="line"><span class="comment"># input shape is %s torch.Size([1, 12288])</span></span><br><span class="line"><span class="comment"># output shape is %s torch.Size([1, 1])</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="安装package时指定镜像"><a href="#安装package时指定镜像" class="headerlink" title="安装package时指定镜像"></a>安装package时指定镜像</h4><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; install.packages(<span class="string">&quot;ggpot2&quot;</span>,repos=<span class="string">&quot;http://mirror.bjtu.edu.cn/ &quot;</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>常用镜像</p>
+<p>清华大学：<a class="link"   target="_blank" rel="noopener" href="http://mirrors.tuna.tsinghua.edu.cn/" >http://mirrors.tuna.tsinghua.edu.cn/<i class="fas fa-external-link-alt"></i></a></p>
+<p>中国科学技术大学：<a class="link"   target="_blank" rel="noopener" href="http://mirror.bjtu.edu.cn/" >http://mirror.bjtu.edu.cn/<i class="fas fa-external-link-alt"></i></a></p>
+<p>兰州大学：<a class="link"   target="_blank" rel="noopener" href="http://mirror.lzu.edu.cn/" >http://mirror.lzu.edu.cn/<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<h4 id="修改默认镜像"><a href="#修改默认镜像" class="headerlink" title="修改默认镜像"></a>修改默认镜像</h4><ol>
+<li><p>Tools—Global options</p>
+</li>
+<li><p>点击右边菜单packages</p>
+</li>
+<li>点击change，更改选择中国区域内的镜像</li>
+<li>点击apply</li>
+</ol>
 
         </div>
 
@@ -219,11 +225,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>Post title：torch</li>
+        <li>Post title：Rstudio配置镜像</li>
         <li>Post author：Caaaaa</li>
-        <li>Create time：2022-05-11 18:25:04</li>
+        <li>Create time：2022-07-20 16:11:41</li>
         <li>
-            Post link：https://caaaa-a.github.io/2022/05/11/tools解决方案-torch/
+            Post link：https://caaaa-a.github.io/2022/07/20/R-Rstudio配置镜像/
         </li>
         <li>
             Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
@@ -242,13 +248,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2022/05/19/Introduction-to-TLU-and-Perceptron/"
+                           href="/2022/07/20/R-install%20package/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">Introduction to TLU and Perceptron</span>
+                                <span class="post-nav-title-item">install package</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -258,10 +264,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/04/27/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0-Apriori/"
+                           href="/2022/07/20/R-%E5%AE%89%E8%A3%85R%E8%AF%AD%E8%A8%80%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E5%8F%8ARStudio/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">Apriori</span>
+                                <span class="post-nav-title-item">安装R语言运行环境及RStudio-mac</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -460,7 +466,7 @@ $tools-item-border-radius = 1px;
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#nn.embedding"><span class="nav-text">nn.Embedding</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nn.linear"><span class="nav-text">nn.Linear</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E6%B3%95"><span class="nav-text">方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85package%E6%97%B6%E6%8C%87%E5%AE%9A%E9%95%9C%E5%83%8F"><span class="nav-text">安装package时指定镜像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E9%95%9C%E5%83%8F"><span class="nav-text">修改默认镜像</span></a></li></ol>
     </div>
 </div>
         </aside>

@@ -11,7 +11,7 @@
     
     <title>
         
-            torch |
+            install package |
         
         Caaaaa
     </title>
@@ -139,7 +139,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">torch</span>
+            <span class="title-hover-animation">install package</span>
         </div>
 
         
@@ -158,8 +158,8 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2022-05-11 18:25:04</span>
-        <span class="mobile">2022-05-11 18:25</span>
+        <span class="pc">2022-07-20 16:41:19</span>
+        <span class="mobile">2022-07-20 16:41</span>
     </span>
     
         <span class="article-categories article-meta-item">
@@ -167,7 +167,7 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/tools%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">tools解决方案</a>&nbsp;
+                        <a href="/categories/R/">R</a>&nbsp;
                     </li>
                 
             </ul>
@@ -178,12 +178,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>548 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>329 Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>2 Mins</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>1 Mins</span>
         </span>
     
     
@@ -199,19 +199,48 @@
         
 
         <div class="article-content markdown-body">
-            <h4 id="nn.embedding">nn.Embedding</h4>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">from</span> torch <span class="keyword">import</span> nn</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;生成5行3列的一个table&#x27;</span></span><br><span class="line">embedding=nn.Embedding(<span class="number">5</span>, <span class="number">3</span>)</span><br><span class="line"><span class="comment"># Embedding(5, 3)</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;服从N(0,1)取点，填充table的weight&#x27;</span></span><br><span class="line">embedding.weight</span><br><span class="line"><span class="comment">#Parameter containing:</span></span><br><span class="line"><span class="comment">#tensor([[ 0.3625, -0.7382, -1.2715],</span></span><br><span class="line"><span class="comment">#        [-0.4616, -0.8950, -0.0341],</span></span><br><span class="line"><span class="comment">#        [ 0.2797, -2.0152, -0.1537],</span></span><br><span class="line"><span class="comment">#        [ 0.9470, -0.1691,  0.8290],</span></span><br><span class="line"><span class="comment">#        [ 0.3921, -2.2116, -0.5891]], requires_grad=True)</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;输出的type就是input的type，其中的值就是刚才weight中索引，</span></span><br><span class="line"><span class="string">比如0就是第一行：[ 0.3625, -0.7382, -1.2715]，按照input的格式排列&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="built_in">input</span> = torch.LongTensor([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>],[<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>]])</span><br><span class="line">embedding(<span class="built_in">input</span>)</span><br><span class="line"><span class="comment"># tensor([[[-0.4616, -0.8950, -0.0341],</span></span><br><span class="line"><span class="comment">#          [ 0.2797, -2.0152, -0.1537],</span></span><br><span class="line"><span class="comment">#          [ 0.3921, -2.2116, -0.5891]],</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#         [[ 0.3921, -2.2116, -0.5891],</span></span><br><span class="line"><span class="comment">#          [ 0.9470, -0.1691,  0.8290],</span></span><br><span class="line"><span class="comment">#          [ 0.2797, -2.0152, -0.1537]]], grad_fn=&lt;EmbeddingBackward0&gt;)</span></span><br></pre></td></tr></table></figure>
-<h4 id="nn.linear">nn.Linear</h4>
-<p>PyTorch的<code>nn.Linear（）</code>是用于设置网络中的<strong>全连接层的</strong>，<strong>需要注意在二维图像处理的任务中，全连接层的输入与输出一般都设置为二维张量，形状通常为<code>[batch_size, size]</code>，不同于卷积层要求输入输出是四维张量</strong>。其用法与形参说明如下：</p>
-<p>对输入数据应用线性变换： <span class="math inline">\(y=xA^T+b\)</span> ，支持浮点数。</p>
-<p><code>torch.nn.Linear(in_features, out_features, bias=True, device=None, dtype=None)</code></p>
-<ul>
-<li><strong>in_features</strong> – size of each input sample，指的是输入的二维张量的大小，即输入的[batch_size, size]中的size。</li>
-<li><strong>out_features</strong> – size of each output sample，指的是输出的二维张量的大小，即输出的二维张量的形状为[batch_size，output_size]，当然，它也代表了该全连接层的神经元个数。</li>
-<li><strong>bias</strong> – If set to <code>False</code>, the layer will not learn an additive bias. Default: <code>True</code></li>
+            <h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><ul>
+<li><p>install.packages(‘包名’)</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">install.packages(<span class="string">&#x27;colorspace&#x27;</span>, depend=<span class="literal">TRUE</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果所要下载的R包不在R语言官网上，那它极有可能在Bioconductor或者Github上，可以先登录Bioconductor官网（<a class="link"   href="https://link.zhihu.com/?target=http%3A//www.bioconductor.org/" >http://www.bioconductor.org/<i class="fas fa-external-link-alt"></i></a>）搜索相关R包，比如edgeR这个包，搜索到后先查看其相关用途，再进行如下安装：</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">install.packages(<span class="string">&#x27;BiocManager&#x27;</span>)</span><br><span class="line">library(BiocManager)</span><br><span class="line">install(<span class="string">&#x27;edgeR&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>这里需要注意的是，下载Bioconductor的R包需使用BiocManager包里的install函数。</p>
+</li>
+<li><p>接下来便是安装源自Github（<a class="link"   href="https://link.zhihu.com/?target=https%3A//github.com/" >https://github.com/<i class="fas fa-external-link-alt"></i></a>）的R包了，它的步骤和安装源自Bioconductor的R包类似，需要先安装devtools包，然后用devtools包里的install_github函数来进行安装，具体代码如下：</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">install.packages(<span class="string">&#x27;devtools&#x27;</span>)</span><br><span class="line">library(devtools)</span><br><span class="line">install_github(<span class="string">&#x27;gertvv/gemtc&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>这里需要注意的是，github中的R包需要在其前面加上该包所在的库名，否则无法进行下载安装。</p>
+</li>
+<li><p>Rstudio内置</p>
+<p>右下角packages -&gt; install packages -&gt; 输入包名下载</p>
+</li>
 </ul>
-<p>从输入输出的张量的shape角度来理解，相当于一个输入为[batch_size, in_features]的张量变换成了[batch_size, out_features]的输出张量</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch <span class="keyword">as</span> t</span><br><span class="line"><span class="keyword">from</span> torch <span class="keyword">import</span> nn</span><br><span class="line"></span><br><span class="line"><span class="comment"># in_features由输入张量的形状决定，out_features则决定了输出张量的形状 </span></span><br><span class="line">connected_layer = nn.Linear(in_features = <span class="number">64</span>*<span class="number">64</span>*<span class="number">3</span>, out_features = <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 假定输入的图像形状为[64,64,3]</span></span><br><span class="line"><span class="built_in">input</span> = t.randn(<span class="number">1</span>,<span class="number">64</span>,<span class="number">64</span>,<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将四维张量转换为二维张量之后，才能作为全连接层的输入</span></span><br><span class="line"><span class="built_in">input</span> = <span class="built_in">input</span>.view(<span class="number">1</span>,<span class="number">64</span>*<span class="number">64</span>*<span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">input</span>.shape)</span><br><span class="line">output = connected_layer(<span class="built_in">input</span>) <span class="comment"># 调用全连接层</span></span><br><span class="line"><span class="built_in">print</span>(output.shape)</span><br><span class="line"></span><br><span class="line"><span class="comment"># input shape is %s torch.Size([1, 12288])</span></span><br><span class="line"><span class="comment"># output shape is %s torch.Size([1, 1])</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h4><ul>
+<li><p>不存在叫 ‘xxxx’ 这个名字的程序包</p>
+</li>
+<li><blockquote>
+<p>换一种方式下载。</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><p>显示“退出狀態的值不是0”</p>
+</li>
+<li><blockquote>
+<pre><code class="lang-R"># 一个原因是R的版本太低
+install.packages(&quot;installr&quot;)
+library(installr)
+updateR()
+
+# 包重复，删除错误提示路径中的文件，重新安装
+# 依赖包未安装好
+</code></pre>
+</blockquote>
+</li>
+</ul>
+<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><ol>
+<li><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/129069910" >R语言入门之R包的安装<i class="fas fa-external-link-alt"></i></a></li>
+</ol>
 
         </div>
 
@@ -219,11 +248,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>Post title：torch</li>
+        <li>Post title：install package</li>
         <li>Post author：Caaaaa</li>
-        <li>Create time：2022-05-11 18:25:04</li>
+        <li>Create time：2022-07-20 16:41:19</li>
         <li>
-            Post link：https://caaaa-a.github.io/2022/05/11/tools解决方案-torch/
+            Post link：https://caaaa-a.github.io/2022/07/20/R-install package/
         </li>
         <li>
             Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
@@ -239,29 +268,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2022/05/19/Introduction-to-TLU-and-Perceptron/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">Introduction to TLU and Perceptron</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/04/27/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0-Apriori/"
+                           href="/2022/07/20/R-Rstudio%E9%85%8D%E7%BD%AE%E9%95%9C%E5%83%8F/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">Apriori</span>
+                                <span class="post-nav-title-item">Rstudio配置镜像</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -460,7 +474,7 @@ $tools-item-border-radius = 1px;
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#nn.embedding"><span class="nav-text">nn.Embedding</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nn.linear"><span class="nav-text">nn.Linear</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E6%B3%95"><span class="nav-text">方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8A%A5%E9%94%99"><span class="nav-text">报错</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-text">参考</span></a></li></ol>
     </div>
 </div>
         </aside>
