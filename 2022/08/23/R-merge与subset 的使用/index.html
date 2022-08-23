@@ -11,7 +11,7 @@
     
     <title>
         
-            python中无穷大与无穷小表示 |
+            merge与subset的使用 |
         
         Caaaaa
     </title>
@@ -139,7 +139,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">python中无穷大与无穷小表示</span>
+            <span class="title-hover-animation">merge与subset的使用</span>
         </div>
 
         
@@ -158,8 +158,8 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2022-07-31 01:47:37</span>
-        <span class="mobile">2022-07-31 01:47</span>
+        <span class="pc">2022-08-23 22:44:07</span>
+        <span class="mobile">2022-08-23 22:44</span>
     </span>
     
         <span class="article-categories article-meta-item">
@@ -167,7 +167,7 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/python%E5%B0%8F%E8%AE%B0/">python小记</a>&nbsp;
+                        <a href="/categories/R/">R</a>&nbsp;
                     </li>
                 
             </ul>
@@ -178,12 +178,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>658 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>239 Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>2 Mins</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>1 Mins</span>
         </span>
     
     
@@ -199,31 +199,16 @@
         
 
         <div class="article-content markdown-body">
-            <p>python中整型不用担心溢出，因为python理论上可以表示无限大的整数，直到把<a class="link"   target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=内存&amp;spm=1001.2101.3001.7020" >内存<i class="fas fa-external-link-alt"></i></a>挤爆。而无穷大在编程中常常需要的。比如，从一组数字中筛选出最小的数字。一般使用一个临时变量用于存储最后结果，变量去逐个比较和不断地更新。而这临时变量一般要初始无穷大或者去第一个元素的值。</p>
-<h4 id="正无穷大与负无穷大">正无穷大与负无穷大</h4>
-<p>python中并没有特殊的语法来表示这些值，但是可以通过 <code>float()</code> 来创建它们：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="built_in">float</span>(<span class="string">&quot;inf&quot;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="built_in">float</span>(<span class="string">&quot;-inf&quot;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a</span><br><span class="line">inf</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b</span><br><span class="line">-inf</span><br></pre></td></tr></table></figure>
-<p>为了测试这些值的存在，使用 <code>math.isinf()</code> 进行判断：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> math</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>math.isinf(a)</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>math.isinf(b)</span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
-<h4 id="无穷大数在执行数学计算的时候会传播">无穷大数在执行数学计算的时候会传播</h4>
-<p>这个就类似于数学中讲述的，无穷大加上一个常数还是无穷大，无穷大与无穷大相等：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="built_in">float</span>(<span class="string">&#x27;inf&#x27;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a + <span class="number">45</span></span><br><span class="line">inf</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a * <span class="number">10</span></span><br><span class="line">inf</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">10</span> / a</span><br><span class="line"><span class="number">0.0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">float</span>(<span class="string">&quot;inf&quot;</span>) == <span class="built_in">float</span>(<span class="string">&quot;inf&quot;</span>)</span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
-<p>无穷大在比较中比任何一个数都要大。</p>
-<p>无穷大在比较中比任何一个数都要大。</p>
-<h4 id="正无穷与负无穷相加的结果是什么">正无穷与负无穷相加的结果是什么</h4>
-<p>有些操作时未定义的并会返回一个 <code>NaN</code> 结果:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="built_in">float</span>(<span class="string">&#x27;inf&#x27;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a/a</span><br><span class="line">nan</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="built_in">float</span>(<span class="string">&#x27;-inf&#x27;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a + b</span><br><span class="line">nan</span><br></pre></td></tr></table></figure>
-<h4 id="表示非数字的-nan">表示非数字的 NaN</h4>
-<p><code>nan</code> 值在所有操作中也会传播，并且不会产生异常：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>c = <span class="built_in">float</span>(<span class="string">&#x27;nan&#x27;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c + <span class="number">23</span></span><br><span class="line">nan</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c / <span class="number">2</span></span><br><span class="line">nan</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c * <span class="number">2</span></span><br><span class="line">nan</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>math.sqrt(c)</span><br><span class="line">nan</span><br></pre></td></tr></table></figure>
-<p>使用 <code>math.isnan()</code> 可以判断值是否是 <code>NaN</code>：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>math.isnan(c)</span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
-<p><code>nan</code> 值的任何比较操作都是返回 <code>False</code> ：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">float</span>(<span class="string">&quot;nan&quot;</span>) == <span class="built_in">float</span>(<span class="string">&quot;nan&quot;</span>)</span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c &gt; <span class="number">3</span></span><br><span class="line"><span class="literal">False</span></span><br></pre></td></tr></table></figure>
-<p>由于无穷的存在，因此字符串装浮点数就存在的一些例外，并且这个转换过程不会抛出异常。如果程序员们想改变 python 的默认行为，可以使用 <code>fpectl</code> 模块，但是它在标准的Python 构建中并没有被启用，它是平台相关的，并且针对的是专家级程序员。这里提供一个比较简单的转换，就是加一个 <code>isdigit()</code> 判断:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">str2float</span>(<span class="params">ss</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> ss.isdigit():</span><br><span class="line">        <span class="keyword">raise</span> ValueError</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">float</span>(ss)</span><br><span class="line"> </span><br><span class="line">sss = <span class="string">&quot;inf&quot;</span></span><br><span class="line">a = str2float(sss)</span><br></pre></td></tr></table></figure>
-<h4 id="原链接">原链接</h4>
-<p>https://blog.csdn.net/hellojoy/article/details/81077019</p>
+            <p>原文：https://blog.csdn.net/qq_34941023/article/details/51606805</p>
+<p>merge函数对数据框的操作，从两个数据框中选择出条件相等的行组合成一个新的数据框</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">df1=data.frame(name=<span class="built_in">c</span>(<span class="string">&quot;aa&quot;</span>,<span class="string">&quot;bb&quot;</span>,<span class="string">&quot;cc&quot;</span>),age=<span class="built_in">c</span>(<span class="number">20</span>,<span class="number">29</span>,<span class="number">30</span>),sex=<span class="built_in">c</span>(<span class="string">&quot;f&quot;</span>,<span class="string">&quot;m&quot;</span>,<span class="string">&quot;f&quot;</span>))</span><br><span class="line">df2=data.frame(name=<span class="built_in">c</span>(<span class="string">&quot;dd&quot;</span>,<span class="string">&quot;bb&quot;</span>,<span class="string">&quot;cc&quot;</span>),age=<span class="built_in">c</span>(<span class="number">40</span>,<span class="number">35</span>,<span class="number">36</span>),sex=<span class="built_in">c</span>(<span class="string">&quot;f&quot;</span>,<span class="string">&quot;m&quot;</span>,<span class="string">&quot;f&quot;</span>))</span><br><span class="line">mergedf=merge(df1,df2,by=<span class="string">&quot;name&quot;</span>)</span><br><span class="line">mergedf</span><br><span class="line">name age.x sex.x age.y sex.y</span><br><span class="line"><span class="number">1</span>   bb    <span class="number">29</span>     m    <span class="number">35</span>     m</span><br><span class="line"><span class="number">2</span>   cc    <span class="number">30</span>     f    <span class="number">36</span>     f</span><br></pre></td></tr></table></figure>
+<p>subset函数，从某一个数据框中选择出符合某条件的数据或是相关的列</p>
+<p>（1）单条件查询</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; selectresult=subset(df1,name==<span class="string">&quot;aa&quot;</span>)</span><br><span class="line">&gt; selectresult</span><br><span class="line">  name age sex</span><br><span class="line"><span class="number">1</span>   aa  <span class="number">20</span>   f</span><br></pre></td></tr></table></figure>
+<p>（2）指定显示列</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; selectresult=subset(df1,name==<span class="string">&quot;aa&quot;</span>,select=<span class="built_in">c</span>(age,sex))</span><br><span class="line">&gt; selectresult</span><br><span class="line">  age sex</span><br><span class="line"><span class="number">1</span>  <span class="number">20</span>   f</span><br></pre></td></tr></table></figure>
+<p>（3）多条件查询</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; selectresult=subset(df1,name==<span class="string">&quot;aa&quot;</span> &amp; sex==<span class="string">&quot;f&quot;</span>,select=<span class="built_in">c</span>(age,sex))</span><br><span class="line">&gt; selectresult</span><br><span class="line">  age sex</span><br><span class="line"><span class="number">1</span>  <span class="number">20</span>   f</span><br></pre></td></tr></table></figure>
 
         </div>
 
@@ -231,11 +216,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>Post title：python中无穷大与无穷小表示</li>
+        <li>Post title：merge与subset的使用</li>
         <li>Post author：Caaaaa</li>
-        <li>Create time：2022-07-31 01:47:37</li>
+        <li>Create time：2022-08-23 22:44:07</li>
         <li>
-            Post link：https://caaaa-a.github.io/2022/07/31/python小记-python中无穷大与无穷小表示/
+            Post link：https://caaaa-a.github.io/2022/08/23/R-merge与subset 的使用/
         </li>
         <li>
             Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
@@ -254,13 +239,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2022/08/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6/"
+                           href="/2022/08/23/R-%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%E6%A3%80%E9%AA%8C/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">算法复杂度</span>
+                                <span class="post-nav-title-item">R语言做正态分布检验</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -270,10 +255,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/07/20/R-install%20package/"
+                           href="/2022/08/23/R-%E7%B3%BB%E7%BB%9F%E6%95%99%E7%A8%8B/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">install package</span>
+                                <span class="post-nav-title-item">R系统教程</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -399,7 +384,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AD%A3%E6%97%A0%E7%A9%B7%E5%A4%A7%E4%B8%8E%E8%B4%9F%E6%97%A0%E7%A9%B7%E5%A4%A7"><span class="nav-text">正无穷大与负无穷大</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%97%A0%E7%A9%B7%E5%A4%A7%E6%95%B0%E5%9C%A8%E6%89%A7%E8%A1%8C%E6%95%B0%E5%AD%A6%E8%AE%A1%E7%AE%97%E7%9A%84%E6%97%B6%E5%80%99%E4%BC%9A%E4%BC%A0%E6%92%AD"><span class="nav-text">无穷大数在执行数学计算的时候会传播</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AD%A3%E6%97%A0%E7%A9%B7%E4%B8%8E%E8%B4%9F%E6%97%A0%E7%A9%B7%E7%9B%B8%E5%8A%A0%E7%9A%84%E7%BB%93%E6%9E%9C%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-text">正无穷与负无穷相加的结果是什么</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A8%E7%A4%BA%E9%9D%9E%E6%95%B0%E5%AD%97%E7%9A%84-nan"><span class="nav-text">表示非数字的 NaN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%9F%E9%93%BE%E6%8E%A5"><span class="nav-text">原链接</span></a></li></ol>
+        
     </div>
 </div>
         </aside>
