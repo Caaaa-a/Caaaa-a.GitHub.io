@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<link rel="dns-prefetch" href="//cdn.bootcss.com" />
+	<link rel="dns-prefetch" href="//cdn.mathjax.org" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Caaaaa">
+    
+    <title>
+        
+            python中的一些复杂度 |
+        
+        Caaaaa
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/logo.png","favicon":"/images/logo.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"To be a slash youth."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Caaaaa
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">python中的一些复杂度</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/logo.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Caaaaa</span>
+                        
+                            <span class="author-label">Lv4</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-09-13 18:11:58</span>
+        <span class="mobile">2022-09-13 18:11</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/python%E5%B0%8F%E8%AE%B0/">python小记</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>943 Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>4 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h3 id="append">append</h3>
+<p>向 List Object 任意位置插入数据，只要插入位置不是结尾，那么就需要将插入位置之后的元素后移，因此插入数据的时间复杂度为 O(n)。向数据插入数据有一个特例位置，向尾部追加 append 一个元素，时间复杂度为 O(1) 。</p>
+<p>Python 的实现非常简单：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span></span></span><br><span class="line"><span class="function"><span class="title">app1</span><span class="params">(PyListObject *self, PyObject *v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Py_ssize_t n = PyList_GET_SIZE(self);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 省略了错误处理代码</span></span><br><span class="line">    <span class="keyword">if</span> (list_resize(self, n+<span class="number">1</span>) &lt; <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">    Py_INCREF(v);</span><br><span class="line">    PyList_SET_ITEM(self, n, v);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>只有两步：重置 List 空间；新增元素设置到尾部。非常直接，常数时间内即可完成。</p>
+<h3 id="pop">pop</h3>
+<p>List 通过 pop 方法弹出元素。具体实现：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Objects/listobject.c:1025</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> PyObject *</span></span><br><span class="line"><span class="function"><span class="title">list_pop_impl</span><span class="params">(PyListObject *self, Py_ssize_t index)</span></span></span><br><span class="line"><span class="function"><span class="comment">/*[clinic end generated code: output=6bd69dcb3f17eca8 input=b83675976f329e6f]*/</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    PyObject *v;</span><br><span class="line">    <span class="keyword">int</span> status;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 忽略一些无关代码</span></span><br><span class="line">    v = self-&gt;ob_item[index];</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 如果要弹出结尾元素，快捷处理</span></span><br><span class="line">    <span class="keyword">if</span> (index == Py_SIZE(self) - <span class="number">1</span>) &#123;</span><br><span class="line">        status = list_resize(self, Py_SIZE(self) - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span> (status &gt;= <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> v; <span class="comment">/* and v now owns the reference the list had */</span></span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 如果位于 List 中间，则删除元素</span></span><br><span class="line">    Py_INCREF(v);</span><br><span class="line">    status = list_ass_slice(self, index, index+<span class="number">1</span>, (PyObject *)<span class="literal">NULL</span>);</span><br><span class="line">    <span class="keyword">if</span> (status &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        Py_DECREF(v);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> v;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>pop 元素根据弹出元素是否是尾部元素区别处理，如果是尾部元素，那么只是进行 resize 操作，弹出元素会被直接截断抛弃。实际上在这个过程中有可能根本不会发生真正的 resize，只是调整了 ob_size 的大小。此时时间复杂度为O(1)。</p>
+<p>较为复杂的情况是弹出元素在数组中间或者头部，当目标元素弹出后，会在 List 中出现一个 “空缺”，其后的元素会被 “前移”，这与插入过程恰好相反，时间复杂度为O(n)。</p>
+<h3 id="list">list</h3>
+<p>python的列表内部实现是<a class="link"   target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=数组&amp;spm=1001.2101.3001.7020" >数组<i class="fas fa-external-link-alt"></i></a>（具体实现要看解析器, CPython的实现 ），因此就有数组的特点。超过容量会增加更多的容量，set, get 是O(1)，但del, insert, in的性能是O(n)。具体的看下表，'n’是容器中当前的元素数， 'k’需要操作的元素个数</p>
+<table>
+<thead>
+<tr class="header">
+<th>Operation</th>
+<th>Average Case</th>
+<th>Amortized Worst Case</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Copy</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr class="even">
+<td>Append[1]</td>
+<td>O(1)</td>
+<td>O(1)</td>
+</tr>
+<tr class="odd">
+<td>Insert</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr class="even">
+<td>Get Item</td>
+<td>O(1)</td>
+<td>O(1)</td>
+</tr>
+<tr class="odd">
+<td>Set Item</td>
+<td>O(1)</td>
+<td>O(1)</td>
+</tr>
+<tr class="even">
+<td>Delete Item</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr class="odd">
+<td>Iteration</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr class="even">
+<td>Get Slice</td>
+<td>O(k)</td>
+<td>O(k)</td>
+</tr>
+<tr class="odd">
+<td>Del Slice</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr class="even">
+<td>Set Slice</td>
+<td>O(k+n)</td>
+<td>O(k+n)</td>
+</tr>
+<tr class="odd">
+<td>Extend[1]</td>
+<td>O(k)</td>
+<td>O(k)</td>
+</tr>
+<tr class="even">
+<td>Sort</td>
+<td>O(n log n)</td>
+<td>O(n log n)</td>
+</tr>
+<tr class="odd">
+<td>Multiply</td>
+<td>O(nk)</td>
+<td>O(nk)</td>
+</tr>
+<tr class="even">
+<td>x in s</td>
+<td>O(n)</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>min(s), max(s)</td>
+<td>O(n)</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Get Length</td>
+<td>O(1)</td>
+<td>O(1)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dict">dict</h3>
+<p>关于字典需要了解的是hash函数和哈希桶。一个好的hash函数使到哈希桶中的值只有一个，若多个key hash到了同一个哈希桶中，称之为哈希冲突。查找值时，会先定位到哈希桶中，再遍历hash桶。更详细的信息请点这里。在hash基本没有冲突的情况下get, set, delete, in方面都是O(1)。自己的操作不会超过O(n)</p>
+<table>
+<thead>
+<tr class="header">
+<th>Operation</th>
+<th>Average Case</th>
+<th>Amortized Worst Case</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Copy[2]</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr class="even">
+<td>Get Item</td>
+<td>O(1)</td>
+<td>O(n)</td>
+</tr>
+<tr class="odd">
+<td>Set Item[1]</td>
+<td>O(1)</td>
+<td>O(n)</td>
+</tr>
+<tr class="even">
+<td>Delete Item</td>
+<td>O(1)</td>
+<td>O(n)</td>
+</tr>
+<tr class="odd">
+<td>x in s</td>
+<td>O(1)</td>
+<td>O(n)</td>
+</tr>
+<tr class="even">
+<td>Iteration[2]</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="set">set</h3>
+<p>内部实现是dict的。在in操作上是O(1), 这一点比list要强。 也有list不存在的差运算</p>
+<table>
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 21%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Operation</th>
+<th>Average case</th>
+<th>Worst Case</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>x in s</td>
+<td>O(1)</td>
+<td>O(n)</td>
+</tr>
+<tr class="even">
+<td>Union s|t</td>
+<td>O(len(s)+len(t))</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Intersection s&amp;t</td>
+<td>O(min(len(s), len(t))</td>
+<td>O(len(s) * len(t))</td>
+</tr>
+<tr class="even">
+<td>Multiple intersection s1&amp;s2&amp;…&amp;sn</td>
+<td></td>
+<td>(n-1)*O(l) where l is max(len(s1),…,len(sn))</td>
+</tr>
+<tr class="odd">
+<td>Difference s-t</td>
+<td>O(len(s))</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>s.difference_update(t)</td>
+<td>O(len(t))</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Symmetric Difference s^t</td>
+<td>O(len(s))</td>
+<td>O(len(s) * len(t))</td>
+</tr>
+<tr class="even">
+<td>s.symmetric_difference_update(t)</td>
+<td>O(len(t))</td>
+<td>O(len(t) * len(s))</td>
+</tr>
+</tbody>
+</table>
+<h3 id="原网址">原网址</h3>
+<ol type="1">
+<li><p><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/158634482" >深入Python(17)-List 的 append 和 pop<i class="fas fa-external-link-alt"></i></a></p></li>
+<li><p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/ACBattle/article/details/97012800" >【python】list，dict，set的时间复杂度<i class="fas fa-external-link-alt"></i></a></p></li>
+</ol>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：python中的一些复杂度</li>
+        <li>Post author：Caaaaa</li>
+        <li>Create time：2022-09-13 18:11:58</li>
+        <li>
+            Post link：https://caaaa-a.github.io/2022/09/13/python小记-python中的一些复杂度/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/09/07/python%E5%B0%8F%E8%AE%B0-python%E5%88%97%E8%A1%A8%E7%9A%84%E6%B7%B1%E6%B5%85%E5%B1%82%E5%A4%8D%E5%88%B6/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">python列表的深浅层复制及效率问题</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Caaaaa</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#append"><span class="nav-text">append</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pop"><span class="nav-text">pop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list"><span class="nav-text">list</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dict"><span class="nav-text">dict</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#set"><span class="nav-text">set</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E7%BD%91%E5%9D%80"><span class="nav-text">原网址</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+</body>
+</html>
