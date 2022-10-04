@@ -141,30 +141,27 @@
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2022/03/22/bert%20huang%20Fall%202015%20Machine%20Learning-3-Decision-Tree/">
-                        3 Decision Tree
+                    <a href="/2022/04/27/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0-Apriori/">
+                        Apriori
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        Decision Tree
-
-
-
+                        目前常用的关联规则方法有很多，如贝叶斯网络、决策树、Apriori算法等。其中Apriori算法是关联规则挖掘频繁项集的经典算法，最早由R.Agrawal等人在1993年提出来的，是一种挖掘单维布尔型的关联规则算法，很多算法也是以其为核心进行改进的。...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Mar 22 2022 12:53:40 GMT+0800">2022-03-22</span></span>
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Wed Apr 27 2022 23:42:02 GMT+0800">2022-04-27</span></span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
                     
                         <li>
                             
-                            <a href="/categories/bert-huang-Fall-2015-Machine-Learning/">bert huang Fall 2015 Machine Learning</a>&nbsp;
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/">机器学习小记</a>&nbsp;
                         </li>
                     
                     
@@ -174,7 +171,7 @@
         
     </div>
 
-    <a href="/2022/03/22/bert%20huang%20Fall%202015%20Machine%20Learning-3-Decision-Tree/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a href="/2022/04/27/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0-Apriori/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -184,23 +181,344 @@
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2022/03/12/Knowledge%20Tracing-Dynamic-Bayesian-Networks-for-Student-Modeling/">
-                        Dynamic Bayesian Networks for Student Modeling
+                    <a href="/2022/04/20/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0-Dropout/">
+                        Dropout
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        作者
-Tanja K€aser , Severin Klingler, Alexander G. Schwing, and Markus Gross
-摘要
-智能教学系统使课程适应学生个人的需求。因此，学生知识的准确表达和预测至关重要。贝叶斯知识追踪（...
+                        什么是Dropout
+训练一个大型的网络，训练数据很少则很容易引起过拟合，可能我们会想到用L2正则化、或者减小网络规模。然而深度学习领域大神Hinton认为过拟合，可以通过阻止某些特征的协同作用来缓解，他在2012年文献：《Improving neu...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sat Mar 12 2022 13:59:51 GMT+0800">2022-03-12</span></span>
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Wed Apr 20 2022 13:42:17 GMT+0800">2022-04-20</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/">机器学习小记</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2022/04/20/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0-Dropout/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2022/04/16/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E5%88%A4%E5%88%AB%E6%A8%A1%E5%9E%8B%E5%92%8C%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/">
+                        机器学习中的判别模型和生成模型
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        机器学习模型可以分为 两类模型——判别模型和生成模型。简而言之，判别模型基于条件概率对看不见的数据进行预测，可用于分类或回归问题陈述。相反，生成模型专注于数据集的分布，以返回给定示例的概率。
+
+
+
+问题表述
+假设我们正在处理一个分类问题，我们的任务是...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sat Apr 16 2022 16:16:06 GMT+0800">2022-04-16</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/">机器学习小记</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2022/04/16/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E5%88%A4%E5%88%AB%E6%A8%A1%E5%9E%8B%E5%92%8C%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2022/04/02/tools%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-%E4%B8%80%E4%BA%9B%E6%95%99%E7%A8%8B/">
+                        一些教程
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        pygame
+https://blog.csdn.net/qq2499094166?type=blog ：2021.9.13系列。
+【梯度下降法】一：快速教程、Python简易实现以及对学习率的探讨
+【梯度下降法】二：冲量（momentum）的原理与...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sat Apr 02 2022 14:50:36 GMT+0800">2022-04-02</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/tools%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">tools解决方案</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2022/04/02/tools%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-%E4%B8%80%E4%BA%9B%E6%95%99%E7%A8%8B/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2022/03/30/tools%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-Mac/">
+                        Mac
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        
+恢复失灵的Type-c接口
+
+关机
+按下键盘右侧的 Shift键，左侧的Control和Option键不放。此时电脑会开机，等进入显示白条的状态，不要松开手，同时按下电源按钮 10 秒钟。此时电脑将关闭。
+松开所有按键
+等待10秒钟，重新启动电脑
+
+
+
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Wed Mar 30 2022 13:07:16 GMT+0800">2022-03-30</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/tools%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">tools解决方案</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2022/03/30/tools%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-Mac/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2022/03/29/tools%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-numpy-and-pandas/">
+                        numpy and pandas
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        数据类型及转换
+Pandas数据类型
+
+float
+int
+bool
+datetime64[ns]
+datetime64[ns, tz]
+timedelta[ns]
+category
+object 默认的数据类型是int64,float64.
+
+查看...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Mar 29 2022 22:12:59 GMT+0800">2022-03-29</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/tools%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">tools解决方案</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2022/03/29/tools%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-numpy-and-pandas/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2022/03/27/%E5%A6%82%E4%BD%95%E5%86%99%E5%87%BA%E5%A5%BD%E7%A8%8B%E5%BA%8F-1-%E4%BB%8B%E7%BB%8D/">
+                        1 介绍
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        最重要的是建立一个良性循环。
+
+写出好程序 \(\rightarrow\) 享受编程 \(\rightarrow\) 工作成就感 \(\rightarrow\) 写出好程序
+
+本书适合：
+
+正在学习编程
+正在帮助其他人学习编程
+not 专业的程序员
+...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sun Mar 27 2022 11:14:58 GMT+0800">2022-03-27</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E5%A6%82%E4%BD%95%E5%86%99%E5%87%BA%E5%A5%BD%E7%A8%8B%E5%BA%8F/">如何写出好程序</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2022/03/27/%E5%A6%82%E4%BD%95%E5%86%99%E5%87%BA%E5%A5%BD%E7%A8%8B%E5%BA%8F-1-%E4%BB%8B%E7%BB%8D/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2022/03/26/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A0%91/">
+                        树——概念
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        多项集的另一种主要类别在第2章里被称为分层（hierarchical），它由各种类型的树结构组成。大多数编程语言不会把树纳入标准类型。但是，树结构有非常广泛的应用。它们可以非常自然地表示文件目录结构或书的目录等对象的多项集。树还可以用来实现其他需要高...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sat Mar 26 2022 22:59:09 GMT+0800">2022-03-26</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2022/03/26/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A0%91/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2022/03/23/Knowledge%20Tracing-KPT/">
+                        KPT
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        
+
+
+
+
+
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Wed Mar 23 2022 23:21:22 GMT+0800">2022-03-23</span></span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
@@ -217,7 +535,7 @@ Tanja K€aser , Severin Klingler, Alexander G. Schwing, and Markus Gross
         
     </div>
 
-    <a href="/2022/03/12/Knowledge%20Tracing-Dynamic-Bayesian-Networks-for-Student-Modeling/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a href="/2022/03/23/Knowledge%20Tracing-KPT/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -227,8 +545,8 @@ Tanja K€aser , Severin Klingler, Alexander G. Schwing, and Markus Gross
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2022/03/10/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0v2-LSTM/">
-                        LSTM
+                    <a href="/2022/03/22/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0-%E5%88%86%E7%B1%BB%E4%BB%BB%E5%8A%A1%E5%8F%8A%E4%B8%80%E7%82%B9%E5%86%B3%E7%AD%96%E6%A0%91/">
+                        分类任务及一点决策树
                     </a>
                 </h3>
 
@@ -241,11 +559,12 @@ Tanja K€aser , Severin Klingler, Alexander G. Schwing, and Markus Gross
 
 
 
-参考：
 
-57 长短期记忆网络（LSTM）【动手学深度学习v2】
-【LSTM长短期记忆网络】3D模型一目了然，带你领略算法背后的逻辑
-【重温经典】大白话讲解LSTM长短期记忆网络 如何缓解梯度消失，手把手公式推导反向传播
+一些链接：
+
+【机器学习】决策树（上）——ID3、C4.5、CART（非常详细）
+【决策树算法1】ID3算法 数据挖掘 期末考试 计算题 详细步骤讲解
+什么是决策树（Decision Tree）？【知多少】
 
 
                     
@@ -253,14 +572,14 @@ Tanja K€aser , Severin Klingler, Alexander G. Schwing, and Markus Gross
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Mar 10 2022 15:04:15 GMT+0800">2022-03-10</span></span>
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Mar 22 2022 13:18:28 GMT+0800">2022-03-22</span></span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
                     
                         <li>
                             
-                            <a href="/categories/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0v2/">动手学深度学习v2</a>&nbsp;
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/">机器学习小记</a>&nbsp;
                         </li>
                     
                     
@@ -270,323 +589,7 @@ Tanja K€aser , Severin Klingler, Alexander G. Schwing, and Markus Gross
         
     </div>
 
-    <a href="/2022/03/10/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0v2-LSTM/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2022/03/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%8F%8C%E6%8C%87%E9%92%88/">
-                        双指针
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        双指针
-双指针，指的是在遍历对象的过程中，不是普通的使用单个指针进行访问，而是使用两个相同方向（快慢指针）或者相反方向（对撞指针）的指针进行扫描，从而达到相应的目的。
-换言之，双指针法充分使用了数组有序这一特征，从而在某些情况下能够简化一些运算。
-双...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Fri Mar 04 2022 22:18:41 GMT+0800">2022-03-04</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-    </div>
-
-    <a href="/2022/03/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%8F%8C%E6%8C%87%E9%92%88/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2022/02/28/bert%20huang%20Fall%202015%20Machine%20Learning-17-Probabilistic-Graphical-Models-and-Bayesian-Networks/">
-                        17 Probabilistic Graphical Models and Bayesian Networks
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        Probabilistic Graphical Models and Bayesian Networks
-
-
-
-
-
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Mon Feb 28 2022 16:07:19 GMT+0800">2022-02-28</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/bert-huang-Fall-2015-Machine-Learning/">bert huang Fall 2015 Machine Learning</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-    </div>
-
-    <a href="/2022/02/28/bert%20huang%20Fall%202015%20Machine%20Learning-17-Probabilistic-Graphical-Models-and-Bayesian-Networks/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2022/02/28/bert%20huang%20Fall%202015%20Machine%20Learning-2-Probability-and-Naive-Bayes/">
-                        2 Probability and Naive Bayes
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        Probability and Naive Bayes
-
-
-
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Mon Feb 28 2022 15:34:47 GMT+0800">2022-02-28</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/bert-huang-Fall-2015-Machine-Learning/">bert huang Fall 2015 Machine Learning</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-    </div>
-
-    <a href="/2022/02/28/bert%20huang%20Fall%202015%20Machine%20Learning-2-Probability-and-Naive-Bayes/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2022/02/28/bert%20huang%20Fall%202015%20Machine%20Learning-1-Machine-Learning/">
-                        1 Machine Learning
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        Machine Learning
-
-
-Types of ML
-
-
-Model Selection in Machine Learning
-
-
-
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Mon Feb 28 2022 15:31:57 GMT+0800">2022-02-28</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/bert-huang-Fall-2015-Machine-Learning/">bert huang Fall 2015 Machine Learning</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-    </div>
-
-    <a href="/2022/02/28/bert%20huang%20Fall%202015%20Machine%20Learning-1-Machine-Learning/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2022/02/28/Knowledge%20Tracing-%E4%BB%8E%E6%95%B0%E6%8D%AE%E8%A7%86%E8%A7%92%E9%80%8F%E6%9E%90%E8%AE%A4%E7%9F%A5%E8%BF%BD%E8%B8%AA-%E6%A1%86%E6%9E%B6%E3%80%81%E9%97%AE%E9%A2%98%E5%8F%8A%E5%90%AF%E7%A4%BA/">
-                        从数据视角透析认知追踪：框架、问题及启示
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        作者
-孙建文 栗大智 彭 晛 邹 睿 王 佩
-摘要
-认知追踪是一种数据驱动的学习者建模技术，被广泛应用于智能导学、智能课堂编排等系统。尤其是2015年深度神经网络被引入认知追踪任务以来，认知追踪成为智能教育领域的研究热点。针对当前研究普遍存在的“重模...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Mon Feb 28 2022 10:04:25 GMT+0800">2022-02-28</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/Knowledge-Tracing/">Knowledge Tracing</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-    </div>
-
-    <a href="/2022/02/28/Knowledge%20Tracing-%E4%BB%8E%E6%95%B0%E6%8D%AE%E8%A7%86%E8%A7%92%E9%80%8F%E6%9E%90%E8%AE%A4%E7%9F%A5%E8%BF%BD%E8%B8%AA-%E6%A1%86%E6%9E%B6%E3%80%81%E9%97%AE%E9%A2%98%E5%8F%8A%E5%90%AF%E7%A4%BA/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2022/02/25/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3python%E7%9A%84%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1%EF%BC%9F%E2%80%94%E2%80%94%E6%94%B9%E8%87%AA%E7%9F%A5%E4%B9%8E%E7%AD%94%E6%A1%88/">
-                        如何理解python的类与对象？——改自知乎答案
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        python教程
-来源：知乎答案
-
-类、对象在实际编程中有啥好处，为啥要用它们
-再给你解释怎么去理解它们
-
-1 类的好处
-
-方便复用（如果你用函数写，就要复制整块代码，增加了代码量，增加了出错率）
-方便扩展（函数写段代码，若要升级、扩展，都十分复杂，...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Fri Feb 25 2022 10:46:57 GMT+0800">2022-02-25</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-    </div>
-
-    <a href="/2022/02/25/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3python%E7%9A%84%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1%EF%BC%9F%E2%80%94%E2%80%94%E6%94%B9%E8%87%AA%E7%9F%A5%E4%B9%8E%E7%AD%94%E6%A1%88/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2022/02/25/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
-                        面向对象 —— 数据结构 Python语言描述
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        定义
-
-类（class）用来描述具有相同的属性和方法的对象的集合。它定义了该集合中每个对象所共有的属性和方法。对象是类的实例。Python里的数据类型都是类。
-数据成员：类变量或者实例变量, 用于处理类及其实例对象的相关的数据。
-方法重写：如果从父类...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Fri Feb 25 2022 10:19:45 GMT+0800">2022-02-25</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-    </div>
-
-    <a href="/2022/02/25/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a href="/2022/03/22/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0-%E5%88%86%E7%B1%BB%E4%BB%BB%E5%8A%A1%E5%8F%8A%E4%B8%80%E7%82%B9%E5%86%B3%E7%AD%96%E6%A0%91/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>

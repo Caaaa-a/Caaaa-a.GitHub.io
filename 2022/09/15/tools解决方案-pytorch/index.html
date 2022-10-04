@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<link rel="dns-prefetch" href="//cdn.bootcss.com" />
+	<link rel="dns-prefetch" href="//cdn.mathjax.org" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Caaaaa">
+    
+    <title>
+        
+            pytorch |
+        
+        Caaaaa
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/logo.png","favicon":"/images/logo.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"To be a slash youth."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Caaaaa
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">pytorch</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/logo.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Caaaaa</span>
+                        
+                            <span class="author-label">Lv5</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-09-15 20:13:09</span>
+        <span class="mobile">2022-09-15 20:13</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/tools%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">tools解决方案</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>670 Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>2 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h4 id="with-torch.no_grad-详解"><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_46559271/article/details/105658654" >with torch.no_grad() 详解<i class="fas fa-external-link-alt"></i></a></h4>
+<p><code>torch.no_grad()</code> 是一个上下文管理器，被该语句 wrap 起来的部分将不会track 梯度。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = torch.tensor([<span class="number">1.1</span>], requires_grad=<span class="literal">True</span>)</span><br><span class="line">b = a * <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>打印b可看到其 grad_fn 为 mulbackward 表示是做的乘法。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">b</span><br><span class="line">Out[<span class="number">63</span>]: tensor([<span class="number">2.2000</span>], grad_fn=&lt;MulBackward0&gt;)</span><br><span class="line">b.add_(<span class="number">2</span>)</span><br><span class="line">Out[<span class="number">64</span>]: tensor([<span class="number">4.2000</span>], grad_fn=&lt;AddBackward0&gt;)</span><br></pre></td></tr></table></figure>
+<p>可以看到不被wrap的情况下，b.grad_fn 为 addbackward 表示这个add 操作被track了</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> torch.no_grad():</span><br><span class="line">    b.mul_(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#在被包裹的情况下可以看到 b.grad_fn 还是为 add，mul 操作没有被 track. 但是注意，乘法操作是被执行了的。(4.2 -&gt; 8.4)</span></span><br><span class="line">b</span><br><span class="line">Out[<span class="number">66</span>]: tensor([<span class="number">8.4000</span>], grad_fn=&lt;AddBackward0&gt;)</span><br></pre></td></tr></table></figure>
+<p>所以如果有不想被track的计算部分可以通过这么一个上下文管理器包裹起来。这样可以执行计算，但该计算不会在反向传播中被记录。</p>
+<p>同时 <a class="link"   target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=torch&amp;spm=1001.2101.3001.7020" >torch<i class="fas fa-external-link-alt"></i></a>.no_grad() 还可以作为一个装饰器。比如在网络测试的函数前加上</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@torch.no_grad()</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">eval</span>():</span></span><br><span class="line">	...</span><br></pre></td></tr></table></figure>
+<p>扩展： 同样还可以用 torch.set_grad_enabled()来实现不计算梯度。 例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">eval</span>():</span></span><br><span class="line">	torch.set_grad_enabled(<span class="literal">False</span>)</span><br><span class="line">	...	<span class="comment"># your test code</span></span><br><span class="line">	torch.set_grad_enabled(<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="详解pytorch中的modulelist和sequential"><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/75206669" >详解PyTorch中的ModuleList和Sequential<i class="fas fa-external-link-alt"></i></a></h4>
+<h4 id="pytorch的nn.linear详解"><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42079689/article/details/102873766" >PyTorch的nn.Linear（）详解<i class="fas fa-external-link-alt"></i></a></h4>
+<p>PyTorch的<code>nn.Linear（）</code>是用于设置网络中的<strong>全连接层的</strong>，<strong>需要注意在二维图像处理的任务中，全连接层的输入与输出一般都设置为二维张量，形状通常为<code>[batch_size, size]</code>，不同于卷积层要求输入输出是四维张量</strong>。<a class="link"   target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/generated/torch.nn.Linear.html" >具体：<i class="fas fa-external-link-alt"></i></a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CLASS torch.nn.Linear(in_features, out_features, bias=<span class="literal">True</span>, device=<span class="literal">None</span>, dtype=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Applies a linear transformation to the incoming data: <span class="math inline">\(y = xA^T + b\)</span></p>
+<p>This module supports <a class="link"   target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/notes/cuda.html#tf32-on-ampere" >TensorFloat32<i class="fas fa-external-link-alt"></i></a>.</p>
+<p>On certain ROCm devices, when using float16 inputs this module will use <a class="link"   target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/notes/numerical_accuracy.html#fp16-on-mi200" >different precision<i class="fas fa-external-link-alt"></i></a> for backward.</p>
+<ul>
+<li><p>Parameters</p>
+<p><strong>in_features</strong> – size of each input sample</p>
+<p><strong>out_features</strong> – size of each output sample</p>
+<p><strong>bias</strong> – If set to <code>False</code>, the layer will not learn an additive bias. Default: <code>True</code></p></li>
+</ul>
+</blockquote>
+<ul>
+<li><p><code>in_features</code>指的是输入的二维张量的大小，即<strong>输入的</strong><code>[batch_size, size]</code>中的<code>size</code>。</p></li>
+<li><p><code>out_features</code>指的是输出的二维张量的大小，即<strong>输出的二维张量的形状为</strong><code>[batch_size，output_size]</code>，当然，它也代表了<strong>该全连接层的神经元个数</strong>。</p></li>
+<li><p><strong>从输入输出的张量的shape角度来理解，相当于一个输入为<code>[batch_size, in_features]</code>的张量变换成了<code>[batch_size, out_features]</code>的输出张量。</strong></p></li>
+<li><p><input type="checkbox" disabled="" />
+```python import torch as t from torch import nn</p><h1 id="in_features由输入张量的形状决定out_features则决定了输出张量的形状">in_features由输入张量的形状决定，out_features则决定了输出张量的形状</h1>
+<p>connected_layer = nn.Linear(in_features = 64<em>64</em>3, out_features = 1)</p>
+<h1 id="假定输入的图像形状为64643">假定输入的图像形状为[64,64,3]</h1>
+<p>input = t.randn(1,64,64,3)</p>
+<h1 id="将四维张量转换为二维张量之后才能作为全连接层的输入">将四维张量转换为二维张量之后，才能作为全连接层的输入</h1>
+<p>input = input.view(1,64<em>64</em>3) print(input.shape) output = connected_layer(input) # 调用全连接层 print(output.shape)</p>
+<h1 id="input-shape-is-s-torch.size1-12288">input shape is %s torch.Size([1, 12288])</h1>
+<h1 id="output-shape-is-s-torch.size1-1">output shape is %s torch.Size([1, 1])</h1>
+<p>```</p></li>
+</ul>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：pytorch</li>
+        <li>Post author：Caaaaa</li>
+        <li>Create time：2022-09-15 20:13:09</li>
+        <li>
+            Post link：https://caaaa-a.github.io/2022/09/15/tools解决方案-pytorch/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/09/19/pl-Lightning-%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E7%9A%84-7-%E4%B8%AA%E5%85%B3%E9%94%AE%E6%AD%A5%E9%AA%A4/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Lightning 工作流程的 7 个关键步骤</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/09/15/tools%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-keras/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">keras</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Caaaaa</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#with-torch.no_grad-%E8%AF%A6%E8%A7%A3"><span class="nav-text">with torch.no_grad() 详解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%A6%E8%A7%A3pytorch%E4%B8%AD%E7%9A%84modulelist%E5%92%8Csequential"><span class="nav-text">详解PyTorch中的ModuleList和Sequential</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pytorch%E7%9A%84nn.linear%E8%AF%A6%E8%A7%A3"><span class="nav-text">PyTorch的nn.Linear（）详解</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#in_features%E7%94%B1%E8%BE%93%E5%85%A5%E5%BC%A0%E9%87%8F%E7%9A%84%E5%BD%A2%E7%8A%B6%E5%86%B3%E5%AE%9Aout_features%E5%88%99%E5%86%B3%E5%AE%9A%E4%BA%86%E8%BE%93%E5%87%BA%E5%BC%A0%E9%87%8F%E7%9A%84%E5%BD%A2%E7%8A%B6"><span class="nav-text">in_features由输入张量的形状决定，out_features则决定了输出张量的形状</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%81%87%E5%AE%9A%E8%BE%93%E5%85%A5%E7%9A%84%E5%9B%BE%E5%83%8F%E5%BD%A2%E7%8A%B6%E4%B8%BA64643"><span class="nav-text">假定输入的图像形状为[64,64,3]</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B0%86%E5%9B%9B%E7%BB%B4%E5%BC%A0%E9%87%8F%E8%BD%AC%E6%8D%A2%E4%B8%BA%E4%BA%8C%E7%BB%B4%E5%BC%A0%E9%87%8F%E4%B9%8B%E5%90%8E%E6%89%8D%E8%83%BD%E4%BD%9C%E4%B8%BA%E5%85%A8%E8%BF%9E%E6%8E%A5%E5%B1%82%E7%9A%84%E8%BE%93%E5%85%A5"><span class="nav-text">将四维张量转换为二维张量之后，才能作为全连接层的输入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#input-shape-is-s-torch.size1-12288"><span class="nav-text">input shape is %s torch.Size([1, 12288])</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#output-shape-is-s-torch.size1-1"><span class="nav-text">output shape is %s torch.Size([1, 1])</span></a>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+</body>
+</html>
