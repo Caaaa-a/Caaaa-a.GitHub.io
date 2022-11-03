@@ -11,7 +11,7 @@
     
     <title>
         
-            python提速 |
+            linux |
         
         Caaaaa
     </title>
@@ -139,7 +139,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">python提速</span>
+            <span class="title-hover-animation">linux</span>
         </div>
 
         
@@ -158,8 +158,8 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2022-10-04 12:37:11</span>
-        <span class="mobile">2022-10-04 12:37</span>
+        <span class="pc">2022-03-30 13:07:16</span>
+        <span class="mobile">2022-03-30 13:07</span>
     </span>
     
         <span class="article-categories article-meta-item">
@@ -167,7 +167,7 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/python%E5%B0%8F%E8%AE%B0/">python小记</a>&nbsp;
+                        <a href="/categories/tools%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">tools解决方案</a>&nbsp;
                     </li>
                 
             </ul>
@@ -178,7 +178,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>125 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>345 Words</span>
         </span>
     
     
@@ -199,13 +199,44 @@
         
 
         <div class="article-content markdown-body">
-            <h4 id="input-sys.stdin.readline"><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_46369610/article/details/120049111" >Input() → sys.stdin.readline()<i class="fas fa-external-link-alt"></i></a></h4>
-<p>优化接收参数过程，将input() 接收参数，改为 sys.stdin.readline()</p>
-<p>由于input 默认将每行最后的换行符删除掉，需要额外的运算。</p>
-<p>在python3环境下，读取数据量很大时，sys.stdin.readline()会提高不少运算速度</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Plase input your name: &#x27;</span>)</span><br><span class="line">name = sys.stdin.readline()</span><br><span class="line"><span class="built_in">print</span>(name)</span><br></pre></td></tr></table></figure>
-<h4 id="列表推导式-for-循环">列表推导式 → for 循环</h4>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = []</span><br><span class="line"><span class="keyword">for</span> i  <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">    a.append(i)</span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"></span><br><span class="line">b = [a <span class="keyword">for</span> a <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>)]</span><br><span class="line"><span class="comment"># b = [a for a in range(10) if a % 2 ==0]</span></span><br><span class="line"><span class="built_in">print</span>(b)</span><br></pre></td></tr></table></figure>
+            <h4 id="删除文件"><strong>删除文件</strong></h4>
+<p><strong>返回上级</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ..</span><br></pre></td></tr></table></figure>
+<p><strong>删除当前目录下的文件</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -f *</span><br></pre></td></tr></table></figure>
+<p><strong>删除指定目录下的文件</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -f 指定目录*</span><br></pre></td></tr></table></figure>
+<p><strong>删除文件夹和文件的命令</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-r 就是向下递归，不管有多少级目录，一并删除</span><br><span class="line">-f 就是直接强行删除，不作任何提示的意思</span><br><span class="line">删除文件夹实例：</span><br><span class="line">rm -rf /var/log/httpd/access</span><br><span class="line">将会删除/var/log/httpd/access目录以及其下所有文件、文件夹</span><br><span class="line">删除文件使用实例：</span><br><span class="line">rm -f /var/log/httpd/access.log</span><br><span class="line">将会强制删除/var/log/httpd/access.log这个文件</span><br></pre></td></tr></table></figure>
+<h4 id="编辑文件后保存退出"><strong>编辑文件后保存退出</strong></h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">按ESC进入Command模式</span><br><span class="line">输入 :wq 后回车即可。</span><br></pre></td></tr></table></figure>
+<h4 id="查看cuda版本">查看cuda版本</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nvidia-smi</span><br><span class="line">nvcc -V</span><br><span class="line">cat /usr/local/cuda/version.txt</span><br></pre></td></tr></table></figure>
+<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41368074/article/details/107785536" >ubuntu 之 查看 cuda，cudnn版本<i class="fas fa-external-link-alt"></i></a></p>
+<h4 id="安装gcc-g-gfortran编译器">安装gcc 、g++ /gfortran编译器</h4>
+<ol type="1">
+<li>gcc</li>
+</ol>
+<ul>
+<li><p>ubuntu下自带gcc编译器。</p></li>
+<li><p>通过<code>gcc -v</code>命令来查看是否安装。</p></li>
+</ul>
+<ol start="2" type="1">
+<li>g++</li>
+</ol>
+<ul>
+<li><p>安装命令：<code>sudo apt-get install build-essential</code> build-essential是一整套工具，gcc，libc等等。</p></li>
+<li><p>通过 <code>g++ -v</code>可以查看g++是否安装成功。</p></li>
+</ul>
+<p>注：“sudo apt-get install build-essential --fix-missing”，这个命令是修补安装build-essential，即已安装了部分build-essential，但没有安装完全，此时可以使用该命令继续安装build-essential。</p>
+<ol start="3" type="1">
+<li>gfortran</li>
+</ol>
+<ul>
+<li>安装命令：<code>sudo apt-get install gfortran</code></li>
+<li>通过<code>gfortran -v</code>可以查看gfortran是否安装成功。</li>
+</ul>
+<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/yangle4695/article/details/51533770" >Linux下安装gcc 、g++ /gfortran编译器,mac<i class="fas fa-external-link-alt"></i></a></p>
 
         </div>
 
@@ -213,11 +244,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>Post title：python提速</li>
+        <li>Post title：linux</li>
         <li>Post author：Caaaaa</li>
-        <li>Create time：2022-10-04 12:37:11</li>
+        <li>Create time：2022-03-30 13:07:16</li>
         <li>
-            Post link：https://caaaa-a.github.io/2022/10/04/python小记-保存文件/
+            Post link：https://caaaa-a.github.io/2022/03/30/tools解决方案-linux/
         </li>
         <li>
             Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
@@ -236,13 +267,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2022/10/04/python%E5%B0%8F%E8%AE%B0-%20%E4%BF%9D%E5%AD%98%E6%96%87%E4%BB%B6/"
+                           href="/2022/03/30/tools%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-Mac/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">保存文件</span>
+                                <span class="post-nav-title-item">Mac</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -252,10 +283,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/09/25/pl-earlystopping/"
+                           href="/2022/03/29/tools%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-numpy-and-pandas/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">earlystopping</span>
+                                <span class="post-nav-title-item">numpy and pandas</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -381,7 +412,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#input-sys.stdin.readline"><span class="nav-text">Input() → sys.stdin.readline()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E6%8E%A8%E5%AF%BC%E5%BC%8F-for-%E5%BE%AA%E7%8E%AF"><span class="nav-text">列表推导式 → for 循环</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6"><span class="nav-text">删除文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%96%E8%BE%91%E6%96%87%E4%BB%B6%E5%90%8E%E4%BF%9D%E5%AD%98%E9%80%80%E5%87%BA"><span class="nav-text">编辑文件后保存退出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8Bcuda%E7%89%88%E6%9C%AC"><span class="nav-text">查看cuda版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85gcc-g-gfortran%E7%BC%96%E8%AF%91%E5%99%A8"><span class="nav-text">安装gcc 、g++ &#x2F;gfortran编译器</span></a></li></ol>
     </div>
 </div>
         </aside>
