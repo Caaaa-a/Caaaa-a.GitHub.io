@@ -11,7 +11,7 @@
     
     <title>
         
-            linux常见命令 |
+            linux安装pytorch |
         
         Caaaaa
     </title>
@@ -139,7 +139,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">linux常见命令</span>
+            <span class="title-hover-animation">linux安装pytorch</span>
         </div>
 
         
@@ -158,8 +158,8 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2022-03-30 13:07:16</span>
-        <span class="mobile">2022-03-30 13:07</span>
+        <span class="pc">2022-11-06 15:12:45</span>
+        <span class="mobile">2022-11-06 15:12</span>
     </span>
     
         <span class="article-categories article-meta-item">
@@ -178,7 +178,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>394 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>263 Words</span>
         </span>
     
     
@@ -199,46 +199,21 @@
         
 
         <div class="article-content markdown-body">
-            <h4 id="删除文件"><strong>删除文件</strong></h4>
-<p><strong>返回上级</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ..</span><br></pre></td></tr></table></figure>
-<p><strong>删除当前目录下的文件</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -f *</span><br></pre></td></tr></table></figure>
-<p><strong>删除指定目录下的文件</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -f 指定目录*</span><br></pre></td></tr></table></figure>
-<p><strong>删除文件夹和文件的命令</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-r 就是向下递归，不管有多少级目录，一并删除</span><br><span class="line">-f 就是直接强行删除，不作任何提示的意思</span><br><span class="line">删除文件夹实例：</span><br><span class="line">rm -rf /var/log/httpd/access</span><br><span class="line">将会删除/var/log/httpd/access目录以及其下所有文件、文件夹</span><br><span class="line">删除文件使用实例：</span><br><span class="line">rm -f /var/log/httpd/access.log</span><br><span class="line">将会强制删除/var/log/httpd/access.log这个文件</span><br></pre></td></tr></table></figure>
-<h4 id="编辑文件后保存退出"><strong>编辑文件后保存退出</strong></h4>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">按ESC进入Command模式</span><br><span class="line">输入 :wq 后回车即可。</span><br></pre></td></tr></table></figure>
-<h4 id="查看cuda版本">查看cuda版本</h4>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nvidia-smi</span><br><span class="line">nvcc -V</span><br><span class="line">cat /usr/local/cuda/version.txt</span><br></pre></td></tr></table></figure>
-<p>详见：<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41368074/article/details/107785536" >ubuntu 之 查看 cuda，cudnn版本<i class="fas fa-external-link-alt"></i></a></p>
-<h4 id="安装gcc-g-gfortran编译器">安装gcc 、g++ /gfortran编译器</h4>
-<ol type="1">
-<li>gcc</li>
+            <p>注意⚠️：</p>
+<ol>
+<li>torch，torchvision，torchaudio和python版本需要对应</li>
+<li>安装的torch要与gpu对应（可以向下兼容）</li>
+<li>反复安装要重启能解决一些问题</li>
 </ol>
-<ul>
-<li><p>ubuntu下自带gcc编译器。</p></li>
-<li><p>通过<code>gcc -v</code>命令来查看是否安装。</p></li>
-</ul>
-<ol start="2" type="1">
-<li>g++</li>
-</ol>
-<ul>
-<li><p>安装命令：<code>sudo apt-get install build-essential</code> build-essential是一整套工具，gcc，libc等等。</p></li>
-<li><p>通过 <code>g++ -v</code>可以查看g++是否安装成功。</p></li>
-</ul>
-<p>注：“sudo apt-get install build-essential --fix-missing”，这个命令是修补安装build-essential，即已安装了部分build-essential，但没有安装完全，此时可以使用该命令继续安装build-essential。</p>
-<ol start="3" type="1">
-<li>gfortran</li>
-</ol>
-<ul>
-<li>安装命令：<code>sudo apt-get install gfortran</code></li>
-<li>通过<code>gfortran -v</code>可以查看gfortran是否安装成功。</li>
-</ul>
-<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/yangle4695/article/details/51533770" >Linux下安装gcc 、g++ /gfortran编译器,mac<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="远程连接screen命令">远程连接screen命令</h3>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 创建窗口</span><br><span class="line">screen -S name</span><br><span class="line"># 执行任务</span><br><span class="line">....</span><br><span class="line"># 查看远程服务器存在的screen</span><br><span class="line">screen -ls</span><br><span class="line"># 重连</span><br><span class="line">screen -r name</span><br><span class="line"># 断开当前screen</span><br><span class="line">Ctrl + A + K</span><br><span class="line">screen -S name -X quit</span><br></pre></td></tr></table></figure>
+<h3 id="下载速度太慢"><a href="#下载速度太慢" class="headerlink" title="下载速度太慢"></a>下载速度太慢</h3><h4 id="添加镜像源（清华、科大），在官网下载时去掉命令后面的-c-pytorch"><a href="#添加镜像源（清华、科大），在官网下载时去掉命令后面的-c-pytorch" class="headerlink" title="添加镜像源（清华、科大），在官网下载时去掉命令后面的 -c pytorch"></a>添加镜像源（清华、科大），在官网下载时去掉命令后面的 -c pytorch</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda install pytorch torchvision cudatoolkit=9.0</span><br><span class="line"># 无gpu</span><br><span class="line">conda install pytorch torchvision cpuonly</span><br></pre></td></tr></table></figure>
+<h4 id="下载对应的whl文件（也可以先下好）"><a href="#下载对应的whl文件（也可以先下好）" class="headerlink" title="下载对应的whl文件（也可以先下好）"></a>下载对应的whl文件（也可以先下好）</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple torch-1.1.0-cp36-cp36m-manylinux1_x86_64.whl</span><br></pre></td></tr></table></figure>
+<h4 id="在清华源里找对应的bz2（也可以先下好）"><a href="#在清华源里找对应的bz2（也可以先下好）" class="headerlink" title="在清华源里找对应的bz2（也可以先下好）"></a>在<a class="link"   target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/linux-64/" >清华源<i class="fas fa-external-link-alt"></i></a>里找对应的bz2（也可以先下好）</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install + 链接</span><br></pre></td></tr></table></figure>
+<p>详见：<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/watermelon1123/article/details/88122020" >conda安装Pytorch下载过慢解决办法(11月26日更新ubuntu下pytorch1.3安装方法)<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="torch，torchvision，torchaudio和python版本需要对应"><a href="#torch，torchvision，torchaudio和python版本需要对应" class="headerlink" title="torch，torchvision，torchaudio和python版本需要对应"></a>torch，torchvision，torchaudio和python版本需要对应</h3><p>报错：from torch._C import <em> ImportError:*</em>torch/undefined symbol: Py│Slice_Unpack</p>
+<p>详见： <a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44901346/article/details/109508064" >ImportError: /home/gp/………/torch/lib/libtorch_python.so: undefined symbol: PySlice_Unpack<i class="fas fa-external-link-alt"></i></a></p>
+<p>各版本对应关系：<a class="link"   target="_blank" rel="noopener" href="https://github.com/pytorch/vision/blob/main/README.rst" >官网<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="安装的torch要与gpu、算力对应（可以向下兼容）"><a href="#安装的torch要与gpu、算力对应（可以向下兼容）" class="headerlink" title="安装的torch要与gpu、算力对应（可以向下兼容）"></a>安装的torch要与gpu、算力对应（可以向下兼容）</h3><h4 id="CUDA-error-no-kernel-image-is-available-for-execution-on-the-device"><a href="#CUDA-error-no-kernel-image-is-available-for-execution-on-the-device" class="headerlink" title="CUDA error: no kernel image is available for execution on the device"></a>CUDA error: no kernel image is available for execution on the device</h4><p>解决办法：安装老版本pytorch </p>
+<p>算力对应版本详见：<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42642296/article/details/115598760" >pytorch 报错 RuntimeError: CUDA error: no kernel image is available for execution on the device<i class="fas fa-external-link-alt"></i></a></p>
 
         </div>
 
@@ -246,11 +221,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>Post title：linux常见命令</li>
+        <li>Post title：linux安装pytorch</li>
         <li>Post author：Caaaaa</li>
-        <li>Create time：2022-03-30 13:07:16</li>
+        <li>Create time：2022-11-06 15:12:45</li>
         <li>
-            Post link：https://caaaa-a.github.io/2022/03/30/linux/linux 常见命令/
+            Post link：https://caaaa-a.github.io/2022/11/06/linux/linux安装pytorch/
         </li>
         <li>
             Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
@@ -266,29 +241,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2022/03/30/tools%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-Mac/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">Mac</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/03/29/tools%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-numpy-and-pandas/"
+                           href="/2022/11/06/linux/linux%20%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">numpy and pandas</span>
+                                <span class="post-nav-title-item">linux常见命令</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -414,7 +374,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6"><span class="nav-text">删除文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%96%E8%BE%91%E6%96%87%E4%BB%B6%E5%90%8E%E4%BF%9D%E5%AD%98%E9%80%80%E5%87%BA"><span class="nav-text">编辑文件后保存退出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8Bcuda%E7%89%88%E6%9C%AC"><span class="nav-text">查看cuda版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85gcc-g-gfortran%E7%BC%96%E8%AF%91%E5%99%A8"><span class="nav-text">安装gcc 、g++ &#x2F;gfortran编译器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5screen%E5%91%BD%E4%BB%A4"><span class="nav-text">远程连接screen命令</span></a>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E9%80%9F%E5%BA%A6%E5%A4%AA%E6%85%A2"><span class="nav-text">下载速度太慢</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E9%95%9C%E5%83%8F%E6%BA%90%EF%BC%88%E6%B8%85%E5%8D%8E%E3%80%81%E7%A7%91%E5%A4%A7%EF%BC%89%EF%BC%8C%E5%9C%A8%E5%AE%98%E7%BD%91%E4%B8%8B%E8%BD%BD%E6%97%B6%E5%8E%BB%E6%8E%89%E5%91%BD%E4%BB%A4%E5%90%8E%E9%9D%A2%E7%9A%84-c-pytorch"><span class="nav-text">添加镜像源（清华、科大），在官网下载时去掉命令后面的 -c pytorch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%AF%B9%E5%BA%94%E7%9A%84whl%E6%96%87%E4%BB%B6%EF%BC%88%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%85%88%E4%B8%8B%E5%A5%BD%EF%BC%89"><span class="nav-text">下载对应的whl文件（也可以先下好）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A8%E6%B8%85%E5%8D%8E%E6%BA%90%E9%87%8C%E6%89%BE%E5%AF%B9%E5%BA%94%E7%9A%84bz2%EF%BC%88%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%85%88%E4%B8%8B%E5%A5%BD%EF%BC%89"><span class="nav-text">在清华源里找对应的bz2（也可以先下好）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#torch%EF%BC%8Ctorchvision%EF%BC%8Ctorchaudio%E5%92%8Cpython%E7%89%88%E6%9C%AC%E9%9C%80%E8%A6%81%E5%AF%B9%E5%BA%94"><span class="nav-text">torch，torchvision，torchaudio和python版本需要对应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E7%9A%84torch%E8%A6%81%E4%B8%8Egpu%E3%80%81%E7%AE%97%E5%8A%9B%E5%AF%B9%E5%BA%94%EF%BC%88%E5%8F%AF%E4%BB%A5%E5%90%91%E4%B8%8B%E5%85%BC%E5%AE%B9%EF%BC%89"><span class="nav-text">安装的torch要与gpu、算力对应（可以向下兼容）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CUDA-error-no-kernel-image-is-available-for-execution-on-the-device"><span class="nav-text">CUDA error: no kernel image is available for execution on the device</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
