@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<link rel="dns-prefetch" href="//cdn.bootcss.com" />
+	<link rel="dns-prefetch" href="//cdn.mathjax.org" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Caaaaa">
+    
+    <title>
+        
+            树——概念 |
+        
+        Caaaaa
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/logo.png","favicon":"/images/logo.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"To be a slash youth."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Caaaaa
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">树——概念</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/logo.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Caaaaa</span>
+                        
+                            <span class="author-label">Lv5</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-03-26 22:59:09</span>
+        <span class="mobile">2022-03-26 22:59</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1/">数据结构与算法设计</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>3.4k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>11 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>多项集的另一种主要类别在第2章里被称为<strong>分层</strong>（hierarchical），它由各种类型的树结构组成。大多数编程语言不会把树纳入标准类型。但是，树结构有非常广泛的应用。它们可以非常自然地表示文件目录结构或书的目录等对象的多项集。树还可以用来实现其他需要高效搜索操作的多项集，例如有序集合和有序字典，这些多项集需要在元素上添加某些优先级顺序的多项集（如优先队列）。本章将介绍让树成为非常有用的数据结构的相关属性，并探讨树在实现几种类型的多项集里的作用。</p>
+<h3 id="树的概述">1　树的概述</h3>
+<p>到目前为止，我们所研究的都是线性数据结构（链表、栈等）。其中，第一个元素之外的其他元素都有一个不同的前驱；最后一个元素之外的其他元素都有一个不同的后继。在树结构里，前驱和后继的这种关系被<strong>父节点</strong>（parent）和<strong>子节点</strong>（child）的关系所取代。</p>
+<p>树有两个主要特征：其一，每个元素可以有多个子节点；其二，除了一个名为<strong>根节点</strong>（root）的特殊元素，其他元素都有且只有一个父节点。根节点没有父节点。</p>
+<h4 id="树的术语">1　树的术语</h4>
+<table>
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 65%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">术语</th>
+<th style="text-align: center;">定义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">节点（node）</td>
+<td style="text-align: center;">存储在树里的元素</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">根节点（root）</td>
+<td style="text-align: center;">树最上层的节点。唯一没有父节点的节点</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">子节点（child）</td>
+<td style="text-align: center;">在某个给定节点的下方直接连接的节点。一个节点可以有多个子节点，并且它的子节点在查看的时候会按照从左到右的顺序进行组织。最左边的子节点称为第一个子节点，最右边的子节点称为最后一个子节点</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">父节点（parent）</td>
+<td style="text-align: center;">在某个给定节点的上方直接连接的节点。一个节点只能有一个父节点</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">兄弟节点（siblings）</td>
+<td style="text-align: center;">拥有共同父节点的一些子节点</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">叶节点（leaf）</td>
+<td style="text-align: center;">没有子节点的节点</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">内部节点（interior node）</td>
+<td style="text-align: center;">至少包含一个子节点的节点</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">边/分支/链接（edge/branch/link）</td>
+<td style="text-align: center;">连接父节点和子节点的线</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">后代（descendant）</td>
+<td style="text-align: center;">节点的子节点，子节点的子节点，以此类推，直到叶节点为止</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">祖先（ancestor）</td>
+<td style="text-align: center;">节点的父节点，父节点的父节点，以此类推，直到根节点为止</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">路径（path）</td>
+<td style="text-align: center;">连接节点和其中一个后代的一系列的边</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">路径长度（path length）</td>
+<td style="text-align: center;">路径里边的数目</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">深度或层数（depth or level）</td>
+<td style="text-align: center;">节点的深度或层数等于把它连接到根节点的路径长度。因此，根节点的深度或层数为0。它的子节点的层数是1，以此类推</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">高度（height）</td>
+<td style="text-align: center;">树里最长路径的长度；换句话说，也是树里叶节点的最大层数</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">子树（subtree）</td>
+<td style="text-align: center;">由一个节点和它的所有后代形成的树</td>
+</tr>
+</tbody>
+</table>
+<center>
+<img src="/img/tree-1.png"  style="zoom:70%;" />
+</center>
+<p>可以看到，树的高度和它所包含的节点数是不同的。只包含一个节点的树的高度为0，按照惯例，空树的高度为−1。</p>
+<h4 id="普通树和二叉树">1.2　普通树和二叉树</h4>
+<p>上图所示的树有时称为<strong>普通树</strong>（general tree），故可以把它和<strong>二叉树</strong>（binary tree）区分开来。在二叉树里，每个节点最多有两个子节点，即<strong>左子节点</strong>（left child）和<strong>右子节点</strong>（right child）。在二叉树里，如果一个节点只有一个子节点，仍然可以把它区分为左子节点或右子节点。因此，图所示的是两棵树。如果把它们当作二叉树，那么就并不相同。但是若将其视为普通树，它们是相同的。</p>
+<center>
+<img src="/img/tree-2.png"  style="zoom:70%;" />
+</center>
+<ul>
+<li><strong>普通树</strong>——普通树要么为空，要么就是由有限的一组节点<img src="https://cdn.ptpress.cn/pubcloud/5B0A982E/ushu/UB77b8c3cca4142/online/FBOL77b8de238c9a3/Images/153.gif" alt="img" />组成的。其中节点<img src="https://cdn.ptpress.cn/pubcloud/5B0A982E/ushu/UB77b8c3cca4142/online/FBOL77b8de238c9a3/Images/154.gif" alt="img" />和其他所有节点都不同，被称为根节点。除此之外，集合 <span class="math inline">\(T-\{r\}\)</span> 被分成了若干个不相交的子集，每个子集都是一棵普通树。</li>
+<li><strong>二叉树</strong>——二叉树要么为空，要么就是由根节点加上左子树和右子树组成的，并且这些子树也都是二叉树。</li>
+</ul>
+<center>
+<img src="/img/tree-3.png"  style="zoom:70%;" />
+</center>
+<h3 id="用树结构的原因">2　用树结构的原因</h3>
+<p>前文提到，树能够很好地表示层次结构。<strong>解析</strong>（parsing）是指分析语言里特定句子的语法的过程。<strong>解析树</strong>（parse tree）根据句子的组成部分（如名词短语或动词短语）来描述句子的句法结构。图展示了句子“The girl hit the ball with a bat”的解析树。</p>
+<center>
+<img src="/img/tree-4.png"  style="zoom:70%;" />
+</center>
+<p>这棵树的根节点被标记为“句子”，用来表示这个结构里最顶层的解析。它的两个子节点分别被标记为“名词短语”和“动词短语”，代表了这个句子的组成部分。标记为“介词短语”的节点是“动词短语”的子节点，因此介词短语“with a bat”是用来修饰动词“hit”的而不是修饰名词短语“the ball”的。在最底层，“ball”这样的叶节点表示解析过程中的单词。</p>
+<p>文件系统结构也是树状的。如图所示，其中目录（现在通常称为文件夹）被标记为“D”，文件则被标记为“F”。</p>
+<center>
+<img src="/img/tree-5.png"  style="zoom:70%;" />
+</center>
+<p>一些有序多项集也可以表示为树状结构，这种树称为<strong>二叉查找树</strong>（Binary Search Tree，BST）。这种树的左子树里每个节点的值都小于根节点的值，并且右子树里每个节点的值都大于根节点的值。图展示了包含字母A～G的有序多项集表示的二叉查找树。</p>
+<center>
+<img src="/img/tree-6.png"  style="zoom:70%;" />
+</center>
+<p>上面3个例子表明，树的最重要和最有用的特征并不是树里元素的位置，而是父节点与子节点之间的关系。这些关系对于树结构里的数据具有非常重要的意义。它们可能会用来表示字母的顺序、短语的结构、子目录之间的包含关系，或者给定问题里的任何一对多关系。树中数据的处理基于数据之间的父/子关系。</p>
+<h3 id="二叉树的形状">3　二叉树的形状</h3>
+<p>自然界里的树有各种形状和大小，数据结构里的树也有各种形状和大小。简单地说，有些树是藤蔓状的且几乎是线性的，而另一些树则是茂密的。这些形状的两个极端如图所示。</p>
+<center>
+<img src="/img/tree-7.png"  style="zoom:70%;" />
+</center>
+<p>高度为 <span class="math inline">\(H\)</span> 的满二叉树里包含的节点数 <span class="math inline">\(N\)</span> 是多少？要用 <span class="math inline">\(H\)</span> 来表示 <span class="math inline">\(N\)</span>，可以从根节点（1个节点）开始，添加它的子节点（2个节点），再添加子节点的子节点（4个节点)，以此类推：<span class="math inline">\(N=2^{H+1}-1\)</span>。那么，具有 <span class="math inline">\(N\)</span> 个节点的满二叉树的高度 <span class="math inline">\(H\)</span> 是 <span class="math inline">\(H=log_2(N+1)-1\)</span>。</p>
+<p>但并不是所有茂密的树都是满二叉树，比如，<strong>完美平衡二叉树</strong>（perfectly balanced binary tree）是除了最后一层其他每一层的节点都被填满的树。它足够茂密，并且也支持最坏情况下对叶节点在对数时间内的访问。另一个例子是<strong>完全二叉树</strong>（complete binary tree）。它是完美平衡二叉树的一个特例，会像满二叉树那样从左到右填充最后一层的节点。图总结了这些类型的二叉树形状，并给出了一些示例。</p>
+<p>一般而言，二叉树越平衡，访问、插入和删除操作的性能越高。</p>
+<center>
+<img src="/img/tree-8.png"  style="zoom:70%;" />
+</center>
+<ul>
+<li>一棵满二叉树的高度为5，它包含多少个节点？</li>
+<li>一棵完全二叉树包含125个节点，它的高度是多少？</li>
+<li>在满二叉树里，第<span class="math inline">\(L\)</span>层上有多少个节点？用 <span class="math inline">\(L\)</span>表示答案。</li>
+</ul>
+<h3 id="二叉树的遍历">4　二叉树的遍历</h3>
+<p>在前面的章节里，我们介绍了如何通过<code>for</code>循环或迭代器来遍历线性多项集里的元素。二叉树的遍历有4种标准类型：前序、中序、后序以及层次遍历。每种遍历在访问树中的节点时都遵循特定的路径和方向。接下来我们将展示在二叉查找树上的遍历。遍历算法的相关内容参见后文。</p>
+<h4 id="前序遍历">4.1　前序遍历</h4>
+<p><strong>前序遍历</strong>（preorder traversal）算法会先访问树的根节点，然后以相同的方式分别遍历它的左子树和右子树。前序遍历访问的节点序列如图所示。</p>
+<center>
+<img src="/img/tree-9.png"  style="zoom:70%;" />
+</center>
+<h4 id="中序遍历">4.2　中序遍历</h4>
+<p><strong>中序遍历</strong>（inorder traversal）算法先遍历左子树，然后访问根节点，最后遍历右子树。在对节点进行访问之前，这个过程先从树的最左侧开始。中序遍历访问的节点序列如图所示。</p>
+<center>
+<img src="/img/tree-10.png"  style="zoom:70%;" />
+</center>
+<h4 id="后序遍历">4.3　后序遍历</h4>
+<p><strong>后序遍历</strong>（postorder traversal）算法先遍历左子树，然后遍历右子树，最后访问根节点。后序遍历所经过的路径如图所示。</p>
+<center>
+<img src="/img/tree-11.png"  style="zoom:70%;" />
+</center>
+<h4 id="层序遍历">4.4 层序遍历</h4>
+<p><strong>层次遍历</strong>（level order traversal）算法从第0层开始按照从左到右的顺序访问每一层里的节点。层次遍历所经过的路径如图所示。</p>
+<center>
+<img src="/img/tree-12.png"  style="zoom:70%;" />
+</center>
+<p>可以看到，中序遍历可以按照排序顺序访问二叉树里的元素。表达式树的前序、中序和后序遍历可以分别用来生成前缀、中缀以及后缀形式的表达式。</p>
+<h3 id="二叉树的3种常见应用">5　二叉树的3种常见应用</h3>
+<p>前文提到，树强调的是父子节点之间的关系，这就能够让用户根据位置以外的标准对数据进行排序。本节介绍二叉树的3种特殊用法：堆、二叉查找树和表达式树。这些特殊用法都对它们的数据加上了顺序。</p>
+<h4 id="堆">5.1 堆</h4>
+<p>二叉树里的数据通常都取自有序集合，其中的元素是可以相互比较的。<strong>最小堆</strong>（min-heap）就是一个特殊的二叉树，其中每个节点的值都小于或等于它的两个子节点。<strong>最大堆</strong>（max-heap）把更大的节点放在更靠近根节点的位置。这两种对节点顺序的约束都称为<strong>堆属性</strong>（heap property）。这里提到的堆和计算机用来管理动态内存的堆并不一样，请勿混淆。图展示了两个最小堆的示例。</p>
+<p>就像图里展示的，最小的元素会在根节点处，最大的元素在叶节点里。可以看到，根据前面给出的定义，图里的堆都具有完全二叉树的形状。堆中的这种数据布局提供了一种被称为<strong>堆排序</strong>（heap sort）的高效排序方法。堆排序方法会先把一组数据构建成一个堆，然后不断地删除根节点的元素，并把它添加到列表的末尾。堆还可以实现优先队列。我们将在本章后面开发堆的实现。</p>
+<center>
+<img src="/img/tree-13.png"  style="zoom:70%;" />
+</center>
+<h4 id="二叉查找树">5.2 二叉查找树</h4>
+<p>前文提到，BST在它的节点上添加了有序的顺序。这种方式和堆的方式是不一样的。在BST里，给定节点左子树里的节点会小于给定节点，而右子树里的节点会大于给定节点。当BST的形状接近完美平衡二叉树的形状时，在最坏情况下，搜索和插入操作的复杂度都是 <span class="math inline">\(O(logn)\)</span>.</p>
+<p>图展示了在有序列表上二分搜索使用的所有可能的搜索路径，但是在实际搜索过程中只会用到其中一条路径。在每个子列表里，为了比较而访问的元素会加上阴影。</p>
+<center>
+<img src="/img/tree-14.png"  style="zoom:70%;" />
+</center>
+<p>如图所示，最长的搜索路径（元素4—7—8—9）需要在包含8个元素的列表里进行4次比较。因为列表是有序的，所以搜索算法在每次比较后都会把搜索空间减少一半。二叉树形式：</p>
+<center>
+<img src="/img/tree-15.png"  style="zoom:70%;" />
+</center>
+<h4 id="表达式树">5.3 表达式树</h4>
+<p>在第 7 章，我们介绍了如何使用栈来把中缀表达式转换为后缀表达式，介绍了如何使用栈计算后缀表达式，还为算术表达式语言开发了解释器和计算器。在一种语言里翻译句子过程也被称为<strong>解析</strong>（parsing）。另一种处理句子的方法是在解析过程中构建<strong>解析树</strong>（parse tree）。对于表达式语言来说，这个结构也被称为<strong>表达式树</strong>（expression tree）。图展示了几个通过解析中缀表达式得到的表达式树。</p>
+<center>
+<img src="/img/tree-16.png"  style="zoom:70%;" />
+</center>
+<p>对于表达式树，需要注意以下几点。</p>
+<ul>
+<li><p>表达式树永远不会为空。</p></li>
+<li><p>每个内部节点都代表一个复合表达式，由一个运算符及其操作数组成。每个内部节点都恰好有两个子节点，它们代表这个运算符的操作数。</p></li>
+<li><p>每个叶节点都代表一个原子的数字操作数。</p></li>
+<li><p>优先级较高的运算符通常出现在树的底部附近，除非它们在源表达式里被括号改变了优先级。</p></li>
+<li><p>画出下面这些表达式的表达式树图：</p>
+<ul>
+<li>　　a．3*5 + 6</li>
+<li>　　b．3 + 5*6</li>
+<li>　　c．3*5*6</li>
+</ul></li>
+</ul>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：树——概念</li>
+        <li>Post author：Caaaaa</li>
+        <li>Create time：2022-03-26 22:59:09</li>
+        <li>
+            Post link：https://caaaa-a.github.io/2022/03/26/数据结构与算法设计/数据结构-树/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/03/27/%E5%A6%82%E4%BD%95%E5%86%99%E5%87%BA%E5%A5%BD%E7%A8%8B%E5%BA%8F-1-%E4%BB%8B%E7%BB%8D/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">1 介绍</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/03/23/Knowledge%20Tracing-KPT/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">KPT</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Caaaaa</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%91%E7%9A%84%E6%A6%82%E8%BF%B0"><span class="nav-text">1　树的概述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%91%E7%9A%84%E6%9C%AF%E8%AF%AD"><span class="nav-text">1　树的术语</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%99%AE%E9%80%9A%E6%A0%91%E5%92%8C%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-text">1.2　普通树和二叉树</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E6%A0%91%E7%BB%93%E6%9E%84%E7%9A%84%E5%8E%9F%E5%9B%A0"><span class="nav-text">2　用树结构的原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%BD%A2%E7%8A%B6"><span class="nav-text">3　二叉树的形状</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86"><span class="nav-text">4　二叉树的遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-text">4.1　前序遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-text">4.2　中序遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-text">4.3　后序遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-text">4.4 层序遍历</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%843%E7%A7%8D%E5%B8%B8%E8%A7%81%E5%BA%94%E7%94%A8"><span class="nav-text">5　二叉树的3种常见应用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A0%86"><span class="nav-text">5.1 堆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91"><span class="nav-text">5.2 二叉查找树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91"><span class="nav-text">5.3 表达式树</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+</body>
+</html>
