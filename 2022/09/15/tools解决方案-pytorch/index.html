@@ -178,7 +178,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>670 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>667 Words</span>
         </span>
     
     
@@ -199,8 +199,7 @@
         
 
         <div class="article-content markdown-body">
-            <h4 id="with-torch.no_grad-详解"><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_46559271/article/details/105658654" >with torch.no_grad() 详解<i class="fas fa-external-link-alt"></i></a></h4>
-<p><code>torch.no_grad()</code> 是一个上下文管理器，被该语句 wrap 起来的部分将不会track 梯度。</p>
+            <h4 id="with-torch-no-grad-详解"><a href="#with-torch-no-grad-详解" class="headerlink" title="with torch.no_grad() 详解"></a><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_46559271/article/details/105658654" >with torch.no_grad() 详解<i class="fas fa-external-link-alt"></i></a></h4><p><code>torch.no_grad()</code> 是一个上下文管理器，被该语句 wrap 起来的部分将不会track 梯度。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = torch.tensor([<span class="number">1.1</span>], requires_grad=<span class="literal">True</span>)</span><br><span class="line">b = a * <span class="number">2</span></span><br></pre></td></tr></table></figure>
 <p>打印b可看到其 grad_fn 为 mulbackward 表示是做的乘法。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">b</span><br><span class="line">Out[<span class="number">63</span>]: tensor([<span class="number">2.2000</span>], grad_fn=&lt;MulBackward0&gt;)</span><br><span class="line">b.add_(<span class="number">2</span>)</span><br><span class="line">Out[<span class="number">64</span>]: tensor([<span class="number">4.2000</span>], grad_fn=&lt;AddBackward0&gt;)</span><br></pre></td></tr></table></figure>
@@ -209,37 +208,33 @@
 <p>所以如果有不想被track的计算部分可以通过这么一个上下文管理器包裹起来。这样可以执行计算，但该计算不会在反向传播中被记录。</p>
 <p>同时 <a class="link"   target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=torch&amp;spm=1001.2101.3001.7020" >torch<i class="fas fa-external-link-alt"></i></a>.no_grad() 还可以作为一个装饰器。比如在网络测试的函数前加上</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@torch.no_grad()</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">eval</span>():</span></span><br><span class="line">	...</span><br></pre></td></tr></table></figure>
-<p>扩展： 同样还可以用 torch.set_grad_enabled()来实现不计算梯度。 例如：</p>
+<p>扩展：<br>同样还可以用 torch.set_grad_enabled()来实现不计算梯度。<br>例如：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">eval</span>():</span></span><br><span class="line">	torch.set_grad_enabled(<span class="literal">False</span>)</span><br><span class="line">	...	<span class="comment"># your test code</span></span><br><span class="line">	torch.set_grad_enabled(<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
-<h4 id="详解pytorch中的modulelist和sequential"><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/75206669" >详解PyTorch中的ModuleList和Sequential<i class="fas fa-external-link-alt"></i></a></h4>
-<h4 id="pytorch的nn.linear详解"><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42079689/article/details/102873766" >PyTorch的nn.Linear（）详解<i class="fas fa-external-link-alt"></i></a></h4>
-<p>PyTorch的<code>nn.Linear（）</code>是用于设置网络中的<strong>全连接层的</strong>，<strong>需要注意在二维图像处理的任务中，全连接层的输入与输出一般都设置为二维张量，形状通常为<code>[batch_size, size]</code>，不同于卷积层要求输入输出是四维张量</strong>。<a class="link"   target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/generated/torch.nn.Linear.html" >具体：<i class="fas fa-external-link-alt"></i></a></p>
+<h4 id="详解PyTorch中的ModuleList和Sequential"><a href="#详解PyTorch中的ModuleList和Sequential" class="headerlink" title="详解PyTorch中的ModuleList和Sequential"></a><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/75206669" >详解PyTorch中的ModuleList和Sequential<i class="fas fa-external-link-alt"></i></a></h4><h4 id="PyTorch的nn-Linear（）详解"><a href="#PyTorch的nn-Linear（）详解" class="headerlink" title="PyTorch的nn.Linear（）详解"></a><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42079689/article/details/102873766" >PyTorch的nn.Linear（）详解<i class="fas fa-external-link-alt"></i></a></h4><p>PyTorch的<code>nn.Linear（）</code>是用于设置网络中的<strong>全连接层的</strong>，<strong>需要注意在二维图像处理的任务中，全连接层的输入与输出一般都设置为二维张量，形状通常为<code>[batch_size, size]</code>，不同于卷积层要求输入输出是四维张量</strong>。<a class="link"   target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/generated/torch.nn.Linear.html" >  具体：<i class="fas fa-external-link-alt"></i></a></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CLASS torch.nn.Linear(in_features, out_features, bias=<span class="literal">True</span>, device=<span class="literal">None</span>, dtype=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>Applies a linear transformation to the incoming data: <span class="math inline">\(y = xA^T + b\)</span></p>
+<p>Applies a linear transformation to the incoming data: $y = xA^T + b$</p>
 <p>This module supports <a class="link"   target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/notes/cuda.html#tf32-on-ampere" >TensorFloat32<i class="fas fa-external-link-alt"></i></a>.</p>
 <p>On certain ROCm devices, when using float16 inputs this module will use <a class="link"   target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/notes/numerical_accuracy.html#fp16-on-mi200" >different precision<i class="fas fa-external-link-alt"></i></a> for backward.</p>
 <ul>
 <li><p>Parameters</p>
 <p><strong>in_features</strong> – size of each input sample</p>
 <p><strong>out_features</strong> – size of each output sample</p>
-<p><strong>bias</strong> – If set to <code>False</code>, the layer will not learn an additive bias. Default: <code>True</code></p></li>
+<p><strong>bias</strong> – If set to <code>False</code>, the layer will not learn an additive bias. Default: <code>True</code></p>
+</li>
 </ul>
 </blockquote>
 <ul>
-<li><p><code>in_features</code>指的是输入的二维张量的大小，即<strong>输入的</strong><code>[batch_size, size]</code>中的<code>size</code>。</p></li>
-<li><p><code>out_features</code>指的是输出的二维张量的大小，即<strong>输出的二维张量的形状为</strong><code>[batch_size，output_size]</code>，当然，它也代表了<strong>该全连接层的神经元个数</strong>。</p></li>
-<li><p><strong>从输入输出的张量的shape角度来理解，相当于一个输入为<code>[batch_size, in_features]</code>的张量变换成了<code>[batch_size, out_features]</code>的输出张量。</strong></p></li>
-<li><p><input type="checkbox" disabled="" />
-```python import torch as t from torch import nn</p><h1 id="in_features由输入张量的形状决定out_features则决定了输出张量的形状">in_features由输入张量的形状决定，out_features则决定了输出张量的形状</h1>
-<p>connected_layer = nn.Linear(in_features = 64<em>64</em>3, out_features = 1)</p>
-<h1 id="假定输入的图像形状为64643">假定输入的图像形状为[64,64,3]</h1>
-<p>input = t.randn(1,64,64,3)</p>
-<h1 id="将四维张量转换为二维张量之后才能作为全连接层的输入">将四维张量转换为二维张量之后，才能作为全连接层的输入</h1>
-<p>input = input.view(1,64<em>64</em>3) print(input.shape) output = connected_layer(input) # 调用全连接层 print(output.shape)</p>
-<h1 id="input-shape-is-s-torch.size1-12288">input shape is %s torch.Size([1, 12288])</h1>
-<h1 id="output-shape-is-s-torch.size1-1">output shape is %s torch.Size([1, 1])</h1>
-<p>```</p></li>
+<li><code>in_features</code>指的是输入的二维张量的大小，即<strong>输入的</strong><code>[batch_size, size]</code>中的<code>size</code>。</li>
+<li><code>out_features</code>指的是输出的二维张量的大小，即<strong>输出的二维张量的形状为</strong><code>[batch_size，output_size]</code>，当然，它也代表了<strong>该全连接层的神经元个数</strong>。</li>
+<li><p><strong>从输入输出的张量的shape角度来理解，相当于一个输入为<code>[batch_size, in_features]</code>的张量变换成了<code>[batch_size, out_features]</code>的输出张量。</strong></p>
+</li>
+<li><p>[ ] ```python<br>import torch as t<br>from torch import nn</p>
+<h1 id="in-features由输入张量的形状决定，out-features则决定了输出张量的形状"><a href="#in-features由输入张量的形状决定，out-features则决定了输出张量的形状" class="headerlink" title="in_features由输入张量的形状决定，out_features则决定了输出张量的形状"></a>in_features由输入张量的形状决定，out_features则决定了输出张量的形状</h1><p>connected_layer = nn.Linear(in_features = 64<em>64</em>3, out_features = 1)</p>
+<h1 id="假定输入的图像形状为-64-64-3"><a href="#假定输入的图像形状为-64-64-3" class="headerlink" title="假定输入的图像形状为[64,64,3]"></a>假定输入的图像形状为[64,64,3]</h1><p>input = t.randn(1,64,64,3)</p>
+<h1 id="将四维张量转换为二维张量之后，才能作为全连接层的输入"><a href="#将四维张量转换为二维张量之后，才能作为全连接层的输入" class="headerlink" title="将四维张量转换为二维张量之后，才能作为全连接层的输入"></a>将四维张量转换为二维张量之后，才能作为全连接层的输入</h1><p>input = input.view(1,64<em>64</em>3)<br>print(input.shape)<br>output = connected_layer(input) # 调用全连接层<br>print(output.shape)</p>
+<h1 id="input-shape-is-s-torch-Size-1-12288"><a href="#input-shape-is-s-torch-Size-1-12288" class="headerlink" title="input shape is %s torch.Size([1, 12288])"></a>input shape is %s torch.Size([1, 12288])</h1><h1 id="output-shape-is-s-torch-Size-1-1"><a href="#output-shape-is-s-torch-Size-1-1" class="headerlink" title="output shape is %s torch.Size([1, 1])"></a>output shape is %s torch.Size([1, 1])</h1><p>```</p>
+</li>
 </ul>
 
         </div>
@@ -416,7 +411,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#with-torch.no_grad-%E8%AF%A6%E8%A7%A3"><span class="nav-text">with torch.no_grad() 详解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%A6%E8%A7%A3pytorch%E4%B8%AD%E7%9A%84modulelist%E5%92%8Csequential"><span class="nav-text">详解PyTorch中的ModuleList和Sequential</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pytorch%E7%9A%84nn.linear%E8%AF%A6%E8%A7%A3"><span class="nav-text">PyTorch的nn.Linear（）详解</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#in_features%E7%94%B1%E8%BE%93%E5%85%A5%E5%BC%A0%E9%87%8F%E7%9A%84%E5%BD%A2%E7%8A%B6%E5%86%B3%E5%AE%9Aout_features%E5%88%99%E5%86%B3%E5%AE%9A%E4%BA%86%E8%BE%93%E5%87%BA%E5%BC%A0%E9%87%8F%E7%9A%84%E5%BD%A2%E7%8A%B6"><span class="nav-text">in_features由输入张量的形状决定，out_features则决定了输出张量的形状</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%81%87%E5%AE%9A%E8%BE%93%E5%85%A5%E7%9A%84%E5%9B%BE%E5%83%8F%E5%BD%A2%E7%8A%B6%E4%B8%BA64643"><span class="nav-text">假定输入的图像形状为[64,64,3]</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B0%86%E5%9B%9B%E7%BB%B4%E5%BC%A0%E9%87%8F%E8%BD%AC%E6%8D%A2%E4%B8%BA%E4%BA%8C%E7%BB%B4%E5%BC%A0%E9%87%8F%E4%B9%8B%E5%90%8E%E6%89%8D%E8%83%BD%E4%BD%9C%E4%B8%BA%E5%85%A8%E8%BF%9E%E6%8E%A5%E5%B1%82%E7%9A%84%E8%BE%93%E5%85%A5"><span class="nav-text">将四维张量转换为二维张量之后，才能作为全连接层的输入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#input-shape-is-s-torch.size1-12288"><span class="nav-text">input shape is %s torch.Size([1, 12288])</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#output-shape-is-s-torch.size1-1"><span class="nav-text">output shape is %s torch.Size([1, 1])</span></a>
+        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#with-torch-no-grad-%E8%AF%A6%E8%A7%A3"><span class="nav-text">with torch.no_grad() 详解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%A6%E8%A7%A3PyTorch%E4%B8%AD%E7%9A%84ModuleList%E5%92%8CSequential"><span class="nav-text">详解PyTorch中的ModuleList和Sequential</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PyTorch%E7%9A%84nn-Linear%EF%BC%88%EF%BC%89%E8%AF%A6%E8%A7%A3"><span class="nav-text">PyTorch的nn.Linear（）详解</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#in-features%E7%94%B1%E8%BE%93%E5%85%A5%E5%BC%A0%E9%87%8F%E7%9A%84%E5%BD%A2%E7%8A%B6%E5%86%B3%E5%AE%9A%EF%BC%8Cout-features%E5%88%99%E5%86%B3%E5%AE%9A%E4%BA%86%E8%BE%93%E5%87%BA%E5%BC%A0%E9%87%8F%E7%9A%84%E5%BD%A2%E7%8A%B6"><span class="nav-text">in_features由输入张量的形状决定，out_features则决定了输出张量的形状</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%81%87%E5%AE%9A%E8%BE%93%E5%85%A5%E7%9A%84%E5%9B%BE%E5%83%8F%E5%BD%A2%E7%8A%B6%E4%B8%BA-64-64-3"><span class="nav-text">假定输入的图像形状为[64,64,3]</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B0%86%E5%9B%9B%E7%BB%B4%E5%BC%A0%E9%87%8F%E8%BD%AC%E6%8D%A2%E4%B8%BA%E4%BA%8C%E7%BB%B4%E5%BC%A0%E9%87%8F%E4%B9%8B%E5%90%8E%EF%BC%8C%E6%89%8D%E8%83%BD%E4%BD%9C%E4%B8%BA%E5%85%A8%E8%BF%9E%E6%8E%A5%E5%B1%82%E7%9A%84%E8%BE%93%E5%85%A5"><span class="nav-text">将四维张量转换为二维张量之后，才能作为全连接层的输入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#input-shape-is-s-torch-Size-1-12288"><span class="nav-text">input shape is %s torch.Size([1, 12288])</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#output-shape-is-s-torch-Size-1-1"><span class="nav-text">output shape is %s torch.Size([1, 1])</span></a>
     </div>
 </div>
         </aside>
@@ -479,6 +474,22 @@
 </div>
 
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </body>
 </html>

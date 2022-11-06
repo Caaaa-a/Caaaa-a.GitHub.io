@@ -199,8 +199,7 @@
         
 
         <div class="article-content markdown-body">
-            <h4 id="好程序">好程序</h4>
-<p>好程序做它们应该做的事情，它必须是<strong>正确</strong>的。</p>
+            <h4 id="好程序"><a href="#好程序" class="headerlink" title="好程序"></a>好程序</h4><p>好程序做它们应该做的事情，它必须是<strong>正确</strong>的。</p>
 <p>好程序都编写得非常<strong>清晰</strong>，尽可能易于阅读和理解。</p>
 <p>好程序都非常简洁？</p>
 <p>someother：高效、可移植、灵活、可测试、内存效率高、可并行等等</p>
@@ -443,6 +442,22 @@
 </div>
 
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </body>
 </html>

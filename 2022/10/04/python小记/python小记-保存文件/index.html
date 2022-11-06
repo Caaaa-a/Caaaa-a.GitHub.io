@@ -199,13 +199,11 @@
         
 
         <div class="article-content markdown-body">
-            <h4 id="input-sys.stdin.readline"><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_46369610/article/details/120049111" >Input() → sys.stdin.readline()<i class="fas fa-external-link-alt"></i></a></h4>
-<p>优化接收参数过程，将input() 接收参数，改为 sys.stdin.readline()</p>
+            <h4 id="Input-→-sys-stdin-readline"><a href="#Input-→-sys-stdin-readline" class="headerlink" title="Input() → sys.stdin.readline()"></a><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_46369610/article/details/120049111" >Input() → sys.stdin.readline()<i class="fas fa-external-link-alt"></i></a></h4><p>优化接收参数过程，将input() 接收参数，改为 sys.stdin.readline()</p>
 <p>由于input 默认将每行最后的换行符删除掉，需要额外的运算。</p>
 <p>在python3环境下，读取数据量很大时，sys.stdin.readline()会提高不少运算速度</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Plase input your name: &#x27;</span>)</span><br><span class="line">name = sys.stdin.readline()</span><br><span class="line"><span class="built_in">print</span>(name)</span><br></pre></td></tr></table></figure>
-<h4 id="列表推导式-for-循环">列表推导式 → for 循环</h4>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = []</span><br><span class="line"><span class="keyword">for</span> i  <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">    a.append(i)</span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"></span><br><span class="line">b = [a <span class="keyword">for</span> a <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>)]</span><br><span class="line"><span class="comment"># b = [a for a in range(10) if a % 2 ==0]</span></span><br><span class="line"><span class="built_in">print</span>(b)</span><br></pre></td></tr></table></figure>
+<h4 id="列表推导式-→-for-循环"><a href="#列表推导式-→-for-循环" class="headerlink" title="列表推导式 → for 循环"></a>列表推导式 → for 循环</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = []</span><br><span class="line"><span class="keyword">for</span> i  <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">    a.append(i)</span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"></span><br><span class="line">b = [a <span class="keyword">for</span> a <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>)]</span><br><span class="line"><span class="comment"># b = [a for a in range(10) if a % 2 ==0]</span></span><br><span class="line"><span class="built_in">print</span>(b)</span><br></pre></td></tr></table></figure>
 
         </div>
 
@@ -381,7 +379,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#input-sys.stdin.readline"><span class="nav-text">Input() → sys.stdin.readline()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E6%8E%A8%E5%AF%BC%E5%BC%8F-for-%E5%BE%AA%E7%8E%AF"><span class="nav-text">列表推导式 → for 循环</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Input-%E2%86%92-sys-stdin-readline"><span class="nav-text">Input() → sys.stdin.readline()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E6%8E%A8%E5%AF%BC%E5%BC%8F-%E2%86%92-for-%E5%BE%AA%E7%8E%AF"><span class="nav-text">列表推导式 → for 循环</span></a></li></ol>
     </div>
 </div>
         </aside>
@@ -444,6 +442,22 @@
 </div>
 
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </body>
 </html>

@@ -178,7 +178,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>584 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>578 Words</span>
         </span>
     
     
@@ -199,49 +199,34 @@
         
 
         <div class="article-content markdown-body">
-            <h4 id="bonuses"><a class="link"   target="_blank" rel="noopener" href="https://www.codewars.com/kata/5d68d05e7a60ba002b0053f6" >Bonuses<i class="fas fa-external-link-alt"></i></a></h4>
-<p>John wants to give a total bonus of <code>$851</code> to his three employees taking <em>fairly as possible</em> into account their number of days of absence during the period under consideration. Employee A was absent <code>18</code> days, B <code>15</code> days, and C <code>12</code> days.</p>
-<p><strong>The more absences, the lower the bonus</strong> ...</p>
+            <h4 id="Bonuses"><a href="#Bonuses" class="headerlink" title="Bonuses"></a><a class="link"   target="_blank" rel="noopener" href="https://www.codewars.com/kata/5d68d05e7a60ba002b0053f6" >Bonuses<i class="fas fa-external-link-alt"></i></a></h4><p>John wants to give a total bonus of <code>$851</code> to his three employees taking <em>fairly as possible</em> into account their number of days of absence during the period under consideration. Employee A was absent <code>18</code> days, B <code>15</code> days, and C <code>12</code> days.</p>
+<p><strong>The more absences, the lower the bonus</strong> …</p>
 <p>How much should each employee receive? John thinks A should receive <code>$230</code>, B <code>$276</code>, C <code>$345</code> since <code>230 * 18 = 276 * 15 = 345 * 12</code> and <code>230 + 276 + 345 = 851</code>.</p>
-<h4 id="task">Task</h4>
-<p>Given an array <code>arr</code> (numbers of days of absence for each employee) and a number <code>s</code> (total bonus) the function <code>bonus(arr, s)</code> will follow John's way and return an array of the <em>fair</em> bonuses of all employees in the same order as their numbers of days of absences.</p>
+<h4 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h4><p>Given an array <code>arr</code> (numbers of days of absence for each employee) and a number <code>s</code> (total bonus) the function <code>bonus(arr, s)</code> will follow John’s way and return an array of the <em>fair</em> bonuses of all employees in the same order as their numbers of days of absences.</p>
 <p><code>s</code> and all elements of <code>arr</code> are positive integers.</p>
-<h4 id="examples">Examples</h4>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bonus([18, 15, 12], 851) -&gt; [230, 276, 345]</span><br><span class="line"></span><br><span class="line">bonus([30, 27, 8, 14, 7], 34067) -&gt; [2772, 3080, 10395, 5940, 11880]</span><br></pre></td></tr></table></figure>
-<h4 id="notes">Notes</h4>
-<ul>
+<h4 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bonus([18, 15, 12], 851) -&gt; [230, 276, 345]</span><br><span class="line"></span><br><span class="line">bonus([30, 27, 8, 14, 7], 34067) -&gt; [2772, 3080, 10395, 5940, 11880]</span><br></pre></td></tr></table></figure>
+<h4 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h4><ul>
 <li>See Example Test Cases for more examples.</li>
 <li>Please ask before translating.</li>
 <li>In some tests the number of elements of <code>arr</code> can be big.</li>
 </ul>
-<h4 id="answer">Answer</h4>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bonus</span>(<span class="params">arr, s</span>):</span></span><br><span class="line">    <span class="comment"># your code</span></span><br><span class="line">    s=s/(<span class="built_in">sum</span>(<span class="number">1</span>/n <span class="keyword">for</span> n <span class="keyword">in</span> arr))</span><br><span class="line">    <span class="keyword">return</span> [<span class="built_in">round</span>(s/n) <span class="keyword">for</span> n <span class="keyword">in</span> arr]</span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bonus2</span>(<span class="params">arr, s</span>):</span></span><br><span class="line">    ls=[]</span><br><span class="line">    d=<span class="built_in">sum</span>([<span class="number">1</span>/x <span class="keyword">for</span> x <span class="keyword">in</span> arr])</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> arr:</span><br><span class="line">        ls.append(s/i/d)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">round</span>, ls))</span><br></pre></td></tr></table></figure>
+<h4 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bonus</span>(<span class="params">arr, s</span>):</span></span><br><span class="line">    <span class="comment"># your code</span></span><br><span class="line">    s=s/(<span class="built_in">sum</span>(<span class="number">1</span>/n <span class="keyword">for</span> n <span class="keyword">in</span> arr))</span><br><span class="line">    <span class="keyword">return</span> [<span class="built_in">round</span>(s/n) <span class="keyword">for</span> n <span class="keyword">in</span> arr]</span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bonus2</span>(<span class="params">arr, s</span>):</span></span><br><span class="line">    ls=[]</span><br><span class="line">    d=<span class="built_in">sum</span>([<span class="number">1</span>/x <span class="keyword">for</span> x <span class="keyword">in</span> arr])</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> arr:</span><br><span class="line">        ls.append(s/i/d)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">round</span>, ls))</span><br></pre></td></tr></table></figure>
 <p><strong>Timeerror or Overflowerror</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bonus</span>(<span class="params">arr, s</span>):</span></span><br><span class="line">    mul = reduce(<span class="keyword">lambda</span> x, y:x * y, arr)</span><br><span class="line">    denominator = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> arr:</span><br><span class="line">        denominator = denominator + mul//i </span><br><span class="line">    ls=[]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> arr:</span><br><span class="line">        ls.append(mul*s/i/denominator)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">round</span>,ls))</span><br></pre></td></tr></table></figure>
-<h4 id="something-else">Something else</h4>
-<h5 id="inverse-variation">- inverse variation</h5>
-<p>In Maths, <strong>inverse variation</strong> is the relationships between variables that are represented in the form of y = k/x, where x and y are two variables and k is the constant value. It states if the value of one quantity increases, then the value of the other quantity decreases.</p>
-<center>
-<img src="/img/inverse.png" alt="image" width=100% />
-</center>
-<h5 id="overflowerrorinteger-division-result-too-large-for-a-float">- Overflowerror：integer division result too large for a float</h5>
-<p>In Python 3, <code>number / 10</code> will try to return a <code>float</code>. However, floating point values can't be of arbitrarily large size in Python and if <code>number</code> is large an <code>OverflowError</code> will be raised.</p>
+<h4 id="Something-else"><a href="#Something-else" class="headerlink" title="Something else"></a>Something else</h4><h5 id="inverse-variation"><a href="#inverse-variation" class="headerlink" title="- inverse variation"></a>- inverse variation</h5><p>In Maths, <strong>inverse variation</strong> is the relationships between variables that are represented in the form of y = k/x, where x and y are two variables and k is the constant value. It states if the value of one quantity increases, then the value of the other quantity decreases.</p>
+<center><img src="/img/inverse.png" alt="image" width=100% /></center>
+
+<h5 id="Overflowerror：integer-division-result-too-large-for-a-float"><a href="#Overflowerror：integer-division-result-too-large-for-a-float" class="headerlink" title="- Overflowerror：integer division result too large for a float"></a>- Overflowerror：integer division result too large for a float</h5><p>In Python 3, <code>number / 10</code> will try to return a <code>float</code>. However, floating point values can’t be of arbitrarily large size in Python and if <code>number</code> is large an <code>OverflowError</code> will be raised.</p>
 <p>You can find the maximum that Python floating point values can take on your system using the <code>sys</code> module:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> sys</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sys.float_info.<span class="built_in">max</span></span><br><span class="line"><span class="number">1.7976931348623157e+308</span></span><br></pre></td></tr></table></figure>
 <p>To get around this limitation, instead use <code>//</code> to get an integer back from the division of the two integers:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">number // <span class="number">10</span></span><br></pre></td></tr></table></figure>
 <p>This will return the <code>int</code> floor value of <code>number / 10</code> (it does not produce a float). Unlike floats, <code>int</code> values can be as large as you need them to be in Python 3 (within memory limits).</p>
-<h5 id="cyccyclic-sum">- cyc（Cyclic Sum）</h5>
-<p><span class="math display">\[
+<h5 id="cyc（Cyclic-Sum）"><a href="#cyc（Cyclic-Sum）" class="headerlink" title="- cyc（Cyclic Sum）"></a>- cyc（Cyclic Sum）</h5><script type="math/tex; mode=display">
 \sum _{cyc}f(x_1,x_2,\cdots,x_n)=f(x_1,x_2,\cdots,x_{n-1},x_n)+f(x_2,x_3,\cdots,x_{n},x_1)+\cdots +f(x_n,x_1,\cdots,x_{n-2},x_{n-1})\\
-\sum_{cyc}{f(a,b,c)}=f(a,b,c)+f(b,c,a)+f(c,a,b)
-\]</span></p>
-<h5 id="symsymmetric-sum">- sym（Symmetric Sum）</h5>
-<p><span class="math display">\[
+\sum_{cyc}{f(a,b,c)}=f(a,b,c)+f(b,c,a)+f(c,a,b)</script><h5 id="sym（Symmetric-Sum）"><a href="#sym（Symmetric-Sum）" class="headerlink" title="- sym（Symmetric Sum）"></a>- sym（Symmetric Sum）</h5><script type="math/tex; mode=display">
 \sum _{sym}f(x_1,x_2,\cdots,x_n)=\sum _{\sigma}f(x_{\sigma{(1)}},x_{\sigma{(2)}},\cdots,x_{\sigma{(n)}})
-\\ \sum\limits_{sym}{f(a,b,c)}=f(a,b,c)+f(b,c,a)+f(c,a,b)+f(b,a,c)+f(c,b,a)+f(a,c,b)
-\]</span></p>
-<p>where <span class="math inline">\(\sigma\)</span> is the permutation of <span class="math inline">\((1,2,...,n)\)</span>.</p>
+\\ \sum\limits_{sym}{f(a,b,c)}=f(a,b,c)+f(b,c,a)+f(c,a,b)+f(b,a,c)+f(c,b,a)+f(a,c,b)</script><p>where $\sigma$ is the permutation of $(1,2,…,n)$.</p>
 
         </div>
 
@@ -417,7 +402,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#bonuses"><span class="nav-text">Bonuses</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#task"><span class="nav-text">Task</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#examples"><span class="nav-text">Examples</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#notes"><span class="nav-text">Notes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#answer"><span class="nav-text">Answer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#something-else"><span class="nav-text">Something else</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#inverse-variation"><span class="nav-text">- inverse variation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#overflowerrorinteger-division-result-too-large-for-a-float"><span class="nav-text">- Overflowerror：integer division result too large for a float</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#cyccyclic-sum"><span class="nav-text">- cyc（Cyclic Sum）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#symsymmetric-sum"><span class="nav-text">- sym（Symmetric Sum）</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Bonuses"><span class="nav-text">Bonuses</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Task"><span class="nav-text">Task</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Examples"><span class="nav-text">Examples</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Notes"><span class="nav-text">Notes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Answer"><span class="nav-text">Answer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Something-else"><span class="nav-text">Something else</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#inverse-variation"><span class="nav-text">- inverse variation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Overflowerror%EF%BC%9Ainteger-division-result-too-large-for-a-float"><span class="nav-text">- Overflowerror：integer division result too large for a float</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#cyc%EF%BC%88Cyclic-Sum%EF%BC%89"><span class="nav-text">- cyc（Cyclic Sum）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sym%EF%BC%88Symmetric-Sum%EF%BC%89"><span class="nav-text">- sym（Symmetric Sum）</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
@@ -480,6 +465,22 @@
 </div>
 
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </body>
 </html>

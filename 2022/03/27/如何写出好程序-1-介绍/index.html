@@ -201,7 +201,7 @@
         <div class="article-content markdown-body">
             <p>最重要的是建立一个良性循环。</p>
 <blockquote>
-<p>写出好程序 <span class="math inline">\(\rightarrow\)</span> 享受编程 <span class="math inline">\(\rightarrow\)</span> 工作成就感 <span class="math inline">\(\rightarrow\)</span> 写出好程序</p>
+<p>写出好程序  $\rightarrow$ 享受编程  $\rightarrow$ 工作成就感  $\rightarrow$ 写出好程序</p>
 </blockquote>
 <p>本书适合：</p>
 <ul>
@@ -215,9 +215,12 @@
 <p><strong>术语：编码，编程，软件工程</strong></p>
 <p>编码，编程，软件工程三者互有重叠，都涉及给计算机下指令。它们的复杂程度依次递增。</p>
 <ul>
-<li><p>编码员可能只会把精确的英文指令翻译成编程语言。</p></li>
-<li><p>程序员要负责决定编写什么、什么时候完成。</p></li>
-<li><p>软件工程师通常作为团队的一员参与工作，用高质量的软件解决实际问题。</p></li>
+<li><p>编码员可能只会把精确的英文指令翻译成编程语言。</p>
+</li>
+<li><p>程序员要负责决定编写什么、什么时候完成。</p>
+</li>
+<li><p>软件工程师通常作为团队的一员参与工作，用高质量的软件解决实际问题。</p>
+</li>
 </ul>
 <p>学会跳出目前所学的任何一种语言的局限去思考，并在不同的语言之间灵活运用编程技能。</p>
 
@@ -458,6 +461,22 @@
 </div>
 
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </body>
 </html>

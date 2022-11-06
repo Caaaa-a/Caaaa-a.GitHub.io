@@ -178,7 +178,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>912 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>911 Words</span>
         </span>
     
     
@@ -199,21 +199,18 @@
         
 
         <div class="article-content markdown-body">
-            <h4 id="anova单因素方差分析与r实现"><a class="link"   target="_blank" rel="noopener" href="http://tiramisutes.github.io/2015/10/08/ANOVA.html" >ANOVA单因素方差分析与R实现<i class="fas fa-external-link-alt"></i></a></h4>
-<p>在进行方差分析前先对输入数据做正态性检验。 对数据的正态性，利用Shapiro-Wilk正态检验方法(W检验)，它通常用于样本容量n≤50时，检验样本是否符合正态分布。</p>
+            <h4 id="ANOVA单因素方差分析与R实现"><a href="#ANOVA单因素方差分析与R实现" class="headerlink" title="ANOVA单因素方差分析与R实现"></a><a class="link"   target="_blank" rel="noopener" href="http://tiramisutes.github.io/2015/10/08/ANOVA.html" >ANOVA单因素方差分析与R实现<i class="fas fa-external-link-alt"></i></a></h4><p>在进行方差分析前先对输入数据做正态性检验。 对数据的正态性，利用Shapiro-Wilk正态检验方法(W检验)，它通常用于样本容量n≤50时，检验样本是否符合正态分布。</p>
 <p>R中，函数shapiro.test()提供了W统计量和相应P值，所以可以直接使用P值作为判断标准(<strong>P值大于0.05说明数据正态</strong>)，其调用格式为shapiro.test(x)，参数x即所要检验的数据集，它是长度在3到5000之间的向量。</p>
 <p>更多正态性检验见：<a class="link"   target="_blank" rel="noopener" href="http://www.cnblogs.com/blueicely/archive/2013/01/08/2850929.html" >R语言做正态分布检验<i class="fas fa-external-link-alt"></i></a> 其中，<strong>D检验(Kolmogorov - Smirnov)是比较精确的正态检验法。</strong></p>
 <ul>
 <li><strong>SPSS 规定:当样本含量3 ≤n ≤5000 时,结果以Shapiro - Wilk (W 检验) 为准,当样本含量n &gt; 5000 结果以Kolmogorov - Smirnov 为准。</strong></li>
 <li><strong>SAS 规定:当样本含量n ≤2000 时,结果以Shapiro - Wilk (W 检验) 为准,当样本含量n &gt;2000 时,结果以Kolmogorov - Smirnov (D 检验) 为准。</strong></li>
 </ul>
-<h4 id="r语言做正态分布检验"><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/blueicely/archive/2013/01/08/2850929.html" >R语言做正态分布检验<i class="fas fa-external-link-alt"></i></a></h4>
-<p><strong>1、ks.test()</strong> 例如零假设为N（15,0.2），则ks.test(x,"pnorm",15,0.2)。如果不是正态分布，还可以选"pexp", "pgamma"等。</p>
+<h4 id="R语言做正态分布检验"><a href="#R语言做正态分布检验" class="headerlink" title="R语言做正态分布检验"></a><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/blueicely/archive/2013/01/08/2850929.html" >R语言做正态分布检验<i class="fas fa-external-link-alt"></i></a></h4><p><strong>1、ks.test()</strong> 例如零假设为N（15,0.2），则ks.test(x,”pnorm”,15,0.2)。如果不是正态分布，还可以选”pexp”, “pgamma”等。</p>
 <p><strong>2、shapiro.test(data)</strong> 可以进行关于正态分布的Shapiro-Wilk检验。</p>
 <p><strong>3、nortest包</strong> lillie.test()可以实行更精确的Kolmogorov-Smirnov检验。 ad.test()进行Anderson-Darling正态性检验。 cvm.test()进行Cramer-von Mises正态性检验。 pearson.test()进行Pearson卡方正态性检验。 sf.test()进行Shapiro-Francia正态性检验。</p>
-<p><strong>4、fBasics包</strong> normalTest()进行Kolmogorov-Smirnov正态性检验。 ksnormTest()进行Kolmogorov-Smirnov正态性检验。 shapiroTest()进行Shapiro-Wilk's正态检验。 jarqueberaTest()进行jarque-Bera正态性检验。 dagoTest进行D'Agostino正态性检验。 gofnorm采用13种方法进行检验，并输出结果。</p>
-<h4 id="r语言--正态性检验"><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/128498779" >R语言--正态性检验<i class="fas fa-external-link-alt"></i></a></h4>
-<p><strong>总结一下：判断分布的步骤：</strong></p>
+<p><strong>4、fBasics包</strong> normalTest()进行Kolmogorov-Smirnov正态性检验。 ksnormTest()进行Kolmogorov-Smirnov正态性检验。 shapiroTest()进行Shapiro-Wilk’s正态检验。 jarqueberaTest()进行jarque-Bera正态性检验。 dagoTest进行D’Agostino正态性检验。 gofnorm采用13种方法进行检验，并输出结果。</p>
+<h4 id="R语言—正态性检验"><a href="#R语言—正态性检验" class="headerlink" title="R语言—正态性检验"></a><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/128498779" >R语言—正态性检验<i class="fas fa-external-link-alt"></i></a></h4><p><strong>总结一下：判断分布的步骤：</strong></p>
 <p>（1）首先应该看直方图和密度曲线。</p>
 <p>（2）然后结合QQ图和峰度、偏度的信息在做判断。可以通过moments包直接计算skewness和kurtosis来判断是否符合正态分布，也可以通过fitdistrplus包对数据的分布进行探索。</p>
 <p>（3）最后，以上这些都只是描述性的，事实是否如我们所见的那样呢？需要通过进一步的统计检验来确证，这就如同诊断肿瘤得靠病理切片，得到病因得靠高质量的RCT或队列研究。</p>
@@ -225,7 +222,7 @@
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ks.test(x, y, ..., alternative=<span class="built_in">c</span>(<span class="string">&quot;two.sided&quot;</span>,<span class="string">&quot;less&quot;</span>,<span class="string">&quot;greater&quot;</span>), exact=<span class="literal">NULL</span>)</span><br></pre></td></tr></table></figure>
 <p>x:要检验的向量或具体数据</p>
 <p>y:可以和x的类型一样，为待检验的数据，也可以是累积分布函数的名称或具体的累积分布函数。当然，只有连续型的累积密度函数（CDF）才是有效的。</p>
-<p>...：由y所指定的分布所对应的参数。</p>
+<p>…：由y所指定的分布所对应的参数。</p>
 <p>pnorm(q, mean = 0, sd = 1, lower.tail = TRUE, log.p = FALSE)</p>
 <p>q：在x轴上某个点取值为q，计算q左侧概率密度曲线下的面积。q取0时，面积应为0.5。</p>
 <p>下面进行KS检验：两种写法结果相近，更多的用第一种。</p>
@@ -410,7 +407,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#anova%E5%8D%95%E5%9B%A0%E7%B4%A0%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90%E4%B8%8Er%E5%AE%9E%E7%8E%B0"><span class="nav-text">ANOVA单因素方差分析与R实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#r%E8%AF%AD%E8%A8%80%E5%81%9A%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%E6%A3%80%E9%AA%8C"><span class="nav-text">R语言做正态分布检验</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#r%E8%AF%AD%E8%A8%80--%E6%AD%A3%E6%80%81%E6%80%A7%E6%A3%80%E9%AA%8C"><span class="nav-text">R语言--正态性检验</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#ANOVA%E5%8D%95%E5%9B%A0%E7%B4%A0%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90%E4%B8%8ER%E5%AE%9E%E7%8E%B0"><span class="nav-text">ANOVA单因素方差分析与R实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#R%E8%AF%AD%E8%A8%80%E5%81%9A%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%E6%A3%80%E9%AA%8C"><span class="nav-text">R语言做正态分布检验</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#R%E8%AF%AD%E8%A8%80%E2%80%94%E6%AD%A3%E6%80%81%E6%80%A7%E6%A3%80%E9%AA%8C"><span class="nav-text">R语言—正态性检验</span></a></li></ol>
     </div>
 </div>
         </aside>
@@ -473,6 +470,22 @@
 </div>
 
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </body>
 </html>

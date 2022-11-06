@@ -199,77 +199,96 @@
         
 
         <div class="article-content markdown-body">
-            <h3 id="多层感知器分类器-mlpclassifier">多层感知器分类器： <a href="https：//scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html#sklearn.neural_network.MLPClassifier.fit">MLPCLassifier</a></h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">sklearn</span>.<span class="title">neural_network</span>.<span class="title">MLPClassifier</span>(<span class="params">hidden_layer_sizes=(<span class="params"><span class="number">100</span>,</span>), activation=<span class="string">&#x27;relu&#x27;</span>, *, solver=<span class="string">&#x27;adam&#x27;</span>, alpha=<span class="number">0.0001</span>, batch_size=<span class="string">&#x27;auto&#x27;</span>, learning_rate=<span class="string">&#x27;constant&#x27;</span>, learning_rate_init=<span class="number">0.001</span>, power_t=<span class="number">0.5</span>, max_iter=<span class="number">200</span>, shuffle=<span class="literal">True</span>, random_state=<span class="literal">None</span>, tol=<span class="number">0.0001</span>, verbose=<span class="literal">False</span>, warm_start=<span class="literal">False</span>, momentum=<span class="number">0.9</span>, nesterovs_momentum=<span class="literal">True</span>, early_stopping=<span class="literal">False</span>, validation_fraction=<span class="number">0.1</span>, beta_1=<span class="number">0.9</span>, beta_2=<span class="number">0.999</span>, epsilon=<span class="number">1e-08</span>, n_iter_no_change=<span class="number">10</span>, max_fun=<span class="number">15000</span></span>)[<span class="title">source</span>]</span></span><br></pre></td></tr></table></figure>
+            <h3 id="多层感知器分类器：-MLPCLassifier"><a href="#多层感知器分类器：-MLPCLassifier" class="headerlink" title="多层感知器分类器： MLPCLassifier"></a>多层感知器分类器： <a href="https：//scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html#sklearn.neural_network.MLPClassifier.fit">MLPCLassifier</a></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">sklearn</span>.<span class="title">neural_network</span>.<span class="title">MLPClassifier</span>(<span class="params">hidden_layer_sizes=(<span class="params"><span class="number">100</span>,</span>), activation=<span class="string">&#x27;relu&#x27;</span>, *, solver=<span class="string">&#x27;adam&#x27;</span>, alpha=<span class="number">0.0001</span>, batch_size=<span class="string">&#x27;auto&#x27;</span>, learning_rate=<span class="string">&#x27;constant&#x27;</span>, learning_rate_init=<span class="number">0.001</span>, power_t=<span class="number">0.5</span>, max_iter=<span class="number">200</span>, shuffle=<span class="literal">True</span>, random_state=<span class="literal">None</span>, tol=<span class="number">0.0001</span>, verbose=<span class="literal">False</span>, warm_start=<span class="literal">False</span>, momentum=<span class="number">0.9</span>, nesterovs_momentum=<span class="literal">True</span>, early_stopping=<span class="literal">False</span>, validation_fraction=<span class="number">0.1</span>, beta_1=<span class="number">0.9</span>, beta_2=<span class="number">0.999</span>, epsilon=<span class="number">1e-08</span>, n_iter_no_change=<span class="number">10</span>, max_fun=<span class="number">15000</span></span>)[<span class="title">source</span>]</span></span><br></pre></td></tr></table></figure>
 <p>该模型使用 LBFGS 或随机梯度下降优化对数损失函数。</p>
-<h4 id="参数">参数</h4>
-<ul>
-<li><p><strong>hidden_layer_sizes</strong> ：默认(100, )，第 i 个元素表示第 i 个隐藏层中的神经元数量。</p></li>
+<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><ul>
+<li><strong>hidden_layer_sizes</strong> ：默认(100, )，第 i 个元素表示第 i 个隐藏层中的神经元数量。</li>
 <li><p><strong>activation</strong>：激活函数，默认relu 。</p>
 <ul>
-<li>identity：<span class="math inline">\(f(x) = x\)</span></li>
+<li>identity：$f(x) = x$</li>
 <li>logistic：其实就是$sigmod,f(x) = 1 / (1 + exp(-x)). $</li>
-<li>tanh：<span class="math inline">\(f(x) = tanh(x)\)</span></li>
+<li>tanh：$f(x) = tanh(x)$</li>
 <li>relu：$f(x) = max(0, x) $</li>
-</ul></li>
-<li><p><strong>solver</strong>： {'lbfgs', 'sgd', 'adam'}，默认adam，用来优化权重。</p>
-<ul>
-<li><p>lbfgs：quasi-Newton方法的优化器</p></li>
-<li><p>sgd：随机梯度下降</p></li>
-<li><p>adam： Kingma, Diederik, and Jimmy Ba提出的机遇随机梯度的优化器</p></li>
-</ul></li>
 </ul>
-<p>注意：默认solver 'adam'在相对较大的数据集上效果比较好（几千个样本或者更多），对小数据集来说，lbfgs收敛更快效果也更好。</p>
+</li>
+<li><p><strong>solver</strong>： {‘lbfgs’, ‘sgd’, ‘adam’}，默认adam，用来优化权重。</p>
 <ul>
-<li><p><strong>alpha</strong>：默认0.0001，正则化项参数</p></li>
-<li><p><strong>batch_size</strong> ： int , 默认'auto'，随机优化器的小批量大小。如果求解器是“lbfgs”，分类器将不使用 minibatch。当设置为“自动”时，<code>batch_size=min(200, n_samples)</code>。</p></li>
-<li><p><strong>learning_rate</strong> ：学习率，用于权重更新，只有当solver为'sgd'时使用，默认constant。</p>
-<ul>
-<li>'constant'： 有 'learning_rate_init' 给定的恒定学习率</li>
-<li>'invscaling'：随着时间 t 使用'power_t'（需设置，默认0.5）的逆标度指数不断降低 effective_learning_rate = learning_rate_init / pow(t, power_t) .</li>
-<li>'adaptive'：只要训练损耗在下降，就保持学习率为'learning_rate_init'不变，当连续两次不能降低训练损耗或验证分数停止升高至少tol时，将当前学习率除以5.</li>
-</ul></li>
-<li><p><strong>learning_rate_int</strong>：double，默认0.001，初始学习率，只有当solver='sgd' 或'adam'时使用。</p></li>
-<li><p><strong>max_iter</strong>：int，可选，默认200，最大迭代次数。</p></li>
-<li><p><strong>random_state</strong>：int 或RandomState，可选，默认None，随机数生成器的状态或种子。</p></li>
-<li><p><strong>verbose</strong> ：bool, 默认False，是否打印过程</p></li>
+<li><p>lbfgs：quasi-Newton方法的优化器 </p>
+</li>
+<li><p>sgd：随机梯度下降 </p>
+</li>
+<li><p>adam： Kingma, Diederik, and Jimmy Ba提出的机遇随机梯度的优化器 </p>
+</li>
 </ul>
-<h4 id="属性">属性</h4>
-<ul>
-<li><p><strong>classes_</strong>：ndarray or list of ndarray of shape (n_classes,)，输出类标签。</p></li>
-<li><p><strong>loss_</strong>：float，损失函数计算出来的当前损失值 。</p></li>
-<li><p><strong>best_loss_</strong>：最小损失值。</p></li>
-<li><p><strong>loss_curve_</strong>：损失值列表。</p></li>
-<li><p><strong>coefs_</strong>：列表中的第i个元素表示i层的权重矩阵。</p></li>
-<li><p><strong>intercepts_</strong>：列表中第i个元素代表i+1层的偏差向量。</p></li>
-<li><p><strong>n_features_in_</strong> ：拟合期间看到的特征数。</p></li>
-<li><p><strong>feature_names_in_</strong> ：拟合期间看到的特征名称。</p></li>
-<li><p><strong>n_iter_</strong> ：迭代次数。</p></li>
-<li><p><strong>n_layers_</strong>：层数。</p></li>
-<li><p><strong>n_outputs_</strong>：输出的个数。</p></li>
-<li><p><strong>out_activation_</strong>：输出激活函数的名称。</p></li>
+</li>
 </ul>
-<h4 id="方法">方法</h4>
+<p>注意：默认solver ‘adam’在相对较大的数据集上效果比较好（几千个样本或者更多），对小数据集来说，lbfgs收敛更快效果也更好。 </p>
 <ul>
-<li><p><strong>fit(X,y)</strong>：拟合，返回经过训练的 MLP 模型。</p></li>
-<li><p><strong>partial_fit(X,y)</strong>：对给定数据进行一次迭代更新模型。一般用在如果训练集数据量非常大，一次不能全部载入内存的时候。这时我们可以把训练集分成若干等分，重复调用partial_fit来一步步的学习训练集。</p></li>
-<li><p><strong>get_params([deep])</strong>：获取参数。</p></li>
-<li><p><strong>predict(X)</strong>：使用MLP进行预测。</p></li>
-<li><p><strong>predic_log_proba(X)</strong>：返回概率估计的对数。</p></li>
-<li><p><strong>predic_proba(X)</strong>：返回模型中每个类的样本的预测概率。</p></li>
-<li><p><strong>score(X,y[,sample_weight])</strong>：返回给定测试数据和标签上的平均准确度，这里的sample_weight和初始化权重不是一回事。</p></li>
-<li><p><strong>set_params(params)</strong>：设置参数。</p></li>
+<li><strong>alpha</strong>：默认0.0001，正则化项参数 </li>
+<li><strong>batch_size</strong> ： int , 默认’auto’，随机优化器的小批量大小。如果求解器是“lbfgs”，分类器将不使用 minibatch。当设置为“自动”时，<code>batch_size=min(200, n_samples)</code>。</li>
+<li><p><strong>learning_rate</strong> ：学习率，用于权重更新，只有当solver为’sgd’时使用，默认constant。</p>
+<ul>
+<li>‘constant’： 有 ‘learning_rate_init’ 给定的恒定学习率 </li>
+<li>‘invscaling’：随着时间 t 使用’power_t’（需设置，默认0.5）的逆标度指数不断降低 effective_learning_rate = learning_rate_init / pow(t, power_t) .</li>
+<li>‘adaptive’：只要训练损耗在下降，就保持学习率为’learning_rate_init’不变，当连续两次不能降低训练损耗或验证分数停止升高至少tol时，将当前学习率除以5. </li>
 </ul>
-<h4 id="关于权重初始化">关于权重初始化</h4>
-<p>sklearn中MLPClassifier类没有权重矩阵，只有fit之后才有，即不支持初始化权重矩阵。查看源码可以看出默认采用xavier均匀分布初始化矩阵。同理设置bias。 <span class="math display">\[
-W～U[-\frac{\sqrt{6}}{\sqrt{n_j+n_{j+1}}},\frac{\sqrt{6}}{\sqrt{n_j+n_{j+1}}}]
-\]</span> <img src="/Users/linyi/Downloads/pw/hexo-site/source/img/sklearn-mlp-weights.png" alt="image-20220525194508355" style="zoom:50%;" /></p>
-<h3 id="带有-sgd-训练的线性分类器-sgdclassifier">带有 SGD 训练的线性分类器： <a href="https：//scikit-learn.org/stable/modules/generated/sklearn.linear_model.SGDClassifier.html">SGDClassifier</a></h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">sklearn</span>.<span class="title">linear_model</span>.<span class="title">SGDClassifier</span>(<span class="params">loss=<span class="string">&#x27;hinge&#x27;</span>, *, penalty=<span class="string">&#x27;l2&#x27;</span>, alpha=<span class="number">0.0001</span>, l1_ratio=<span class="number">0.15</span>, fit_intercept=<span class="literal">True</span>, max_iter=<span class="number">1000</span>, tol=<span class="number">0.001</span>, shuffle=<span class="literal">True</span>, verbose=<span class="number">0</span>, epsilon=<span class="number">0.1</span>, n_jobs=<span class="literal">None</span>, random_state=<span class="literal">None</span>, learning_rate=<span class="string">&#x27;optimal&#x27;</span>, eta0=<span class="number">0.0</span>, power_t=<span class="number">0.5</span>, early_stopping=<span class="literal">False</span>, validation_fraction=<span class="number">0.1</span>, n_iter_no_change=<span class="number">5</span>, class_weight=<span class="literal">None</span>, warm_start=<span class="literal">False</span>, average=<span class="literal">False</span></span>)</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>learning_rate_int</strong>：double，默认0.001，初始学习率，只有当solver=’sgd’ 或’adam’时使用。 </p>
+</li>
+<li><p><strong>max_iter</strong>：int，可选，默认200，最大迭代次数。 </p>
+</li>
+<li><p><strong>random_state</strong>：int 或RandomState，可选，默认None，随机数生成器的状态或种子。 </p>
+</li>
+<li><p><strong>verbose</strong> ：bool, 默认False，是否打印过程 </p>
+</li>
+</ul>
+<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><ul>
+<li><p><strong>classes_</strong>：ndarray or list of ndarray of shape (n_classes,)，输出类标签。 </p>
+</li>
+<li><p><strong>loss_</strong>：float，损失函数计算出来的当前损失值 。</p>
+</li>
+<li><strong>best<em>loss</em></strong>：最小损失值。</li>
+<li><p><strong>loss<em>curve</em></strong>：损失值列表。</p>
+</li>
+<li><p><strong>coefs_</strong>：列表中的第i个元素表示i层的权重矩阵。</p>
+</li>
+<li><p><strong>intercepts_</strong>：列表中第i个元素代表i+1层的偏差向量。</p>
+</li>
+<li><strong>n<em>features_in</em></strong> ：拟合期间看到的特征数。</li>
+<li><p><strong>feature<em>names_in</em></strong> ：拟合期间看到的特征名称。</p>
+</li>
+<li><p><strong>n<em>iter</em></strong> ：迭代次数。</p>
+</li>
+<li><p><strong>n<em>layers</em></strong>：层数。</p>
+</li>
+<li><p><strong>n<em>outputs</em></strong>：输出的个数。</p>
+</li>
+<li><p><strong>out<em>activation</em></strong>：输出激活函数的名称。 </p>
+</li>
+</ul>
+<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><ul>
+<li><strong>fit(X,y)</strong>：拟合，返回经过训练的 MLP 模型。</li>
+<li><p><strong>partial_fit(X,y)</strong>：对给定数据进行一次迭代更新模型。一般用在如果训练集数据量非常大，一次不能全部载入内存的时候。这时我们可以把训练集分成若干等分，重复调用partial_fit来一步步的学习训练集。</p>
+</li>
+<li><p><strong>get_params([deep])</strong>：获取参数。</p>
+</li>
+<li><p><strong>predict(X)</strong>：使用MLP进行预测。</p>
+</li>
+<li><p><strong>predic_log_proba(X)</strong>：返回概率估计的对数。</p>
+</li>
+<li><p><strong>predic_proba(X)</strong>：返回模型中每个类的样本的预测概率。</p>
+</li>
+<li><p><strong>score(X,y[,sample_weight])</strong>：返回给定测试数据和标签上的平均准确度，这里的sample_weight和初始化权重不是一回事。</p>
+</li>
+<li><p><strong>set_params(params)</strong>：设置参数。</p>
+</li>
+</ul>
+<h4 id="关于权重初始化"><a href="#关于权重初始化" class="headerlink" title="关于权重初始化"></a>关于权重初始化</h4><p>sklearn中MLPClassifier类没有权重矩阵，只有fit之后才有，即不支持初始化权重矩阵。查看源码可以看出默认采用xavier均匀分布初始化矩阵。同理设置bias。</p>
+<script type="math/tex; mode=display">
+W～U[-\frac{\sqrt{6}}{\sqrt{n_j+n_{j+1}}},\frac{\sqrt{6}}{\sqrt{n_j+n_{j+1}}}]</script><p><img src="/Users/linyi/Downloads/pw/hexo-site/source/img/sklearn-mlp-weights.png" alt="image-20220525194508355" style="zoom:50%;" /></p>
+<h3 id="带有-SGD-训练的线性分类器：-SGDClassifier"><a href="#带有-SGD-训练的线性分类器：-SGDClassifier" class="headerlink" title="带有 SGD 训练的线性分类器： SGDClassifier"></a>带有 SGD 训练的线性分类器： <a href="https：//scikit-learn.org/stable/modules/generated/sklearn.linear_model.SGDClassifier.html">SGDClassifier</a></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">sklearn</span>.<span class="title">linear_model</span>.<span class="title">SGDClassifier</span>(<span class="params">loss=<span class="string">&#x27;hinge&#x27;</span>, *, penalty=<span class="string">&#x27;l2&#x27;</span>, alpha=<span class="number">0.0001</span>, l1_ratio=<span class="number">0.15</span>, fit_intercept=<span class="literal">True</span>, max_iter=<span class="number">1000</span>, tol=<span class="number">0.001</span>, shuffle=<span class="literal">True</span>, verbose=<span class="number">0</span>, epsilon=<span class="number">0.1</span>, n_jobs=<span class="literal">None</span>, random_state=<span class="literal">None</span>, learning_rate=<span class="string">&#x27;optimal&#x27;</span>, eta0=<span class="number">0.0</span>, power_t=<span class="number">0.5</span>, early_stopping=<span class="literal">False</span>, validation_fraction=<span class="number">0.1</span>, n_iter_no_change=<span class="number">5</span>, class_weight=<span class="literal">None</span>, warm_start=<span class="literal">False</span>, average=<span class="literal">False</span></span>)</span></span><br></pre></td></tr></table></figure>
 <p>该类实现了用SGD方法进行训练的线性分类器（比如线性SVM，逻辑回归等）。模型每次使用一个样本来估计损失函数梯度。模型的学习速率会随着迭代地进行而减小。</p>
-<h4 id="scoring的参数模型评估规则"><a href="https：//scikit-learn.org/stable/modules/model_evaluation.html#scoring-parameter">scoring的参数（模型评估规则）</a></h4>
-<h3 id="plotting-learning-curves"><a class="link"   target="_blank" rel="noopener" href="https://scikit-learn.org/stable/auto_examples/model_selection/plot_learning_curve.html" >Plotting Learning Curves<i class="fas fa-external-link-alt"></i></a></h3>
-
+<h4 id="scoring的参数（模型评估规则）"><a href="#scoring的参数（模型评估规则）" class="headerlink" title="scoring的参数（模型评估规则）"></a><a href="https：//scikit-learn.org/stable/modules/model_evaluation.html#scoring-parameter">scoring的参数（模型评估规则）</a></h4><h3 id="Plotting-Learning-Curves"><a href="#Plotting-Learning-Curves" class="headerlink" title="Plotting Learning Curves"></a><a class="link"   target="_blank" rel="noopener" href="https://scikit-learn.org/stable/auto_examples/model_selection/plot_learning_curve.html" >Plotting Learning Curves<i class="fas fa-external-link-alt"></i></a></h3>
         </div>
 
         
@@ -444,7 +463,7 @@ W～U[-\frac{\sqrt{6}}{\sqrt{n_j+n_{j+1}}},\frac{\sqrt{6}}{\sqrt{n_j+n_{j+1}}}]
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E5%B1%82%E6%84%9F%E7%9F%A5%E5%99%A8%E5%88%86%E7%B1%BB%E5%99%A8-mlpclassifier"><span class="nav-text">多层感知器分类器： MLPCLassifier</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E6%95%B0"><span class="nav-text">参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B1%9E%E6%80%A7"><span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E6%B3%95"><span class="nav-text">方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E6%9D%83%E9%87%8D%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-text">关于权重初始化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%A6%E6%9C%89-sgd-%E8%AE%AD%E7%BB%83%E7%9A%84%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB%E5%99%A8-sgdclassifier"><span class="nav-text">带有 SGD 训练的线性分类器： SGDClassifier</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#scoring%E7%9A%84%E5%8F%82%E6%95%B0%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E8%A7%84%E5%88%99"><span class="nav-text">scoring的参数（模型评估规则）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#plotting-learning-curves"><span class="nav-text">Plotting Learning Curves</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E5%B1%82%E6%84%9F%E7%9F%A5%E5%99%A8%E5%88%86%E7%B1%BB%E5%99%A8%EF%BC%9A-MLPCLassifier"><span class="nav-text">多层感知器分类器： MLPCLassifier</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E6%95%B0"><span class="nav-text">参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B1%9E%E6%80%A7"><span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E6%B3%95"><span class="nav-text">方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E6%9D%83%E9%87%8D%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-text">关于权重初始化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%A6%E6%9C%89-SGD-%E8%AE%AD%E7%BB%83%E7%9A%84%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB%E5%99%A8%EF%BC%9A-SGDClassifier"><span class="nav-text">带有 SGD 训练的线性分类器： SGDClassifier</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#scoring%E7%9A%84%E5%8F%82%E6%95%B0%EF%BC%88%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E8%A7%84%E5%88%99%EF%BC%89"><span class="nav-text">scoring的参数（模型评估规则）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Plotting-Learning-Curves"><span class="nav-text">Plotting Learning Curves</span></a></li></ol>
     </div>
 </div>
         </aside>
@@ -507,6 +526,22 @@ W～U[-\frac{\sqrt{6}}{\sqrt{n_j+n_{j+1}}},\frac{\sqrt{6}}{\sqrt{n_j+n_{j+1}}}]
 </div>
 
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </body>
 </html>

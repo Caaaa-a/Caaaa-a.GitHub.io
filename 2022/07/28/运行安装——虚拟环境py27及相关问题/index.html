@@ -176,7 +176,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>858 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>855 Words</span>
         </span>
     
     
@@ -198,8 +198,7 @@
 
         <div class="article-content markdown-body">
             <p>基于anaconda安装。</p>
-<h4 id="python2.7环境安装jupyter-notebook"><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43507761/article/details/84943264" >python2.7环境安装jupyter notebook<i class="fas fa-external-link-alt"></i></a></h4>
-<blockquote>
+<h4 id="python2-7环境安装jupyter-notebook"><a href="#python2-7环境安装jupyter-notebook" class="headerlink" title="python2.7环境安装jupyter notebook"></a><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43507761/article/details/84943264" >python2.7环境安装jupyter notebook<i class="fas fa-external-link-alt"></i></a></h4><blockquote>
 <p>尝试一：</p>
 <p>python2.7环境安装jupyter notebook ，官方给的代码安装报错Command “python setup.py egg_info” failed with error code 1 in /tmp/pip-install-pjB8H9/ipython/</p>
 <p>尝试二：</p>
@@ -207,31 +206,27 @@
 </blockquote>
 <p>多方搜罗信息，以上安装报错是因为新版的ipython只支持python3.4以上版本，python2.7的jupyter需配置如下版本。</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#=====新建python2.7环境</span></span><br><span class="line">conda create -n my_name python=2.7  <span class="comment"># 创建conda环境</span></span><br><span class="line"><span class="built_in">source</span> activate my_name  <span class="comment"># 激活conda环境</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#=====python2.7环境安装jupyter notebook </span></span><br><span class="line"><span class="built_in">which</span> jupyter  <span class="comment"># 默认jupyter路径，通常是主conda环境下的</span></span><br><span class="line"><span class="comment"># 新版的ipython只支持python3.4以上版本，python2.7的jupyter需配置如下版本</span></span><br><span class="line">pip install ipython==5.5.0</span><br><span class="line">pip install ipykernel==4.8.2</span><br><span class="line"><span class="built_in">which</span> jupyter  <span class="comment"># my_name环境下的jupyter</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#=====保证my_name环境下的package在python可以引用到</span></span><br><span class="line">import sys</span><br><span class="line">sys.path  <span class="comment"># 如果没有my_name下site-packages路径，则手动加入</span></span><br><span class="line">sys.path.append(<span class="string">&#x27;/root/anaconda3/envs/my_name/lib/python2.7/site-packages&#x27;</span>)</span><br><span class="line"><span class="comment">#=====启动jupyter</span></span><br><span class="line"><span class="comment">#nohup jupyter notebook --no-browser --port=3434 --ip=192.168.1.230 --allow-root --notebook-dir=&#x27;/&#x27;</span></span><br></pre></td></tr></table></figure>
-<h4 id="jupyter-notebook-增加python2.7"><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/awww797877/article/details/55270786?spm=1001.2101.3001.6650.1&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1-55270786-blog-84943264.pc_relevant_multi_platform_whitelistv1&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1-55270786-blog-84943264.pc_relevant_multi_platform_whitelistv1&amp;utm_relevant_index=1" >Jupyter notebook 增加Python2.7<i class="fas fa-external-link-alt"></i></a></h4>
-<p>因为是为了Jupyter强大的编辑可读特性，所以不在乎性能内存问题，怎么方便怎么来，直接装装装。安装完成后运行：</p>
+<h4 id="Jupyter-notebook-增加Python2-7"><a href="#Jupyter-notebook-增加Python2-7" class="headerlink" title="Jupyter notebook 增加Python2.7"></a><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/awww797877/article/details/55270786?spm=1001.2101.3001.6650.1&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1-55270786-blog-84943264.pc_relevant_multi_platform_whitelistv1&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1-55270786-blog-84943264.pc_relevant_multi_platform_whitelistv1&amp;utm_relevant_index=1" >Jupyter notebook 增加Python2.7<i class="fas fa-external-link-alt"></i></a></h4><p>因为是为了Jupyter强大的编辑可读特性，所以不在乎性能内存问题，怎么方便怎么来，直接装装装。安装完成后运行：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda create -n py27 python=2.7 ipykernel</span><br><span class="line">conda create -n py36 python=3.6 ipykernel</span><br></pre></td></tr></table></figure>
 <p>这里有可能会出现 Command conda not found的情况，是因为没有设置环境变量，设置一下就好了：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="string">&quot;~/anaconda2/bin:<span class="variable">$PATH</span>&quot;</span></span><br></pre></td></tr></table></figure>
 <p>但是我在完成这些工作之后打开Jupyter notebook仍然只有python3，最后再加上以下命令重新安装一下需要的核就好了：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python2.7 -m pip install ipykernel</span><br><span class="line">python2.7 -m ipykernel install --user</span><br></pre></td></tr></table></figure>
 <p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/xiemanR/article/details/71837385" >在PyCharm环境中使用Jupyter Notebook的两种方法<i class="fas fa-external-link-alt"></i></a>（需注意上述版本问题）</p>
-<h4 id="python-2.7中安装pip的方法及步骤"><a class="link"   target="_blank" rel="noopener" href="https://www.cjavapy.com/article/826/" >Python 2.7中安装pip的方法及步骤<i class="fas fa-external-link-alt"></i></a></h4>
-<p><strong>1､安装setup-tools</strong></p>
-<p><strong>下载地址</strong>：https://pypi.python.org/pypi/setuptools</p>
+<h4 id="Python-2-7中安装pip的方法及步骤"><a href="#Python-2-7中安装pip的方法及步骤" class="headerlink" title="Python 2.7中安装pip的方法及步骤"></a><a class="link"   target="_blank" rel="noopener" href="https://www.cjavapy.com/article/826/" >Python 2.7中安装pip的方法及步骤<i class="fas fa-external-link-alt"></i></a></h4><p><strong>1､安装setup-tools</strong></p>
+<p><strong>下载地址</strong>：<a class="link"   target="_blank" rel="noopener" href="https://pypi.python.org/pypi/setuptools" >https://pypi.python.org/pypi/setuptools<i class="fas fa-external-link-alt"></i></a></p>
 <p>下载安装包，可以使用wget命令下载。下载及安装命令如下，</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget https://pypi.python.org/packages/45/29/8814bf414e7cd1031e1a3c8a4169218376e284ea2553cc0822a6ea1c2d78/setuptools-36.6.0.zip<span class="comment">#md5=74663b15117d9a2cc5295d76011e6fd1</span></span><br><span class="line">unzip setuptools-36.6.0.zip </span><br><span class="line"><span class="built_in">cd</span> setuptools-36.6.0</span><br><span class="line">python setup.py install</span><br></pre></td></tr></table></figure>
 <p><strong>2､Python2安装pip</strong></p>
-<p><strong>下载地址</strong>：https://pypi.python.org/pypi/pip</p>
+<p><strong>下载地址</strong>：<a class="link"   target="_blank" rel="noopener" href="https://pypi.python.org/pypi/pip" >https://pypi.python.org/pypi/pip<i class="fas fa-external-link-alt"></i></a></p>
 <p>可以使用<code>wget</code>命令下载。下载及安装命令如下，</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget https://pypi.python.org/packages/11/b6/abcb525026a4be042b486df43905d6893fb04f05aac21c32c638e939e447/pip-9.0.1.tar.gz<span class="comment">#md5=35f01da33009719497f01a4ba69d63c9</span></span><br><span class="line">tar -zxvf pip-9.0.1.tar.gz</span><br><span class="line"><span class="built_in">cd</span> pip-9.0.1</span><br><span class="line">python setup.py install</span><br></pre></td></tr></table></figure>
 <p><strong>3､创建pip软链接</strong></p>
 <p>如果上面执行完成，可以正常使用<code>pip</code>命令，也可以不执行下面命令创建软链接。</p>
 <p>进入到<code>/usr/local/python27/bin</code>目录，如果上面安装没报错的话，就可以看到<code>easy_install</code>和<code>pip</code>命令，创建命令如下，</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">rm -rf /usr/bin/easy_install* /usr/bin/pip</span><br><span class="line">ln -s /usr/<span class="built_in">local</span>/python27/bin/pip2.7 /usr/bin/pip</span><br><span class="line">ln -s /usr/<span class="built_in">local</span>/python27/bin/pip2.7 /usr/bin/pip27</span><br><span class="line">ln -s /usr/<span class="built_in">local</span>/python27/bin/pip2.7 /usr/bin/pip2.7</span><br><span class="line">ln -s /usr/<span class="built_in">local</span>/python27/bin/easy_install /usr/bin/easy_install</span><br><span class="line">ln -s /usr/<span class="built_in">local</span>/python27/bin/easy_install /usr/bin/easy_install27</span><br><span class="line">ln -s /usr/<span class="built_in">local</span>/python27/bin/easy_install /usr/bin/easy_install2.7</span><br><span class="line"><span class="comment"># 验证操作是否成功</span></span><br><span class="line">pip --version</span><br><span class="line">pip 9.0.1 from /usr/<span class="built_in">local</span>/python27/lib/python2.7/site-packages/pip-9.0.1-py2.7.egg (python 2.7)</span><br><span class="line">easy_install --version</span><br><span class="line">setuptools 36.5.0 from /usr/<span class="built_in">local</span>/python27/lib/python2.7/site-packages/setuptools-36.5.0-py2.7.egg (Python 2.7)</span><br></pre></td></tr></table></figure>
-<h4 id="syntax-error-whenever-i-try-to-use-sys.stderr"><a class="link"   target="_blank" rel="noopener" href="https://stackoverflow.com/questions/27472194/syntax-error-whenever-i-try-to-use-sys-stderr" >Syntax error whenever i try to use sys.stderr<i class="fas fa-external-link-alt"></i></a></h4>
-<p>You think you're using Python 3.x, but it's actually Python 2.x. On most systems <code>python</code> executable means Python 2.x.</p>
-<h4 id="虚拟环境error-virtualenv-is-not-compatible-with-this-system-or-executable"><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/m0_37644085/article/details/82351422" >虚拟环境：ERROR: virtualenv is not compatible with this system or executable<i class="fas fa-external-link-alt"></i></a></h4>
-<p>!! 虚拟环境的路径中不能有中文，否则也会出现此问题</p>
+<h4 id="Syntax-error-whenever-i-try-to-use-sys-stderr"><a href="#Syntax-error-whenever-i-try-to-use-sys-stderr" class="headerlink" title="Syntax error whenever i try to use sys.stderr"></a><a class="link"   target="_blank" rel="noopener" href="https://stackoverflow.com/questions/27472194/syntax-error-whenever-i-try-to-use-sys-stderr" >Syntax error whenever i try to use sys.stderr<i class="fas fa-external-link-alt"></i></a></h4><p>You think you’re using Python 3.x, but it’s actually Python 2.x. On most systems <code>python</code> executable means Python 2.x.</p>
+<h4 id="虚拟环境：ERROR-virtualenv-is-not-compatible-with-this-system-or-executable"><a href="#虚拟环境：ERROR-virtualenv-is-not-compatible-with-this-system-or-executable" class="headerlink" title="虚拟环境：ERROR: virtualenv is not compatible with this system or executable"></a><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/m0_37644085/article/details/82351422" >虚拟环境：ERROR: virtualenv is not compatible with this system or executable<i class="fas fa-external-link-alt"></i></a></h4><p>!! 虚拟环境的路径中不能有中文，否则也会出现此问题</p>
 
         </div>
 
@@ -262,7 +257,7 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2022/07/28/%E8%BF%90%E8%A1%8C%E5%AE%89%E8%A3%85%E2%80%94%E2%80%94%E8%BF%90%E8%A1%8Cshell/"
+                           href="/2022/07/28/%E8%BF%90%E8%A1%8C%E5%AE%89%E8%A3%85%E2%80%94%E2%80%94%E4%B8%80%E4%BA%9B%E6%8A%A5%E9%94%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
@@ -278,10 +273,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/07/28/%E8%BF%90%E8%A1%8C%E5%AE%89%E8%A3%85%E2%80%94%E2%80%94%E4%B8%80%E4%BA%9B%E6%8A%A5%E9%94%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"
+                           href="/2022/07/20/R/R-install%20package/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item"></span>
+                                <span class="post-nav-title-item">install package</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -407,7 +402,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#python2.7%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85jupyter-notebook"><span class="nav-text">python2.7环境安装jupyter notebook</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jupyter-notebook-%E5%A2%9E%E5%8A%A0python2.7"><span class="nav-text">Jupyter notebook 增加Python2.7</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#python-2.7%E4%B8%AD%E5%AE%89%E8%A3%85pip%E7%9A%84%E6%96%B9%E6%B3%95%E5%8F%8A%E6%AD%A5%E9%AA%A4"><span class="nav-text">Python 2.7中安装pip的方法及步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#syntax-error-whenever-i-try-to-use-sys.stderr"><span class="nav-text">Syntax error whenever i try to use sys.stderr</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83error-virtualenv-is-not-compatible-with-this-system-or-executable"><span class="nav-text">虚拟环境：ERROR: virtualenv is not compatible with this system or executable</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#python2-7%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85jupyter-notebook"><span class="nav-text">python2.7环境安装jupyter notebook</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Jupyter-notebook-%E5%A2%9E%E5%8A%A0Python2-7"><span class="nav-text">Jupyter notebook 增加Python2.7</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Python-2-7%E4%B8%AD%E5%AE%89%E8%A3%85pip%E7%9A%84%E6%96%B9%E6%B3%95%E5%8F%8A%E6%AD%A5%E9%AA%A4"><span class="nav-text">Python 2.7中安装pip的方法及步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Syntax-error-whenever-i-try-to-use-sys-stderr"><span class="nav-text">Syntax error whenever i try to use sys.stderr</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%EF%BC%9AERROR-virtualenv-is-not-compatible-with-this-system-or-executable"><span class="nav-text">虚拟环境：ERROR: virtualenv is not compatible with this system or executable</span></a></li></ol>
     </div>
 </div>
         </aside>
@@ -470,6 +465,22 @@
 </div>
 
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </body>
 </html>

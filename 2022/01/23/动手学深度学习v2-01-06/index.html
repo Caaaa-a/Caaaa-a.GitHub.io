@@ -178,7 +178,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>115 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>113 Words</span>
         </span>
     
     
@@ -199,14 +199,11 @@
         
 
         <div class="article-content markdown-body">
-            <p><img src="/img/Page1.jpg" /></p>
-<p><img src="/img/Page2.jpg" /></p>
-<p><img src="/img/Page3.jpg" /></p>
-<h3 id="筛选的qa">筛选的Q&amp;A</h3>
-<h4 id="copy和clone的区别">1、copy和clone的区别</h4>
-<p>copy分深拷贝和浅拷贝，不一定会复制内存；clone一定会复制内存。</p>
-<h4 id="torch不区分行向量与列向量吗">2、torch不区分行向量与列向量吗</h4>
-<p>行向量 <span class="math inline">\([1, 2, 3]\)</span> ， 列向量 $ [[1], [2], [3]]$，行向量的shape是 <span class="math inline">\([n]\)</span>，列向量的shape是 <span class="math inline">\([n,1]\)</span> .</p>
+            <p><img src="/img/Page1.jpg" alt=""></p>
+<p><img src="/img/Page2.jpg" alt=""></p>
+<p><img src="/img/Page3.jpg" alt=""></p>
+<h3 id="筛选的Q-amp-A"><a href="#筛选的Q-amp-A" class="headerlink" title="筛选的Q&amp;A"></a>筛选的Q&amp;A</h3><h4 id="1、copy和clone的区别"><a href="#1、copy和clone的区别" class="headerlink" title="1、copy和clone的区别"></a>1、copy和clone的区别</h4><p>copy分深拷贝和浅拷贝，不一定会复制内存；clone一定会复制内存。</p>
+<h4 id="2、torch不区分行向量与列向量吗"><a href="#2、torch不区分行向量与列向量吗" class="headerlink" title="2、torch不区分行向量与列向量吗"></a>2、torch不区分行向量与列向量吗</h4><p>行向量 $[1, 2, 3]$ ， 列向量 $ [[1], [2], [3]]$，行向量的shape是 $[n]$，列向量的shape是 $[n,1]$ .</p>
 <p>如果一个问题能够得到最优解，那么它就是p问题，机器学习不关心p问题，只关心np的问题。</p>
 
         </div>
@@ -383,7 +380,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%9B%E9%80%89%E7%9A%84qa"><span class="nav-text">筛选的Q&amp;A</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#copy%E5%92%8Cclone%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">1、copy和clone的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#torch%E4%B8%8D%E5%8C%BA%E5%88%86%E8%A1%8C%E5%90%91%E9%87%8F%E4%B8%8E%E5%88%97%E5%90%91%E9%87%8F%E5%90%97"><span class="nav-text">2、torch不区分行向量与列向量吗</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%9B%E9%80%89%E7%9A%84Q-amp-A"><span class="nav-text">筛选的Q&amp;A</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1%E3%80%81copy%E5%92%8Cclone%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">1、copy和clone的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2%E3%80%81torch%E4%B8%8D%E5%8C%BA%E5%88%86%E8%A1%8C%E5%90%91%E9%87%8F%E4%B8%8E%E5%88%97%E5%90%91%E9%87%8F%E5%90%97"><span class="nav-text">2、torch不区分行向量与列向量吗</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
@@ -446,6 +443,22 @@
 </div>
 
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </body>
 </html>

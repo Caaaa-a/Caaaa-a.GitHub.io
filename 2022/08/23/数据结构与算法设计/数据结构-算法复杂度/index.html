@@ -199,23 +199,18 @@
         
 
         <div class="article-content markdown-body">
-            <h3 id="算法复杂度">算法复杂度</h3>
-<h4 id="关于时间复杂度的几个典型证明"><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17550379/article/details/79425139" >关于时间复杂度的几个典型证明<i class="fas fa-external-link-alt"></i></a></h4>
-<p>证明 $O ( f ) + O ( g ) = O ( f + g ) $</p>
-<p>证明 <span class="math inline">\(θ ( f ) + θ ( g ) = θ ( f + g )\)</span></p>
+            <h3 id="算法复杂度"><a href="#算法复杂度" class="headerlink" title="算法复杂度"></a>算法复杂度</h3><h4 id="关于时间复杂度的几个典型证明"><a href="#关于时间复杂度的几个典型证明" class="headerlink" title="关于时间复杂度的几个典型证明"></a><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17550379/article/details/79425139" >关于时间复杂度的几个典型证明<i class="fas fa-external-link-alt"></i></a></h4><p>证明 $O ( f ) + O ( g ) = O ( f + g ) $</p>
+<p>证明 $θ ( f ) + θ ( g ) = θ ( f + g )$</p>
 <p>证明 $m a x ( θ ( f ) , θ ( g ) ) = θ ( f + g ) $</p>
 <p>证明 $θ ( f ) ⋅ θ ( g ) = θ ( f ⋅ g ) $</p>
-<p>证明 <span class="math inline">\(θ ( m a x ( f ( n ) , g ( n ) ) ) = θ ( f + g )\)</span></p>
-<h4 id="oθωoω别再傻傻分不清了"><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/tangtong1/article/details/107550320?spm=1001.2101.3001.6650.2&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2-107550320-blog-46929493.t0_layer_searchtargeting_s&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2-107550320-blog-46929493.t0_layer_searchtargeting_s&amp;utm_relevant_index=5" >O、Θ、Ω、o、ω，别再傻傻分不清了！<i class="fas fa-external-link-alt"></i></a></h4>
-<h4 id="算法复杂度分析中的符号θοοωω简介"><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/liyuming0000/article/details/46929493" >算法复杂度分析中的符号（Θ、Ο、ο、Ω、ω）简介<i class="fas fa-external-link-alt"></i></a></h4>
-<p>Θ，读音：theta、西塔；既是上界也是下界(tight)，等于的意思。</p>
+<p>证明 $θ ( m a x ( f ( n ) , g ( n ) ) ) = θ ( f + g )$</p>
+<h4 id="O、Θ、Ω、o、ω，别再傻傻分不清了！"><a href="#O、Θ、Ω、o、ω，别再傻傻分不清了！" class="headerlink" title="O、Θ、Ω、o、ω，别再傻傻分不清了！"></a><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/tangtong1/article/details/107550320?spm=1001.2101.3001.6650.2&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2-107550320-blog-46929493.t0_layer_searchtargeting_s&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2-107550320-blog-46929493.t0_layer_searchtargeting_s&amp;utm_relevant_index=5" >O、Θ、Ω、o、ω，别再傻傻分不清了！<i class="fas fa-external-link-alt"></i></a></h4><h4 id="算法复杂度分析中的符号（Θ、Ο、ο、Ω、ω）简介"><a href="#算法复杂度分析中的符号（Θ、Ο、ο、Ω、ω）简介" class="headerlink" title="算法复杂度分析中的符号（Θ、Ο、ο、Ω、ω）简介"></a><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/liyuming0000/article/details/46929493" >算法复杂度分析中的符号（Θ、Ο、ο、Ω、ω）简介<i class="fas fa-external-link-alt"></i></a></h4><p>Θ，读音：theta、西塔；既是上界也是下界(tight)，等于的意思。</p>
 <p>Ο，读音：big-oh、欧米可荣（大写）；表示上界(tightness unknown)，小于等于的意思。</p>
 <p>ο，读音：small-oh、欧米可荣（小写）；表示上界(not tight)，小于的意思。</p>
 <p>Ω，读音：big omega、欧米伽（大写）；表示下界(tightness unknown)，大于等于的意思。</p>
 <p>ω，读音：small omega、欧米伽（小写）；表示下界(not tight)，大于的意思。</p>
 <p>Ο是渐进上界，Ω是渐进下界。Θ需同时满足大Ο和Ω，故称为确界（必须同时符合上界和下界）。Ο极其有用，因为它表示了最差性能。</p>
-<h4 id="算法复杂度中的ologn底数是多少"><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/jdbc/article/details/42173751" >算法复杂度中的O(logN)底数是多少<i class="fas fa-external-link-alt"></i></a></h4>
-<p>算法中log级别的时间复杂度都是由于使用了分治思想,这个底数直接由分治的复杂度决定。 如果采用二分法,那么就会以2为底数,三分法就会以3为底数,其他亦然。 不过无论底数是什么,log级别的渐进意义是一样的。</p>
+<h4 id="算法复杂度中的O-logN-底数是多少"><a href="#算法复杂度中的O-logN-底数是多少" class="headerlink" title="算法复杂度中的O(logN)底数是多少"></a><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/jdbc/article/details/42173751" >算法复杂度中的O(logN)底数是多少<i class="fas fa-external-link-alt"></i></a></h4><p>算法中log级别的时间复杂度都是由于使用了分治思想,这个底数直接由分治的复杂度决定。<br>如果采用二分法,那么就会以2为底数,三分法就会以3为底数,其他亦然。<br>不过无论底数是什么,log级别的渐进意义是一样的。</p>
 
         </div>
 
@@ -391,7 +386,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="nav-text">算法复杂度</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E7%9A%84%E5%87%A0%E4%B8%AA%E5%85%B8%E5%9E%8B%E8%AF%81%E6%98%8E"><span class="nav-text">关于时间复杂度的几个典型证明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#o%CE%B8%CF%89o%CF%89%E5%88%AB%E5%86%8D%E5%82%BB%E5%82%BB%E5%88%86%E4%B8%8D%E6%B8%85%E4%BA%86"><span class="nav-text">O、Θ、Ω、o、ω，别再傻傻分不清了！</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90%E4%B8%AD%E7%9A%84%E7%AC%A6%E5%8F%B7%CE%B8%CE%BF%CE%BF%CF%89%CF%89%E7%AE%80%E4%BB%8B"><span class="nav-text">算法复杂度分析中的符号（Θ、Ο、ο、Ω、ω）简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%AD%E7%9A%84ologn%E5%BA%95%E6%95%B0%E6%98%AF%E5%A4%9A%E5%B0%91"><span class="nav-text">算法复杂度中的O(logN)底数是多少</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="nav-text">算法复杂度</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E7%9A%84%E5%87%A0%E4%B8%AA%E5%85%B8%E5%9E%8B%E8%AF%81%E6%98%8E"><span class="nav-text">关于时间复杂度的几个典型证明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#O%E3%80%81%CE%98%E3%80%81%CE%A9%E3%80%81o%E3%80%81%CF%89%EF%BC%8C%E5%88%AB%E5%86%8D%E5%82%BB%E5%82%BB%E5%88%86%E4%B8%8D%E6%B8%85%E4%BA%86%EF%BC%81"><span class="nav-text">O、Θ、Ω、o、ω，别再傻傻分不清了！</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90%E4%B8%AD%E7%9A%84%E7%AC%A6%E5%8F%B7%EF%BC%88%CE%98%E3%80%81%CE%9F%E3%80%81%CE%BF%E3%80%81%CE%A9%E3%80%81%CF%89%EF%BC%89%E7%AE%80%E4%BB%8B"><span class="nav-text">算法复杂度分析中的符号（Θ、Ο、ο、Ω、ω）简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%AD%E7%9A%84O-logN-%E5%BA%95%E6%95%B0%E6%98%AF%E5%A4%9A%E5%B0%91"><span class="nav-text">算法复杂度中的O(logN)底数是多少</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
@@ -454,6 +449,22 @@
 </div>
 
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </body>
 </html>

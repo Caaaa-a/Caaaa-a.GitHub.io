@@ -178,12 +178,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>3.2k Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.4k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>16 Mins</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>7 Mins</span>
         </span>
     
     
@@ -199,23 +199,23 @@
         
 
         <div class="article-content markdown-body">
-            <p><strong>来源：https://zhuanlan.zhihu.com/p/34685081</strong></p>
+            <p><strong>来源：<a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/34685081" >https://zhuanlan.zhihu.com/p/34685081<i class="fas fa-external-link-alt"></i></a></strong></p>
 <blockquote>
-<p>本文记录了八大常见类型的行列式及其解法，解法从一般性到特殊性都有，分享给大家，例子都特别经典好用，希望对线代、高代初学者以及考研党有用。</p>
+<p>  本文记录了八大常见类型的行列式及其解法，解法从一般性到特殊性都有，分享给大家，例子都特别经典好用，希望对线代、高代初学者以及考研党有用。</p>
 </blockquote>
 <p><strong>类型总览：</strong></p>
-<ol type="1">
+<ol>
 <li>箭型行列式</li>
 <li>两三角型行列式</li>
 <li>两条线型行列式</li>
 <li>范德蒙德型行列式</li>
-<li><span class="math inline">\(Hessenberg\)</span>型行列式</li>
+<li>$Hessenberg$型行列式</li>
 <li>三对角型行列式</li>
 <li>各行元素和相等型行列式</li>
 <li>相邻两行对应元素相差K倍型行列式</li>
 </ol>
 <p><strong>方法总览：</strong></p>
-<ol type="1">
+<ol>
 <li>拆行法</li>
 <li>升阶法</li>
 <li>方程组法</li>
@@ -224,192 +224,104 @@
 <li>递推法（特征方程法）</li>
 <li>步步差法</li>
 </ol>
-<h4 id="一箭型行列式">一：箭型行列式</h4>
-<p>最常见最常用的行列式，特征很好辨识，必须掌握，请看下例：</p>
-<p><span class="math display">\[
-eg:D_n= \left|\begin{array}{cccc} x_1&amp;1&amp;1 &amp;... &amp;1\\ 1&amp;x_2&amp;&amp;&amp;\\ 1&amp;&amp;x_3\\ ...&amp;&amp;&amp;...\\ 1&amp;&amp;&amp;...&amp;x_n \end{array}\right|(空白处都为0)
-\]</span></p>
-<p><span class="math inline">\(Solution\)</span>: 将第一列元素依次减去第$ i$ 列的<span class="math inline">\(\frac{1}{x_i}\)</span> ,$i=2...n $</p>
+<h4 id="一：箭型行列式"><a href="#一：箭型行列式" class="headerlink" title="一：箭型行列式"></a>一：箭型行列式</h4><p>最常见最常用的行列式，特征很好辨识，必须掌握，请看下例：</p>
+<script type="math/tex; mode=display">
+eg:D_n= \left|\begin{array}{cccc} x_1&1&1 &... &1\\ 1&x_2&&&\\ 1&&x_3\\ ...&&&...\\ 1&&&...&x_n \end{array}\right|(空白处都为0)</script><p>$Solution$: 将第一列元素依次减去第$ i$ 列的$\frac{1}{x_i}$ ,$i=2…n $</p>
 <p>得：</p>
-<p><span class="math display">\[
-D_n= \left|\begin{array}{cccc} x_1-\frac{1}{x_2}-...-\frac{1}{x_n}&amp;1&amp;1 &amp;... &amp;1\\ 0&amp;x_2&amp;&amp;&amp;\\ 0&amp;&amp;x_3\\ ...&amp;&amp;&amp;...\\ 0&amp;&amp;&amp;...&amp;x_n \end{array}\right|
-\]</span></p>
-<p>所以：</p>
-<p><span class="math display">\[
-D_n=\prod_{i=2}^{n}x_i(x_1-\sum_{i=2}^{n}\frac{1}{x_i})
-\]</span></p>
-<h4 id="二两三角型行列式">二：两三角型行列式</h4>
-<ol type="1">
-<li>特征为对角线上方元素均为<span class="math inline">\(a\)</span> ,下方元素均为<span class="math inline">\(b\)</span></li>
+<script type="math/tex; mode=display">
+D_n= \left|\begin{array}{cccc} x_1-\frac{1}{x_2}-...-\frac{1}{x_n}&1&1 &... &1\\ 0&x_2&&&\\ 0&&x_3\\ ...&&&...\\ 0&&&...&x_n \end{array}\right|</script><p>所以：</p>
+<script type="math/tex; mode=display">
+D_n=\prod_{i=2}^{n}x_i(x_1-\sum_{i=2}^{n}\frac{1}{x_i})</script><h4 id="二：两三角型行列式"><a href="#二：两三角型行列式" class="headerlink" title="二：两三角型行列式"></a>二：两三角型行列式</h4><ol>
+<li>特征为对角线上方元素均为$a$ ,下方元素均为$b$</li>
 </ol>
 <ul>
-<li>当 <span class="math inline">\(a=b\)</span> 时可化为箭型行列式计算，当 <span class="math inline">\(a\not=b\)</span> 时采用<strong>拆行法</strong>计算，请看下面两例</li>
+<li>当 $a=b$  时可化为箭型行列式计算，当 $a\not=b$ 时采用<strong>拆行法</strong>计算，请看下面两例</li>
 </ul>
-<p><span class="math display">\[
-eg1(a=b):D_n=\left|\begin{array}{cccc} x_1&amp;b&amp;b &amp;... &amp;b\\ b&amp;x_2&amp;b&amp;...&amp;b\\ b&amp;b&amp;x_3&amp;...&amp;b\\ ...&amp;...&amp;...&amp;...&amp;...\\ b&amp;b&amp;b&amp;...&amp;x_n \end{array}\right| 
-\]</span></p>
-<p><span class="math inline">\(Solution\)</span>: 将第<span class="math inline">\(i，i=2...n\)</span> 行都减去第一行</p>
-<p>得： <span class="math display">\[
-D_n=\left|\begin{array}{cccc} x_1&amp;b&amp;b &amp;... &amp;b\\ b-x_1&amp;x_2-b&amp;0&amp;...&amp;0\\ b-x_1&amp;0&amp;x_3-b&amp;...&amp;0\\ ...&amp;...&amp;...&amp;...&amp;...\\ b-x_1&amp;0&amp;0&amp;...&amp;x_n-b \end{array}\right| 
-\]</span></p>
-<p>即化成了箭型行列式，所以：</p>
-<p><span class="math display">\[
-D_n=[\prod_{i=2}^{n}(x_i-b)]\times[x_1-b(b-x_1)\sum_{i=2}^{n}\frac{1}{x_i-b}] 
-\]</span></p>
-<hr />
-<p><span class="math display">\[
-eg2(a\not=b):D_n=\left|\begin{array}{cccc} x_1&amp;a&amp;a &amp;... &amp;a\\ b&amp;x_2&amp;a&amp;...&amp;a\\ b&amp;b&amp;x_3&amp;...&amp;a\\ ...&amp;...&amp;...&amp;...&amp;...\\ b&amp;b&amp;b&amp;...&amp;x_n \end{array}\right| 
-\]</span></p>
-<p><span class="math inline">\(Solution\)</span>: 采用拆行法，目的是为了降阶</p>
-<p><span class="math display">\[
-D_n=\left|\begin{array}{cccc} x_1&amp;a&amp;a &amp;... &amp;a+0\\ b&amp;x_2&amp;a&amp;...&amp;a+0\\ b&amp;b&amp;x_3&amp;...&amp;a+0\\ ...&amp;...&amp;...&amp;...&amp;...\\ b&amp;b&amp;b&amp;...&amp;x_n+b-b \end{array}\right| 
-\]</span></p>
-<p><span class="math display">\[
-D_n=\left|\begin{array}{cccc} x_1&amp;a&amp;a &amp;... &amp;a\\ b&amp;x_2&amp;a&amp;...&amp;a\\ b&amp;b&amp;x_3&amp;...&amp;a\\ ...&amp;...&amp;...&amp;...&amp;...\\ b&amp;b&amp;b&amp;...&amp;b \end{array}\right|_{(*)}+\left|\begin{array}{cccc} x_1&amp;a&amp;a &amp;... &amp;0\\ b&amp;x_2&amp;a&amp;...&amp;0\\ b&amp;b&amp;x_3&amp;...&amp;0\\ ...&amp;...&amp;...&amp;...&amp;...\\ b&amp;b&amp;b&amp;...&amp;x_n-b \end{array}\right| 
-\]</span></p>
-<p>将第 <span class="math inline">\(i,i=1...n-1\)</span> 列都减去最后一列，得：</p>
-<p><span class="math display">\[
-D_n=\left|\begin{array}{cccc} x_1-a&amp;0&amp;0 &amp;... &amp;a\\ b-a&amp;x_2-a&amp;0&amp;...&amp;a\\ b-a&amp;b-a&amp;x_3-a&amp;...&amp;a\\ ...&amp;...&amp;...&amp;...&amp;...\\ 0&amp;0&amp;0&amp;...&amp;b \end{array}\right|+(x_n-b)D_{n-1} 
-\]</span></p>
-<p>所以： <span class="math display">\[
-D_n=b\prod_{i=1}^{n-1}(x_i-a)+(x_n-b)D_{n-1}
-\]</span></p>
-<p>再由行列式转置不变性得到：</p>
-<p><span class="math display">\[
-D_n=a\prod_{i=1}^{n-1}(x_i-b)+(x_n-a)D_{n-1}
-\]</span></p>
-<p>联立<span class="math inline">\((11)(12)\)</span> ,得通式：</p>
-<p><span class="math display">\[
-D_n=\frac{1}{a-b}[a\prod_{i=1}^{n}(x_i-b)-b\prod_{j=1}^{n}(x_j-a)]
-\]</span></p>
-<ol start="2" type="1">
+<script type="math/tex; mode=display">
+eg1(a=b):D_n=\left|\begin{array}{cccc} x_1&b&b &... &b\\ b&x_2&b&...&b\\ b&b&x_3&...&b\\ ...&...&...&...&...\\ b&b&b&...&x_n \end{array}\right|</script><p>$Solution$: 将第$i，i=2…n$ 行都减去第一行</p>
+<p>得：</p>
+<script type="math/tex; mode=display">
+D_n=\left|\begin{array}{cccc} x_1&b&b &... &b\\ b-x_1&x_2-b&0&...&0\\ b-x_1&0&x_3-b&...&0\\ ...&...&...&...&...\\ b-x_1&0&0&...&x_n-b \end{array}\right|</script><p>即化成了箭型行列式，所以：</p>
+<script type="math/tex; mode=display">
+D_n=[\prod_{i=2}^{n}(x_i-b)]\times[x_1-b(b-x_1)\sum_{i=2}^{n}\frac{1}{x_i-b}]</script><hr>
+<script type="math/tex; mode=display">
+eg2(a\not=b):D_n=\left|\begin{array}{cccc} x_1&a&a &... &a\\ b&x_2&a&...&a\\ b&b&x_3&...&a\\ ...&...&...&...&...\\ b&b&b&...&x_n \end{array}\right|</script><p>$Solution$:  采用拆行法，目的是为了降阶</p>
+<script type="math/tex; mode=display">
+D_n=\left|\begin{array}{cccc} x_1&a&a &... &a+0\\ b&x_2&a&...&a+0\\ b&b&x_3&...&a+0\\ ...&...&...&...&...\\ b&b&b&...&x_n+b-b \end{array}\right|</script><script type="math/tex; mode=display">
+D_n=\left|\begin{array}{cccc} x_1&a&a &... &a\\ b&x_2&a&...&a\\ b&b&x_3&...&a\\ ...&...&...&...&...\\ b&b&b&...&b \end{array}\right|_{(*)}+\left|\begin{array}{cccc} x_1&a&a &... &0\\ b&x_2&a&...&0\\ b&b&x_3&...&0\\ ...&...&...&...&...\\ b&b&b&...&x_n-b \end{array}\right|</script><p>将第 $i,i=1…n-1$ 列都减去最后一列，得：</p>
+<script type="math/tex; mode=display">
+D_n=\left|\begin{array}{cccc} x_1-a&0&0 &... &a\\ b-a&x_2-a&0&...&a\\ b-a&b-a&x_3-a&...&a\\ ...&...&...&...&...\\ 0&0&0&...&b \end{array}\right|+(x_n-b)D_{n-1}</script><p>所以：</p>
+<script type="math/tex; mode=display">
+D_n=b\prod_{i=1}^{n-1}(x_i-a)+(x_n-b)D_{n-1}</script><p>再由行列式转置不变性得到：</p>
+<script type="math/tex; mode=display">
+D_n=a\prod_{i=1}^{n-1}(x_i-b)+(x_n-a)D_{n-1}</script><p>联立$(11)(12)$ ,得通式：</p>
+<script type="math/tex; mode=display">
+D_n=\frac{1}{a-b}[a\prod_{i=1}^{n}(x_i-b)-b\prod_{j=1}^{n}(x_j-a)]</script><ol>
 <li>通过适当变换可以化为两三角型行列式的，描述不如大家自己看例子揣摩，也很容易理解的，请看下例</li>
 </ol>
-<p><span class="math display">\[
-eg3:D_n=\left|\begin{array}{cccc} d&amp;b&amp;b &amp;... &amp;b\\ c&amp;x&amp;a&amp;...&amp;a\\ c&amp;a&amp;x&amp;...&amp;a\\ ...&amp;...&amp;...&amp;...&amp;...\\ c&amp;a&amp;a&amp;...&amp;x \end{array}\right|
-\]</span></p>
-<p><span class="math inline">\(Solution\)</span>: 将第一行乘上 <span class="math inline">\(\frac{a}{b}\)</span> ，第一列乘上 <span class="math inline">\(\frac{a}{c}\)</span>，得：</p>
-<p><span class="math display">\[
-D_n=\frac{bc}{a^2}\left|\begin{array}{cccc} \frac{a^2d}{bc}&amp;a&amp;a &amp;... &amp;a\\ a&amp;x&amp;a&amp;...&amp;a\\ a&amp;a&amp;x&amp;...&amp;a\\ ...&amp;...&amp;...&amp;...&amp;...\\ a&amp;a&amp;a&amp;...&amp;x \end{array}\right|
-\]</span></p>
-<p>即化成了两三角型行列式</p>
-<ol start="3" type="1">
+<script type="math/tex; mode=display">
+eg3:D_n=\left|\begin{array}{cccc} d&b&b &... &b\\ c&x&a&...&a\\ c&a&x&...&a\\ ...&...&...&...&...\\ c&a&a&...&x \end{array}\right|</script><p>$Solution$: 将第一行乘上 $\frac{a}{b}$ ，第一列乘上 $\frac{a}{c}$，得：</p>
+<script type="math/tex; mode=display">
+D_n=\frac{bc}{a^2}\left|\begin{array}{cccc} \frac{a^2d}{bc}&a&a &... &a\\ a&x&a&...&a\\ a&a&x&...&a\\ ...&...&...&...&...\\ a&a&a&...&x \end{array}\right|</script><p>即化成了两三角型行列式</p>
+<ol>
 <li>一些每行上有公因子但是无法向上式那样在保持行列式不变得基础上能提出公因子的，采用<strong>升阶法，</strong>请看下例</li>
 </ol>
-<p><span class="math display">\[
-eg4:D_n=\left|\begin{array}{cccc} 1+x_{1}^2&amp;x_1x_2&amp;x_1x_3 &amp;... &amp;x_1x_n\\ x_2x_1&amp;1+x_{2}^2&amp;x_2x_3&amp;...&amp;x_2x_n\\ x_3x_1&amp;x_3x_2&amp;1+x_{3}^2&amp;...&amp;x_3x_n\\ ...&amp;...&amp;...&amp;...&amp;...\\ x_nx_1&amp;x_nx_2&amp;x_nx_3&amp;...&amp;1+x_{n}^2 \end{array}\right| 
-\]</span></p>
-<p><span class="math inline">\(Solution\)</span>: 加边升阶，得：</p>
-<p><span class="math display">\[
-D_n=\left|\begin{array}{cccc} 1&amp;x_1&amp;x_2&amp;x_3&amp;...&amp;x_n\\ 0&amp;1+x_{1}^2&amp;x_1x_2&amp;x_1x_3 &amp;... &amp;x_1x_n\\ 0&amp;x_2x_1&amp;1+x_{2}^2&amp;x_2x_3&amp;...&amp;x_2x_n\\ 0&amp;x_3x_1&amp;x_3x_2&amp;1+x_{3}^2&amp;...&amp;x_3x_n\\ 0&amp;...&amp;...&amp;...&amp;...&amp;...\\ 0&amp;x_nx_1&amp;x_nx_2&amp;x_nx_3&amp;...&amp;1+x_{n}^2 \end{array}\right| 
-\]</span></p>
-<p>再将第 <span class="math inline">\(i,i=2...n+1\)</span> 都减去第一行的<span class="math inline">\(x_i，i=1...n\)</span> 倍，得：</p>
-<p><span class="math display">\[
-D_n=\left|\begin{array}{cccc} 1&amp;x_1&amp;x_2&amp;x_3&amp;...&amp;x_n\\ -x_1&amp;1&amp;0&amp;0 &amp;... &amp;0\\ -x_2&amp;0&amp;1&amp;0&amp;...&amp;0\\ -x_3&amp;0&amp;0&amp;1&amp;...&amp;0\\ 0&amp;...&amp;...&amp;...&amp;...&amp;...\\ -x_n&amp;0&amp;0&amp;0&amp;...&amp;1 \end{array}\right| 
-\]</span></p>
-<p>即又化成了箭型行列式，可得通式：</p>
-<p><span class="math display">\[
-D_n=1+\sum_{i=1}^{n}x_{i}^{2} 
-\]</span></p>
-<h4 id="三两条线型行列式">三：两条线型行列式</h4>
-<p>特征是除了主(次)对角线或与其相邻得一条斜线所组成的任意一条线加四个顶点中的某个顶点外，其他元素均为<span class="math inline">\(0\)</span>，这类行列式可以直接展开降阶。这段描述有点繁琐，但其实也并不复杂，请看下例理解</p>
-<p><span class="math display">\[
-eg3:D_n=\left|\begin{array}{cccc} a_1&amp;b_1&amp; &amp;... &amp;\\ &amp;a_2&amp;b_2&amp;...&amp;\\ &amp;&amp;a_3&amp;...&amp;\\ &amp;&amp;&amp;\\ &amp;&amp;...&amp;a_{n-1}&amp;b_{n-1} \\ b_n&amp;&amp;...&amp;&amp;a_n \end{array}\right| (空白处都为0)
-\]</span></p>
-<p><span class="math inline">\(Solution\)</span>: 按照第一列两个非<span class="math inline">\(0\)</span>元素拉普拉斯展开即可</p>
-<p><span class="math display">\[
-D_n=\prod_{i=1}^{n}a_i+(-1)^{n+1}\prod_{i=1}^{n}b_i 
-\]</span></p>
-<h4 id="四范德蒙德型行列式">四：范德蒙德型行列式</h4>
-<p>范德蒙德行列式大家应该熟悉，而范德蒙德型行列式的特征就是有逐行(列)元素按幂递增(减)，可以将其转化为范德蒙德行列式来计算，请看下例</p>
-<p><span class="math display">\[
-eg:D_n=\left|\begin{array}{cccc} a_{1}^n&amp; a_{1}^{n-1}b_1&amp;... &amp;a_1b_1^{n-1}&amp;b_1^n\\ a_{2}^n&amp;a_{2}^{n-1}b_2&amp;...&amp;a_2b_2^{n-1}&amp;b_2^n\\ ...&amp;...&amp;...&amp;...&amp;...\\ a_{n}^n&amp;a_{n}^{n-1}b_n&amp;...&amp;a_nb_n^{n-1}&amp;b_n^n\\ a_{n+1}^n&amp;a_{n+1}^{n-1}b_{n+1}&amp;...&amp;a_{n+1}b_{n+1}^{n-1}&amp;b_{n+1}^n \end{array}\right| 
-\]</span></p>
-<p><span class="math inline">\(Solution\)</span>: 将每行都提出 <span class="math inline">\(a_i^{n}\)</span>,$i=1...n+1 $倍，得：</p>
-<p><span class="math display">\[
-D_n=\prod_{i=1}^{n+1}a_i^n\left|\begin{array}{cccc} 1&amp; \frac{b_1}{a_1}&amp;... &amp;(\frac{b_1}{a_1})^{n-1}&amp;(\frac{b_1}{a_1})^{n}\\ 1&amp;\frac{b_2}{a_2}&amp;...&amp;(\frac{b_2}{a_2})^{n-1}&amp;(\frac{b_2}{a_2})^{n}\\ ...&amp;...&amp;...&amp;...&amp;...\\ 1&amp;\frac{b_n}{a_n}&amp;...&amp;(\frac{b_n}{a_n})^{n-1}&amp;(\frac{b_n}{a_n})^{n}\\ 1&amp;\frac{b_{n+1}}{a_{n+1}}&amp;...&amp;(\frac{b_{n+1}}{a_{n+1}})^{n-1}&amp;(\frac{b_{n+1}}{a_{n+1}})^{n} \end{array}\right| 
-\]</span></p>
-<p>上式即为范德蒙德行列式，所以通式为：</p>
-<p><span class="math display">\[
-D_n=\prod_{1\le i&lt;j\le n+1}(a_ib_j-b_ia_j)
-\]</span></p>
-<h4 id="五hessenberg型行列式">五：<span class="math inline">\(Hessenberg\)</span>型行列式</h4>
-<p>特征为除了主(次)对角线及与其相邻的斜线，再加上第一行(列)或第<span class="math inline">\(n\)</span>行(列)外，其余元素均为<span class="math inline">\(0\)</span>。这类行列式有点像前面说的两条线型行列式，但是还是有一点区别的。这类行列式都用<strong>累加消点法</strong>，即通常将某一行(列)都化简到只有一个非<span class="math inline">\(0\)</span>元素，以便于降阶计算，请看下例</p>
-<p><span class="math display">\[
-eg:D_n= \left|\begin{array}{cccc} 1&amp;2&amp;3 &amp;... &amp;n-1&amp;n\\ 1&amp;-1&amp;&amp;&amp;&amp;\\ &amp;2&amp;-2&amp;...\\ ...&amp;...&amp;...&amp;...&amp;...&amp;...\\ &amp;&amp;&amp;n-2&amp;2-n&amp;\\ &amp;&amp;&amp;...&amp;n-1&amp;1-n \end{array}\right| 
-\]</span></p>
-<p><span class="math inline">\(Solution\)</span>: 将各列都加到第一列，得到：</p>
-<p><span class="math display">\[
-D_n= \left|\begin{array}{cccc} \frac{n(n+1)}{2}&amp;2&amp;3 &amp;... &amp;n-1&amp;n\\ 0&amp;-1&amp;&amp;&amp;&amp;\\ 0&amp;2&amp;-2&amp;...\\ ...&amp;...&amp;...&amp;...&amp;...&amp;...\\ 0&amp;&amp;&amp;n-2&amp;2-n&amp;\\ 0&amp;&amp;&amp;...&amp;n-1&amp;1-n \end{array}\right| 
-\]</span></p>
-<p>降阶之后再重复上述步骤即可得到通式：</p>
-<p><span class="math display">\[
-D_n=(-1)^{n-1}\frac{(n+1)!}{2} 
-\]</span></p>
-<p>注：需要说明的是，上面举的例子比较容易看出如何实施<strong>累加消点法</strong>就可以实现将某一行(列)都化简到只有一个非<span class="math inline">\(0\)</span>元素从而达到降阶的目的，但是还有很多<span class="math inline">\(Hessenberg\)</span>型行列式并不这么容易就做到，还需要大家找找技巧稍微变换一下，只要始终记得你要用<strong>累加消点法</strong>来消元来降阶就可以了</p>
-<h4 id="六三对角型行列式">六：三对角型行列式</h4>
-<p>这是一种递推结构的行列式，特征为所有主子式都有相同的结构，从而以最后一列展开，将所得的<span class="math inline">\((n-1)\)</span> 阶行列式再展开即得递推公式，即<strong>递推法(特征方程法)</strong>，请看下例</p>
-<p><span class="math display">\[
-eg:D_n= \left|\begin{array}{cccc} a&amp;b&amp; &amp;&amp;... &amp;&amp;&amp;\\ c&amp;a&amp;b&amp;&amp;...&amp;&amp;&amp;\\ &amp;c&amp;a&amp;b&amp;...&amp;&amp;\\ ...&amp;...&amp;...&amp;...&amp;...&amp;\\ &amp;&amp;&amp;&amp;...&amp;a&amp;b\\ &amp;&amp;&amp;&amp;...&amp;c&amp;a \end{array}\right| 
-\]</span></p>
-<p><span class="math inline">\(Solution\)</span>: 按第一列拉普拉斯展开，得：</p>
-<p><span class="math display">\[
-D_n=aD_{n-1}-bcD_{n-2} 
-\]</span></p>
-<p>解特征方程： <span class="math inline">\(x^2=ax-bc\)</span> ，得：</p>
-<p><span class="math display">\[
-x_1=\frac{a+\sqrt{a^2-4bc}}{2}
-\]</span></p>
-<p><span class="math display">\[
-x_2=\frac{a-\sqrt{a^2-4bc}}{2} 
-\]</span></p>
-<p>即可得通式：</p>
-<p><span class="math display">\[
-D_n = \frac{x_1^{n+1}-x_2^{n+1}}{x_1-x_2} 
-\]</span></p>
-<p>注：特征方程法我没记错的话，应该是在高中将数列的时候用到的。</p>
-<h4 id="七各行元素和相等型行列式">七：各行元素和相等型行列式</h4>
-<p>这个特征已经很清楚了吧，方法就是<strong>累加法</strong>，很简单，直接看下例</p>
-<p><span class="math display">\[
-eg:D_n= \left|\begin{array}{cccc} 1+x_1&amp;x_1 &amp;... &amp;x_1\\ x_2&amp;1+x_2&amp;...&amp;x_2\\ ...&amp;...&amp;...&amp;...\\ x_n&amp;x_n&amp;...&amp;1+x_n \end{array}\right| 
-\]</span></p>
-<p><span class="math inline">\(Solution\)</span>: 将第<span class="math inline">\(i,i=2...n\)</span>行都加到第一行去，得：</p>
-<p><span class="math display">\[
-D_n= \left|\begin{array}{cccc} 1+\sum_{i=1}^{n}x_i&amp;1+\sum_{i=1}^{n}x_i &amp;... &amp;1+\sum_{i=1}^{n}x_i\\ x_2&amp;1+x_2&amp;...&amp;x_2\\ ...&amp;...&amp;...&amp;...\\ x_n&amp;x_n&amp;...&amp;1+x_n \end{array}\right| 
-\]</span></p>
-<p>所以：</p>
-<p><span class="math display">\[
-D_n= (1+\sum_{i=1}^{n}x_i)\left|\begin{array}{cccc} 1&amp;1 &amp;... &amp;1\\ x_2&amp;1+x_2&amp;...&amp;x_2\\ ...&amp;...&amp;...&amp;...\\ x_n&amp;x_n&amp;...&amp;1+x_n \end{array}\right|= (1+\sum_{i=1}^{n}x_i)\left|\begin{array}{cccc} 1&amp;0&amp;... &amp;0\\ x_2&amp;1&amp;...&amp;0\\ ...&amp;...&amp;...&amp;...\\ x_n&amp;0&amp;...&amp;1 \end{array}\right|=1+\sum_{i=1}^{n}x_i 
-\]</span></p>
-<h4 id="八相邻两行对应元素相差k倍型行列式">八：相邻两行对应元素相差K倍型行列式</h4>
-<p>这个要用<strong>步步差法</strong></p>
-<p>(1)大部分元素为数字，且相邻两行对应元素相差为<span class="math inline">\(1\)</span>，采用逐步作差的方法，即可出现大量 <span class="math inline">\(\pm1\)</span> 元素，进而出现大量<span class="math inline">\(0\)</span>元素</p>
-<p>(2)若相邻两行相差<span class="math inline">\(K\)</span>倍，采用逐步作<span class="math inline">\(k\)</span>倍差得方法，即可出现大量<span class="math inline">\(0\)</span>元素</p>
+<script type="math/tex; mode=display">
+eg4:D_n=\left|\begin{array}{cccc} 1+x_{1}^2&x_1x_2&x_1x_3 &... &x_1x_n\\ x_2x_1&1+x_{2}^2&x_2x_3&...&x_2x_n\\ x_3x_1&x_3x_2&1+x_{3}^2&...&x_3x_n\\ ...&...&...&...&...\\ x_nx_1&x_nx_2&x_nx_3&...&1+x_{n}^2 \end{array}\right|</script><p>$Solution$:  加边升阶，得：</p>
+<script type="math/tex; mode=display">
+D_n=\left|\begin{array}{cccc} 1&x_1&x_2&x_3&...&x_n\\ 0&1+x_{1}^2&x_1x_2&x_1x_3 &... &x_1x_n\\ 0&x_2x_1&1+x_{2}^2&x_2x_3&...&x_2x_n\\ 0&x_3x_1&x_3x_2&1+x_{3}^2&...&x_3x_n\\ 0&...&...&...&...&...\\ 0&x_nx_1&x_nx_2&x_nx_3&...&1+x_{n}^2 \end{array}\right|</script><p>再将第 $i,i=2…n+1$ 都减去第一行的$x_i，i=1…n$ 倍，得：</p>
+<script type="math/tex; mode=display">
+D_n=\left|\begin{array}{cccc} 1&x_1&x_2&x_3&...&x_n\\ -x_1&1&0&0 &... &0\\ -x_2&0&1&0&...&0\\ -x_3&0&0&1&...&0\\ 0&...&...&...&...&...\\ -x_n&0&0&0&...&1 \end{array}\right|</script><p>即又化成了箭型行列式，可得通式：</p>
+<script type="math/tex; mode=display">
+D_n=1+\sum_{i=1}^{n}x_{i}^{2}</script><h4 id="三：两条线型行列式"><a href="#三：两条线型行列式" class="headerlink" title="三：两条线型行列式"></a>三：两条线型行列式</h4><p>特征是除了主(次)对角线或与其相邻得一条斜线所组成的任意一条线加四个顶点中的某个顶点外，其他元素均为$0$，这类行列式可以直接展开降阶。这段描述有点繁琐，但其实也并不复杂，请看下例理解</p>
+<script type="math/tex; mode=display">
+eg3:D_n=\left|\begin{array}{cccc} a_1&b_1& &... &\\ &a_2&b_2&...&\\ &&a_3&...&\\ &&&\\ &&...&a_{n-1}&b_{n-1} \\ b_n&&...&&a_n \end{array}\right| (空白处都为0)</script><p>$Solution$: 按照第一列两个非$0$元素拉普拉斯展开即可</p>
+<script type="math/tex; mode=display">
+D_n=\prod_{i=1}^{n}a_i+(-1)^{n+1}\prod_{i=1}^{n}b_i</script><h4 id="四：范德蒙德型行列式"><a href="#四：范德蒙德型行列式" class="headerlink" title="四：范德蒙德型行列式"></a>四：范德蒙德型行列式</h4><p>范德蒙德行列式大家应该熟悉，而范德蒙德型行列式的特征就是有逐行(列)元素按幂递增(减)，可以将其转化为范德蒙德行列式来计算，请看下例</p>
+<script type="math/tex; mode=display">
+eg:D_n=\left|\begin{array}{cccc} a_{1}^n& a_{1}^{n-1}b_1&... &a_1b_1^{n-1}&b_1^n\\ a_{2}^n&a_{2}^{n-1}b_2&...&a_2b_2^{n-1}&b_2^n\\ ...&...&...&...&...\\ a_{n}^n&a_{n}^{n-1}b_n&...&a_nb_n^{n-1}&b_n^n\\ a_{n+1}^n&a_{n+1}^{n-1}b_{n+1}&...&a_{n+1}b_{n+1}^{n-1}&b_{n+1}^n \end{array}\right|</script><p>$Solution$:  将每行都提出 $a_i^{n}$,$i=1…n+1 $倍，得：</p>
+<script type="math/tex; mode=display">
+D_n=\prod_{i=1}^{n+1}a_i^n\left|\begin{array}{cccc} 1& \frac{b_1}{a_1}&... &(\frac{b_1}{a_1})^{n-1}&(\frac{b_1}{a_1})^{n}\\ 1&\frac{b_2}{a_2}&...&(\frac{b_2}{a_2})^{n-1}&(\frac{b_2}{a_2})^{n}\\ ...&...&...&...&...\\ 1&\frac{b_n}{a_n}&...&(\frac{b_n}{a_n})^{n-1}&(\frac{b_n}{a_n})^{n}\\ 1&\frac{b_{n+1}}{a_{n+1}}&...&(\frac{b_{n+1}}{a_{n+1}})^{n-1}&(\frac{b_{n+1}}{a_{n+1}})^{n} \end{array}\right|</script><p>上式即为范德蒙德行列式，所以通式为：</p>
+<script type="math/tex; mode=display">
+D_n=\prod_{1\le i<j\le n+1}(a_ib_j-b_ia_j)</script><h4 id="五：-Hessenberg-型行列式"><a href="#五：-Hessenberg-型行列式" class="headerlink" title="五：$Hessenberg$型行列式"></a>五：$Hessenberg$型行列式</h4><p>特征为除了主(次)对角线及与其相邻的斜线，再加上第一行(列)或第$n$行(列)外，其余元素均为$0$。这类行列式有点像前面说的两条线型行列式，但是还是有一点区别的。这类行列式都用<strong>累加消点法</strong>，即通常将某一行(列)都化简到只有一个非$0$元素，以便于降阶计算，请看下例</p>
+<script type="math/tex; mode=display">
+eg:D_n= \left|\begin{array}{cccc} 1&2&3 &... &n-1&n\\ 1&-1&&&&\\ &2&-2&...\\ ...&...&...&...&...&...\\ &&&n-2&2-n&\\ &&&...&n-1&1-n \end{array}\right|</script><p>$Solution$:  将各列都加到第一列，得到：</p>
+<script type="math/tex; mode=display">
+D_n= \left|\begin{array}{cccc} \frac{n(n+1)}{2}&2&3 &... &n-1&n\\ 0&-1&&&&\\ 0&2&-2&...\\ ...&...&...&...&...&...\\ 0&&&n-2&2-n&\\ 0&&&...&n-1&1-n \end{array}\right|</script><p>降阶之后再重复上述步骤即可得到通式：</p>
+<script type="math/tex; mode=display">
+D_n=(-1)^{n-1}\frac{(n+1)!}{2}</script><p>注：需要说明的是，上面举的例子比较容易看出如何实施<strong>累加消点法</strong>就可以实现将某一行(列)都化简到只有一个非$0$元素从而达到降阶的目的，但是还有很多$Hessenberg$型行列式并不这么容易就做到，还需要大家找找技巧稍微变换一下，只要始终记得你要用<strong>累加消点法</strong>来消元来降阶就可以了 </p>
+<h4 id="六：三对角型行列式"><a href="#六：三对角型行列式" class="headerlink" title="六：三对角型行列式"></a>六：三对角型行列式</h4><p>这是一种递推结构的行列式，特征为所有主子式都有相同的结构，从而以最后一列展开，将所得的$(n-1)$ 阶行列式再展开即得递推公式，即<strong>递推法(特征方程法)</strong>，请看下例</p>
+<script type="math/tex; mode=display">
+eg:D_n= \left|\begin{array}{cccc} a&b& &&... &&&\\ c&a&b&&...&&&\\ &c&a&b&...&&\\ ...&...&...&...&...&\\ &&&&...&a&b\\ &&&&...&c&a \end{array}\right|</script><p>$Solution$: 按第一列拉普拉斯展开，得：</p>
+<script type="math/tex; mode=display">
+D_n=aD_{n-1}-bcD_{n-2}</script><p>解特征方程： $x^2=ax-bc$ ，得：</p>
+<script type="math/tex; mode=display">
+x_1=\frac{a+\sqrt{a^2-4bc}}{2}</script><script type="math/tex; mode=display">
+x_2=\frac{a-\sqrt{a^2-4bc}}{2}</script><p>即可得通式：</p>
+<script type="math/tex; mode=display">
+D_n = \frac{x_1^{n+1}-x_2^{n+1}}{x_1-x_2}</script><p>注：特征方程法我没记错的话，应该是在高中将数列的时候用到的。</p>
+<h4 id="七：各行元素和相等型行列式"><a href="#七：各行元素和相等型行列式" class="headerlink" title="七：各行元素和相等型行列式"></a>七：各行元素和相等型行列式</h4><p>这个特征已经很清楚了吧，方法就是<strong>累加法</strong>，很简单，直接看下例</p>
+<script type="math/tex; mode=display">
+eg:D_n= \left|\begin{array}{cccc} 1+x_1&x_1 &... &x_1\\ x_2&1+x_2&...&x_2\\ ...&...&...&...\\ x_n&x_n&...&1+x_n \end{array}\right|</script><p>$Solution$:  将第$i,i=2…n$行都加到第一行去，得：</p>
+<script type="math/tex; mode=display">
+D_n= \left|\begin{array}{cccc} 1+\sum_{i=1}^{n}x_i&1+\sum_{i=1}^{n}x_i &... &1+\sum_{i=1}^{n}x_i\\ x_2&1+x_2&...&x_2\\ ...&...&...&...\\ x_n&x_n&...&1+x_n \end{array}\right|</script><p>所以：</p>
+<script type="math/tex; mode=display">
+D_n= (1+\sum_{i=1}^{n}x_i)\left|\begin{array}{cccc} 1&1 &... &1\\ x_2&1+x_2&...&x_2\\ ...&...&...&...\\ x_n&x_n&...&1+x_n \end{array}\right|= (1+\sum_{i=1}^{n}x_i)\left|\begin{array}{cccc} 1&0&... &0\\ x_2&1&...&0\\ ...&...&...&...\\ x_n&0&...&1 \end{array}\right|=1+\sum_{i=1}^{n}x_i</script><h4 id="八：相邻两行对应元素相差K倍型行列式"><a href="#八：相邻两行对应元素相差K倍型行列式" class="headerlink" title="八：相邻两行对应元素相差K倍型行列式"></a>八：相邻两行对应元素相差K倍型行列式</h4><p>这个要用<strong>步步差法</strong></p>
+<p>(1)大部分元素为数字，且相邻两行对应元素相差为$1$，采用逐步作差的方法，即可出现大量 $\pm1$ 元素，进而出现大量$0$元素</p>
+<p>(2)若相邻两行相差$K$倍，采用逐步作$k$倍差得方法，即可出现大量$0$元素</p>
 <p>请看下面两个例子</p>
-<p><span class="math display">\[
-eg1:D_n= \left|\begin{array}{cccc} 0&amp;1&amp;2 &amp;...&amp;n-2 &amp;n-1\\ 1&amp;0&amp;1&amp;...&amp;n-3&amp;n-2\\ 2&amp;1&amp;0&amp;...&amp;n-4&amp;n-3\\ ...&amp;...&amp;...&amp;...&amp;...&amp;...\\ n-2&amp;n-3&amp;n-4&amp;...&amp;0&amp;1\\ n-1&amp;n-2&amp;n-3&amp;...&amp;1&amp;0 \end{array}\right| 
-\]</span></p>
-<p><span class="math inline">\(Solution\)</span>: 从第一行开始，依次用前一行减去后一行，得：</p>
-<p><span class="math display">\[
-D_n= \left|\begin{array}{cccc} -1&amp;1&amp;1 &amp;...&amp;1 &amp;1\\ -1&amp;-1&amp;1&amp;...&amp;1&amp;1\\ -1&amp;-1&amp;-1&amp;...&amp;1&amp;1\\ ...&amp;...&amp;...&amp;...&amp;...&amp;...\\ -1&amp;-1&amp;-1&amp;...&amp;-1&amp;1\\ n-1&amp;n-2&amp;n-3&amp;...&amp;1&amp;0 \end{array}\right| 
-\]</span></p>
-<p>再将第一列加到第<span class="math inline">\(i,i=2...n\)</span> 列，得：</p>
-<p><span class="math display">\[
-D_n= \left|\begin{array}{cccc} -1&amp;0&amp;0&amp;...&amp;0&amp;0\\ -1&amp;-2&amp;0&amp;...&amp;0&amp;0\\ -1&amp;-2&amp;-2&amp;...&amp;0&amp;0\\ ...&amp;...&amp;...&amp;...&amp;...&amp;...\\ -1&amp;-2&amp;-2&amp;...&amp;-2&amp;0\\ n-1&amp;2n-3&amp;2n-4&amp;...&amp;n&amp;n-1 \end{array}\right|=(-1)^{n-1}(-2)^{n-2}(n-1) 
-\]</span></p>
-<hr />
-<p><span class="math display">\[
-eg2:D_n= \left|\begin{array}{cccc} 1&amp;a&amp;a^2 &amp;...&amp;a^{n-2} &amp;a^{n-1}\\ a^{n-1}&amp;1&amp;a&amp;...&amp;a^{n-3} &amp;a^{n-2} \\ a^{n-2} &amp;a^{n-1} &amp;1&amp;...&amp;a^{n-4} &amp;a^{n-3} \\ ...&amp;...&amp;...&amp;...&amp;...&amp;...\\ a^2&amp;a^3&amp;a^4&amp;...&amp;1&amp;a\\ a&amp;a^2&amp;a^3&amp;...&amp;a^{n-1}&amp;1 \end{array}\right| 
-\]</span></p>
-<p><span class="math inline">\(Solution\)</span>: 从第一行开始，依次用前一行加上后一行的<span class="math inline">\((-a)\)</span> 倍，得：</p>
-<p><span class="math display">\[
-D_n= \left|\begin{array}{cccc} 1-a^n&amp;0&amp;0&amp;...&amp;0&amp;0\\ a^{n-1}&amp;1-a^n&amp;0&amp;...&amp;0 &amp;0\\ 0 &amp;0 &amp;1-a^n&amp;...&amp;0&amp;0 \\ ...&amp;...&amp;...&amp;...&amp;...&amp;...\\ 0&amp;0&amp;0&amp;...&amp;1-a^n&amp;0\\ a&amp;a^2&amp;a^3&amp;...&amp;a^{n-1}&amp;1 \end{array}\right| 
-\]</span></p>
-<p>所以：</p>
-<p><span class="math display">\[
-D_n=(1-a^n)^{n-1}
-\]</span></p>
-
+<script type="math/tex; mode=display">
+eg1:D_n= \left|\begin{array}{cccc} 0&1&2 &...&n-2 &n-1\\ 1&0&1&...&n-3&n-2\\ 2&1&0&...&n-4&n-3\\ ...&...&...&...&...&...\\ n-2&n-3&n-4&...&0&1\\ n-1&n-2&n-3&...&1&0 \end{array}\right|</script><p>$Solution$: 从第一行开始，依次用前一行减去后一行，得：</p>
+<script type="math/tex; mode=display">
+D_n= \left|\begin{array}{cccc} -1&1&1 &...&1 &1\\ -1&-1&1&...&1&1\\ -1&-1&-1&...&1&1\\ ...&...&...&...&...&...\\ -1&-1&-1&...&-1&1\\ n-1&n-2&n-3&...&1&0 \end{array}\right|</script><p>再将第一列加到第$i,i=2…n$ 列，得：</p>
+<script type="math/tex; mode=display">
+D_n= \left|\begin{array}{cccc} -1&0&0&...&0&0\\ -1&-2&0&...&0&0\\ -1&-2&-2&...&0&0\\ ...&...&...&...&...&...\\ -1&-2&-2&...&-2&0\\ n-1&2n-3&2n-4&...&n&n-1 \end{array}\right|=(-1)^{n-1}(-2)^{n-2}(n-1)</script><hr>
+<script type="math/tex; mode=display">
+eg2:D_n= \left|\begin{array}{cccc} 1&a&a^2 &...&a^{n-2} &a^{n-1}\\ a^{n-1}&1&a&...&a^{n-3} &a^{n-2} \\ a^{n-2} &a^{n-1} &1&...&a^{n-4} &a^{n-3} \\ ...&...&...&...&...&...\\ a^2&a^3&a^4&...&1&a\\ a&a^2&a^3&...&a^{n-1}&1 \end{array}\right|</script><p>$Solution$:  从第一行开始，依次用前一行加上后一行的$(-a)$ 倍，得：</p>
+<script type="math/tex; mode=display">
+D_n= \left|\begin{array}{cccc} 1-a^n&0&0&...&0&0\\ a^{n-1}&1-a^n&0&...&0 &0\\ 0 &0 &1-a^n&...&0&0 \\ ...&...&...&...&...&...\\ 0&0&0&...&1-a^n&0\\ a&a^2&a^3&...&a^{n-1}&1 \end{array}\right|</script><p>所以：</p>
+<script type="math/tex; mode=display">
+D_n=(1-a^n)^{n-1}</script>
         </div>
 
         
@@ -584,7 +496,7 @@ D_n=(1-a^n)^{n-1}
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E7%AE%AD%E5%9E%8B%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-text">一：箭型行列式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E4%B8%A4%E4%B8%89%E8%A7%92%E5%9E%8B%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-text">二：两三角型行列式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%89%E4%B8%A4%E6%9D%A1%E7%BA%BF%E5%9E%8B%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-text">三：两条线型行列式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%9B%E8%8C%83%E5%BE%B7%E8%92%99%E5%BE%B7%E5%9E%8B%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-text">四：范德蒙德型行列式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%94hessenberg%E5%9E%8B%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-text">五：\(Hessenberg\)型行列式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%AD%E4%B8%89%E5%AF%B9%E8%A7%92%E5%9E%8B%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-text">六：三对角型行列式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%83%E5%90%84%E8%A1%8C%E5%85%83%E7%B4%A0%E5%92%8C%E7%9B%B8%E7%AD%89%E5%9E%8B%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-text">七：各行元素和相等型行列式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%AB%E7%9B%B8%E9%82%BB%E4%B8%A4%E8%A1%8C%E5%AF%B9%E5%BA%94%E5%85%83%E7%B4%A0%E7%9B%B8%E5%B7%AEk%E5%80%8D%E5%9E%8B%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-text">八：相邻两行对应元素相差K倍型行列式</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%EF%BC%9A%E7%AE%AD%E5%9E%8B%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-text">一：箭型行列式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%EF%BC%9A%E4%B8%A4%E4%B8%89%E8%A7%92%E5%9E%8B%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-text">二：两三角型行列式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%89%EF%BC%9A%E4%B8%A4%E6%9D%A1%E7%BA%BF%E5%9E%8B%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-text">三：两条线型行列式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%9B%EF%BC%9A%E8%8C%83%E5%BE%B7%E8%92%99%E5%BE%B7%E5%9E%8B%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-text">四：范德蒙德型行列式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%94%EF%BC%9A-Hessenberg-%E5%9E%8B%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-text">五：$Hessenberg$型行列式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%AD%EF%BC%9A%E4%B8%89%E5%AF%B9%E8%A7%92%E5%9E%8B%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-text">六：三对角型行列式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%83%EF%BC%9A%E5%90%84%E8%A1%8C%E5%85%83%E7%B4%A0%E5%92%8C%E7%9B%B8%E7%AD%89%E5%9E%8B%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-text">七：各行元素和相等型行列式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%AB%EF%BC%9A%E7%9B%B8%E9%82%BB%E4%B8%A4%E8%A1%8C%E5%AF%B9%E5%BA%94%E5%85%83%E7%B4%A0%E7%9B%B8%E5%B7%AEK%E5%80%8D%E5%9E%8B%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-text">八：相邻两行对应元素相差K倍型行列式</span></a></li></ol>
     </div>
 </div>
         </aside>
@@ -647,6 +559,22 @@ D_n=(1-a^n)^{n-1}
 </div>
 
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </body>
 </html>

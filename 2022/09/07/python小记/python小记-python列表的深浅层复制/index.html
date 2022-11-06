@@ -199,21 +199,18 @@
         
 
         <div class="article-content markdown-body">
-            <h4 id="浅复制">浅复制</h4>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line"><span class="comment"># 第一种 使用copy()函数 或导入copy包</span></span><br><span class="line">b = a.copy()</span><br><span class="line"><span class="keyword">import</span> copy</span><br><span class="line">b = copy.copy(a)</span><br><span class="line"><span class="comment"># 第二种 </span></span><br><span class="line">b = a[:]</span><br><span class="line"><span class="comment"># 第三种</span></span><br><span class="line">b = <span class="built_in">list</span>(a)</span><br></pre></td></tr></table></figure>
-<p>特点：b有独立的不用于a的地址，修改元素不会相互影响 但 <strong>若a中的元素包含列表等特殊类型时，上述方法则无效</strong>，修改时会同时影响a和b。 因为浅复制只是改变了第一层的引用地址，a中存储的列表的第二层引用没有改变，是单独分配的空间。此时需要用到列表的深层复制。</p>
+            <h4 id="浅复制"><a href="#浅复制" class="headerlink" title="浅复制"></a>浅复制</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line"><span class="comment"># 第一种 使用copy()函数 或导入copy包</span></span><br><span class="line">b = a.copy()</span><br><span class="line"><span class="keyword">import</span> copy</span><br><span class="line">b = copy.copy(a)</span><br><span class="line"><span class="comment"># 第二种 </span></span><br><span class="line">b = a[:]</span><br><span class="line"><span class="comment"># 第三种</span></span><br><span class="line">b = <span class="built_in">list</span>(a)</span><br></pre></td></tr></table></figure>
+<p>特点：b有独立的不用于a的地址，修改元素不会相互影响<br>但 <strong>若a中的元素包含列表等特殊类型时，上述方法则无效</strong>，修改时会同时影响a和b。<br>因为浅复制只是改变了第一层的引用地址，a中存储的列表的第二层引用没有改变，是单独分配的空间。此时需要用到列表的深层复制。</p>
 <p><strong>即：二维列表等使用上述方法复制仍会改变原列表。</strong></p>
-<h4 id="深复制">深复制</h4>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> copy</span><br><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], <span class="number">4</span>]</span><br><span class="line">b = copy.deepcopy(a)</span><br></pre></td></tr></table></figure>
-<h4 id="深拷贝效率问题">深拷贝效率问题</h4>
-<p>不过在使用深拷贝的时候需要慎重，阅读过源码的都知道，深拷贝需要维护一个 memo 用于记录已经拷贝的对象，这是它比较慢的原因。在绝大多数情况下，程序里都不存在相互引用。但作为通用模块，Python 深拷贝必须为了这 1% 情形，牺牲 99% 情形下的性能。所以可以另外一种复制方式以提高效率。</p>
+<h4 id="深复制"><a href="#深复制" class="headerlink" title="深复制"></a>深复制</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> copy</span><br><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], <span class="number">4</span>]</span><br><span class="line">b = copy.deepcopy(a)</span><br></pre></td></tr></table></figure>
+<h4 id="深拷贝效率问题"><a href="#深拷贝效率问题" class="headerlink" title="深拷贝效率问题"></a>深拷贝效率问题</h4><p>不过在使用深拷贝的时候需要慎重，阅读过源码的都知道，深拷贝需要维护一个 memo 用于记录已经拷贝的对象，这是它比较慢的原因。在绝大多数情况下，程序里都不存在相互引用。但作为通用模块，Python 深拷贝必须为了这 1% 情形，牺牲 99% 情形下的性能。所以可以另外一种复制方式以提高效率。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#生成一个列表</span></span><br><span class="line">li = [i <span class="keyword">for</span> i <span class="keyword">in</span> xrange(<span class="number">10000000</span>)]</span><br><span class="line"> </span><br><span class="line"><span class="comment">#方式1：直接复制</span></span><br><span class="line">st1 = time.clock()</span><br><span class="line">temp1 = [i <span class="keyword">for</span> i <span class="keyword">in</span> li]</span><br><span class="line"><span class="comment"># 二维列表</span></span><br><span class="line"><span class="comment"># copy = [[graph[i][j] for j in range(len(graph[0]))] for i in range(len(graph))]</span></span><br><span class="line">end1 = time.clock()</span><br><span class="line"> </span><br><span class="line"><span class="comment">#方式2：深拷贝</span></span><br><span class="line">start2 = time.clock()</span><br><span class="line">temp2 = copy.deepcopy(li)</span><br><span class="line">end2 = time.clock()</span><br><span class="line"> </span><br><span class="line"><span class="built_in">print</span> <span class="string">&quot;方式1耗时：%s&quot;</span> % (end1 - st1)</span><br><span class="line"><span class="built_in">print</span> <span class="string">&quot;方式2耗时：%s&quot;</span> % (end2 - start2)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 方式1耗时：0.996229993256</span></span><br><span class="line"><span class="comment"># 方式2耗时：18.3346241035</span></span><br></pre></td></tr></table></figure>
-<h4 id="推荐使用列表推导式复制">推荐使用列表推导式复制</h4>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">一维：[i <span class="keyword">for</span> i <span class="keyword">in</span> ls]</span><br><span class="line">二维：[[graph[i][j] <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(graph[<span class="number">0</span>]))] <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(graph))]</span><br></pre></td></tr></table></figure>
-<h4 id="参考">参考</h4>
-<ol type="1">
-<li><p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/mooneve/article/details/80156145" >Python List 列表的深浅层复制<i class="fas fa-external-link-alt"></i></a></p></li>
-<li><p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/u010180815/article/details/80102892" >Python 深拷贝效率问题与改进<i class="fas fa-external-link-alt"></i></a></p></li>
+<h4 id="推荐使用列表推导式复制"><a href="#推荐使用列表推导式复制" class="headerlink" title="推荐使用列表推导式复制"></a>推荐使用列表推导式复制</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">一维：[i <span class="keyword">for</span> i <span class="keyword">in</span> ls]</span><br><span class="line">二维：[[graph[i][j] <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(graph[<span class="number">0</span>]))] <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(graph))]</span><br></pre></td></tr></table></figure>
+<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><ol>
+<li><p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/mooneve/article/details/80156145" >Python List 列表的深浅层复制<i class="fas fa-external-link-alt"></i></a></p>
+</li>
+<li><p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/u010180815/article/details/80102892" >Python 深拷贝效率问题与改进<i class="fas fa-external-link-alt"></i></a></p>
+</li>
 </ol>
 
         </div>
@@ -453,6 +450,22 @@
 </div>
 
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </body>
 </html>

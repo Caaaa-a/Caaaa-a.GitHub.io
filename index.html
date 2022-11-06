@@ -204,8 +204,7 @@ torch，torchvision，torchaudio和python版本需要对应
 
                 <div class="home-article-content markdown-body">
                     
-                        删除文件
-返回上级
+                        删除文件返回上级 
 1cd ..
 删除当前目录下的文件
 1rm -f *
@@ -252,10 +251,8 @@ torch，torchvision，torchaudio和python版本需要对应
 
                 <div class="home-article-content markdown-body">
                     
-                        运行命令行命令
-os.system
-仅仅在一个子终端运行系统命令，而不能获取命令执行后的返回信息。如果在命令行下执行，结果直接打印出来。
-1234os.system(&#x27;ls&#x27;)# 04101419778.CHM   bash   ...
+                        运行命令行命令os.system仅仅在一个子终端运行系统命令，而不能获取命令执行后的返回信息。如果在命令行下执行，结果直接打印出来。
+1234os.system(&#x27;ls&#x27;)# 04101419778.CHM   bash     ...
                     
                 </div>
 
@@ -340,9 +337,7 @@ NP-完全...
 
                 <div class="home-article-content markdown-body">
                     
-                        安装miniconda
-step 1: 获取安装shell脚本文件
-1234567wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.shwget https...
+                        安装minicondastep 1: 获取安装shell脚本文件1234567wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.shwget https:/...
                     
                 </div>
 
@@ -423,8 +418,7 @@ step 1: 获取安装shell脚本文件
 
                 <div class="home-article-content markdown-body">
                     
-                        合并到多个sheet工作表
-1234567import pandas as pdwriter = pd.ExcelWriter(&#x27;test.xlsx&#x27;)data1 = pd.read_csv(&quot;2019-04-01.cs...
+                        合并到多个sheet工作表1234567import pandas as pdwriter = pd.ExcelWriter(&#x27;test.xlsx&#x27;)data1 = pd.read_csv(&quot;2019-04-01.csv...
                     
                 </div>
 
@@ -464,10 +458,9 @@ step 1: 获取安装shell脚本文件
 
                 <div class="home-article-content markdown-body">
                     
-                        Input() → sys.stdin.readline()
-优化接收参数过程，将input() 接收参数，改为 sys.stdin.readline()
+                        Input() → sys.stdin.readline()优化接收参数过程，将input() 接收参数，改为 sys.stdin.readline()
 由于input 默认将每行最后的换行符删除掉，需要额外的运算。
-在python3环境下，读取数...
+在python3环境下，读取数据...
                     
                 </div>
 
@@ -507,10 +500,8 @@ step 1: 获取安装shell脚本文件
 
                 <div class="home-article-content markdown-body">
                     
-                        earlystop相关
-详见：早停法
-definition
-1CLASS pytorch_lightning.callbacks.EarlyStopping(monitor, min_delta=0.0, patience=3, verbose=Fa...
+                        earlystop相关详见：早停法
+definition1CLASS pytorch_lightning.callbacks.EarlyStopping(monitor, min_delta=0.0, patience=3, verbose=Fals...
                     
                 </div>
 
@@ -550,10 +541,9 @@ definition
 
                 <div class="home-article-content markdown-body">
                     
-                        Input() → sys.stdin.readline()
-优化接收参数过程，将input() 接收参数，改为 sys.stdin.readline()
+                        Input() → sys.stdin.readline()优化接收参数过程，将input() 接收参数，改为 sys.stdin.readline()
 由于input 默认将每行最后的换行符删除掉，需要额外的运算。
-在python3环境下，读取数...
+在python3环境下，读取数据...
                     
                 </div>
 
@@ -744,6 +734,22 @@ definition
 </div>
 
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </body>
 </html>
