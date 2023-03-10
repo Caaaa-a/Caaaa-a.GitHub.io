@@ -11,7 +11,7 @@
     
     <title>
         
-            Apriori |
+            Dropout |
         
         Caaaaa
     </title>
@@ -139,7 +139,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">Apriori</span>
+            <span class="title-hover-animation">Dropout</span>
         </div>
 
         
@@ -158,8 +158,8 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2022-04-27 23:42:02</span>
-        <span class="mobile">2022-04-27 23:42</span>
+        <span class="pc">2022-04-20 13:42:17</span>
+        <span class="mobile">2022-04-20 13:42</span>
     </span>
     
         <span class="article-categories article-meta-item">
@@ -178,12 +178,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>1.7k Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.1k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>6 Mins</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>4 Mins</span>
         </span>
     
     
@@ -199,90 +199,35 @@
         
 
         <div class="article-content markdown-body">
-            <p>目前常用的关联规则方法有很多，如贝叶斯网络、决策树、Apriori算法等。其中Apriori算法是关联规则挖掘频繁项集的经典算法，最早由R.Agrawal等人在1993年提出来的，是一种挖掘单维布尔型的关联规则算法，很多算法也是以其为核心进行改进的。</p>
-<h3 id="1-基本介绍"><a href="#1-基本介绍" class="headerlink" title="1 基本介绍"></a><strong>1 基本介绍</strong></h3><h4 id="1-1-概述"><a href="#1-1-概述" class="headerlink" title="1.1 概述"></a><strong>1.1 概述</strong></h4><p>Apriori算法是一种通过频繁项集来挖掘关联规则的算法。该算法既可以发现频繁项集，又可以挖掘物品之间关联规则。分别采用支持度和置信度来量化频繁项集和关联规则。其核心思想是通过候选集生成和情节的向下封闭检验检测两个阶段来挖掘频繁项集。</p>
-<p>其最常见的改进算法为AprioriTid算法，该改进算法与原算法的主要区别在于对数据集的更新方式不一样。当数据量较大时，使用改进算法得到的新数据集会比原始数据集小很多，这样在进行遍历的时候就节省了很多时间。</p>
-<h4 id="1-2-相关概念"><a href="#1-2-相关概念" class="headerlink" title="1.2 相关概念"></a><strong>1.2 相关概念</strong></h4><p><strong>（1）项</strong>（Item）：是关联规则最基础的元素，用 $i_n（n=1,2,3…..）$ 表示某一项。</p>
-<p><strong>（2）项集：</strong>是项的集合，假设项集 $I={i_1，i_2,…,i_n}$，包括 $n$ 项的项集成为 $n$ 项集。</p>
-<p><strong>（3）事务（TID）：</strong>是由一个唯一的事务标识号和一个组成事务的项的列表构成的。</p>
-<p><strong>（4）事务集：</strong>是所有事务构成的集合。假设事务数据集 $T={t_1,t_2，…, t_n}$ </p>
-<p><strong>（5）关联规则：</strong>可以表示为行如所示的蕴涵式。其中，$X \subset I,Y\subset I$ 且 $X \cap Y = \emptyset$。该关系式表示如果项集 $X$ 在某一事物中出现时，那么项集 $Y$ 也可能以某一概率出现在该事务中。</p>
-<p><strong>（6）支持度：</strong>是某一项集的频繁程度，是关联规则重要性的衡量准则，用于表示该项集的重要性。假设包含项集X、Y的事务数量与事务集总数countAll的比值,反映了X、Y项集同时出现的频率。</p>
-<script type="math/tex; mode=display">
-support(X\Rightarrow Y)=\frac{count(X\cup Y)}{countAll}</script><p><strong>（7）置信度：</strong>用来确定Y在包含X的事务中出现的频繁程度，即Y在X条件下的条件概率，是对关联规则准确度的衡量准则，表示规则的可靠程度。假设包含项集X、Y的事务数量与项集X事务数量的比值。</p>
-<script type="math/tex; mode=display">
-Confidence(X\Rightarrow Y)=\frac{support(X\Rightarrow Y)}{support(X)}=\frac{count(X\cup Y)}{count(X)}</script><p><strong>（8）频繁项集与最小支持度：</strong>最小支持度是预先设置好的项集满足支持度的下限，用<em>Min_sup</em>表示，反映了所关注的项集的最低重要性。当项集X的支持度不小于最小支持度阈值时，X为频繁项集。</p>
-<script type="math/tex; mode=display">
-support(X)=\frac{count(X)}{countAll} \geq min_{sup}</script><p>频繁项集中有两个重要的特性：</p>
-<ol>
-<li>如果一个项集是频繁的，那么它的所有非空子集都是频繁的。</li>
-<li>如果一个项集不是频繁的，那么它的所有超集也必然不是频繁的。</li>
+            <h4 id="什么是dropout">什么是Dropout</h4>
+<p>训练一个大型的网络，训练数据很少则很容易引起过拟合，可能我们会想到用L2正则化、或者减小网络规模。然而深度学习领域大神Hinton认为过拟合，可以通过阻止某些特征的协同作用来缓解，他在2012年文献：《Improving neural networks by preventing co-adaptation of feature detectors》提出：在每次训练的时候，让一半的特征检测器停过工作（每个神经元有百分之50的几率被移除，这样可以让一个神经元的出现不应该依赖于另外一个神经元），以此提高网络的泛化能力，称为dropout。</p>
+<p>另外，我们可以把dropout理解为 模型平均。 假设我们要实现一个图片分类任务，我们设计出了100000个网络，这100000个网络，我们可以设计得各不相同，然后我们对这100000个网络进行训练，训练完后我们采用平均的方法，进行预测，这样肯定可以提高网络的泛化能力，或者说可以防止过拟合，因为这100000个网络，它们各不相同，可以提高网络的稳定性。而所谓的dropout我们可以这么理解，这n个网络，它们权值共享，并且具有相同的网络层数(这样可以大大减小计算量)。我们每次dropout后，网络模型都可以看成是整个网络的子网络。(需要注意的是如果采用dropout，训练时间大大延长，但是对测试阶段没影响)。</p>
+<p><img src="../img/image-jqxxxj-dp1.png" alt="image-20220420134134042" style="zoom:50%;" /></p>
+<p>计算公式： <span class="math display">\[
+z_i^{(l+1)}=w_i^{(l+1)}y^l+b_i^{(l+1)},\\
+y^{(l+1)}=f(z^{(l+1)}_i)
+\]</span> 变成了： <span class="math display">\[
+r_j^{l}\sim Bernoulli(p) \\
+\pmb{\widetilde y}^{(l)}=\pmb{r}^{(l)}*\pmb{y}^{(l)}\\
+z_i^{(l+1)}=\pmb{w}_i^{(l+1)}\pmb{\widetilde y}^l+b_i^{(l+1)},\\
+y^{(l+1)}=f(z^{(l+1)}_i)
+\]</span> 上面公式中Bernoulli函数，是为了以概率p，随机生成一个0、1的向量。</p>
+<p><strong>算法实现概述：</strong></p>
+<ol type="1">
+<li>设置dropout比例，确定多少检测器停止工作</li>
+<li>rescale，乘以 <span class="math inline">\(1/(1-p)\)</span></li>
 </ol>
-<p><strong>EXAMPLE:</strong></p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>TID</th>
-<th>Items</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Bread, Milk</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Bread, Diaper, Beer, Eggs</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Milk, Diaper, Beer, Coke</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Bread, Milk, Diaper, Beer</td>
-</tr>
-<tr>
-<td>5</td>
-<td>Bread, Milk, Diaper, Coke</td>
-</tr>
-</tbody>
-</table>
-</div>
-<script type="math/tex; mode=display">
-\{Milk,Diaper\} \Rightarrow Beer\\
-s=\frac{count(Milk,Diaper,Beer)}{countAll}=\frac{2}{5}\\
-c=\frac{count(Milk,Diaper,Beer)}{count(Milk,Diaper)}=\frac{2}{3}</script><p><strong>（9）强关联规则与最小置信度</strong>：最小置信度是预先设置好的项集满足置信度的下限，用 $Min_{conf}$ 表示，反映了所关注的项集的最低可靠程度。当关联规则 $R$ 同时满足支持度与置信度不小于最小阈值，则称其为强关联规则：</p>
-<script type="math/tex; mode=display">
-\left\{\begin{array}{}
-Support(X\Rightarrow Y)\geq min_{sup}\\
-Confidence(X\Rightarrow Y)\geq min_{conf}
-\end{array}
-\right.</script><p>挖掘关联规则的主要任务就是为了找出满足条件的各种强关联规则。</p>
-<p><strong>（10）提升度</strong>：置信度与期望可信度的比值</p>
-<script type="math/tex; mode=display">
-lift(X\Rightarrow Y)=\frac{count(X \cup Y)}{count(X)count(Y)}=\frac{Confidence(X\Rightarrow Y)}{support(Y)}</script><p>说明了物品集X的出现，对物品集Y出现的概率有多大的变化；</p>
-<ul>
-<li>正常数值区间<strong>大于1</strong>；</li>
-<li>如果lift=1 说明X,Y事件为互相独立事件，物品集X的出现<strong>不会改变</strong>物品集Y出现的概率；</li>
-</ul>
-<h4 id="1-3-优点"><a href="#1-3-优点" class="headerlink" title="1.3 优点"></a><strong>1.3 优点</strong></h4><p><strong>[1]</strong> 该算法的关联规则关联规则是在频繁项集基础上产生的，这可以保证这些规则的支持度达到指定的水平，具有普遍性和令人信服的水平；</p>
-<p><strong>[2]</strong> 算法简单，易于理解，对数据的要求低。</p>
-<h4 id="1-4-缺点"><a href="#1-4-缺点" class="headerlink" title="1.4 缺点"></a><strong>1.4 缺点</strong></h4><p><strong>[1]</strong> 在每一步产生候选项目集的时候循环产生的组合过多，没有排除不应参与组合的项；</p>
-<p><strong>[2]</strong> 每次计算项集的支持度的时候，都对数据库中的全部数据进行了一遍扫描比较，I/O负载很大。</p>
-<h3 id="2-算法流程"><a href="#2-算法流程" class="headerlink" title="2 算法流程"></a><strong>2 算法流程</strong></h3><h4 id="2-1-问题说明"><a href="#2-1-问题说明" class="headerlink" title="2.1 问题说明"></a><strong>2.1 问题说明</strong></h4><p>【已知】：数据集 $X=(x_1,x_2,…,x_n)$ ，其中每一个 $x_i$ 对应 $k$ 个变量（即 $k$ 个统计指标），如果该变量的取值满足设定的条件， 则$x_i$ 在该变量上可转化成分类数据或者 $0-1$ 式数据。</p>
-<p>【待求】：数据集的频繁项集和关联规则。</p>
-<h4 id="2-2-算法步骤（文字描述版）"><a href="#2-2-算法步骤（文字描述版）" class="headerlink" title="2.2 算法步骤（文字描述版）"></a><strong>2.2 算法步骤（文字描述版）</strong></h4><p><strong>[1] 第一步：</strong>输入数据集 $X$</p>
-<p><strong>[2] 第二步：</strong>确定数据集 $X$ 中所包含的项集，并具体化到每一个数据点（即每一个 $x_i$ 中所包含的变量情况）</p>
-<p><strong>[3] 第三步：</strong>进行第一次迭代，把每个项集中的项目单独扫描统计（即某个项在多少个数据点中出现了），将每个项都作为候选 $1-$ 项集 $C_1$  的成员，并计算每个项的支持度</p>
-<p><strong>[4] 第四步：</strong>设定最小支持度，根据候选  $1-$ 项集 $C_1$  的成员、支持度和最小支持度，采用扫描过滤的方式得候选 $2-$ 项集 $C_2$ ，候选项集需满足所有真子集的支持度都 $≥$ 最小支持度</p>
-<p><strong>[5] 第五步：</strong>保持最小支持度不变,重复进行第四步，直到没有办法再合并(即候选项集无法满足条件)，形成新的候选项集，此时输出最终的频繁项集结果并给关联规则。</p>
-<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_46649052/article/details/115385998" >机器学习—关联规则分析之Apriori算法及其python实现<i class="fas fa-external-link-alt"></i></a></p>
-<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43391414/article/details/109330289" >数据挖掘关联规则挖掘改进算法DHP<i class="fas fa-external-link-alt"></i></a></p>
-<h4 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h4><p><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/73095827" >数据挖掘十大算法—— Apriori<i class="fas fa-external-link-alt"></i></a>：算法步骤（数学描述）和例子、R语言</p>
-<p><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/84680819" >数据分析方法—Apriori算法简介<i class="fas fa-external-link-alt"></i></a>：例子好像错了</p>
+<h4 id="源码实现">源码实现</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#dropout函数的实现</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dropout</span>(<span class="params">x, level</span>):</span></span><br><span class="line">	<span class="keyword">if</span> level &lt; <span class="number">0.</span> <span class="keyword">or</span> level &gt;= <span class="number">1</span>:<span class="comment">#level是概率值，必须在0~1之间</span></span><br><span class="line">	    <span class="keyword">raise</span> Exception(<span class="string">&#x27;Dropout level must be in interval [0, 1[.&#x27;</span>)</span><br><span class="line">	retain_prob = <span class="number">1.</span> - level</span><br><span class="line">    <span class="comment">#我们通过binomial函数，生成与x一样的维数向量。binomial函数就像抛硬币一样，我们可以把每个神经元当做抛硬币一样</span></span><br><span class="line">	<span class="comment">#硬币 正面的概率为p，n表示每个神经元试验的次数</span></span><br><span class="line">	<span class="comment">#因为我们每个神经元只需要抛一次就可以了所以n=1，size参数是我们有多少个硬币。</span></span><br><span class="line">	sample=np.random.binomial(n=<span class="number">1</span>,p=retain_prob,size=x.shape)<span class="comment">#即将生成一个0、1分布的向量，0表示这个神经元被屏蔽，不工作了，也就是dropout了</span></span><br><span class="line">	<span class="built_in">print</span> sample</span><br><span class="line">	x *=sample<span class="comment">#0、1与x相乘，我们就可以屏蔽某些神经元，让它们的值变为0</span></span><br><span class="line">	<span class="built_in">print</span> x</span><br><span class="line">	x /= retain_prob</span><br><span class="line"> </span><br><span class="line">	<span class="keyword">return</span> x</span><br><span class="line"><span class="comment">#对dropout的测试，大家可以跑一下上面的函数，了解一个输入x向量，经过dropout的结果</span></span><br><span class="line">x=np.asarray([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>],dtype=np.float32)</span><br><span class="line">dropout(x,<span class="number">0.4</span>)&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+<p>函数中，x是本层网络的激活值。Level就是dropout就是每个神经元要被丢弃的概率。</p>
+<p>在Dropout之前，正则化是主要的用来缓解模型过拟合的策略，例如l1正则和l2正则。但是它们并没有完全解决模型的过拟合问题，原因就是网络中存在co-adaption（共适应）问题。</p>
+<p>所谓co-adaption，是指网络中的一些节点会比另外一些节点有更强的表征能力。这时，随着网络的不断训练，具有更强表征能力的节点被不断的强化，而更弱的节点则不断弱化直到对网络的贡献可以忽略不计。这时候只有网络中的部分节点才会被训练，浪费了网络的宽度和深度，进而导致模型的效果上升收到限制。</p>
+<p>而Dropout的提出解决了co-adaption问题，从而使得训练更宽的网络成为可能。</p>
+<h4 id="参考">参考</h4>
+<ol type="1">
+<li><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/hjimce/article/details/50413257" >深度学习（二十二）Dropout浅层理解与实现<i class="fas fa-external-link-alt"></i></a></li>
+<li>详细推导见：<a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/390990848" >Dropout详解<i class="fas fa-external-link-alt"></i></a></li>
+</ol>
 
         </div>
 
@@ -290,11 +235,11 @@ lift(X\Rightarrow Y)=\frac{count(X \cup Y)}{count(X)count(Y)}=\frac{Confidence(X
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>Post title：Apriori</li>
+        <li>Post title：Dropout</li>
         <li>Post author：Caaaaa</li>
-        <li>Create time：2022-04-27 23:42:02</li>
+        <li>Create time：2022-04-20 13:42:17</li>
         <li>
-            Post link：https://caaaa-a.github.io/2022/04/27/机器学习小记-Apriori/
+            Post link：https://caaaa-a.github.io/2022/04/20/机器学习小记/机器学习小记-Dropout/
         </li>
         <li>
             Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
@@ -313,13 +258,13 @@ lift(X\Rightarrow Y)=\frac{count(X \cup Y)}{count(X)count(Y)}=\frac{Confidence(X
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2022/05/11/tools%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-torch/"
+                           href="/2022/04/27/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0-Apriori/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">torch</span>
+                                <span class="post-nav-title-item">Apriori</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -329,10 +274,10 @@ lift(X\Rightarrow Y)=\frac{count(X \cup Y)}{count(X)count(Y)}=\frac{Confidence(X
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/04/20/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0-Dropout/"
+                           href="/2022/04/16/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E5%88%A4%E5%88%AB%E6%A8%A1%E5%9E%8B%E5%92%8C%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">Dropout</span>
+                                <span class="post-nav-title-item">机器学习中的判别模型和生成模型</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -363,7 +308,7 @@ lift(X\Rightarrow Y)=\frac{count(X \cup Y)}{count(X)count(Y)}=\frac{Confidence(X
               <span>2020</span>
               -
             
-            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Caaaaa</a>
+            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Caaaaa</a>
         </div>
         
             <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -458,7 +403,7 @@ lift(X\Rightarrow Y)=\frac{count(X \cup Y)}{count(X)count(Y)}=\frac{Confidence(X
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D"><span class="nav-text">1 基本介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-%E6%A6%82%E8%BF%B0"><span class="nav-text">1.1 概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5"><span class="nav-text">1.2 相关概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-%E4%BC%98%E7%82%B9"><span class="nav-text">1.3 优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-%E7%BC%BA%E7%82%B9"><span class="nav-text">1.4 缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%AE%97%E6%B3%95%E6%B5%81%E7%A8%8B"><span class="nav-text">2 算法流程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-%E9%97%AE%E9%A2%98%E8%AF%B4%E6%98%8E"><span class="nav-text">2.1 问题说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-%E7%AE%97%E6%B3%95%E6%AD%A5%E9%AA%A4%EF%BC%88%E6%96%87%E5%AD%97%E6%8F%8F%E8%BF%B0%E7%89%88%EF%BC%89"><span class="nav-text">2.2 算法步骤（文字描述版）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E8%80%83%EF%BC%9A"><span class="nav-text">参考：</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFdropout"><span class="nav-text">什么是Dropout</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%BA%90%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-text">源码实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-text">参考</span></a></li></ol>
     </div>
 </div>
         </aside>
