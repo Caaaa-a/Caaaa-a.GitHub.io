@@ -2,9 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://caaaa-a.github.io/2023/02/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/%E5%AD%A6%E4%B9%A0%E7%8E%87%E8%A1%B0%E5%87%8F/</loc>
+    <loc>https://caaaa-a.github.io/2023/03/13/%E5%89%AA%E6%9E%9D/To-prune,-or-not-to-prune-exploring-the-efficacy-of-pruning-for-model-compression/</loc>
     
-    <lastmod>2023-03-10</lastmod>
+    <lastmod>2023-03-13</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -12,6 +12,24 @@
   
   <url>
     <loc>https://caaaa-a.github.io/2023/03/10/%E5%89%AA%E6%9E%9D/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9A%84%E5%89%AA%E6%9E%9D/</loc>
+    
+    <lastmod>2023-03-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://caaaa-a.github.io/2023/03/13/%E5%89%AA%E6%9E%9D/Learning-both-Weights-and-Connections-for-Efficient-Neural-Networks/</loc>
+    
+    <lastmod>2023-03-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://caaaa-a.github.io/2023/02/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/%E5%AD%A6%E4%B9%A0%E7%8E%87%E8%A1%B0%E5%87%8F/</loc>
     
     <lastmod>2023-03-10</lastmod>
     
@@ -787,7 +805,7 @@
 
   <url>
     <loc>https://caaaa-a.github.io/</loc>
-    <lastmod>2023-03-10</lastmod>
+    <lastmod>2023-03-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -797,161 +815,161 @@
   
   <url>
     <loc>https://caaaa-a.github.io/categories/Natural-Network/</loc>
-    <lastmod>2023-03-10</lastmod>
+    <lastmod>2023-03-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caaaa-a.github.io/categories/Knowledge-Tracing/</loc>
-    <lastmod>2023-03-10</lastmod>
+    <lastmod>2023-03-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caaaa-a.github.io/categories/bert-huang-Fall-2015-Machine-Learning/</loc>
-    <lastmod>2023-03-10</lastmod>
+    <lastmod>2023-03-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caaaa-a.github.io/categories/hello/</loc>
-    <lastmod>2023-03-10</lastmod>
+    <lastmod>2023-03-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caaaa-a.github.io/categories/pytorch-lightning/</loc>
-    <lastmod>2023-03-10</lastmod>
+    <lastmod>2023-03-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caaaa-a.github.io/categories/tools%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</loc>
-    <lastmod>2023-03-10</lastmod>
+    <lastmod>2023-03-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caaaa-a.github.io/categories/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0v2/</loc>
-    <lastmod>2023-03-10</lastmod>
+    <lastmod>2023-03-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caaaa-a.github.io/categories/%E5%A6%82%E4%BD%95%E5%86%99%E5%87%BA%E5%A5%BD%E7%A8%8B%E5%BA%8F/</loc>
-    <lastmod>2023-03-10</lastmod>
+    <lastmod>2023-03-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caaaa-a.github.io/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2023-03-10</lastmod>
+    <lastmod>2023-03-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caaaa-a.github.io/categories/%E6%9C%89%E6%AF%92%E7%9A%84%E9%80%BB%E8%BE%91/</loc>
-    <lastmod>2023-03-10</lastmod>
+    <lastmod>2023-03-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caaaa-a.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/</loc>
-    <lastmod>2023-03-10</lastmod>
+    <lastmod>2023-03-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caaaa-a.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2023-03-10</lastmod>
+    <lastmod>2023-03-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caaaa-a.github.io/categories/%E7%88%AC%E8%99%AB/</loc>
-    <lastmod>2023-03-10</lastmod>
+    <lastmod>2023-03-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caaaa-a.github.io/categories/%E7%A0%94%E7%A9%B6%E5%88%9D%E6%88%90%E9%95%BF/</loc>
-    <lastmod>2023-03-10</lastmod>
+    <lastmod>2023-03-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caaaa-a.github.io/categories/%E7%BC%96%E7%A8%8B%E6%80%9D%E7%BB%B4/</loc>
-    <lastmod>2023-03-10</lastmod>
+    <lastmod>2023-03-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caaaa-a.github.io/categories/%E8%BF%90%E8%A1%8C%E5%AE%89%E8%A3%85/</loc>
-    <lastmod>2023-03-10</lastmod>
+    <lastmod>2023-03-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caaaa-a.github.io/categories/R/</loc>
-    <lastmod>2023-03-10</lastmod>
+    <lastmod>2023-03-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caaaa-a.github.io/categories/python%E5%B0%8F%E8%AE%B0/</loc>
-    <lastmod>2023-03-10</lastmod>
+    <lastmod>2023-03-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caaaa-a.github.io/categories/%E9%A2%98%E8%A7%A3/</loc>
-    <lastmod>2023-03-10</lastmod>
+    <lastmod>2023-03-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caaaa-a.github.io/categories/linux/</loc>
-    <lastmod>2023-03-10</lastmod>
+    <lastmod>2023-03-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caaaa-a.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1/</loc>
-    <lastmod>2023-03-10</lastmod>
+    <lastmod>2023-03-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caaaa-a.github.io/categories/%E6%95%99%E8%82%B2%E7%A7%91%E7%A0%94%E6%96%B9%E6%B3%95/</loc>
-    <lastmod>2023-03-10</lastmod>
+    <lastmod>2023-03-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caaaa-a.github.io/categories/%E5%89%AA%E6%9E%9D/</loc>
-    <lastmod>2023-03-10</lastmod>
+    <lastmod>2023-03-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
