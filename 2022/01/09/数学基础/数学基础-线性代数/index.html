@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<link rel="dns-prefetch" href="//cdn.bootcss.com" />
+	<link rel="dns-prefetch" href="//cdn.mathjax.org" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Caaaaa">
+    
+    <title>
+        
+            机器学习数学基础：线性代数 |
+        
+        Caaaaa
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"caaaa-a.github.io","root":"/","language":"en","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/logo.png","favicon":"/images/logo.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"To be a slash youth."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Caaaaa
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">机器学习数学基础：线性代数</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/logo.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Caaaaa</span>
+                        
+                            <span class="author-label">Lv5</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-01-09 15:03:46</span>
+        <span class="mobile">2022-01-09 15:03</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/">数学基础</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>4.6k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>19 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>本章介绍线性代数中向量、内积、范数、矩阵、线性变换、二次型、矩阵分解等基本知识。</p>
+<h2 id="1-行列式"><a href="#1-行列式" class="headerlink" title="1 行列式"></a>1 行列式</h2><p>线性代数中，行列式是一个函数，和矩阵有一定的关系。几何上，行列式可以看作有向面积或体积的概念在一般的欧几里得空间中的推广。</p>
+<h3 id="1-1-二阶与三阶行列式"><a href="#1-1-二阶与三阶行列式" class="headerlink" title="1.1 二阶与三阶行列式"></a>1.1 二阶与三阶行列式</h3><p>可用来解决线性方程求解的问题，同时注意对角线法则只适用于二阶和三阶的行列式。</p>
+<p>表达式</p>
+<script type="math/tex; mode=display">
+D=a_{11}a_{22}-a_{12}a_{21}=\left[
+ \begin{matrix}
+   a_{11} & a_{12}\\
+   a_{21} & a_{22} 
+  \end{matrix}
+  \right]</script><p>称为数表的<strong>二阶行列式</strong>，记作 $D=det(a_{ij})$ .</p>
+<p><strong>三阶行列式</strong>定义为</p>
+<script type="math/tex; mode=display">
+\left[
+ \begin{matrix}
+   a_{11} & a_{12} & a_{13} \\
+   a_{21} & a_{22} & a_{23} \\
+   a_{31} & a_{32} & a_{33}
+  \end{matrix}
+  \right]=a_{11}a_{22}a_{33}+a_{12}a_{23}a_{31}+a_{13}a_{21}a_{32}-a_{13}a_{22}a_{31}-a_{12}a_{21}a_{33}-a_{11}a_{23}a_{32}</script><h3 id="1-2-全排列和对换"><a href="#1-2-全排列和对换" class="headerlink" title="1.2 全排列和对换"></a>1.2 全排列和对换</h3><p><strong>全排列的定义</strong>：由 $1$ 到 $n$ 个数组成的一个有序数组称为一个n级全排列，通常用 $ P_n$ 表示。</p>
+<script type="math/tex; mode=display">
+P_n=n\times (n-1)\times \dots\times3\times2\times1=n!</script><p><strong>逆序数的定义</strong>：在一个排列中，如果两个数（称为数对）的前后位置与大小顺序相反，即前面的数大于后面的数，那么称它们构成一个逆序（反序）。一个排列中所有逆序的总数称为此排列的逆序数。分别计算出排在 $1,2,\dots,n-1,n$ 前面比它大的数码之和。</p>
+<script type="math/tex; mode=display">
+t=t_1+t_2+\dots+t_n=\sum_{i=1}^nt_i</script><p>此外，还有奇排列和偶排列的概念，即奇排列为逆序数为奇数的排列。</p>
+<p><strong>对换的定义</strong>：在排列中，将任意两个元素对调，其余元素不动，就得到另一个排列，这样的一个变换叫作对换。将相邻的两个元素对换，叫作相邻对换。其中，一个排列中任意两个元素对换，排列改变奇偶性。</p>
+<h3 id="1-3-n阶行列式"><a href="#1-3-n阶行列式" class="headerlink" title="1.3 n阶行列式"></a>1.3 n阶行列式</h3><script type="math/tex; mode=display">
+\left[
+ \begin{matrix}
+   a_{11} & a_{12} & a_{13} \\
+   a_{21} & a_{22} & a_{23} \\
+   a_{31} & a_{32} & a_{33}
+  \end{matrix}
+  \right]=\sum(-1)^ta_{11}a_{22}a_{33}</script><p>可推广至n阶，其中 $t$ 为列标排列的逆序数。</p>
+<h3 id="1-4-几种特殊行列式的值"><a href="#1-4-几种特殊行列式的值" class="headerlink" title="1.4 几种特殊行列式的值"></a>1.4 几种特殊行列式的值</h3><p><strong>上、下三角行列式，对角行列式，特殊行列式（类似反的下三角行列式）</strong> </p>
+<p>如果是计算的是主对角线的值，则直接连乘；如果是副对角线，则需加一个系数 $(-1)^{\frac{n(n-1)}{2}}$.</p>
+<p>一些其他的见知乎：<a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/34685081。" >https://zhuanlan.zhihu.com/p/34685081。<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="1-5-n阶行列式的性质"><a href="#1-5-n阶行列式的性质" class="headerlink" title="1.5 n阶行列式的性质"></a>1.5 n阶行列式的性质</h3><ul>
+<li>性质1：行列式与它的转置行列式相等。</li>
+<li>性质2：互换行列式的两列，行列式变号。（推论：两行或两列相同，此行列式等于零）。</li>
+<li>性质3：行列式的某一行（列）中所有元素都乘同一数 $k$，等于用数 $k$ 乘此行列式。</li>
+<li>性质4：行列式中如果有两行（列）元素成比例，则此行列式等于零。</li>
+<li>性质5：若行列式的某一列（行）的元素都是两数 之和，则该行列式等于两个行列式之和。</li>
+<li>性质6：把行列式的某一列（行）的各个元素乘同一个数，然后加到另一列（行）对应的元素上去，行列式的值不变。</li>
+</ul>
+<h2 id="2-用向量描述空间"><a href="#2-用向量描述空间" class="headerlink" title="2 用向量描述空间"></a>2 用向量描述空间</h2><h3 id="2-1-向量及其运算"><a href="#2-1-向量及其运算" class="headerlink" title="2.1 向量及其运算"></a>2.1 向量及其运算</h3><p>$n$ 维空间用 $\pmb{R}^n$ 表示，上标 $n$ 表示空间的维度。</p>
+<h3 id="2-2-向量组的线性组合"><a href="#2-2-向量组的线性组合" class="headerlink" title="2.2 向量组的线性组合"></a>2.2 向量组的线性组合</h3><p>若干个同纬度的列向量（或同纬度的行向量）所组成的集合叫作向量组。</p>
+<p>给定向量组 $\pmb{A}:\pmb{a}_1,\pmb{a}_2,\dots,\pmb{a}_m$ 和一组实数 $\lambda_1,\lambda_2,\dots,\lambda_m$，那么表达式 $\lambda_1\pmb{a}_1+\lambda_2\pmb{a}_2,\dots,\lambda_m\pmb{a}_m$称为向量组 $\pmb{A} $ 的一个线性组合。</p>
+<p>给定向量组 $\pmb{A}:\pmb{a}_1,\pmb{a}_2,\dots,\pmb{a}_m$ 和向量 $\pmb{b}$，如果存在一组数 $\lambda_1,\lambda_2,\dots,\lambda_m$，使得 $\pmb{b}=\lambda_1\pmb{a}_1+\lambda_2\pmb{a}_2,\dots,\lambda_m\pmb{a}_m$，则向量 $\pmb{b}$ 是向量组 $\pmb{A}$ 的线性组合，这时称向量 $\pmb{b}$ 能由向量组 $\pmb{A}$ 线性表示，也就是对应的方程组有解。</p>
+<h3 id="2-3-向量组的线性相关性"><a href="#2-3-向量组的线性相关性" class="headerlink" title="2.3 向量组的线性相关性"></a>2.3 向量组的线性相关性</h3><p><strong>向量组的线性相关性的定义</strong>：给定向量组 $\pmb{A}:\pmb{a}_1,\pmb{a}_2,\dots,\pmb{a}_m$ ，如果存在不全为0的数 $\lambda_1,\lambda_2,\dots,\lambda_m$，使得$\lambda_1\pmb{a}_1+\lambda_2\pmb{a}_2,\dots,\lambda_m\pmb{a}_m=0$，则称向量组 $\pmb{A}$ 是线性相关的。</p>
+<p><strong>线性相关的充要条件是</strong>：向量组中至少有一个向量可以由其他所有向量线性表示。</p>
+<h2 id="3-内积、正交向量组和范数"><a href="#3-内积、正交向量组和范数" class="headerlink" title="3 内积、正交向量组和范数"></a>3 内积、正交向量组和范数</h2><h3 id="3-1-内积"><a href="#3-1-内积" class="headerlink" title="3.1 内积"></a>3.1 内积</h3><p>向量之间的乘法可分为内积和外积，一般用内积比较多。内积的直接描述为某一向量在另一个向量方向上的投影长度。</p>
+<p><strong>内积的定义</strong>：设有 $n$ 维向量 $\pmb{x}=\left(\begin{matrix}<br>   x_1 \<br>  x_2\ \vdots  \ x_n<br>  \end{matrix}\right)$，$\pmb{y}=\left(\begin{matrix}<br>   y_1 \<br>  y_2\ \vdots  \ y_n<br>  \end{matrix}\right)$，令$（\pmb{x},\pmb{y}）=x_1y_1+x_2y_2+\dots+x_ny_n$，$（\pmb{x},\pmb{y}）$称为向量 $\pmb{x}$ 和向量 $\pmb{y}$ 的内积，也可以表示为 $\pmb{x·}\pmb{y}$.</p>
+<h3 id="3-2-正交向量组和施密特正交化"><a href="#3-2-正交向量组和施密特正交化" class="headerlink" title="3.2 正交向量组和施密特正交化"></a>3.2 正交向量组和施密特正交化</h3><p><strong>正交向量的定义</strong>：如果两向量的内积为零，则称它们正交。</p>
+<p><strong>正交向量组的定义</strong>：如果向量组中任意两个向量都正交且不含零向量，则称为正交向量组，并且正交向量组是线性无关的。</p>
+<p><strong>标准正交向量</strong>：向量组内向量彼此之间的点积为 $0$，与自身的点积为 $1$。</p>
+<p><strong>施密特正交化详见：</strong></p>
+<p>如何理解施密特（Schmidt）正交化：<a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/136627868。" >https://zhuanlan.zhihu.com/p/136627868。<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="3-3-范数"><a href="#3-3-范数" class="headerlink" title="3.3 范数"></a>3.3 范数</h3><p><a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%9F%A9%E9%99%A3%E7%AF%84%E6%95%B8" >wiki——矩阵范数<i class="fas fa-external-link-alt"></i></a></p>
+<p><strong>向量范数的定义</strong>：如果向量 $\pmb{a} \in \pmb{R}^n$ 的某个实值函数 $f(\pmb{a})=||\pmb{a}|| $ 满足</p>
+<ul>
+<li>非负性：$||\pmb{a}||\geq 0$ ，且$||\pmb{a}||=0$ 当且仅当 $\pmb{a}=0$</li>
+<li>齐次性：对于任意实数 $\lambda$，都有 $||\lambda\pmb{a}||=|\lambda|||\pmb{a}||$</li>
+<li>三角不等式：对于任意 $\pmb{a,b}\in\pmb{R}^n$，都有 $||\pmb{a+b}||\leq||\pmb{a}||+||\pmb{b}||$</li>
+</ul>
+<p>常用的向量范数有 $ 1$ -范数、$2$ -范数和 $\infty$ -范数。</p>
+<ul>
+<li><p>$ 1$ -范数：也称为曼哈顿距离</p>
+<script type="math/tex; mode=display">
+||\pmb{a}||_1=\sum_i^n|\pmb{a}_i|</script></li>
+<li><p>$2$ -范数：也称为欧几里得范数</p>
+</li>
+</ul>
+<script type="math/tex; mode=display">
+||\pmb{a}||_2=\sqrt{\sum_{i=1}^n\pmb{a}_i^2}</script><ul>
+<li>$\infty$ -范数：所有向量元素中的最大值<script type="math/tex; mode=display">
+||\pmb{a}||_\infty=\max_i|a_i|</script></li>
+</ul>
+<p><strong>矩阵范数的定义</strong>：如果矩阵 $\pmb{A} \in \pmb{R}^{n\times n}$ ，若按某一确定的法则对应于一个非负实数 $||\pmb{A}|| $ 满足</p>
+<ul>
+<li>非负性：$||\pmb{A}||\geq 0$ ，且$||\pmb{A}||=0$ 当且仅当 $\pmb{A}=0$</li>
+<li>齐次性：对于任意实数 $\lambda$，都有 $||\lambda\pmb{A}||=|\lambda|||\pmb{A}||$</li>
+<li>三角不等式：对于任意 $\pmb{A，B}\in\pmb{R}^{n\times n}$，都有 $||\pmb{A+B}||\leq||\pmb{A}||+||\pmb{B}||$</li>
+<li>相容性：对于任意的 $\pmb{A，B}\in\pmb{R}^{n\times n}$，都有 $||\pmb{AB}||\leq||\pmb{A}||||\pmb{B}||$</li>
+</ul>
+<p>常用的矩阵范数有 $ 1$ -范数、$2$ -范数、 $\infty$ -范数和 $F$ -范数。</p>
+<ul>
+<li><p>$ 1$ -范数：又称为列和范数。顾名思义，即矩阵列向量中绝对值之和的最大值。</p>
+<script type="math/tex; mode=display">
+||\pmb{A}||_1=\max_j\sum_i^m|a_{ij}|</script></li>
+<li><p>$2$ -范数：又称为谱范数，计算方法为 $\pmb{A^TA}$ 矩阵的最大特征值开平方。</p>
+</li>
+</ul>
+<script type="math/tex; mode=display">
+||\pmb{A}||_2=\sqrt{\lambda_1}</script><ul>
+<li><p>$\infty$ -范数：又称为行和范数。顾名思义，即矩阵行向量中绝对值之和的最大值。</p>
+<script type="math/tex; mode=display">
+||\pmb{A}||_\infty=\max_i\sum_j^n|a_{ij}|</script></li>
+<li><p>$F$ -范数：又称为Frobenius范数，计算方法为矩阵元素的绝对值的平方和再开方。</p>
+<script type="math/tex; mode=display">
+||\pmb{A}||_F=\sqrt{\sum_{i=1}^m\sum_{j=1}^n|a_{ij}|}</script></li>
+</ul>
+<h3 id="习题：Python编程实现求向量范数和矩阵范数。"><a href="#习题：Python编程实现求向量范数和矩阵范数。" class="headerlink" title="习题：Python编程实现求向量范数和矩阵范数。"></a>习题：Python编程实现求向量范数和矩阵范数。</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a=np.array([<span class="number">2</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">8</span>,-<span class="number">3</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;向量a：&#x27;</span>,a)</span><br><span class="line"><span class="built_in">print</span> (<span class="string">&#x27;向量a的1-范数:&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.linalg.norm(a,<span class="built_in">ord</span>=<span class="number">1</span>))</span><br><span class="line"><span class="built_in">print</span> (<span class="string">&#x27;向量a的2-范数:&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.linalg.norm(a,<span class="built_in">ord</span>=<span class="number">2</span>))</span><br><span class="line"><span class="built_in">print</span> (<span class="string">&#x27;向量a的∞-范数:&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.linalg.norm(a,<span class="built_in">ord</span>=np.inf))</span><br><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">A=np.arange(<span class="number">3</span>,<span class="number">15</span>).reshape(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;矩阵A：&#x27;</span>,A)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;矩阵A的1-范数:&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.linalg.norm(A,<span class="built_in">ord</span>=<span class="number">1</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;矩阵A的2-范数:&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.linalg.norm(A,<span class="built_in">ord</span>=<span class="number">2</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;矩阵的∞-范数:&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.linalg.norm(A,<span class="built_in">ord</span>=np.inf))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;矩阵A的F-范数:&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.linalg.norm(A,<span class="built_in">ord</span>=<span class="string">&#x27;fro&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;矩阵A列向量的2-范数:&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.linalg.norm(A,<span class="built_in">ord</span>=<span class="number">2</span>,axis=<span class="number">0</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;矩阵A行向量的2-范数:&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.linalg.norm(A,<span class="built_in">ord</span>=<span class="number">2</span>,axis=<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+<h2 id="4-矩阵和线性变换"><a href="#4-矩阵和线性变换" class="headerlink" title="4 矩阵和线性变换"></a>4 矩阵和线性变换</h2><h3 id="4-1-矩阵及其运算"><a href="#4-1-矩阵及其运算" class="headerlink" title="4.1 矩阵及其运算"></a>4.1 矩阵及其运算</h3><p>一些不想敲的概念：</p>
+<ul>
+<li>矩阵的定义。</li>
+<li>特殊的矩阵：行矩阵（也叫行向量）、列矩阵（也叫列向量）、方阵（$\pmb{A}_n$），三角矩阵、单位矩阵、对称矩阵、对角矩阵、实对称矩阵、零矩阵、正交矩阵。</li>
+<li>矩阵的运算：加法、数乘、乘法、转置、行列式（$|\pmb{A}|$ 或 $det(\pmb{A})$).</li>
+</ul>
+<h3 id="4-2-逆矩阵"><a href="#4-2-逆矩阵" class="headerlink" title="4.2 逆矩阵"></a>4.2 逆矩阵</h3><p>对于 $n$ 阶矩阵 $\pmb{A}$ ，如果有一个 $n$ 阶矩阵 $\pmb{B}$ ，使得 $\pmb{AB=BA=E}$，则称矩阵 $\pmb{A}$ 是可逆的，并把矩阵 $\pmb{B}$ 称为 $\pmb{A}$ 的逆矩阵，记作 $\pmb{A}^{-1}$ .</p>
+<ul>
+<li>若矩阵 $\pmb{A}$ 可逆，则 $|\pmb{A}| \neq 0$ .</li>
+<li>若  $|\pmb{A}| \neq 0$，则矩阵 $\pmb{A}$ 可逆，且 $\pmb{A}^{-1}=\frac{1}{|\pmb{A}|}\pmb{A}^<em>$，其中 $\pmb{A}^</em>$ 为矩阵 $\pmb{A}$ 的伴随矩阵。</li>
+</ul>
+<h3 id="4-3-矩阵的初等变换"><a href="#4-3-矩阵的初等变换" class="headerlink" title="4.3 矩阵的初等变换"></a>4.3 矩阵的初等变换</h3><ul>
+<li>对调两行</li>
+<li>数乘</li>
+<li>数乘再相加</li>
+</ul>
+<h3 id="4-4-标量对向量的导数、最小二乘法"><a href="#4-4-标量对向量的导数、最小二乘法" class="headerlink" title="4.4 标量对向量的导数、最小二乘法"></a>4.4 标量对向量的导数、最小二乘法</h3><p><img src="/img/xxds.png" alt="xxds"></p>
+<p><strong>详见：</strong></p>
+<p>系列：<a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/69027474" >机器学习中的矩阵向量求导<i class="fas fa-external-link-alt"></i></a></p>
+<p>单列一个：<a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/pinard/p/10773942.html" >机器学习中的矩阵向量求导(二) 矩阵向量求导之定义法 <i class="fas fa-external-link-alt"></i></a></p>
+<p>最小二乘法及python代码：<a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/38128785" >最小二乘法（least sqaure method）<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="4-5-线性变换"><a href="#4-5-线性变换" class="headerlink" title="4.5 线性变换"></a>4.5 线性变换</h3><p><strong>线性变换的定义</strong>：设 $\pmb{V}$ 为一个线性空间，映射 $f:\pmb{V}\rightarrow\pmb{V}$ 为 $\pmb{V}$ 的一个变换，若 $f$ 保持 $\pmb{V}$ 的加法与数乘运算，则称 $f:\pmb{V}\rightarrow\pmb{V}$ 为 $\pmb{V}$ 的一个线性变换。</p>
+<p>线性变换把一个向量空间里的向量映射到了另一个向量空间里的另一个向量，因此，我们可以把线性变换理解成输入一个向量，然后输出一个向量的<strong>特殊函数</strong>。</p>
+<p>它可以看成一个动态的过程，比如<strong>旋转</strong>、<strong>伸缩</strong>或者<strong>投影</strong>之类的<strong>升降维</strong>的操作。</p>
+<p>常见的线性变换还有：恒等变换（单位变换）、求微商（线性空间 $P[x]$ 内）、求定积分。</p>
+<p>详见：<a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/60209876" >线性变换（一）【直观理解线性变换】<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="4-6-矩阵的秩"><a href="#4-6-矩阵的秩" class="headerlink" title="4.6 矩阵的秩"></a>4.6 矩阵的秩</h3><p><strong>一些概念：</strong>矩阵的秩、行秩、列秩和极大无关向量组。</p>
+<p><strong>定理：</strong>设 $n$ 元线性方程组 $\pmb{Ax=b}$ ，$R(\pmb{A})$ 表示系数矩阵 $\pmb{A}$ 的秩，$R(\pmb{A,b})$ 表示增广矩阵 $\pmb{B=(A,b)}$ 的秩，则该线性方程组</p>
+<ul>
+<li>无解的充要条件是 : $R(\pmb{A})&lt;R(\pmb{A,b})$；</li>
+<li>有唯一解的充要条件是： $R(\pmb{A})=R(\pmb{A,b})=n$；</li>
+<li>有无限多解的充要条件是： $R(\pmb{A})=R(\pmb{A,b})&lt;n$ .</li>
+</ul>
+<p>一些概念：线性方程组的解、方阵的特征值和特征向量</p>
+<h3 id="习题：Python编程实现求逆矩阵、行列式的值、秩"><a href="#习题：Python编程实现求逆矩阵、行列式的值、秩" class="headerlink" title="习题：Python编程实现求逆矩阵、行列式的值、秩"></a>习题：Python编程实现求逆矩阵、行列式的值、秩</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="comment"># a=np.array([[1,4,7],[2,5,8],[3,6,9]])</span></span><br><span class="line"><span class="comment"># a=np.array([[1,2,3],[4,5,6]])</span></span><br><span class="line">A=np.array([[<span class="number">1</span>,<span class="number">4</span>,<span class="number">9</span>],[<span class="number">2</span>,<span class="number">5</span>,<span class="number">8</span>],[<span class="number">3</span>,<span class="number">6</span>,<span class="number">9</span>]])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;A矩阵为：&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(A)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;*&#x27;</span>*<span class="number">40</span>)</span><br><span class="line">F = np.linalg.inv(A)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;A矩阵的逆矩阵为：&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(F)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;*&#x27;</span>*<span class="number">40</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;A矩阵与其逆矩阵乘积为：&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.dot(A,np.linalg.inv(A)))</span><br><span class="line"><span class="built_in">print</span>(np.dot(A,np.linalg.inv(A)).astype(<span class="built_in">int</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;*&#x27;</span>*<span class="number">40</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;A矩阵的行列式的值为：&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.linalg.det(A))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;*&#x27;</span>*<span class="number">40</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;A矩阵的秩为：&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.linalg.matrix_rank(A))</span><br></pre></td></tr></table></figure>
+<h2 id="5-二次型"><a href="#5-二次型" class="headerlink" title="5 二次型"></a>5 二次型</h2><h3 id="5-1-二次型的定义"><a href="#5-1-二次型的定义" class="headerlink" title="5.1 二次型的定义"></a>5.1 二次型的定义</h3><p>即二次齐次函数（$x^2,x_1x_2,\dots$，类似平方项展开加上系数）。二次型的标准型可理解为只含平方项的二次型。</p>
+<p>若 $\pmb{A}$ 为对称矩阵， $\pmb{x}=\left(\begin{matrix}<br>   x_1 \<br>  x_2\ \vdots  \ x_n<br>  \end{matrix}\right)$，则 $f=\pmb{x^TAx}$ 也是二次型的一种形式，对成矩阵 $\pmb{A}$ 叫作二次型 $f$ 的矩阵，也把 $f$ 叫作对称矩阵 $\pmb{A}$ 的二次型。对称矩阵 $\pmb{A}$ 的秩就叫做二次型 $f$ 的秩。</p>
+<h3 id="5-2-用正交变换化二次型为标准型"><a href="#5-2-用正交变换化二次型为标准型" class="headerlink" title="5.2 用正交变换化二次型为标准型"></a>5.2 用正交变换化二次型为标准型</h3><ul>
+<li>将二次型 $f=\sum<em>\limits{i=1}^n\sum</em>\limits{j=1}^na_{ij}x_ix_j$，写成矩阵形式 $f=\pmb{x^TAx}$ .</li>
+<li><p>由 $|\pmb{A-\lambda E}|=0$，求出 $\pmb{A}$ 的全部特征值。</p>
+</li>
+<li><p>由 $(\pmb{A-\lambda E})\pmb{x}=0$，求出 $\pmb{A}$ 的特征向量。</p>
+</li>
+</ul>
+<p>对于求出的不同特征值所对应的特征向量已正交，只需要单位化；对于 $k$ 冲特征值 $\lambda$ 所对应的 $k$ 个线性无关的特征向量，用施密特正交化方法把它们化成 $k$ 个两两正交的单位向量。</p>
+<ul>
+<li><p>把求出的n个两两正交的单位向量拼成正交矩阵 $\pmb{P}$，作正交变换 $\pmb{x=Py}$.</p>
+</li>
+<li><p>用 $\pmb{x=Py}$ ，把 $f$ 化成标准型 $f=\lambda<em>1y_1^2+\lambda_2y_2^2+\dots+\lambda_ny_n^2$，其中 $\lambda_1,\lambda_2,\dots,\lambda_n$是矩阵 $\pmb{A}=(a</em>{ij})$ 的特征值。</p>
+</li>
+</ul>
+<h3 id="5-3-二次型的正定型"><a href="#5-3-二次型的正定型" class="headerlink" title="5.3 二次型的正定型"></a>5.3 二次型的正定型</h3><p>正定二次型、惯性定理、和赫尔维茨定理（后两个是判定定理）。</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/37854768" >麻省理工线性代数笔记（二十四）-正定矩阵<i class="fas fa-external-link-alt"></i></a></p>
+<h2 id="6-矩阵分解"><a href="#6-矩阵分解" class="headerlink" title="6 矩阵分解"></a>6 矩阵分解</h2><p>矩阵分解有很多种，如 $LU$ 分解、$QR$ 分解、特征值分解（$EVD$ ）和奇异值分解（$SVD$ ）。$LU$ 分解是将满秩矩阵分解为两个倒扣的三角形，即分解成下三角矩阵和上三角矩阵的乘积，它的意义在于求解大型方程组。QR分解经常用来解线性最小二乘法问题，它和机器学习的相关算法密切。特征值分解的方法也非常有效，但有一些局限性，即要求矩阵必须是方阵且能够被对角化。奇异值分解可以对任意形状的矩阵进行分解，实用性更广。</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/37947910" >麻省理工线性代数笔记（二十六）-奇异值分解<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV16A411T7zX?from=search&amp;seid=13038098236613060355&amp;spm_id_from=333.337.0.0" >【学长小课堂】什么是奇异值分解SVD—SVD如何分解时空矩阵<i class="fas fa-external-link-alt"></i></a></p>
+<center><img src="/img/qyz.png" alt="image" style="zoom:50%;" /></center>
+
+<p><a class="link"   target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1xa4y1v7q5/?spm_id_from=333.788.recommend_more_video.0" >李航统计学习之奇异值分解（SVD）<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="习题：实现矩阵的QR分解"><a href="#习题：实现矩阵的QR分解" class="headerlink" title="习题：实现矩阵的QR分解"></a>习题：实现矩阵的QR分解</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">M= np.array([[<span class="number">12</span>,<span class="number">9</span>,-<span class="number">45</span>],[<span class="number">7</span>,<span class="number">4</span>,<span class="number">15</span>],[<span class="number">6</span>,-<span class="number">3</span>,<span class="number">21</span>],[<span class="number">6</span>,<span class="number">18</span>,<span class="number">5</span>]],dtype=<span class="built_in">float</span>)</span><br><span class="line">Q=np.zeros((<span class="number">4</span>, <span class="number">3</span>))</span><br><span class="line">j = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> a <span class="keyword">in</span> M.T:</span><br><span class="line">    b = np.copy(a)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, j):</span><br><span class="line">        b = b - np.dot(np.dot(Q[:, i].T, a), Q[:, i])</span><br><span class="line">    e = b / np.linalg.norm(b)</span><br><span class="line">    Q[:, j] = e</span><br><span class="line">    j += <span class="number">1</span></span><br><span class="line">R = np.dot(Q.T, M)</span><br><span class="line">np.set_printoptions(precision=<span class="number">3</span>,suppress=<span class="literal">True</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Gram-schmidt正交化变换结果&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Q矩阵：&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(Q)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;R矩阵：&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(R)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;矩阵的乘积：&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.dot(Q,R))</span><br><span class="line"></span><br><span class="line"><span class="comment">#方法二</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">np.set_printoptions(precision=<span class="number">4</span>, suppress=<span class="literal">True</span>)</span><br><span class="line">M= np.array([[<span class="number">12</span>,<span class="number">9</span>,-<span class="number">45</span>],[<span class="number">7</span>,<span class="number">4</span>,<span class="number">15</span>],[<span class="number">6</span>,-<span class="number">3</span>,<span class="number">21</span>],[<span class="number">6</span>,<span class="number">18</span>,<span class="number">5</span>]],dtype=<span class="built_in">float</span>)</span><br><span class="line">s = <span class="number">4</span></span><br><span class="line">t = <span class="number">3</span></span><br><span class="line">Q = np.identity(s)</span><br><span class="line">R = np.copy(M)</span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(s - <span class="number">1</span>):</span><br><span class="line">    x = R[j:, j]</span><br><span class="line">    E = np.zeros((<span class="number">4</span>, <span class="number">3</span>))</span><br><span class="line">    E = np.zeros_like(x)</span><br><span class="line">    b = x - E</span><br><span class="line">    d = b / np.linalg.norm(b)</span><br><span class="line">    Q_j = np.identity(s)</span><br><span class="line">    Q_j[j:, j:] -= <span class="number">2.0</span> * np.outer(d, d)</span><br><span class="line">    R = np.dot(Q_j, R)</span><br><span class="line">    Q = np.dot(Q, Q_j)</span><br><span class="line">np.set_printoptions(precision=<span class="number">3</span>,suppress=<span class="literal">True</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Householder变换结果&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Q矩阵：&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(Q)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;R矩阵：&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(R)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;矩阵的乘积：&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.dot(Q,R))</span><br></pre></td></tr></table></figure>
+<h3 id="Q：奇异值分解的应用场景有哪些"><a href="#Q：奇异值分解的应用场景有哪些" class="headerlink" title="Q：奇异值分解的应用场景有哪些?"></a>Q：奇异值分解的应用场景有哪些?</h3><p>$SVD$ 的应用有很多，可以说，$SVD$ 是矩阵分解、降维、压缩、特征学习的一个基础工具，所以 $SVD$ 在机器学习领域相当的重要。</p>
+<p>$SVD$ 在降维中作用如何呢？通过 $SVD$ 的公式可以看出，原来矩阵 $ \pmb{A}$ 的特征有 $n$ 维，经过 $SVD$ 后，可以用前 $r$ 个非零奇异值对应的奇异向量表示矩阵$\pmb{A}$ 的主要特征，这样就把矩阵 $ \pmb{A}$ 进行了降维。</p>
+<p>$SVD$ 在压缩中作用如何呢？机器学习最基本和最有趣的特征之一是数据压缩概念的相关性。如果我们能提取有用的数据，我们就能用更少的比特位来表达数据。从信息论的观点来看，数据之间存在相关性，则有可压缩性。通过 $SVD$ 的公式可以看出，矩阵 $ \pmb{A}$ 经过 $SVD$ 后，要表示原来的大矩阵 $ \pmb{A}$ ，我们只需要存储 $\pmb{U,\Delta,V}$ 三个较小的矩阵即可。而这 $3$ 个较小规模的矩阵占用内存上也是远远小于原有矩阵 $ \pmb{A}$ 的，这样 $SVD$ 就起到了压缩的作用。</p>
+<p>$SVD$ 和主成分分析有什么关系呢？$PCA$ 即主成分分析方法，是一种使用最广泛的数据降维算法。$PCA$ 的主要思想是将n维特征映射到 $ m$ 维上，这 $m$ 维是全新的正交特征，也被称为主成分，是在原有 $n$ 维特征的基础上重新构造出来的 $m$ 维特征。$PCA$ 的工作就是从原始的空间中顺序地找一组相互正交的坐标轴，新的坐标轴的选择与数据本身是密切相关的。$PCA$ 算法有两种实现方法，即基于特征值分解协方差矩阵实现 $PCA$ 算法和基于 $SVD$ 协方差矩阵实现 $PCA$ 算法。所以，$SVD$ 是 $PCA$ 算法的一种实现方法。</p>
+<p>我们再来看一下潜在语义索引，它是一种简单实用的主题模型。潜在语义索引是一种利用 $SVD$ 方法获得在文本中术语和概念之间关系的索引和获取方法。该方法的主要依据是在相同文章中的词语一般有类似的含义，可以从一篇文章中提取术语关系，从而建立起主要概念内容。潜在语义索引不同于 $PCA$ ，至少不是实现了 $SVD$ 就可以直接用的，但它也是一个高度依赖 $SVD$ 的算法。</p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：机器学习数学基础：线性代数</li>
+        <li>Post author：Caaaaa</li>
+        <li>Create time：2022-01-09 15:03:46</li>
+        <li>
+            Post link：https://caaaa-a.github.io/2022/01/09/数学基础/数学基础-线性代数/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/01/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A0%88%E5%92%8C%E9%80%92%E5%BD%92/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">栈和递归</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/01/09/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80-%E5%85%AB%E5%A4%A7%E5%B8%B8%E8%A7%81%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%A1%8C%E5%88%97%E5%BC%8F%E5%8F%8A%E5%85%B6%E8%A7%A3%E6%B3%95/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">八大常见类型的行列式及其解法</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Caaaaa</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-text">1 行列式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E4%BA%8C%E9%98%B6%E4%B8%8E%E4%B8%89%E9%98%B6%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-text">1.1 二阶与三阶行列式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E5%85%A8%E6%8E%92%E5%88%97%E5%92%8C%E5%AF%B9%E6%8D%A2"><span class="nav-text">1.2 全排列和对换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-n%E9%98%B6%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-text">1.3 n阶行列式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-%E5%87%A0%E7%A7%8D%E7%89%B9%E6%AE%8A%E8%A1%8C%E5%88%97%E5%BC%8F%E7%9A%84%E5%80%BC"><span class="nav-text">1.4 几种特殊行列式的值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-n%E9%98%B6%E8%A1%8C%E5%88%97%E5%BC%8F%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-text">1.5 n阶行列式的性质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E7%94%A8%E5%90%91%E9%87%8F%E6%8F%8F%E8%BF%B0%E7%A9%BA%E9%97%B4"><span class="nav-text">2 用向量描述空间</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E5%90%91%E9%87%8F%E5%8F%8A%E5%85%B6%E8%BF%90%E7%AE%97"><span class="nav-text">2.1 向量及其运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E5%90%91%E9%87%8F%E7%BB%84%E7%9A%84%E7%BA%BF%E6%80%A7%E7%BB%84%E5%90%88"><span class="nav-text">2.2 向量组的线性组合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-%E5%90%91%E9%87%8F%E7%BB%84%E7%9A%84%E7%BA%BF%E6%80%A7%E7%9B%B8%E5%85%B3%E6%80%A7"><span class="nav-text">2.3 向量组的线性相关性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%86%85%E7%A7%AF%E3%80%81%E6%AD%A3%E4%BA%A4%E5%90%91%E9%87%8F%E7%BB%84%E5%92%8C%E8%8C%83%E6%95%B0"><span class="nav-text">3 内积、正交向量组和范数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E5%86%85%E7%A7%AF"><span class="nav-text">3.1 内积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-%E6%AD%A3%E4%BA%A4%E5%90%91%E9%87%8F%E7%BB%84%E5%92%8C%E6%96%BD%E5%AF%86%E7%89%B9%E6%AD%A3%E4%BA%A4%E5%8C%96"><span class="nav-text">3.2 正交向量组和施密特正交化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-%E8%8C%83%E6%95%B0"><span class="nav-text">3.3 范数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B9%A0%E9%A2%98%EF%BC%9APython%E7%BC%96%E7%A8%8B%E5%AE%9E%E7%8E%B0%E6%B1%82%E5%90%91%E9%87%8F%E8%8C%83%E6%95%B0%E5%92%8C%E7%9F%A9%E9%98%B5%E8%8C%83%E6%95%B0%E3%80%82"><span class="nav-text">习题：Python编程实现求向量范数和矩阵范数。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E7%9F%A9%E9%98%B5%E5%92%8C%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2"><span class="nav-text">4 矩阵和线性变换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E7%9F%A9%E9%98%B5%E5%8F%8A%E5%85%B6%E8%BF%90%E7%AE%97"><span class="nav-text">4.1 矩阵及其运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-%E9%80%86%E7%9F%A9%E9%98%B5"><span class="nav-text">4.2 逆矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-%E7%9F%A9%E9%98%B5%E7%9A%84%E5%88%9D%E7%AD%89%E5%8F%98%E6%8D%A2"><span class="nav-text">4.3 矩阵的初等变换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-%E6%A0%87%E9%87%8F%E5%AF%B9%E5%90%91%E9%87%8F%E7%9A%84%E5%AF%BC%E6%95%B0%E3%80%81%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95"><span class="nav-text">4.4 标量对向量的导数、最小二乘法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5-%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2"><span class="nav-text">4.5 线性变换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-6-%E7%9F%A9%E9%98%B5%E7%9A%84%E7%A7%A9"><span class="nav-text">4.6 矩阵的秩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B9%A0%E9%A2%98%EF%BC%9APython%E7%BC%96%E7%A8%8B%E5%AE%9E%E7%8E%B0%E6%B1%82%E9%80%86%E7%9F%A9%E9%98%B5%E3%80%81%E8%A1%8C%E5%88%97%E5%BC%8F%E7%9A%84%E5%80%BC%E3%80%81%E7%A7%A9"><span class="nav-text">习题：Python编程实现求逆矩阵、行列式的值、秩</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E4%BA%8C%E6%AC%A1%E5%9E%8B"><span class="nav-text">5 二次型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-%E4%BA%8C%E6%AC%A1%E5%9E%8B%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-text">5.1 二次型的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-%E7%94%A8%E6%AD%A3%E4%BA%A4%E5%8F%98%E6%8D%A2%E5%8C%96%E4%BA%8C%E6%AC%A1%E5%9E%8B%E4%B8%BA%E6%A0%87%E5%87%86%E5%9E%8B"><span class="nav-text">5.2 用正交变换化二次型为标准型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-%E4%BA%8C%E6%AC%A1%E5%9E%8B%E7%9A%84%E6%AD%A3%E5%AE%9A%E5%9E%8B"><span class="nav-text">5.3 二次型的正定型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3"><span class="nav-text">6 矩阵分解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B9%A0%E9%A2%98%EF%BC%9A%E5%AE%9E%E7%8E%B0%E7%9F%A9%E9%98%B5%E7%9A%84QR%E5%88%86%E8%A7%A3"><span class="nav-text">习题：实现矩阵的QR分解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q%EF%BC%9A%E5%A5%87%E5%BC%82%E5%80%BC%E5%88%86%E8%A7%A3%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="nav-text">Q：奇异值分解的应用场景有哪些?</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>

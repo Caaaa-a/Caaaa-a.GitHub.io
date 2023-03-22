@@ -158,9 +158,8 @@
 
                 <div class="home-article-content markdown-body">
                     
-                        TypeError: can't pickle weakref objects
-Fixed it by adding .state_dict():
-12torch.save(ema.state_dict(), os.path.join(opt.out...
+                        TypeError: can’t pickle weakref objectsFixed it by adding .state_dict():
+12torch.save(ema.state_dict(), os.path.join(opt.outp...
                     
                 </div>
 

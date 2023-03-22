@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<link rel="dns-prefetch" href="//cdn.bootcss.com" />
+	<link rel="dns-prefetch" href="//cdn.mathjax.org" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Caaaaa">
+    
+    <title>
+        
+            pytorch lightning —— BASIC SKILLS |
+        
+        Caaaaa
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"caaaa-a.github.io","root":"/","language":"en","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/logo.png","favicon":"/images/logo.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"To be a slash youth."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Caaaaa
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">pytorch lightning —— BASIC SKILLS</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/logo.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Caaaaa</span>
+                        
+                            <span class="author-label">Lv5</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-09-19 11:20:11</span>
+        <span class="mobile">2022-09-19 11:20</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Deep-Learning/">Deep Learning</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>687 Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>4 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h4 id="摘自-basic-skills">摘自 <a class="link"   target="_blank" rel="noopener" href="https://pytorch-lightning.readthedocs.io/en/stable/levels/core_skills.html" >BASIC SKILLS<i class="fas fa-external-link-alt"></i></a></h4>
+<h3 id="train-a-model">TRAIN A MODEL</h3>
+<h4 id="add-imports">Add imports</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">from</span> torch <span class="keyword">import</span> nn</span><br><span class="line"><span class="keyword">import</span> torch.nn.functional <span class="keyword">as</span> F</span><br><span class="line"><span class="keyword">from</span> torchvision <span class="keyword">import</span> transforms</span><br><span class="line"><span class="keyword">from</span> torchvision.datasets <span class="keyword">import</span> MNIST</span><br><span class="line"><span class="keyword">from</span> torch.utils.data <span class="keyword">import</span> DataLoader, random_split</span><br><span class="line"><span class="keyword">import</span> pytorch_lightning <span class="keyword">as</span> pl</span><br></pre></td></tr></table></figure>
+<h4 id="define-the-pytorch-nn.modules">Define the PyTorch nn.Modules</h4>
+<p>利用pytorch构建网络层，ModuleList和Sequential 详见 <a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/75206669" >详解PyTorch中的ModuleList和Sequential<i class="fas fa-external-link-alt"></i></a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Encoder</span>(<span class="params">nn.Module</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.l1 = nn.Sequential(nn.Linear(<span class="number">28</span> * <span class="number">28</span>, <span class="number">64</span>), nn.ReLU(), nn.Linear(<span class="number">64</span>, <span class="number">3</span>))</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span>(<span class="params">self, x</span>):</span></span><br><span class="line">        <span class="keyword">return</span> self.l1(x)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Decoder</span>(<span class="params">nn.Module</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.l1 = nn.Sequential(nn.Linear(<span class="number">3</span>, <span class="number">64</span>), nn.ReLU(), nn.Linear(<span class="number">64</span>, <span class="number">28</span> * <span class="number">28</span>))</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span>(<span class="params">self, x</span>):</span></span><br><span class="line">        <span class="keyword">return</span> self.l1(x)</span><br></pre></td></tr></table></figure>
+<h4 id="define-a-lightningmodule">Define a LightningModule</h4>
+<p>The LightningModule is the full <strong>recipe</strong> that defines how your nn.Modules interact.</p>
+<ul>
+<li>The <strong>training_step</strong> defines how the <em>nn.Modules</em> interact together.</li>
+<li>In the <strong>configure_optimizers</strong> define the optimizer(s) for your models.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LitAutoEncoder</span>(<span class="params">pl.LightningModule</span>):</span></span><br><span class="line">  <span class="comment"># 构建LightningModule，去融合、交互pytorch层</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, encoder, decoder</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.encoder = encoder</span><br><span class="line">        self.decoder = decoder</span><br><span class="line">        </span><br><span class="line">	<span class="comment"># 确定train的loss</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">training_step</span>(<span class="params">self, batch, batch_idx</span>):</span></span><br><span class="line">        <span class="comment"># training_step defines the train loop.</span></span><br><span class="line">        x, y = batch</span><br><span class="line">        x = x.view(x.size(<span class="number">0</span>), -<span class="number">1</span>)</span><br><span class="line">        z = self.encoder(x)</span><br><span class="line">        x_hat = self.decoder(z)</span><br><span class="line">        loss = F.mse_loss(x_hat, x)</span><br><span class="line">        <span class="keyword">return</span> loss</span><br><span class="line"></span><br><span class="line">  <span class="comment"># 优化器</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">configure_optimizers</span>(<span class="params">self</span>):</span></span><br><span class="line">        optimizer = torch.optim.Adam(self.parameters(), lr=<span class="number">1e-3</span>)</span><br><span class="line">        <span class="keyword">return</span> optimizer</span><br></pre></td></tr></table></figure>
+<h4 id="define-the-training-dataset">Define the training dataset</h4>
+<p>Define a PyTorch <a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader"><code>DataLoader</code></a> which contains your training dataset.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dataset = MNIST(os.getcwd(), download=<span class="literal">True</span>, transform=transforms.ToTensor())</span><br><span class="line">train_loader = DataLoader(dataset)</span><br></pre></td></tr></table></figure>
+<p><strong>注：在dataloader设置batch_size,和后续的epoch确定每一个epoch的iteration数和每轮的数据量</strong></p>
+<h4 id="train-the-model">Train the model</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># model</span></span><br><span class="line">autoencoder = LitAutoEncoder(Encoder(), Decoder())</span><br><span class="line"></span><br><span class="line"><span class="comment"># train model</span></span><br><span class="line">trainer = pl.Trainer()</span><br><span class="line">trainer.fit(model=autoencoder, train_dataloaders=train_loader)</span><br></pre></td></tr></table></figure>
+<h4 id="eliminate-the-training-loop">Eliminate the training loop</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">autoencoder = LitAutoEncoder(encoder, decoder)</span><br><span class="line">optimizer = autoencoder.configure_optimizers()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> batch_idx, batch <span class="keyword">in</span> <span class="built_in">enumerate</span>(train_loader):</span><br><span class="line">    loss = autoencoder(batch, batch_idx)</span><br><span class="line"></span><br><span class="line">    loss.backward()</span><br><span class="line">    optimizer.step()</span><br><span class="line">    optimizer.zero_grad()</span><br></pre></td></tr></table></figure>
+<p>The power of Lightning comes when the training loop gets complicated as you add validation/test splits, schedulers, distributed training and all the latest SOTA techniques.</p>
+<p>With Lightning, you can add mix all these techniques together without needing to rewrite a new loop every time.</p>
+<h3 id="validate-and-test-a-model">VALIDATE AND TEST A MODEL</h3>
+<p>The test set is <strong>NOT</strong> used during training, it is <strong>ONLY</strong> used once the model has been trained to see how the model will do in the real-world.</p>
+<h4 id="find-the-train-and-test-splits">Find the train and test splits</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch.utils.data <span class="keyword">as</span> data</span><br><span class="line"><span class="keyword">from</span> torchvision <span class="keyword">import</span> datasets</span><br><span class="line"></span><br><span class="line"><span class="comment"># Load data sets</span></span><br><span class="line">train_set = datasets.MNIST(root=<span class="string">&quot;MNIST&quot;</span>, download=<span class="literal">True</span>, train=<span class="literal">True</span>)</span><br><span class="line">test_set = datasets.MNIST(root=<span class="string">&quot;MNIST&quot;</span>, download=<span class="literal">True</span>, train=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="define-the-test-loop">Define the test loop</h4>
+<p>在training_step后增加test_step即可</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LitAutoEncoder</span>(<span class="params">pl.LightningModule</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">training_step</span>(<span class="params">self, batch, batch_idx</span>):</span></span><br><span class="line">        ...</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_step</span>(<span class="params">self, batch, batch_idx</span>):</span></span><br><span class="line">        <span class="comment"># this is the test loop</span></span><br><span class="line">        x, y = batch</span><br><span class="line">        x = x.view(x.size(<span class="number">0</span>), -<span class="number">1</span>)</span><br><span class="line">        z = self.encoder(x)</span><br><span class="line">        x_hat = self.decoder(z)</span><br><span class="line">        test_loss = F.mse_loss(x_hat, x)</span><br><span class="line">        self.log(<span class="string">&quot;test_loss&quot;</span>, test_loss)</span><br></pre></td></tr></table></figure>
+<h4 id="train-with-the-test-loop">Train with the test loop</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> torch.utils.data <span class="keyword">import</span> DataLoader</span><br><span class="line"></span><br><span class="line"><span class="comment"># initialize the Trainer</span></span><br><span class="line">trainer = Trainer()</span><br><span class="line"></span><br><span class="line"><span class="comment"># test the model</span></span><br><span class="line">trainer.test(model, dataloaders=DataLoader(test_set))</span><br></pre></td></tr></table></figure>
+<h4 id="add-a-validation-loop">Add a validation loop</h4>
+<p>During training, it’s common practice to use a small portion of the train split to determine when the model has finished training.</p>
+<h4 id="split-the-training-data">Split the training data</h4>
+<p>也可以事先分好</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># use 20% of training data for validation</span></span><br><span class="line">train_set_size = <span class="built_in">int</span>(<span class="built_in">len</span>(train_set) * <span class="number">0.8</span>)</span><br><span class="line">valid_set_size = <span class="built_in">len</span>(train_set) - train_set_size</span><br><span class="line"></span><br><span class="line"><span class="comment"># split the train set into two</span></span><br><span class="line">seed = torch.Generator().manual_seed(<span class="number">42</span>)</span><br><span class="line">train_set, valid_set = data.random_split(train_set, [train_set_size, valid_set_size], generator=seed)</span><br></pre></td></tr></table></figure>
+<h4 id="define-the-validation-loop">Define the validation loop</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LitAutoEncoder</span>(<span class="params">pl.LightningModule</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">training_step</span>(<span class="params">self, batch, batch_idx</span>):</span></span><br><span class="line">        ...</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">validation_step</span>(<span class="params">self, batch, batch_idx</span>):</span></span><br><span class="line">        <span class="comment"># this is the validation loop</span></span><br><span class="line">        x, y = batch</span><br><span class="line">        x = x.view(x.size(<span class="number">0</span>), -<span class="number">1</span>)</span><br><span class="line">        z = self.encoder(x)</span><br><span class="line">        x_hat = self.decoder(z)</span><br><span class="line">        test_loss = F.mse_loss(x_hat, x)</span><br><span class="line">        self.log(<span class="string">&quot;val_loss&quot;</span>, test_loss)</span><br></pre></td></tr></table></figure>
+<h4 id="train-with-the-validation-loop">Train with the validation loop</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> torch.utils.data <span class="keyword">import</span> DataLoader</span><br><span class="line"></span><br><span class="line">train_set = DataLoader(train_set)</span><br><span class="line">val_set = DataLoader(val_set)</span><br><span class="line"></span><br><span class="line"><span class="comment"># train with both splits</span></span><br><span class="line">trainer = Trainer()</span><br><span class="line">trainer.fit(model, train_set, val_set)</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：pytorch lightning —— BASIC SKILLS</li>
+        <li>Post author：Caaaaa</li>
+        <li>Create time：2022-09-19 11:20:11</li>
+        <li>
+            Post link：https://caaaa-a.github.io/2022/09/19/Deep Learning/pl-BASIC-SKILLS/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/09/25/python%E5%B0%8F%E8%AE%B0/python%E5%B0%8F%E8%AE%B0-python%E6%8F%90%E9%80%9F/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">python提速</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/09/19/Deep%20Learning/pl-Lightning-%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E7%9A%84-7-%E4%B8%AA%E5%85%B3%E9%94%AE%E6%AD%A5%E9%AA%A4/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">pytorch lightning —— Lightning 工作流程的 7 个关键步骤</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Caaaaa</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%91%98%E8%87%AA-basic-skills"><span class="nav-text">摘自 BASIC SKILLS</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#train-a-model"><span class="nav-text">TRAIN A MODEL</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#add-imports"><span class="nav-text">Add imports</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#define-the-pytorch-nn.modules"><span class="nav-text">Define the PyTorch nn.Modules</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#define-a-lightningmodule"><span class="nav-text">Define a LightningModule</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#define-the-training-dataset"><span class="nav-text">Define the training dataset</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#train-the-model"><span class="nav-text">Train the model</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#eliminate-the-training-loop"><span class="nav-text">Eliminate the training loop</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#validate-and-test-a-model"><span class="nav-text">VALIDATE AND TEST A MODEL</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#find-the-train-and-test-splits"><span class="nav-text">Find the train and test splits</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#define-the-test-loop"><span class="nav-text">Define the test loop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#train-with-the-test-loop"><span class="nav-text">Train with the test loop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#add-a-validation-loop"><span class="nav-text">Add a validation loop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#split-the-training-data"><span class="nav-text">Split the training data</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#define-the-validation-loop"><span class="nav-text">Define the validation loop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#train-with-the-validation-loop"><span class="nav-text">Train with the validation loop</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>
