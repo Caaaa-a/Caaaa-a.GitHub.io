@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<link rel="dns-prefetch" href="//cdn.bootcss.com" />
+	<link rel="dns-prefetch" href="//cdn.mathjax.org" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Caaaaa">
+    
+    <title>
+        
+            Pruning Convolutional Neural Networks For Resource Efficient Inference |
+        
+        Caaaaa
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"caaaa-a.github.io","root":"/","language":"en","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/logo.png","favicon":"/images/logo.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"To be a slash youth."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Caaaaa
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">Pruning Convolutional Neural Networks For Resource Efficient Inference</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/logo.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Caaaaa</span>
+                        
+                            <span class="author-label">Lv5</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2023-03-16 12:21:24</span>
+        <span class="mobile">2023-03-16 12:21</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E5%89%AA%E6%9E%9D/">剪枝</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.4k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>5 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>链接： <a class="link"   target="_blank" rel="noopener" href="https://arxiv.org/pdf/1611.06440v2.pdf" >论文<i class="fas fa-external-link-alt"></i></a> <a class="link"   target="_blank" rel="noopener" href="https://www.slideshare.net/kaushalya_uom/pruning-convolutional-neural-networks-for-resource-efficient-inference" >PPT<i class="fas fa-external-link-alt"></i></a> <a class="link"   target="_blank" rel="noopener" href="https://paperswithcode.com/paper/pruning-convolutional-neural-networks-for#code" >code<i class="fas fa-external-link-alt"></i></a></p>
+<p>提出了一个基于泰勒展开的损失函数，而这个函数是可以用来衡量剪枝后的参数带来的改变的。</p>
+<blockquote>
+<p>损失函数衡量的就是当前值和最优解之间的差异。而在这里我们的最优解显然就是未剪枝之前的网络，而当前值就是剪枝之后的网络，那我的损失函数就可以定义为:剪枝后的参数带来的改变的值。而我们要优化这个损失函数就要涉及到求导了，从微积分里知道，要求任意一个函数的导数，一个万能的办法就是求它的泰勒展开式。</p>
+</blockquote>
+<center>
+<img src="/img/jz-paper5-image1.png" alt="image" width=80% />
+</center>
+<h3 id="method">method</h3>
+<ol type="1">
+<li>fine-tune直到网络收敛；</li>
+<li>进行剪枝(删掉最不重要的参数)；</li>
+<li>进行fine-tune；</li>
+<li>在达到结束条件之后结束结束fine-tune和剪枝。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> !网络收敛:</span><br><span class="line">    fine-tune</span><br><span class="line"><span class="comment"># 到这一步的时候，网络就收敛了</span></span><br><span class="line"><span class="keyword">while</span> !符合结束条件:</span><br><span class="line">    进行剪枝</span><br><span class="line">    进行fine-tune</span><br><span class="line"><span class="comment"># 到这一步的时候，结束剪枝和fine-tune，模型压缩完毕</span></span><br></pre></td></tr></table></figure>
+<center>
+<img src="/img/jz-paper5-image2.png" alt="image" width=80% />
+</center>
+<blockquote>
+<p>要求我们对网络进行剪枝之后的误差与没有进行剪枝的误差尽可能的小，最理想的效果就是两者相等，也就是 <span class="math inline">\(C(D|W&#39;) = C(D|W)\)</span>，这就意味着我的网络少了参数(那么网络就是被压缩了), 但是网络的性能不变。在这里有个加了个限制条件，就是<span class="math inline">\(||W&#39;||&lt;=B\)</span>, paper里解释这里是做了个l0正则，也就是规定了这个优化必须是得减参数的。挨个求解是不现实的，所以引入了贪心。</p>
+</blockquote>
+<center>
+<img src="/img/jz-paper5-image3.png" alt="image" width=80% />
+</center>
+<center>
+<img src="/img/jz-paper5-image4.png" alt="image" width=80% />
+</center>
+<blockquote>
+<p>泰勒标准依赖于近似移除特征图引起的损失变化，与OBD的核心思想相同。但是，它们的处理方式有所不同。泰勒标准将一阶泰勒展开项的处理方式作为区别，它使用了一阶项的绝对值，而OBD将其视为零，并专注于二阶项。此外，泰勒标准避免了计算二阶泰勒展开项或其简化 - 海森矩阵对角线的计算，这是OBD所必需的。相对于OBD方法而言，泰勒技术的准确率较高，计算速度也更快。</p>
+</blockquote>
+<h4 id="optimismoracle-pruning">OPTIMISM/ORACLE PRUNING</h4>
+<p>逐个参数遍历，然后loss的定义为两种：</p>
+<ol type="1">
+<li><p><span class="math inline">\(C(D|W&#39;) - C(D|W)\)</span></p></li>
+<li><p><span class="math inline">\(|C(D|W&#39;) - C(D|W)|\)</span>。</p></li>
+</ol>
+<p>从后面的实验可以看出来，第二种效果更好。在很多数据挖掘比赛中，往往把MSE改成MAE会有不错的分数提升。能找到全局最优<span class="math inline">\(O(2^n)\)</span>，或者采用贪心，但是耗费的时间和计算资源过多。</p>
+<h4 id="criteria-for-pruning">CRITERIA FOR PRUNING</h4>
+<h5 id="minimum-weight."><strong>2.1 Minimum weight.</strong></h5>
+<p>通过l1/l2正则化，将大部分参数约束到0附近，把它们删掉，进而达到压缩模型的作用。</p>
+<blockquote>
+<p>从后面的实验结果可以看出，这个不行。</p>
+</blockquote>
+<h5 id="activation"><strong>2.2 Activation</strong></h5>
+<p>因为ReLU作为一个特别常用的激活函数，它的输出反映了这个神经元的重要程度</p>
+<blockquote>
+<p>如果一个神经元重是输出0，那对下一个神经元的影响是没影响的，那这时候有它没它都一样，删掉它就省内存了，得到了压缩的效果。</p>
+</blockquote>
+<h5 id="mutual-information."><strong>2.3 Mutual information.</strong></h5>
+<p>利用计算墒来衡量某个神经元所蕴含的信息，如果一个神经元蕴含的信息越多，就说明这个东西越重要。（没有给出效果。）</p>
+<p>两个随机变量的互信息越小则两个随机变量越相互独立，如果参数同输出的互信息量小则参数同输出的越独立也就是无关，以此为标准来衡量参数裁剪。</p>
+<h5 id="taylor-expansion"><strong>2.4 Taylor expansion</strong></h5>
+<p>损失函数衡量的就是当前值和最优解之间的差异。而在这里我们的最优解显然就是未剪枝之前的网络，而当前值就是剪枝之后的网络，那我的损失函数就可以定义为：剪枝后的参数带来的改变的值。考虑到参数的独立性： <span class="math display">\[
+|∆C(h_i)|=|C(D,h_i=0) − C(D, h_i)|
+\]</span> <span class="math inline">\(C(D, hi = 0)\)</span>是 <span class="math inline">\(h_i\)</span> 已经被剪掉后的cost function的值。为了估计 <span class="math inline">\(∆C(h_i)\)</span> ，我们用第一层的泰勒展开式展开，令<span class="math inline">\(x=a\)</span>： <span class="math display">\[
+f(x) = \sum\limits^P_{p=0} \frac{f^{(p)}(a)}{p!}(x − a)^p + R_p(x)
+\]</span> <span class="math inline">\(f^{(p)}(a)\)</span>是公式 <span class="math inline">\(f\)</span> 在 <span class="math inline">\(a\)</span> 处第 <span class="math inline">\(p\)</span> 次迭代的结果，<span class="math inline">\(R_p(x)\)</span> 是第 <span class="math inline">\(p\)</span> 次迭代的高阶余项。我们得到： <span class="math display">\[
+C(D,h_i=0) = C(D,h_i)−\frac{δC}{δh_i}h_i+R_1(h_i=0).
+\]</span> 余项的拉格朗日形式为： <span class="math display">\[
+R_1(h_i = 0) = \frac{δ^2C}{δ(h_i^2=ξ)} \frac{h^2_i}{2}, \text{ }ξ\in [0,h_i]
+\]</span> 然而，我们忽略了这个一阶余数，很大程度上是因为需要进行大量的计算，但也有部分原因是广泛使用的ReLU激活函数鼓励使用更小的二阶项。我们最终得到 <span class="math inline">\(Θ_{TE}:\mathbb{R}^{H_l\times W_l\times C_l} \rightarrow \mathbb{R}^+\)</span>： <span class="math display">\[
+Θ_{TE}(h_i)=|∆C(h_i)|=|C(D,h_i)−\frac{δC}{δh_i}h_i-C(D,h_i)|=|\frac{δC}{δh_i}h_i|
+\]</span> 再根据贪心（感觉是去除最差的 or 选择最好的再继续迭代）。</p>
+<h3 id="reference">Reference</h3>
+<ol type="1">
+<li><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/33492157" >卷积神经网络的压缩与加速 -- 剪枝(PRUNING)论文(一)<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/33492157" >深度学习模型压缩与加速之PCNNFREI<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35608277/article/details/115416912" >【模型剪枝】|论文笔记 Optimal Brain Damage<i class="fas fa-external-link-alt"></i></a></li>
+</ol>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：Pruning Convolutional Neural Networks For Resource Efficient Inference</li>
+        <li>Post author：Caaaaa</li>
+        <li>Create time：2023-03-16 12:21:24</li>
+        <li>
+            Post link：https://caaaa-a.github.io/2023/03/16/剪枝/Pruning-Convolutional-Neural-Networks-For-Resource-Efficient-Inference/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2023/03/22/python%E5%B0%8F%E8%AE%B0/%E4%BA%BF%E7%82%B9%E7%82%B9%E6%8A%A5%E9%94%99/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">亿点点报错</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2023/03/15/%E5%89%AA%E6%9E%9D/Rethinking-the-Value-of-Network-Pruning/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Rethinking the Value of Network Pruning</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Caaaaa</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#method"><span class="nav-text">method</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#optimismoracle-pruning"><span class="nav-text">OPTIMISM&#x2F;ORACLE PRUNING</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#criteria-for-pruning"><span class="nav-text">CRITERIA FOR PRUNING</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#minimum-weight."><span class="nav-text">2.1 Minimum weight.</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#activation"><span class="nav-text">2.2 Activation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#mutual-information."><span class="nav-text">2.3 Mutual information.</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#taylor-expansion"><span class="nav-text">2.4 Taylor expansion</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reference"><span class="nav-text">Reference</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+</body>
+</html>

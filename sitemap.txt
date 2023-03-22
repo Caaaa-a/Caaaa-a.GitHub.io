@@ -1,5 +1,14 @@
-https://caaaa-a.github.io/2023/03/13/%E5%89%AA%E6%9E%9D/To-prune,-or-not-to-prune-exploring-the-efficacy-of-pruning-for-model-compression/
+https://caaaa-a.github.io/2023/03/14/%E5%89%AA%E6%9E%9D/EagleEye-Fast-Sub-net-Evaluation-for-Efficient-Neural-Network-Pruning/
+https://caaaa-a.github.io/2023/03/15/%E5%89%AA%E6%9E%9D/ResRep-Lossless-CNN-Pruning-via-Decoupling-Remembering-and-Forgetting/
+https://caaaa-a.github.io/2023/03/15/%E5%89%AA%E6%9E%9D/Network-Pruning-That-Matters-A-Case-Study-On-Retraining-Variants/
+https://caaaa-a.github.io/2023/03/14/%E5%89%AA%E6%9E%9D/Proving-the-Lottery-Ticket-Hypothesis-Pruning-is-All-You-Need/
+https://caaaa-a.github.io/2023/03/15/%E5%89%AA%E6%9E%9D/Rethinking-the-Value-of-Network-Pruning/
+https://caaaa-a.github.io/2023/03/16/%E5%89%AA%E6%9E%9D/Pruning-Convolutional-Neural-Networks-For-Resource-Efficient-Inference/
+https://caaaa-a.github.io/2023/03/22/python%E5%B0%8F%E8%AE%B0/%E4%BA%BF%E7%82%B9%E7%82%B9%E6%8A%A5%E9%94%99/
 https://caaaa-a.github.io/2023/03/10/%E5%89%AA%E6%9E%9D/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9A%84%E5%89%AA%E6%9E%9D/
+https://caaaa-a.github.io/2023/03/15/%E5%89%AA%E6%9E%9D/%E5%9B%BA%E5%AE%9A%E4%B8%A2%E5%BC%83%E7%A5%9E%E7%BB%8F%E5%85%83%E7%9A%84%E9%A1%BA%E5%BA%8F/
+https://caaaa-a.github.io/2023/03/14/%E5%89%AA%E6%9E%9D/Rethinking-the-Smaller-Norm-Less-Informative-Assumption-in-Channel-Pruning-of-Convolution-Layers/
+https://caaaa-a.github.io/2023/03/13/%E5%89%AA%E6%9E%9D/To-prune,-or-not-to-prune-exploring-the-efficacy-of-pruning-for-model-compression/
 https://caaaa-a.github.io/2023/03/13/%E5%89%AA%E6%9E%9D/Learning-both-Weights-and-Connections-for-Efficient-Neural-Networks/
 https://caaaa-a.github.io/2023/02/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/%E5%AD%A6%E4%B9%A0%E7%8E%87%E8%A1%B0%E5%87%8F/
 https://caaaa-a.github.io/2023/02/18/%E6%95%99%E8%82%B2%E7%A7%91%E7%A0%94%E6%96%B9%E6%B3%95/%E5%85%83%E5%88%86%E6%9E%90%E9%93%BE%E6%8E%A5%E6%B1%87%E6%80%BB/

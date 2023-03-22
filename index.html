@@ -151,6 +151,393 @@
                 
 
                 <h3 class="home-article-title">
+                    <a href="/2023/03/22/python%E5%B0%8F%E8%AE%B0/%E4%BA%BF%E7%82%B9%E7%82%B9%E6%8A%A5%E9%94%99/">
+                        亿点点报错
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        TypeError: can't pickle weakref objects
+Fixed it by adding .state_dict():
+12torch.save(ema.state_dict(), os.path.join(opt.out...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Wed Mar 22 2023 16:57:19 GMT+0800">2023-03-22</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/python%E5%B0%8F%E8%AE%B0/">python小记</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2023/03/22/python%E5%B0%8F%E8%AE%B0/%E4%BA%BF%E7%82%B9%E7%82%B9%E6%8A%A5%E9%94%99/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/03/16/%E5%89%AA%E6%9E%9D/Pruning-Convolutional-Neural-Networks-For-Resource-Efficient-Inference/">
+                        Pruning Convolutional Neural Networks For Resource Efficient Inference
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        链接： 论文 PPT code
+提出了一个基于泰勒展开的损失函数，而这个函数是可以用来衡量剪枝后的参数带来的改变的。
+
+损失函数衡量的就是当前值和最优解之间的差异。而在这里我们的最优解显然就是未剪枝之前的网络，而当前值就是剪枝之后的网络，那我的损失函...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Mar 16 2023 12:21:24 GMT+0800">2023-03-16</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E5%89%AA%E6%9E%9D/">剪枝</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2023/03/16/%E5%89%AA%E6%9E%9D/Pruning-Convolutional-Neural-Networks-For-Resource-Efficient-Inference/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/03/15/%E5%89%AA%E6%9E%9D/Rethinking-the-Value-of-Network-Pruning/">
+                        Rethinking the Value of Network Pruning
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        结论：
+
+对剪枝后的模型进行fine-tuning，只比使用随机初始化权重训练的网络的性能好一点点，甚至性能更差。
+重要的是获得的模型架构，而不是保留的权重，尽管找到目标结构需要训练大型模型。
+自动剪枝算法的价值在于识别有效的结构和执行隐式架构搜索（...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Wed Mar 15 2023 18:24:07 GMT+0800">2023-03-15</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E5%89%AA%E6%9E%9D/">剪枝</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2023/03/15/%E5%89%AA%E6%9E%9D/Rethinking-the-Value-of-Network-Pruning/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/03/15/%E5%89%AA%E6%9E%9D/%E5%9B%BA%E5%AE%9A%E4%B8%A2%E5%BC%83%E7%A5%9E%E7%BB%8F%E5%85%83%E7%9A%84%E9%A1%BA%E5%BA%8F/">
+                        固定丢弃神经元的顺序
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        主要思想是：神经元的地位是相同的，从左往右开始删减，简化了搜索空间： \(O(2^C) \rightarrow O(C)\) 。
+Learning Compact Representations of Neural Networks using Di...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Wed Mar 15 2023 17:45:30 GMT+0800">2023-03-15</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E5%89%AA%E6%9E%9D/">剪枝</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2023/03/15/%E5%89%AA%E6%9E%9D/%E5%9B%BA%E5%AE%9A%E4%B8%A2%E5%BC%83%E7%A5%9E%E7%BB%8F%E5%85%83%E7%9A%84%E9%A1%BA%E5%BA%8F/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/03/15/%E5%89%AA%E6%9E%9D/ResRep-Lossless-CNN-Pruning-via-Decoupling-Remembering-and-Forgetting/">
+                        ResRep —— Lossless CNN Pruning via Decoupling Remembering and Forgetting
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        
+https://zhuanlan.zhihu.com/p/361090497
+ResRep：重参和剪枝的美妙结合！结构重参数化实现无损压缩（ICCV）
+
+
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Wed Mar 15 2023 17:09:57 GMT+0800">2023-03-15</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E5%89%AA%E6%9E%9D/">剪枝</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2023/03/15/%E5%89%AA%E6%9E%9D/ResRep-Lossless-CNN-Pruning-via-Decoupling-Remembering-and-Forgetting/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/03/15/%E5%89%AA%E6%9E%9D/Network-Pruning-That-Matters-A-Case-Study-On-Retraining-Variants/">
+                        Network Pruning That Matters —— A Case Study On Retraining Variants
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        模型剪枝包括了三步：
+
+训练原始模型到收敛
+根据某些准则裁剪冗余的权重
+retraining剪枝后模型来恢复模型性能损失，其中包含了很多变量，那么哪些是影响剪枝后模型精度恢复的主要因素呢？
+
+剪枝网络使用的retraining技术包括了：
+
+Fine...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Wed Mar 15 2023 16:47:41 GMT+0800">2023-03-15</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E5%89%AA%E6%9E%9D/">剪枝</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2023/03/15/%E5%89%AA%E6%9E%9D/Network-Pruning-That-Matters-A-Case-Study-On-Retraining-Variants/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/03/14/%E5%89%AA%E6%9E%9D/EagleEye-Fast-Sub-net-Evaluation-for-Efficient-Neural-Network-Pruning/">
+                        EagleEye —— Fast Sub-net Evaluation for Efficient Neural Network Pruning
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        自适应BN
+
+https://www.cnblogs.com/chenbong/p/13679818.html
+论文分享｜从零入门剪枝（七）
+https://blog.csdn.net/c2250645962/article/details/1072...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Mar 14 2023 21:24:00 GMT+0800">2023-03-14</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E5%89%AA%E6%9E%9D/">剪枝</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2023/03/14/%E5%89%AA%E6%9E%9D/EagleEye-Fast-Sub-net-Evaluation-for-Efficient-Neural-Network-Pruning/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/03/14/%E5%89%AA%E6%9E%9D/Proving-the-Lottery-Ticket-Hypothesis-Pruning-is-All-You-Need/">
+                        Proving the Lottery Ticket Hypothesis —— Pruning is All You Need
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        这篇文章就解释了：剪枝后的结构还是权重哪个重要？（理论证明）
+首先 Frankle and Carbin 在 2018 年提出了彩票理论（lottery ticket hypothesis），一个随机初始化的网络包含一个小的子网络，这个子网络具有在进...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Mar 14 2023 19:35:31 GMT+0800">2023-03-14</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E5%89%AA%E6%9E%9D/">剪枝</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2023/03/14/%E5%89%AA%E6%9E%9D/Proving-the-Lottery-Ticket-Hypothesis-Pruning-is-All-You-Need/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/03/14/%E5%89%AA%E6%9E%9D/Rethinking-the-Smaller-Norm-Less-Informative-Assumption-in-Channel-Pruning-of-Convolution-Layers/">
+                        Rethinking the Smaller-Norm-Less-Informative Assumption in Channel Pruning of Convolution Layers
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        作者主要的思想是：把 CNN 视为一个网络流，通过不同层的不同通道将信息从输入传递到输出，而非把 CNN 的计算当作不同层的单独计算的集合。作者认为CNN 的算力减少不仅要减少在单个层中计算的内容，更重要的是探索计算图中的每个通道如何对信息流做出的贡...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Mar 14 2023 12:01:00 GMT+0800">2023-03-14</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E5%89%AA%E6%9E%9D/">剪枝</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2023/03/14/%E5%89%AA%E6%9E%9D/Rethinking-the-Smaller-Norm-Less-Informative-Assumption-in-Channel-Pruning-of-Convolution-Layers/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
                     <a href="/2023/03/13/%E5%89%AA%E6%9E%9D/To-prune,-or-not-to-prune-exploring-the-efficacy-of-pruning-for-model-compression/">
                         To prune, or not to prune exploring the efficacy of pruning for model compression
                     </a>
@@ -158,9 +545,12 @@
 
                 <div class="home-article-content markdown-body">
                     
-                        To prune, or not to prune: exploring the efficacy of pruning for model compression
-链接：论文 code
-作者是斯坦福和谷歌的大牛，提出了一个问题：在给定模型内存占用的...
+                        链接：论文 code
+作者是斯坦福和谷歌的大牛，提出了一个问题：在给定模型内存占用的情况下，我们如何才能得出最准确的模型？
+作者对比以下模型：
+
+对大模型通过剪枝来获取只有少量参数非零对稀疏模型(large-sparse)
+训练一个 small-de...
                     
                 </div>
 
@@ -184,403 +574,6 @@
     </div>
 
     <a href="/2023/03/13/%E5%89%AA%E6%9E%9D/To-prune,-or-not-to-prune-exploring-the-efficacy-of-pruning-for-model-compression/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2023/03/13/%E5%89%AA%E6%9E%9D/Learning-both-Weights-and-Connections-for-Efficient-Neural-Networks/">
-                        Learning both Weights and Connections for Efficient Neural Networks
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        Learning both Weights and Connections for Efficient Neural Networks链接：论文  code
-这篇论文是 Han Song 在模型压缩方面很重要的论文。
-
-目的：减少存储量和计算量，使网...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Mon Mar 13 2023 16:01:34 GMT+0800">2023-03-13</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/%E5%89%AA%E6%9E%9D/">剪枝</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-    </div>
-
-    <a href="/2023/03/13/%E5%89%AA%E6%9E%9D/Learning-both-Weights-and-Connections-for-Efficient-Neural-Networks/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2023/03/10/%E5%89%AA%E6%9E%9D/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9A%84%E5%89%AA%E6%9E%9D/">
-                        神经网络中的剪枝
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        神经网络中的剪枝
-简介
-剪枝顾名思义，就是删去一些不重要的节点，来减小计算或搜索的复杂度。剪枝在很多算法中都有很好的应用，如：决策树，神经网络，搜索算法，数据库的设计等。在决策树和神经网络中，剪枝可以有效缓解过拟合问题并减小计算复杂度；在搜索算法中，...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Fri Mar 10 2023 15:22:50 GMT+0800">2023-03-10</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/%E5%89%AA%E6%9E%9D/">剪枝</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-    </div>
-
-    <a href="/2023/03/10/%E5%89%AA%E6%9E%9D/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9A%84%E5%89%AA%E6%9E%9D/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2023/02/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/%E5%AD%A6%E4%B9%A0%E7%8E%87%E8%A1%B0%E5%87%8F/">
-                        学习率衰减
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        torch.optim.lr_scheduler.StepLR
-1class torch.optim.lr_scheduler.StepLR(optimizer, step_size, gamma=0.1, last_epoch=-1)
-
-optim...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Feb 21 2023 21:02:10 GMT+0800">2023-02-21</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/">机器学习小记</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-    </div>
-
-    <a href="/2023/02/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/%E5%AD%A6%E4%B9%A0%E7%8E%87%E8%A1%B0%E5%87%8F/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2023/02/18/%E6%95%99%E8%82%B2%E7%A7%91%E7%A0%94%E6%96%B9%E6%B3%95/%E5%85%83%E5%88%86%E6%9E%90%E9%93%BE%E6%8E%A5%E6%B1%87%E6%80%BB/">
-                        元分析链接汇总
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        
-元分析教程 | 手把手教你使用CMA 2.0：工具使用
-系统性文献综述&amp;元分析数据分析及报告的29个建议
-Meta分析异质性大，如何处理？
-心理学meta分析/元分析简介
-
-
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sat Feb 18 2023 17:17:12 GMT+0800">2023-02-18</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/%E6%95%99%E8%82%B2%E7%A7%91%E7%A0%94%E6%96%B9%E6%B3%95/">教育科研方法</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-    </div>
-
-    <a href="/2023/02/18/%E6%95%99%E8%82%B2%E7%A7%91%E7%A0%94%E6%96%B9%E6%B3%95/%E5%85%83%E5%88%86%E6%9E%90%E9%93%BE%E6%8E%A5%E6%B1%87%E6%80%BB/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2022/11/23/%E6%95%99%E8%82%B2%E7%A7%91%E7%A0%94%E6%96%B9%E6%B3%95/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C%E9%93%BE%E6%8E%A5%E6%B1%87%E6%80%BB/">
-                        假设检验链接汇总
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        方差分析
-数模系列(6)：方差分析（ANOVA）
-SPSS单因素方差分析
-t检验
-一文详解t检验
-
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Wed Nov 23 2022 20:41:52 GMT+0800">2022-11-23</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/%E6%95%99%E8%82%B2%E7%A7%91%E7%A0%94%E6%96%B9%E6%B3%95/">教育科研方法</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-    </div>
-
-    <a href="/2022/11/23/%E6%95%99%E8%82%B2%E7%A7%91%E7%A0%94%E6%96%B9%E6%B3%95/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C%E9%93%BE%E6%8E%A5%E6%B1%87%E6%80%BB/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2022/11/23/%E6%95%99%E8%82%B2%E7%A7%91%E7%A0%94%E6%96%B9%E6%B3%95/%E8%AF%84%E4%BB%B7%E7%B1%BB%E6%A8%A1%E5%9E%8B%E9%93%BE%E6%8E%A5%E6%B1%87%E6%80%BB/">
-                        评价类模型链接汇总
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        模糊分析
-它具有结果清晰，系统性强的特点，能较好地解决模糊的、难以量化的问题，适合各种非确定性问题的解决。
-模糊层次综合分析法Python实践及相关优缺点分析
-TOPSIS
-TOPSIS法(优劣解距离法)介绍及 python3 实现
-数学建模笔记——...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Wed Nov 23 2022 20:34:31 GMT+0800">2022-11-23</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/%E6%95%99%E8%82%B2%E7%A7%91%E7%A0%94%E6%96%B9%E6%B3%95/">教育科研方法</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-    </div>
-
-    <a href="/2022/11/23/%E6%95%99%E8%82%B2%E7%A7%91%E7%A0%94%E6%96%B9%E6%B3%95/%E8%AF%84%E4%BB%B7%E7%B1%BB%E6%A8%A1%E5%9E%8B%E9%93%BE%E6%8E%A5%E6%B1%87%E6%80%BB/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2022/11/23/%E6%95%99%E8%82%B2%E7%A7%91%E7%A0%94%E6%96%B9%E6%B3%95/%E6%8E%A2%E7%B4%A2%E6%80%A7%E5%9B%A0%E7%B4%A0%E5%88%86%E6%9E%90%E4%B8%8E%E9%AA%8C%E8%AF%81%E6%80%A7%E5%9B%A0%E7%B4%A0%E5%88%86%E6%9E%90/">
-                        探索性因素分析与验证性因素分析
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        探索性因素分析与验证性因素分析的差异
-验证性因子分析
-基本思想不同
-探索性因子分析主要是为了找出影响观测变量的因子个数,以及各个因子和各个观测变量之间的相关程度,以试图揭示一套相对比较大的变量的内在结构。研究者的假定是每个指标变量都与某个因子匹配,而...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Wed Nov 23 2022 20:34:31 GMT+0800">2022-11-23</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/%E6%95%99%E8%82%B2%E7%A7%91%E7%A0%94%E6%96%B9%E6%B3%95/">教育科研方法</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-    </div>
-
-    <a href="/2022/11/23/%E6%95%99%E8%82%B2%E7%A7%91%E7%A0%94%E6%96%B9%E6%B3%95/%E6%8E%A2%E7%B4%A2%E6%80%A7%E5%9B%A0%E7%B4%A0%E5%88%86%E6%9E%90%E4%B8%8E%E9%AA%8C%E8%AF%81%E6%80%A7%E5%9B%A0%E7%B4%A0%E5%88%86%E6%9E%90/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2022/11/22/linux/linux%E4%B8%ADssh%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">
-                        linux中ssh相关问题
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        SSH配置
-1.查询是否安装SSH.
-1rpm -pa |grep ssh
-2.如果没有安装rmp:
-12sudo apt-get install rpm          #ubuntu,debianyum -y instal rpm       ...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Nov 22 2022 15:32:35 GMT+0800">2022-11-22</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/linux/">linux</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-    </div>
-
-    <a href="/2022/11/22/linux/linux%E4%B8%ADssh%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2022/11/06/linux/linux%E5%AE%89%E8%A3%85pytorch/">
-                        linux安装pytorch
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        注意⚠️：
-
-torch，torchvision，torchaudio和python版本需要对应
-安装的torch要与gpu对应（可以向下兼容）
-反复安装要重启能解决一些问题
-
-下载速度太慢添加镜像源（清华、科大），在官网下载时去掉命令后面的 -c ...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sun Nov 06 2022 15:12:45 GMT+0800">2022-11-06</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/linux/">linux</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-    </div>
-
-    <a href="/2022/11/06/linux/linux%E5%AE%89%E8%A3%85pytorch/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
