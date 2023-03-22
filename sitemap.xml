@@ -2,6 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://caaaa-a.github.io/2022/07/28/%E8%BF%90%E8%A1%8C%E5%AE%89%E8%A3%85%E2%80%94%E2%80%94%E8%BF%90%E8%A1%8Cshell/</loc>
+    
+    <lastmod>2023-03-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://caaaa-a.github.io/2022/07/28/%E8%BF%90%E8%A1%8C%E5%AE%89%E8%A3%85%E2%80%94%E2%80%94%E4%B8%80%E4%BA%9B%E6%8A%A5%E9%94%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</loc>
+    
+    <lastmod>2023-03-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://caaaa-a.github.io/2022/07/28/%E8%BF%90%E8%A1%8C%E5%AE%89%E8%A3%85%E2%80%94%E2%80%94%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83py27%E5%8F%8A%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</loc>
+    
+    <lastmod>2023-03-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://caaaa-a.github.io/2023/03/14/%E5%89%AA%E6%9E%9D/EagleEye-Fast-Sub-net-Evaluation-for-Efficient-Neural-Network-Pruning/</loc>
     
     <lastmod>2023-03-22</lastmod>
@@ -173,24 +200,6 @@
   </url>
   
   <url>
-    <loc>https://caaaa-a.github.io/2022/07/28/%E8%BF%90%E8%A1%8C%E5%AE%89%E8%A3%85%E2%80%94%E2%80%94%E4%B8%80%E4%BA%9B%E6%8A%A5%E9%94%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</loc>
-    
-    <lastmod>2022-11-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://caaaa-a.github.io/2022/07/28/%E8%BF%90%E8%A1%8C%E5%AE%89%E8%A3%85%E2%80%94%E2%80%94%E8%BF%90%E8%A1%8Cshell/</loc>
-    
-    <lastmod>2022-11-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://caaaa-a.github.io/2022/11/06/python%E5%B0%8F%E8%AE%B0/python%E5%B0%8F%E8%AE%B0-shell/</loc>
     
     <lastmod>2022-11-06</lastmod>
@@ -302,15 +311,6 @@
     <loc>https://caaaa-a.github.io/2022/03/29/tools%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-numpy-and-pandas/</loc>
     
     <lastmod>2022-10-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://caaaa-a.github.io/2022/07/28/%E8%BF%90%E8%A1%8C%E5%AE%89%E8%A3%85%E2%80%94%E2%80%94%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83py27%E5%8F%8A%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</loc>
-    
-    <lastmod>2022-10-04</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

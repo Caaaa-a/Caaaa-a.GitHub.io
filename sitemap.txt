@@ -1,3 +1,6 @@
+https://caaaa-a.github.io/2022/07/28/%E8%BF%90%E8%A1%8C%E5%AE%89%E8%A3%85%E2%80%94%E2%80%94%E8%BF%90%E8%A1%8Cshell/
+https://caaaa-a.github.io/2022/07/28/%E8%BF%90%E8%A1%8C%E5%AE%89%E8%A3%85%E2%80%94%E2%80%94%E4%B8%80%E4%BA%9B%E6%8A%A5%E9%94%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/
+https://caaaa-a.github.io/2022/07/28/%E8%BF%90%E8%A1%8C%E5%AE%89%E8%A3%85%E2%80%94%E2%80%94%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83py27%E5%8F%8A%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/
 https://caaaa-a.github.io/2023/03/14/%E5%89%AA%E6%9E%9D/EagleEye-Fast-Sub-net-Evaluation-for-Efficient-Neural-Network-Pruning/
 https://caaaa-a.github.io/2023/03/15/%E5%89%AA%E6%9E%9D/ResRep-Lossless-CNN-Pruning-via-Decoupling-Remembering-and-Forgetting/
 https://caaaa-a.github.io/2023/03/15/%E5%89%AA%E6%9E%9D/Network-Pruning-That-Matters-A-Case-Study-On-Retraining-Variants/
@@ -17,8 +20,6 @@ https://caaaa-a.github.io/2022/11/23/%E6%95%99%E8%82%B2%E7%A7%91%E7%A0%94%E6%96%
 https://caaaa-a.github.io/2022/11/23/%E6%95%99%E8%82%B2%E7%A7%91%E7%A0%94%E6%96%B9%E6%B3%95/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C%E9%93%BE%E6%8E%A5%E6%B1%87%E6%80%BB/
 https://caaaa-a.github.io/2022/11/22/linux/linux%E4%B8%ADssh%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/
 https://caaaa-a.github.io/2022/10/22/linux/linux%20%E5%AE%89%E8%A3%85miniconda%E5%92%8Cpython/
-https://caaaa-a.github.io/2022/07/28/%E8%BF%90%E8%A1%8C%E5%AE%89%E8%A3%85%E2%80%94%E2%80%94%E4%B8%80%E4%BA%9B%E6%8A%A5%E9%94%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/
-https://caaaa-a.github.io/2022/07/28/%E8%BF%90%E8%A1%8C%E5%AE%89%E8%A3%85%E2%80%94%E2%80%94%E8%BF%90%E8%A1%8Cshell/
 https://caaaa-a.github.io/2022/11/06/python%E5%B0%8F%E8%AE%B0/python%E5%B0%8F%E8%AE%B0-shell/
 https://caaaa-a.github.io/2022/11/06/linux/linux%E5%AE%89%E8%A3%85pytorch/
 https://caaaa-a.github.io/2022/11/06/linux/linux%20%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/
@@ -32,7 +33,6 @@ https://caaaa-a.github.io/2022/01/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%
 https://caaaa-a.github.io/2022/10/04/python%E5%B0%8F%E8%AE%B0/python%E5%B0%8F%E8%AE%B0-%20%E8%AE%BA%E6%96%87%E5%8A%A8%E8%AF%8D%E6%9F%A5%E6%89%BE/
 https://caaaa-a.github.io/2022/04/02/tools%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-%E4%B8%80%E4%BA%9B%E6%95%99%E7%A8%8B/
 https://caaaa-a.github.io/2022/03/29/tools%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-numpy-and-pandas/
-https://caaaa-a.github.io/2022/07/28/%E8%BF%90%E8%A1%8C%E5%AE%89%E8%A3%85%E2%80%94%E2%80%94%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83py27%E5%8F%8A%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/
 https://caaaa-a.github.io/2022/10/04/python%E5%B0%8F%E8%AE%B0/python%E5%B0%8F%E8%AE%B0-%20%E4%BF%9D%E5%AD%98%E6%96%87%E4%BB%B6/
 https://caaaa-a.github.io/2022/09/25/pl-earlystopping/
 https://caaaa-a.github.io/2022/04/16/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E5%88%A4%E5%88%AB%E6%A8%A1%E5%9E%8B%E5%92%8C%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/
