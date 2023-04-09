@@ -199,235 +199,246 @@
         
 
         <div class="article-content markdown-body">
-            <h3 id="list"><a href="#list" class="headerlink" title="list"></a>list</h3><p>python的列表内部实现是<a class="link"   target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=数组&amp;spm=1001.2101.3001.7020" >数组<i class="fas fa-external-link-alt"></i></a>（数组是一种线性表结构，其用一块连续的内存空间，来存储一组具有相同类型的数据。具体实现要看解析器, CPython的实现 ），因此就有数组的特点。超过容量会增加更多的容量，set, get 是O(1)，但del, insert, in的性能是O(n)。具体的看下表，’n’是容器中当前的元素数， ‘k’需要操作的元素个数</p>
-<div class="table-container">
+            <h3 id="list">list</h3>
+<p>python的列表内部实现是<a class="link"   target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=数组&amp;spm=1001.2101.3001.7020" >数组<i class="fas fa-external-link-alt"></i></a>（数组是一种线性表结构，其用一块连续的内存空间，来存储一组具有相同类型的数据。具体实现要看解析器, CPython的实现 ），因此就有数组的特点。超过容量会增加更多的容量，set, get 是O(1)，但del, insert, in的性能是O(n)。具体的看下表，'n’是容器中当前的元素数， 'k’需要操作的元素个数</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Operation</th>
 <th>Average Case</th>
 <th>Amortized Worst Case</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>Copy</td>
 <td>O(n)</td>
 <td>O(n)</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Append[1]</td>
 <td>O(1)</td>
 <td>O(1)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Insert</td>
 <td>O(n)</td>
 <td>O(n)</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Pop</td>
 <td>O(n)(best O(1))</td>
 <td>O(n)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Get Item</td>
 <td>O(1)</td>
 <td>O(1)</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Set Item</td>
 <td>O(1)</td>
 <td>O(1)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Delete Item</td>
 <td>O(n)</td>
 <td>O(n)</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Iteration</td>
 <td>O(n)</td>
 <td>O(n)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Get Slice</td>
 <td>O(k)</td>
 <td>O(k)</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Del Slice</td>
 <td>O(n)</td>
 <td>O(n)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Set Slice</td>
 <td>O(k+n)</td>
 <td>O(k+n)</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Extend[1]</td>
 <td>O(k)</td>
 <td>O(k)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Sort</td>
 <td>O(n log n)</td>
 <td>O(n log n)</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Multiply</td>
 <td>O(nk)</td>
 <td>O(nk)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>x in s</td>
 <td>O(n)</td>
 <td></td>
 </tr>
-<tr>
+<tr class="even">
 <td>min(s), max(s)</td>
 <td>O(n)</td>
 <td></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Get Length</td>
 <td>O(1)</td>
 <td>O(1)</td>
 </tr>
 </tbody>
 </table>
-</div>
 <p>列表的实现</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">typedef struct &#123;</span><br><span class="line">    PyObject_VAR_HEAD</span><br><span class="line">    /* Vector of pointers to <span class="built_in">list</span> elements.  <span class="built_in">list</span>[<span class="number">0</span>] <span class="keyword">is</span> ob_item[<span class="number">0</span>], etc. */</span><br><span class="line">    PyObject **ob_item;</span><br><span class="line"></span><br><span class="line">    /* ob_item contains space <span class="keyword">for</span> <span class="string">&#x27;allocated&#x27;</span> elements.  The number</span><br><span class="line">     * currently <span class="keyword">in</span> use <span class="keyword">is</span> ob_size.</span><br><span class="line">     * Invariants:</span><br><span class="line">     *     <span class="number">0</span> &lt;= ob_size &lt;= allocated</span><br><span class="line">     *     <span class="built_in">len</span>(<span class="built_in">list</span>) == ob_size</span><br><span class="line">     *     ob_item == NULL implies ob_size == allocated == <span class="number">0</span></span><br><span class="line">     * <span class="built_in">list</span>.sort() temporarily sets allocated to -<span class="number">1</span> to detect mutations.</span><br><span class="line">     *</span><br><span class="line">     * Items must normally <span class="keyword">not</span> be NULL, <span class="keyword">except</span> during construction when</span><br><span class="line">     * the <span class="built_in">list</span> <span class="keyword">is</span> <span class="keyword">not</span> yet visible outside the function that builds it.</span><br><span class="line">     */</span><br><span class="line">    Py_ssize_t allocated;</span><br><span class="line">&#125; PyListObject;</span><br><span class="line"></span><br><span class="line">list_resize(PyListObject *self, Py_ssize_t newsize)</span><br><span class="line">&#123;</span><br><span class="line">    PyObject **items;</span><br><span class="line">    size_t new_allocated;</span><br><span class="line">    Py_ssize_t allocated = self-&gt;allocated;</span><br><span class="line"></span><br><span class="line">    /* Bypass realloc() when a previous overallocation <span class="keyword">is</span> large enough</span><br><span class="line">       to accommodate the newsize.  If the newsize falls lower than half</span><br><span class="line">       the allocated size, then proceed <span class="keyword">with</span> the realloc() to shrink the <span class="built_in">list</span>.</span><br><span class="line">    */</span><br><span class="line">    <span class="keyword">if</span> (allocated &gt;= newsize &amp;&amp; newsize &gt;= (allocated &gt;&gt; <span class="number">1</span>)) &#123;</span><br><span class="line">        <span class="keyword">assert</span>(self-&gt;ob_item != NULL || newsize == <span class="number">0</span>);</span><br><span class="line">        Py_SIZE(self) = newsize;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /* This over-allocates proportional to the <span class="built_in">list</span> size, making room</span><br><span class="line">     * <span class="keyword">for</span> additional growth.  The over-allocation <span class="keyword">is</span> mild, but <span class="keyword">is</span></span><br><span class="line">     * enough to give linear-time amortized behavior over a long</span><br><span class="line">     * sequence of appends() <span class="keyword">in</span> the presence of a poorly-performing</span><br><span class="line">     * system realloc().</span><br><span class="line">     * The growth pattern <span class="keyword">is</span>:  <span class="number">0</span>, <span class="number">4</span>, <span class="number">8</span>, <span class="number">16</span>, <span class="number">25</span>, <span class="number">35</span>, <span class="number">46</span>, <span class="number">58</span>, <span class="number">72</span>, <span class="number">88</span>, ...</span><br><span class="line">     */</span><br><span class="line">    new_allocated = (newsize &gt;&gt; <span class="number">3</span>) + (newsize &lt; <span class="number">9</span> ? <span class="number">3</span> : <span class="number">6</span>);</span><br><span class="line">...</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># 截取部分代码</span></span><br></pre></td></tr></table></figure>
 <p>可以看到，python list本质上是一个over-allocate的数组，啥叫over-allocate呢？就是当底层数组容量满了而需要扩充的时候，python依据规则会扩充多个位置出来。比如初始化列表array=[1, 2, 3, 4]，向其中添加元素23，此时array对应的底层数组，扩充后的容量不是5，而是8。这就是over-allocate的意义，即扩充容量的时候会多分配一些存储空间。这样做的优点当然是提高了执行效率，否则每次添加元素，都要对底层数组进行扩充，效率是很低下的。另外，当列表存储的元素在变少时，python也会及时收缩底层的数组，避免造成内存浪费。这里可以通过对列表的实践，验证扩充与收缩的过程（通过 <strong><code>__sizeof__()</code></strong>或<strong><code>sys.getsizeof()</code></strong>查看内存变化，并推算容量值）。</p>
 <p>python列表存储的是对象引用，而非对象本身。不管是python文档的说明还是我们开发过程中的实践，均能感知到列表存储的是对象的引用。</p>
-<h4 id="append"><a href="#append" class="headerlink" title="append"></a>append</h4><p>向列表尾部添加元素，最好情况即列表容量足够，添加元素一步完成，对应的时间复杂度为O(1)；最坏情况即列表需要扩容，这时需要对现有元素一一遍历移动位置，此时时间复杂度为O(n)。因此最终的时间复杂度为O(1)。</p>
+<h4 id="append">append</h4>
+<p>向列表尾部添加元素，最好情况即列表容量足够，添加元素一步完成，对应的时间复杂度为O(1)；最坏情况即列表需要扩容，这时需要对现有元素一一遍历移动位置，此时时间复杂度为O(n)。因此最终的时间复杂度为O(1)。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span></span></span><br><span class="line"><span class="function"><span class="title">app1</span><span class="params">(PyListObject *self, PyObject *v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Py_ssize_t n = PyList_GET_SIZE(self);</span><br><span class="line"></span><br><span class="line">    assert (v != <span class="literal">NULL</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == PY_SSIZE_T_MAX) &#123;</span><br><span class="line">        PyErr_SetString(PyExc_OverflowError,</span><br><span class="line">            <span class="string">&quot;cannot add more objects to list&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (list_resize(self, n+<span class="number">1</span>) == <span class="number">-1</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">    Py_INCREF(v);</span><br><span class="line">    PyList_SET_ITEM(self, n, v);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span></span></span><br><span class="line"><span class="function"><span class="title">PyList_Append</span><span class="params">(PyObject *op, PyObject *newitem)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (PyList_Check(op) &amp;&amp; (newitem != <span class="literal">NULL</span>))</span><br><span class="line">        <span class="keyword">return</span> app1((PyListObject *)op, newitem);</span><br><span class="line">    PyErr_BadInternalCall();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>只有两步：重置 List 空间；新增元素设置到尾部。非常直接，常数时间内即可完成。</p>
-<h4 id="pop"><a href="#pop" class="headerlink" title="pop"></a>pop</h4><p>pop 元素根据弹出元素是否是尾部元素区别处理，如果是尾部元素，那么只是进行 resize 操作，弹出元素会被直接截断抛弃。实际上在这个过程中有可能根本不会发生真正的 resize，只是调整了 ob_size 的大小。此时时间复杂度为O(1)。</p>
+<h4 id="pop">pop</h4>
+<p>pop 元素根据弹出元素是否是尾部元素区别处理，如果是尾部元素，那么只是进行 resize 操作，弹出元素会被直接截断抛弃。实际上在这个过程中有可能根本不会发生真正的 resize，只是调整了 ob_size 的大小。此时时间复杂度为O(1)。</p>
 <p>较为复杂的情况是弹出元素在数组中间或者头部，当目标元素弹出后，会在 List 中出现一个 “空缺”，其后的元素会被 “前移”，这与插入过程恰好相反，时间复杂度为O(n)。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Objects/listobject.c:1025</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> PyObject *</span></span><br><span class="line"><span class="function"><span class="title">list_pop_impl</span><span class="params">(PyListObject *self, Py_ssize_t index)</span></span></span><br><span class="line"><span class="function"><span class="comment">/*[clinic end generated code: output=6bd69dcb3f17eca8 input=b83675976f329e6f]*/</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    PyObject *v;</span><br><span class="line">    <span class="keyword">int</span> status;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 忽略一些无关代码</span></span><br><span class="line">    v = self-&gt;ob_item[index];</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 如果要弹出结尾元素，快捷处理</span></span><br><span class="line">    <span class="keyword">if</span> (index == Py_SIZE(self) - <span class="number">1</span>) &#123;</span><br><span class="line">        status = list_resize(self, Py_SIZE(self) - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span> (status &gt;= <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> v; <span class="comment">/* and v now owns the reference the list had */</span></span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 如果位于 List 中间，则删除元素</span></span><br><span class="line">    Py_INCREF(v);</span><br><span class="line">    status = list_ass_slice(self, index, index+<span class="number">1</span>, (PyObject *)<span class="literal">NULL</span>);</span><br><span class="line">    <span class="keyword">if</span> (status &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        Py_DECREF(v);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> v;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="index-or-index-assignment"><a href="#index-or-index-assignment" class="headerlink" title="index or index assignment"></a>index or index assignment</h4><p>列表的索引操作，比如data[i]或data[i]=new_item，对应的时间复杂度为O(1)，即常量阶。对于一块连续的存储空间，获取某个位置的地址通过一步计算即可算出。通常的公式是i_addr = start_addr + i <em> unit_byte，比如一个int类型的数组，想要计算数组下标为2的元素的内存地址，此时就等于数组的起始内存地址（数组下标为0的地址）+ 2 </em> unit_byte，unit_byte为不同类型对应的字节数，比如int类型占用2个节点，float类型占用4个字节。因为数组存储的是一组具有相同类型的数据，unit_byte固定，因此i位置内存地址较容易算出。python列表可以存储任意类型，为啥也能通过这个公式算计算呢，本质上还是因为列表实际存储的是对象的引用，每个对象的引用占用的字节数固定，因此i_addr = start_addr + i * unit_byte公式可用。</p>
-<h4 id="insert"><a href="#insert" class="headerlink" title="insert"></a>insert</h4><p> insert(index, object)：在指定索引前插入元素object。在第一个位置插入元素时，列表中原有的所有数据均要向后移动，在最后一个位置插入元素时，这时就不需要移动元素的操作。同时insert伴随着容量扩容的潜在操作，因此最终的时间复杂度为O(n)。</p>
-<h4 id="del"><a href="#del" class="headerlink" title="del"></a>del</h4><p> del通常的操作是del data[i] 或者 del data[i:j]，删除元素后，涉及到i或j之后元素的向前移动的操作，同时还会伴随着数组收缩的潜在操作，因此对应的时间复杂度为O(n)。</p>
-<h4 id="contains-or-in"><a href="#contains-or-in" class="headerlink" title="contains or in"></a>contains or in</h4><p> 判断一个元素是否在列表内，需要从头遍历列表，最好情况是第一个元素就是，最坏情况是最后一个元素才是，或者元素根本就不在列表中，这两种情况均会完整遍历列表元素。</p>
+<h4 id="index-or-index-assignment">index or index assignment</h4>
+<p>列表的索引操作，比如data[i]或data[i]=new_item，对应的时间复杂度为O(1)，即常量阶。对于一块连续的存储空间，获取某个位置的地址通过一步计算即可算出。通常的公式是i_addr = start_addr + i * unit_byte，比如一个int类型的数组，想要计算数组下标为2的元素的内存地址，此时就等于数组的起始内存地址（数组下标为0的地址）+ 2 * unit_byte，unit_byte为不同类型对应的字节数，比如int类型占用2个节点，float类型占用4个字节。因为数组存储的是一组具有相同类型的数据，unit_byte固定，因此i位置内存地址较容易算出。python列表可以存储任意类型，为啥也能通过这个公式算计算呢，本质上还是因为列表实际存储的是对象的引用，每个对象的引用占用的字节数固定，因此i_addr = start_addr + i * unit_byte公式可用。</p>
+<h4 id="insert">insert</h4>
+<p>insert(index, object)：在指定索引前插入元素object。在第一个位置插入元素时，列表中原有的所有数据均要向后移动，在最后一个位置插入元素时，这时就不需要移动元素的操作。同时insert伴随着容量扩容的潜在操作，因此最终的时间复杂度为O(n)。</p>
+<h4 id="del">del</h4>
+<p>del通常的操作是del data[i] 或者 del data[i:j]，删除元素后，涉及到i或j之后元素的向前移动的操作，同时还会伴随着数组收缩的潜在操作，因此对应的时间复杂度为O(n)。</p>
+<h4 id="contains-or-in">contains or in</h4>
+<p>判断一个元素是否在列表内，需要从头遍历列表，最好情况是第一个元素就是，最坏情况是最后一个元素才是，或者元素根本就不在列表中，这两种情况均会完整遍历列表元素。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">static <span class="built_in">int</span></span><br><span class="line">list_contains(PyListObject *a, PyObject *el)</span><br><span class="line">&#123;</span><br><span class="line">    Py_ssize_t i;</span><br><span class="line">    <span class="built_in">int</span> cmp;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>, cmp = <span class="number">0</span> ; cmp == <span class="number">0</span> &amp;&amp; i &lt; Py_SIZE(a); ++i)</span><br><span class="line">        cmp = PyObject_RichCompareBool(el, PyList_GET_ITEM(a, i),</span><br><span class="line">                                           Py_EQ);</span><br><span class="line">    <span class="keyword">return</span> cmp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="iteration"><a href="#iteration" class="headerlink" title="iteration"></a>iteration</h4><p> iteration需要遍历列表内的所有元素，因此时间复杂度为O(n)。</p>
-<h4 id="remove"><a href="#remove" class="headerlink" title="remove"></a>remove</h4><p> remove(value)：删除列表中第一次出现的value。首先要从头开始遍历列表，判断是否找到value值，若找到value，则紧接着将其删除，然后后续的元素向前移动。如果要删除的元素在列表的第一个位置，删除之后，后续所有的元素均向前移动；若要删除的元素在最后一个位置，删除之后，不存在要移动位置的元素，但需要遍历到最后一个元素。这些操作同时伴随着底层数组收缩的潜在操作，因此最终的时间复杂度为O(n)。</p>
+<h4 id="iteration">iteration</h4>
+<p>iteration需要遍历列表内的所有元素，因此时间复杂度为O(n)。</p>
+<h4 id="remove">remove</h4>
+<p>remove(value)：删除列表中第一次出现的value。首先要从头开始遍历列表，判断是否找到value值，若找到value，则紧接着将其删除，然后后续的元素向前移动。如果要删除的元素在列表的第一个位置，删除之后，后续所有的元素均向前移动；若要删除的元素在最后一个位置，删除之后，不存在要移动位置的元素，但需要遍历到最后一个元素。这些操作同时伴随着底层数组收缩的潜在操作，因此最终的时间复杂度为O(n)。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">static PyObject *</span><br><span class="line">listremove(PyListObject *self, PyObject *v)</span><br><span class="line">&#123;</span><br><span class="line">    Py_ssize_t i;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; Py_SIZE(self); i++) &#123;</span><br><span class="line">        <span class="built_in">int</span> cmp = PyObject_RichCompareBool(self-&gt;ob_item[i], v, Py_EQ);</span><br><span class="line">        <span class="keyword">if</span> (cmp &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (list_ass_slice(self, i, i+<span class="number">1</span>,</span><br><span class="line">                               (PyObject *)NULL) == <span class="number">0</span>)</span><br><span class="line">                Py_RETURN_NONE;</span><br><span class="line">            <span class="keyword">return</span> NULL;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (cmp &lt; <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> NULL;</span><br><span class="line">    &#125;</span><br><span class="line">    PyErr_SetString(PyExc_ValueError, <span class="string">&quot;list.remove(x): x not in list&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> NULL;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="count"><a href="#count" class="headerlink" title="count"></a>count</h4><p>count(value)：获取列表中value出现的次数，这个仅需要完整遍历列表元素即可，不涉及元素移动位置的操作，因此时间复杂度为O(n)。</p>
+<h4 id="count">count</h4>
+<p>count(value)：获取列表中value出现的次数，这个仅需要完整遍历列表元素即可，不涉及元素移动位置的操作，因此时间复杂度为O(n)。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">static PyObject *</span><br><span class="line">listcount(PyListObject *self, PyObject *v)</span><br><span class="line">&#123;</span><br><span class="line">    Py_ssize_t count = <span class="number">0</span>;</span><br><span class="line">    Py_ssize_t i;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; Py_SIZE(self); i++) &#123;</span><br><span class="line">        <span class="built_in">int</span> cmp = PyObject_RichCompareBool(self-&gt;ob_item[i], v, Py_EQ);</span><br><span class="line">        <span class="keyword">if</span> (cmp &gt; <span class="number">0</span>)</span><br><span class="line">            count++;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (cmp &lt; <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> NULL;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> PyInt_FromSsize_t(count);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="len"><a href="#len" class="headerlink" title="len"></a>len</h4><p> len(list)：获取列表内元素的个数，因为在列表实现中，其内部维护了一个Py_ssize_t类型的变量表示列表内元素的个数，因此时间复杂度为O(1)。</p>
-<h4 id="reverse"><a href="#reverse" class="headerlink" title="reverse"></a>reverse</h4><p> reverse()：反转列表内的所有元素，至少需要遍历一半的元素，因此时间复杂度为O(n)。</p>
-<h4 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h4><p> sort(cmp=None, key=None, reverse=False)：对列表内的元素，依据某种策略进行排序。其时间复杂度为O(nlogn)，这里咱们先记住这个复杂度，等到后续的排序文章中再给大家做具体的分析。</p>
+<h4 id="len">len</h4>
+<p>len(list)：获取列表内元素的个数，因为在列表实现中，其内部维护了一个Py_ssize_t类型的变量表示列表内元素的个数，因此时间复杂度为O(1)。</p>
+<h4 id="reverse">reverse</h4>
+<p>reverse()：反转列表内的所有元素，至少需要遍历一半的元素，因此时间复杂度为O(n)。</p>
+<h4 id="sort">sort</h4>
+<p>sort(cmp=None, key=None, reverse=False)：对列表内的元素，依据某种策略进行排序。其时间复杂度为O(nlogn)，这里咱们先记住这个复杂度，等到后续的排序文章中再给大家做具体的分析。</p>
 <p>通过分析可以发现，<strong>列表不太适合做元素的查找、删除、插入等操作</strong>，对应的时间复杂度为O(n)；<strong>访问某个索引的元素、尾部添加元素或删除元素这些操作比较适合做</strong>，对应的时间复杂度为O(1)。比如我们要在业务开发中，判断一个value是否在一个数据集中，如果数据集用list存储，那此时的判断操作就很耗时，如果我们用hash table（set or dict，后续也会专门写文章分析）来存储，此时的判断就能在O(1)的复杂度下完成，这样我们的程序就会有一定的提高。当然，在开发中如何有效的评估数据量也是非常重要的。</p>
-<h3 id="dict"><a href="#dict" class="headerlink" title="dict"></a>dict</h3><p>关于字典需要了解的是hash函数和哈希桶。一个好的hash函数使到哈希桶中的值只有一个，若多个key hash到了同一个哈希桶中，称之为哈希冲突。查找值时，会先定位到哈希桶中，再遍历hash桶。更详细的信息请点这里。在hash基本没有冲突的情况下get, set, delete, in方面都是O(1)。自己的操作不会超过O(n)</p>
-<div class="table-container">
+<h3 id="dict">dict</h3>
+<p>关于字典需要了解的是hash函数和哈希桶。一个好的hash函数使到哈希桶中的值只有一个，若多个key hash到了同一个哈希桶中，称之为哈希冲突。查找值时，会先定位到哈希桶中，再遍历hash桶。更详细的信息请点这里。在hash基本没有冲突的情况下get, set, delete, in方面都是O(1)。自己的操作不会超过O(n)</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Operation</th>
 <th>Average Case</th>
 <th>Amortized Worst Case</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>Copy[2]</td>
 <td>O(n)</td>
 <td>O(n)</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Get Item</td>
 <td>O(1)</td>
 <td>O(n)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Set Item[1]</td>
 <td>O(1)</td>
 <td>O(n)</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Delete Item</td>
 <td>O(1)</td>
 <td>O(n)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>x in s</td>
 <td>O(1)</td>
 <td>O(n)</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Iteration[2]</td>
 <td>O(n)</td>
 <td>O(n)</td>
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="set"><a href="#set" class="headerlink" title="set"></a>set</h3><p>内部实现是dict的。在in操作上是O(1), 这一点比list要强。<br>也有list不存在的差运算</p>
-<div class="table-container">
+<h3 id="set">set</h3>
+<p>内部实现是dict的。在in操作上是O(1), 这一点比list要强。 也有list不存在的差运算</p>
 <table>
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 21%" />
+<col style="width: 45%" />
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Operation</th>
 <th>Average case</th>
 <th>Worst Case</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>x in s</td>
 <td>O(1)</td>
 <td>O(n)</td>
 </tr>
-<tr>
-<td>Union s\</td>
-<td>t</td>
+<tr class="even">
+<td>Union s|t</td>
 <td>O(len(s)+len(t))</td>
 <td></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Intersection s&amp;t</td>
 <td>O(min(len(s), len(t))</td>
 <td>O(len(s) * len(t))</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Multiple intersection s1&amp;s2&amp;…&amp;sn</td>
 <td></td>
 <td>(n-1)*O(l) where l is max(len(s1),…,len(sn))</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Difference s-t</td>
 <td>O(len(s))</td>
 <td></td>
 </tr>
-<tr>
+<tr class="even">
 <td>s.difference_update(t)</td>
 <td>O(len(t))</td>
 <td></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Symmetric Difference s^t</td>
 <td>O(len(s))</td>
 <td>O(len(s) * len(t))</td>
 </tr>
-<tr>
+<tr class="even">
 <td>s.symmetric_difference_update(t)</td>
 <td>O(len(t))</td>
 <td>O(len(t) * len(s))</td>
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="原网址"><a href="#原网址" class="headerlink" title="原网址"></a>原网址</h3><ol>
-<li><p><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/158634482" >深入Python(17)-List 的 append 和 pop<i class="fas fa-external-link-alt"></i></a></p>
-</li>
-<li><p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/ACBattle/article/details/97012800" >【python】list，dict，set的时间复杂度<i class="fas fa-external-link-alt"></i></a></p>
-</li>
-<li><p><a class="link"   target="_blank" rel="noopener" href="https://www.jianshu.com/p/a2c98df9cfae?u_atoken=4f4be72c-86ab-42f0-8437-b76a253ad430&amp;u_asession=01F6xUib_z_-7AdlLjDjcTjhl6Z1gokRN2jr-j3-bKoh7Xhvd2C1Lg07it4j7GrHcaX0KNBwm7Lovlpxjd_P_q4JsKWYrT3W_NKPr8w6oU7K9QRILKWg9qLeKTO1xJ_WCMhVaMhQoQvxDmSarRnKyUVWBkFo3NEHBv0PZUm6pbxQU&amp;u_asig=05xmYejoJhBKUw-EcvuyK5znYkk3ufM37SbtpMxleai_U2BkrA4p_grzuDIt-O5WQOb6sLRGO7IfrbSf_9mZ5FXkhZy6Y4so_JcT-Y23ktg_hyCefSChcumOeK3pGo7AOOpxTA-JIktoOWojh-_kiy6Ze3iiLfnwfZrzrxW8owaRX9JS7q8ZD7Xtz2Ly-b0kmuyAKRFSVJkkdwVUnyHAIJzZoZxUcg9wTd3m_8ykkaUjZB1Jdo7d-KhAa_LY9nXS1yCNkNfzbmXGypMDlqpKRYAO3h9VXwMyh6PgyDIVSG1W9dlaV9CGUgOiLLq2d73Oy3yqiocquMB3dEXCMLVTi_hWdJHHmJC7GwmGwC4-QNySVRXI8YCWI5irkBSq7507cVmWspDxyAEEo4kbsryBKb9Q&amp;u_aref=vLjxdwgYEsAiACTFJrS7GLw%2BCsA%3D" >python list 之时间复杂度分析<i class="fas fa-external-link-alt"></i></a></p>
-</li>
+<h3 id="原网址">原网址</h3>
+<ol type="1">
+<li><p><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/158634482" >深入Python(17)-List 的 append 和 pop<i class="fas fa-external-link-alt"></i></a></p></li>
+<li><p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/ACBattle/article/details/97012800" >【python】list，dict，set的时间复杂度<i class="fas fa-external-link-alt"></i></a></p></li>
+<li><p><a class="link"   target="_blank" rel="noopener" href="https://www.jianshu.com/p/a2c98df9cfae?u_atoken=4f4be72c-86ab-42f0-8437-b76a253ad430&amp;u_asession=01F6xUib_z_-7AdlLjDjcTjhl6Z1gokRN2jr-j3-bKoh7Xhvd2C1Lg07it4j7GrHcaX0KNBwm7Lovlpxjd_P_q4JsKWYrT3W_NKPr8w6oU7K9QRILKWg9qLeKTO1xJ_WCMhVaMhQoQvxDmSarRnKyUVWBkFo3NEHBv0PZUm6pbxQU&amp;u_asig=05xmYejoJhBKUw-EcvuyK5znYkk3ufM37SbtpMxleai_U2BkrA4p_grzuDIt-O5WQOb6sLRGO7IfrbSf_9mZ5FXkhZy6Y4so_JcT-Y23ktg_hyCefSChcumOeK3pGo7AOOpxTA-JIktoOWojh-_kiy6Ze3iiLfnwfZrzrxW8owaRX9JS7q8ZD7Xtz2Ly-b0kmuyAKRFSVJkkdwVUnyHAIJzZoZxUcg9wTd3m_8ykkaUjZB1Jdo7d-KhAa_LY9nXS1yCNkNfzbmXGypMDlqpKRYAO3h9VXwMyh6PgyDIVSG1W9dlaV9CGUgOiLLq2d73Oy3yqiocquMB3dEXCMLVTi_hWdJHHmJC7GwmGwC4-QNySVRXI8YCWI5irkBSq7507cVmWspDxyAEEo4kbsryBKb9Q&amp;u_aref=vLjxdwgYEsAiACTFJrS7GLw%2BCsA%3D" >python list 之时间复杂度分析<i class="fas fa-external-link-alt"></i></a></p></li>
 </ol>
 
         </div>

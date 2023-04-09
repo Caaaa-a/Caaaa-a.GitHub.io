@@ -178,7 +178,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>656 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>611 Words</span>
         </span>
     
     
@@ -199,7 +199,8 @@
         
 
         <div class="article-content markdown-body">
-            <h3 id="图例"><a href="#图例" class="headerlink" title="图例"></a>图例</h3><p><code>matplotlib</code>可以为可见对象（<code>Artist</code>，比如线条、形状）添加图例。<strong>官方建议使用<code>pyplot</code>模块的<code>legend</code>函数简便的创建图例，而不是使用底层的<code>matplotlib.legend</code>类构造图例。</strong></p>
+            <h3 id="图例">图例</h3>
+<p><code>matplotlib</code>可以为可见对象（<code>Artist</code>，比如线条、形状）添加图例。<strong>官方建议使用<code>pyplot</code>模块的<code>legend</code>函数简便的创建图例，而不是使用底层的<code>matplotlib.legend</code>类构造图例。</strong></p>
 <p>使用图例的基础有两个：</p>
 <ul>
 <li><code>handles</code>：可见对象（<code>Artist</code>，比如线条、形状）序列，与<code>labels</code>配合使用。</li>
@@ -212,75 +213,73 @@
 <li><code>legend(labels)</code>：自动匹配可见对象和<code>labels</code>，<strong>官方不建议使用这种方式</strong>，因为可见对象和标签的对应关系并不明确！</li>
 <li><code>legend(handles, labels)</code>：指定可见对象和标签的对应关系。</li>
 </ul>
-<h4 id="coding"><a href="#coding" class="headerlink" title="coding"></a>coding</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">13</span>,<span class="number">4</span>))</span><br><span class="line">plt.subplot(<span class="number">131</span>)</span><br><span class="line"><span class="comment"># legend()调用方式，****建议</span></span><br><span class="line">plt.plot([<span class="number">1</span>, <span class="number">1</span>],label=<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">plt.plot([<span class="number">2</span>, <span class="number">2</span>],label=<span class="string">&#x27;2&#x27;</span>)</span><br><span class="line">plt.legend()</span><br><span class="line">plt.subplot(<span class="number">132</span>)</span><br><span class="line"><span class="comment"># legend(labels)调用方式</span></span><br><span class="line">plt.plot([<span class="number">1</span>, <span class="number">1</span>])</span><br><span class="line">plt.plot([<span class="number">2</span>, <span class="number">2</span>])</span><br><span class="line">plt.legend([<span class="string">&#x27;1&#x27;</span>,<span class="string">&#x27;2&#x27;</span>])</span><br><span class="line">plt.subplot(<span class="number">133</span>)</span><br><span class="line"><span class="comment"># legend(handles, labels)调用方式</span></span><br><span class="line"><span class="comment"># 注意plot函数返回的为Line2D对象列表</span></span><br><span class="line">line1, = plt.plot([<span class="number">1</span>, <span class="number">1</span>])</span><br><span class="line">line2, = plt.plot([<span class="number">2</span>, <span class="number">2</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(line1))</span><br><span class="line">plt.legend((line1,line2),[<span class="string">&#x27;1st&#x27;</span>,<span class="string">&#x27;2nd&#x27;</span>])</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><ul>
-<li><code>loc</code>：图例显示的位置，类型为浮点数或字符串，默认值为<code>rcParams[&quot;legend.loc&quot;] ( &#39;best&#39;)</code>。浮点数和字符串之间具有以下对应关系：</li>
+<h4 id="coding">coding</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">13</span>,<span class="number">4</span>))</span><br><span class="line">plt.subplot(<span class="number">131</span>)</span><br><span class="line"><span class="comment"># legend()调用方式，****建议</span></span><br><span class="line">plt.plot([<span class="number">1</span>, <span class="number">1</span>],label=<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">plt.plot([<span class="number">2</span>, <span class="number">2</span>],label=<span class="string">&#x27;2&#x27;</span>)</span><br><span class="line">plt.legend()</span><br><span class="line">plt.subplot(<span class="number">132</span>)</span><br><span class="line"><span class="comment"># legend(labels)调用方式</span></span><br><span class="line">plt.plot([<span class="number">1</span>, <span class="number">1</span>])</span><br><span class="line">plt.plot([<span class="number">2</span>, <span class="number">2</span>])</span><br><span class="line">plt.legend([<span class="string">&#x27;1&#x27;</span>,<span class="string">&#x27;2&#x27;</span>])</span><br><span class="line">plt.subplot(<span class="number">133</span>)</span><br><span class="line"><span class="comment"># legend(handles, labels)调用方式</span></span><br><span class="line"><span class="comment"># 注意plot函数返回的为Line2D对象列表</span></span><br><span class="line">line1, = plt.plot([<span class="number">1</span>, <span class="number">1</span>])</span><br><span class="line">line2, = plt.plot([<span class="number">2</span>, <span class="number">2</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(line1))</span><br><span class="line">plt.legend((line1,line2),[<span class="string">&#x27;1st&#x27;</span>,<span class="string">&#x27;2nd&#x27;</span>])</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<h4 id="参数">参数</h4>
+<ul>
+<li><code>loc</code>：图例显示的位置，类型为浮点数或字符串，默认值为<code>rcParams["legend.loc"] ( 'best')</code>。浮点数和字符串之间具有以下对应关系：</li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
-<tr>
-<th style="text-align:center">位置字符串</th>
-<th style="text-align:center">位置编码</th>
+<tr class="header">
+<th style="text-align: center;">位置字符串</th>
+<th style="text-align: center;">位置编码</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:center">‘best’</td>
-<td style="text-align:center">0</td>
+<tr class="odd">
+<td style="text-align: center;">'best'</td>
+<td style="text-align: center;">0</td>
 </tr>
-<tr>
-<td style="text-align:center">‘upper right’</td>
-<td style="text-align:center">1</td>
+<tr class="even">
+<td style="text-align: center;">'upper right'</td>
+<td style="text-align: center;">1</td>
 </tr>
-<tr>
-<td style="text-align:center">‘upper left’</td>
-<td style="text-align:center">2</td>
+<tr class="odd">
+<td style="text-align: center;">'upper left'</td>
+<td style="text-align: center;">2</td>
 </tr>
-<tr>
-<td style="text-align:center">‘lower left’</td>
-<td style="text-align:center">3</td>
+<tr class="even">
+<td style="text-align: center;">'lower left'</td>
+<td style="text-align: center;">3</td>
 </tr>
-<tr>
-<td style="text-align:center">‘lower right’</td>
-<td style="text-align:center">4</td>
+<tr class="odd">
+<td style="text-align: center;">'lower right'</td>
+<td style="text-align: center;">4</td>
 </tr>
-<tr>
-<td style="text-align:center">‘right’</td>
-<td style="text-align:center">5</td>
+<tr class="even">
+<td style="text-align: center;">'right'</td>
+<td style="text-align: center;">5</td>
 </tr>
-<tr>
-<td style="text-align:center">‘center left’</td>
-<td style="text-align:center">6</td>
+<tr class="odd">
+<td style="text-align: center;">'center left'</td>
+<td style="text-align: center;">6</td>
 </tr>
-<tr>
-<td style="text-align:center">‘center right’</td>
-<td style="text-align:center">7</td>
+<tr class="even">
+<td style="text-align: center;">'center right'</td>
+<td style="text-align: center;">7</td>
 </tr>
-<tr>
-<td style="text-align:center">‘lower center’</td>
-<td style="text-align:center">8</td>
+<tr class="odd">
+<td style="text-align: center;">'lower center'</td>
+<td style="text-align: center;">8</td>
 </tr>
-<tr>
-<td style="text-align:center">‘upper center’</td>
-<td style="text-align:center">9</td>
+<tr class="even">
+<td style="text-align: center;">'upper center'</td>
+<td style="text-align: center;">9</td>
 </tr>
-<tr>
-<td style="text-align:center">‘center’</td>
-<td style="text-align:center">10</td>
+<tr class="odd">
+<td style="text-align: center;">'center'</td>
+<td style="text-align: center;">10</td>
 </tr>
 </tbody>
 </table>
-</div>
 <ul>
-<li><p><code>fontsize</code>：标签字体大小。整数或<code>&#123;&#39;xx-small&#39;, &#39;x-small&#39;, &#39;small&#39;, &#39;medium&#39;, &#39;large&#39;, &#39;x-large&#39;, &#39;xx-large&#39;&#125;</code>。只有设置了<code>prop</code>参数，<code>fontsize</code>属性才生效。</p>
-</li>
-<li><p><code>labelcolor</code>：标签颜色。字符串或字符串列表，可以为颜色格式或<code>&#39;linecolor&#39;</code>， <code>&#39;markerfacecolor&#39; (&#39;mfc&#39;)</code>，<code>&#39;markeredgecolor&#39; ( &#39;mec&#39;)</code>。</p>
-</li>
-<li><code>shadow</code>：图例区域是否有阴影。类型为布尔值。默认值为：<code>rcParams[&quot;legend.shadow&quot;] ( False)</code>。</li>
-<li><code>facecolor</code>：图例区域背景色。<code>&quot;inherit&quot;</code>或 色彩值，默认值为<code>rcParams[&quot;legend.facecolor&quot;] (&#39;inherit&#39;)</code>。如果使用<code>&quot;inherit&quot;</code>，使用<code>rcParams[&quot;axes.facecolor&quot;] ( &#39;white&#39;)</code>。</li>
-<li><code>labelspacing</code>：图例条目之间的垂直距离。浮点值，单位为字体大小单位。默认值为<code>rcParams[&quot;legend.labelspacing&quot;] ( 0.5)</code>。</li>
-<li><code>handlelength</code>：图例标记的长度。浮点值，单位为字体大小单位。默认值为<code>rcParams[&quot;legend.handlelength&quot;] (2.0)</code>。</li>
+<li><p><code>fontsize</code>：标签字体大小。整数或<code>&#123;'xx-small', 'x-small', 'small', 'medium', 'large', 'x-large', 'xx-large'&#125;</code>。只有设置了<code>prop</code>参数，<code>fontsize</code>属性才生效。</p></li>
+<li><p><code>labelcolor</code>：标签颜色。字符串或字符串列表，可以为颜色格式或<code>'linecolor'</code>， <code>'markerfacecolor' ('mfc')</code>，<code>'markeredgecolor' ( 'mec')</code>。</p></li>
+<li><p><code>shadow</code>：图例区域是否有阴影。类型为布尔值。默认值为：<code>rcParams["legend.shadow"] ( False)</code>。</p></li>
+<li><p><code>facecolor</code>：图例区域背景色。<code>"inherit"</code>或 色彩值，默认值为<code>rcParams["legend.facecolor"] ('inherit')</code>。如果使用<code>"inherit"</code>，使用<code>rcParams["axes.facecolor"] ( 'white')</code>。</p></li>
+<li><p><code>labelspacing</code>：图例条目之间的垂直距离。浮点值，单位为字体大小单位。默认值为<code>rcParams["legend.labelspacing"] ( 0.5)</code>。</p></li>
+<li><p><code>handlelength</code>：图例标记的长度。浮点值，单位为字体大小单位。默认值为<code>rcParams["legend.handlelength"] (2.0)</code>。</p></li>
 </ul>
 <p>更多见：<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/mighty13/article/details/113820798" >matplotlib之pyplot模块之图例（legend）基础（legend()的调用方式，图例外观设置）<i class="fas fa-external-link-alt"></i></a></p>
 

@@ -178,7 +178,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>263 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>264 Words</span>
         </span>
     
     
@@ -200,19 +200,26 @@
 
         <div class="article-content markdown-body">
             <p>注意⚠️：</p>
-<ol>
+<ol type="1">
 <li>torch，torchvision，torchaudio和python版本需要对应</li>
 <li>安装的torch要与gpu对应（可以向下兼容）</li>
 <li>反复安装要重启能解决一些问题</li>
 </ol>
-<h3 id="下载速度太慢"><a href="#下载速度太慢" class="headerlink" title="下载速度太慢"></a>下载速度太慢</h3><h4 id="添加镜像源（清华、科大），在官网下载时去掉命令后面的-c-pytorch"><a href="#添加镜像源（清华、科大），在官网下载时去掉命令后面的-c-pytorch" class="headerlink" title="添加镜像源（清华、科大），在官网下载时去掉命令后面的 -c pytorch"></a>添加镜像源（清华、科大），在官网下载时去掉命令后面的 -c pytorch</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda install pytorch torchvision cudatoolkit=9.0</span><br><span class="line"># 无gpu</span><br><span class="line">conda install pytorch torchvision cpuonly</span><br></pre></td></tr></table></figure>
-<h4 id="下载对应的whl文件（也可以先下好）"><a href="#下载对应的whl文件（也可以先下好）" class="headerlink" title="下载对应的whl文件（也可以先下好）"></a>下载对应的whl文件（也可以先下好）</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple torch-1.1.0-cp36-cp36m-manylinux1_x86_64.whl</span><br></pre></td></tr></table></figure>
-<h4 id="在清华源里找对应的bz2（也可以先下好）"><a href="#在清华源里找对应的bz2（也可以先下好）" class="headerlink" title="在清华源里找对应的bz2（也可以先下好）"></a>在<a class="link"   target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/linux-64/" >清华源<i class="fas fa-external-link-alt"></i></a>里找对应的bz2（也可以先下好）</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install + 链接</span><br></pre></td></tr></table></figure>
+<h3 id="下载速度太慢">下载速度太慢</h3>
+<h4 id="添加镜像源清华科大在官网下载时去掉命令后面的--c-pytorch">添加镜像源（清华、科大），在官网下载时去掉命令后面的 -c pytorch</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda install pytorch torchvision cudatoolkit=9.0</span><br><span class="line"># 无gpu</span><br><span class="line">conda install pytorch torchvision cpuonly</span><br></pre></td></tr></table></figure>
+<h4 id="下载对应的whl文件也可以先下好">下载对应的whl文件（也可以先下好）</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple torch-1.1.0-cp36-cp36m-manylinux1_x86_64.whl</span><br></pre></td></tr></table></figure>
+<h4 id="在清华源里找对应的bz2也可以先下好">在<a class="link"   target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/linux-64/" >清华源<i class="fas fa-external-link-alt"></i></a>里找对应的bz2（也可以先下好）</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install + 链接</span><br></pre></td></tr></table></figure>
 <p>详见：<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/watermelon1123/article/details/88122020" >conda安装Pytorch下载过慢解决办法(11月26日更新ubuntu下pytorch1.3安装方法)<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="torch，torchvision，torchaudio和python版本需要对应"><a href="#torch，torchvision，torchaudio和python版本需要对应" class="headerlink" title="torch，torchvision，torchaudio和python版本需要对应"></a>torch，torchvision，torchaudio和python版本需要对应</h3><p>报错：from torch._C import <em> ImportError:*</em>torch/undefined symbol: Py│Slice_Unpack</p>
-<p>详见： <a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44901346/article/details/109508064" >ImportError: /home/gp/………/torch/lib/libtorch_python.so: undefined symbol: PySlice_Unpack<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="torchtorchvisiontorchaudio和python版本需要对应">torch，torchvision，torchaudio和python版本需要对应</h3>
+<p>报错：from torch._C import * ImportError:**torch/undefined symbol: Py│Slice_Unpack</p>
+<p>详见： <a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44901346/article/details/109508064" >ImportError: /home/gp/........./torch/lib/libtorch_python.so: undefined symbol: PySlice_Unpack<i class="fas fa-external-link-alt"></i></a></p>
 <p>各版本对应关系：<a class="link"   target="_blank" rel="noopener" href="https://github.com/pytorch/vision/blob/main/README.rst" >官网<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="安装的torch要与gpu、算力对应（可以向下兼容）"><a href="#安装的torch要与gpu、算力对应（可以向下兼容）" class="headerlink" title="安装的torch要与gpu、算力对应（可以向下兼容）"></a>安装的torch要与gpu、算力对应（可以向下兼容）</h3><h4 id="CUDA-error-no-kernel-image-is-available-for-execution-on-the-device"><a href="#CUDA-error-no-kernel-image-is-available-for-execution-on-the-device" class="headerlink" title="CUDA error: no kernel image is available for execution on the device"></a>CUDA error: no kernel image is available for execution on the device</h4><p>解决办法：安装老版本pytorch </p>
+<h3 id="安装的torch要与gpu算力对应可以向下兼容">安装的torch要与gpu、算力对应（可以向下兼容）</h3>
+<h4 id="cuda-error-no-kernel-image-is-available-for-execution-on-the-device">CUDA error: no kernel image is available for execution on the device</h4>
+<p>解决办法：安装老版本pytorch</p>
 <p>算力对应版本详见：<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42642296/article/details/115598760" >pytorch 报错 RuntimeError: CUDA error: no kernel image is available for execution on the device<i class="fas fa-external-link-alt"></i></a></p>
 
         </div>
@@ -389,7 +396,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E9%80%9F%E5%BA%A6%E5%A4%AA%E6%85%A2"><span class="nav-text">下载速度太慢</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E9%95%9C%E5%83%8F%E6%BA%90%EF%BC%88%E6%B8%85%E5%8D%8E%E3%80%81%E7%A7%91%E5%A4%A7%EF%BC%89%EF%BC%8C%E5%9C%A8%E5%AE%98%E7%BD%91%E4%B8%8B%E8%BD%BD%E6%97%B6%E5%8E%BB%E6%8E%89%E5%91%BD%E4%BB%A4%E5%90%8E%E9%9D%A2%E7%9A%84-c-pytorch"><span class="nav-text">添加镜像源（清华、科大），在官网下载时去掉命令后面的 -c pytorch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%AF%B9%E5%BA%94%E7%9A%84whl%E6%96%87%E4%BB%B6%EF%BC%88%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%85%88%E4%B8%8B%E5%A5%BD%EF%BC%89"><span class="nav-text">下载对应的whl文件（也可以先下好）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A8%E6%B8%85%E5%8D%8E%E6%BA%90%E9%87%8C%E6%89%BE%E5%AF%B9%E5%BA%94%E7%9A%84bz2%EF%BC%88%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%85%88%E4%B8%8B%E5%A5%BD%EF%BC%89"><span class="nav-text">在清华源里找对应的bz2（也可以先下好）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#torch%EF%BC%8Ctorchvision%EF%BC%8Ctorchaudio%E5%92%8Cpython%E7%89%88%E6%9C%AC%E9%9C%80%E8%A6%81%E5%AF%B9%E5%BA%94"><span class="nav-text">torch，torchvision，torchaudio和python版本需要对应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E7%9A%84torch%E8%A6%81%E4%B8%8Egpu%E3%80%81%E7%AE%97%E5%8A%9B%E5%AF%B9%E5%BA%94%EF%BC%88%E5%8F%AF%E4%BB%A5%E5%90%91%E4%B8%8B%E5%85%BC%E5%AE%B9%EF%BC%89"><span class="nav-text">安装的torch要与gpu、算力对应（可以向下兼容）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CUDA-error-no-kernel-image-is-available-for-execution-on-the-device"><span class="nav-text">CUDA error: no kernel image is available for execution on the device</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E9%80%9F%E5%BA%A6%E5%A4%AA%E6%85%A2"><span class="nav-text">下载速度太慢</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E9%95%9C%E5%83%8F%E6%BA%90%E6%B8%85%E5%8D%8E%E7%A7%91%E5%A4%A7%E5%9C%A8%E5%AE%98%E7%BD%91%E4%B8%8B%E8%BD%BD%E6%97%B6%E5%8E%BB%E6%8E%89%E5%91%BD%E4%BB%A4%E5%90%8E%E9%9D%A2%E7%9A%84--c-pytorch"><span class="nav-text">添加镜像源（清华、科大），在官网下载时去掉命令后面的 -c pytorch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%AF%B9%E5%BA%94%E7%9A%84whl%E6%96%87%E4%BB%B6%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%85%88%E4%B8%8B%E5%A5%BD"><span class="nav-text">下载对应的whl文件（也可以先下好）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A8%E6%B8%85%E5%8D%8E%E6%BA%90%E9%87%8C%E6%89%BE%E5%AF%B9%E5%BA%94%E7%9A%84bz2%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%85%88%E4%B8%8B%E5%A5%BD"><span class="nav-text">在清华源里找对应的bz2（也可以先下好）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#torchtorchvisiontorchaudio%E5%92%8Cpython%E7%89%88%E6%9C%AC%E9%9C%80%E8%A6%81%E5%AF%B9%E5%BA%94"><span class="nav-text">torch，torchvision，torchaudio和python版本需要对应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E7%9A%84torch%E8%A6%81%E4%B8%8Egpu%E7%AE%97%E5%8A%9B%E5%AF%B9%E5%BA%94%E5%8F%AF%E4%BB%A5%E5%90%91%E4%B8%8B%E5%85%BC%E5%AE%B9"><span class="nav-text">安装的torch要与gpu、算力对应（可以向下兼容）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#cuda-error-no-kernel-image-is-available-for-execution-on-the-device"><span class="nav-text">CUDA error: no kernel image is available for execution on the device</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
