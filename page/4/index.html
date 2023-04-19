@@ -602,18 +602,16 @@ II 数据类型与相应的运算
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2022/07/28/python%E5%B0%8F%E8%AE%B0/%E8%BF%90%E8%A1%8C%E5%AE%89%E8%A3%85%E2%80%94%E2%80%94%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83py27%E5%8F%8A%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">
-                        虚拟环境——py27及相关问题
+                    <a href="/2022/07/28/python%E5%B0%8F%E8%AE%B0/python%E5%B0%8F%E8%AE%B0-%E8%BF%90%E8%A1%8C%E5%AE%89%E8%A3%85%E2%80%94%E2%80%94%E4%B8%80%E4%BA%9B%E6%8A%A5%E9%94%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+                        一些报错的解决方案
                     </a>
                 </h3>
 
                 <div class="home-article-content keep-markdown-body">
                     
-                        基于anaconda安装。
-python2.7环境安装jupyter notebook
-
-尝试一：
-python2.7环境安装jupyter notebook ，官方给的代码安装报错Command “python setup.py egg_info”...
+                        AttributeError: module 'pymc3' has no attribute 'diagnostics'
+pip install pymc==3.7
+AttributeError: 'int' object has no attri...
                     
                 </div>
 
@@ -621,7 +619,7 @@ python2.7环境安装jupyter notebook ，官方给的代码安装报错Command �
     <div class="home-article-meta-info">
         <span>
             <i class="fas fa-history"></i>&nbsp;
-            <span class="home-article-date" data-updated="Wed Mar 22 2023 17:44:21 GMT+0800">
+            <span class="home-article-date" data-updated="Wed Mar 22 2023 17:44:23 GMT+0800">
                 2023-03-22
             </span>
         </span>
@@ -641,7 +639,7 @@ python2.7环境安装jupyter notebook ，官方给的代码安装报错Command �
         
     </div>
 
-    <a class="read-more" href="/2022/07/28/python%E5%B0%8F%E8%AE%B0/%E8%BF%90%E8%A1%8C%E5%AE%89%E8%A3%85%E2%80%94%E2%80%94%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83py27%E5%8F%8A%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a class="read-more" href="/2022/07/28/python%E5%B0%8F%E8%AE%B0/python%E5%B0%8F%E8%AE%B0-%E8%BF%90%E8%A1%8C%E5%AE%89%E8%A3%85%E2%80%94%E2%80%94%E4%B8%80%E4%BA%9B%E6%8A%A5%E9%94%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -809,22 +807,6 @@ python2.7环境安装jupyter notebook ，官方给的代码安装报错Command �
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </body>
 </html>
