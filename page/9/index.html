@@ -2,8 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-	<link rel="dns-prefetch" href="//cdn.bootcss.com" />
-	<link rel="dns-prefetch" href="//cdn.mathjax.org" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="keywords" content="Hexo Theme Keep">
     <meta name="description" content="Hexo Theme Keep">
@@ -17,20 +15,23 @@
 <link rel="stylesheet" href="/css/style.css">
 
     <link rel="shortcut icon" href="/images/logo.png">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/regular.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/solid.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/brands.min.css">
     <script id="hexo-configurations">
-    let KEEP = window.KEEP || {};
-    KEEP.hexo_config = {"hostname":"caaaa-a.github.io","root":"/","language":"en","path":"search.json"};
-    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/logo.png","favicon":"/images/logo.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"To be a slash youth."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
-    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    let KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"caaaa-a.github.io","root":"/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/logo.png","favicon":"/images/logo.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"To be a slash youth."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"code_block":{},"side_tools":{},"pjax":{"enable":false},"lazyload":{"enable":false},"comment":{"enable":true,"use":"waline","valine":{"appid":null,"appkey":null,"placeholder":null},"waline":{"server_url":"https://caaaaa-4zm7-e0rssaizw-caaaa-a.vercel.app/","version":2}},"post":{"word_count":{"enable":true,"wordcount":true,"min2read":true},"author_label":{"enable":true,"auto":true,"custom_label_list":["Trainee","Engineer","Architect","CTO","BOSS"]}},"version":"3.6.1"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
   </script>
 <meta name="generator" content="Hexo 6.0.0"></head>
 
 
 <body>
 <div class="progress-bar-container">
-    
-        <span class="scroll-progress-bar"></span>
     
 
     
@@ -41,16 +42,17 @@
 
     
 
-    <div class="page-main-content">
+    <div class="page-main-content is-home">
 
         <div class="page-main-content-top">
-            <header class="header-wrapper">
+            
+<header class="header-wrapper">
 
     <div class="header-content">
         <div class="left">
             
             <a class="logo-title" href="/">
-                Caaaaa
+               Caaaaa
             </a>
         </div>
 
@@ -172,7 +174,7 @@
                     </a>
                 </h3>
 
-                <div class="home-article-content markdown-body">
+                <div class="home-article-content keep-markdown-body">
                     
                         
   我了解你们人类。你们都是乖乖听话的羔羊。
@@ -183,7 +185,12 @@
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Feb 15 2022 21:24:03 GMT+0800">2022-02-15</span></span>
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Wed Mar 22 2023 17:33:05 GMT+0800">
+                2023-03-22
+            </span>
+        </span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
@@ -200,7 +207,7 @@
         
     </div>
 
-    <a href="/2022/02/15/Books/%E6%9C%89%E6%AF%92%E7%9A%84%E9%80%BB%E8%BE%91-%E7%AC%AC3%E7%AB%A0%20%E6%84%9F%E6%80%A7%E7%9A%84%E8%AF%AD%E8%A8%80-%E5%AE%A3%E4%BC%A0%E9%BC%93%E5%8A%A8/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a class="read-more" href="/2022/02/15/Books/%E6%9C%89%E6%AF%92%E7%9A%84%E9%80%BB%E8%BE%91-%E7%AC%AC3%E7%AB%A0%20%E6%84%9F%E6%80%A7%E7%9A%84%E8%AF%AD%E8%A8%80-%E5%AE%A3%E4%BC%A0%E9%BC%93%E5%8A%A8/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -215,7 +222,7 @@
                     </a>
                 </h3>
 
-                <div class="home-article-content markdown-body">
+                <div class="home-article-content keep-markdown-body">
                     
                         
   越是坏事，越能说出好的道理来。
@@ -226,7 +233,12 @@
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Mon Feb 14 2022 23:57:41 GMT+0800">2022-02-14</span></span>
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Wed Mar 22 2023 17:33:08 GMT+0800">
+                2023-03-22
+            </span>
+        </span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
@@ -243,7 +255,7 @@
         
     </div>
 
-    <a href="/2022/02/14/Books/%E6%9C%89%E6%AF%92%E7%9A%84%E9%80%BB%E8%BE%91-%E7%AC%AC2%E7%AB%A0%E6%84%9F%E6%80%A7%E7%9A%84%E8%AF%AD%E8%A8%80/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a class="read-more" href="/2022/02/14/Books/%E6%9C%89%E6%AF%92%E7%9A%84%E9%80%BB%E8%BE%91-%E7%AC%AC2%E7%AB%A0%E6%84%9F%E6%80%A7%E7%9A%84%E8%AF%AD%E8%A8%80/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -258,7 +270,7 @@
                     </a>
                 </h3>
 
-                <div class="home-article-content markdown-body">
+                <div class="home-article-content keep-markdown-body">
                     
                         青藤学术
 来源：知乎答案
@@ -273,7 +285,12 @@
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Mon Feb 14 2022 10:56:28 GMT+0800">2022-02-14</span></span>
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Fri Feb 25 2022 10:45:46 GMT+0800">
+                2022-02-25
+            </span>
+        </span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
@@ -290,7 +307,7 @@
         
     </div>
 
-    <a href="/2022/02/14/%E7%A0%94%E7%A9%B6%E5%88%9D%E6%88%90%E9%95%BF-%E5%A6%82%E4%BD%95%E5%81%9A%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E6%B1%87%E6%8A%A5%EF%BC%9F/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a class="read-more" href="/2022/02/14/%E7%A0%94%E7%A9%B6%E5%88%9D%E6%88%90%E9%95%BF-%E5%A6%82%E4%BD%95%E5%81%9A%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E6%B1%87%E6%8A%A5%EF%BC%9F/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -305,7 +322,7 @@
                     </a>
                 </h3>
 
-                <div class="home-article-content markdown-body">
+                <div class="home-article-content keep-markdown-body">
                     
                         
   我只知道它言之无理，却讲不出所以然。
@@ -320,7 +337,12 @@
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sun Feb 13 2022 23:05:18 GMT+0800">2022-02-13</span></span>
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Wed Mar 22 2023 17:33:11 GMT+0800">
+                2023-03-22
+            </span>
+        </span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
@@ -337,7 +359,7 @@
         
     </div>
 
-    <a href="/2022/02/13/Books/%E6%9C%89%E6%AF%92%E7%9A%84%E9%80%BB%E8%BE%91-%E7%AC%AC1%E7%AB%A0-%E6%97%A5%E5%B8%B8%E7%94%A8%E8%AF%AD%E7%9A%84%E9%AA%97%E5%B1%80/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a class="read-more" href="/2022/02/13/Books/%E6%9C%89%E6%AF%92%E7%9A%84%E9%80%BB%E8%BE%91-%E7%AC%AC1%E7%AB%A0-%E6%97%A5%E5%B8%B8%E7%94%A8%E8%AF%AD%E7%9A%84%E9%AA%97%E5%B1%80/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -352,7 +374,7 @@
                     </a>
                 </h3>
 
-                <div class="home-article-content markdown-body">
+                <div class="home-article-content keep-markdown-body">
                     
                         流程图 Flowchart
 What is flowchart?
@@ -362,7 +384,12 @@ A flowchart is a schematic representation of an algorithm or process that tell h
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Fri Feb 11 2022 19:52:41 GMT+0800">2022-02-11</span></span>
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Wed Mar 22 2023 17:46:35 GMT+0800">
+                2023-03-22
+            </span>
+        </span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
@@ -379,7 +406,7 @@ A flowchart is a schematic representation of an algorithm or process that tell h
         
     </div>
 
-    <a href="/2022/02/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1/%E7%BC%96%E7%A8%8B%E6%80%9D%E7%BB%B4-%E6%B5%81%E7%A8%8B%E5%9B%BE%E4%B8%8E%E4%BC%AA%E4%BB%A3%E7%A0%81/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a class="read-more" href="/2022/02/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1/%E7%BC%96%E7%A8%8B%E6%80%9D%E7%BB%B4-%E6%B5%81%E7%A8%8B%E5%9B%BE%E4%B8%8E%E4%BC%AA%E4%BB%A3%E7%A0%81/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -394,7 +421,7 @@ A flowchart is a schematic representation of an algorithm or process that tell h
                     </a>
                 </h3>
 
-                <div class="home-article-content markdown-body">
+                <div class="home-article-content keep-markdown-body">
                     
                         在文泉书局上买了本《统计学习必学的十个问题》，但是只有网上的阅读权限，不是很方便做笔记。电子阅读后发现，每一页其实都是一张图片，因此可以把图片保存下来，然后再合成PDF。再HTML进行解析获得左边目录对应的书签，对PDF进行添加书签，然后一本带书签的...
                     
@@ -402,7 +429,12 @@ A flowchart is a schematic representation of an algorithm or process that tell h
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Wed Feb 09 2022 12:27:54 GMT+0800">2022-02-09</span></span>
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Mon Feb 28 2022 13:37:48 GMT+0800">
+                2022-02-28
+            </span>
+        </span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
@@ -419,7 +451,7 @@ A flowchart is a schematic representation of an algorithm or process that tell h
         
     </div>
 
-    <a href="/2022/02/09/%E7%88%AC%E8%99%AB-%E7%94%B5%E5%AD%90%E9%98%85%E8%AF%BB%E6%9D%83%E9%99%90%E4%BF%9D%E5%AD%98%E7%94%B5%E5%AD%90%E4%B9%A6/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a class="read-more" href="/2022/02/09/%E7%88%AC%E8%99%AB-%E7%94%B5%E5%AD%90%E9%98%85%E8%AF%BB%E6%9D%83%E9%99%90%E4%BF%9D%E5%AD%98%E7%94%B5%E5%AD%90%E4%B9%A6/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -434,7 +466,7 @@ A flowchart is a schematic representation of an algorithm or process that tell h
                     </a>
                 </h3>
 
-                <div class="home-article-content markdown-body">
+                <div class="home-article-content keep-markdown-body">
                     
                         筛选的Q&amp;A
 1、为什么深度学习中一般对标量求导而不是对矩阵或者向量？
@@ -444,7 +476,12 @@ A flowchart is a schematic representation of an algorithm or process that tell h
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sun Feb 06 2022 19:26:22 GMT+0800">2022-02-06</span></span>
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Wed Mar 22 2023 17:27:57 GMT+0800">
+                2023-03-22
+            </span>
+        </span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
@@ -461,7 +498,7 @@ A flowchart is a schematic representation of an algorithm or process that tell h
         
     </div>
 
-    <a href="/2022/02/06/Deep%20Learning/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0v2-07-08/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a class="read-more" href="/2022/02/06/Deep%20Learning/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0v2-07-08/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -476,7 +513,7 @@ A flowchart is a schematic representation of an algorithm or process that tell h
                     </a>
                 </h3>
 
-                <div class="home-article-content markdown-body">
+                <div class="home-article-content keep-markdown-body">
                     
                         原文见：矩阵求导的本质与分子布局、分母布局的本质（矩阵求导——本质篇）
 1 函数与标量、向量、矩阵
@@ -489,7 +526,12 @@ A flowchart is a schematic representation of an algorithm or process that tell h
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sat Feb 05 2022 23:12:03 GMT+0800">2022-02-05</span></span>
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Wed Feb 16 2022 13:12:39 GMT+0800">
+                2022-02-16
+            </span>
+        </span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
@@ -506,7 +548,7 @@ A flowchart is a schematic representation of an algorithm or process that tell h
         
     </div>
 
-    <a href="/2022/02/05/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80-%E7%9F%A9%E9%98%B5%E6%B1%82%E5%AF%BC%E4%B8%8E%E5%88%86%E5%AD%90%E3%80%81%E5%88%86%E6%AF%8D%E5%B8%83%E5%B1%80/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a class="read-more" href="/2022/02/05/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80-%E7%9F%A9%E9%98%B5%E6%B1%82%E5%AF%BC%E4%B8%8E%E5%88%86%E5%AD%90%E3%80%81%E5%88%86%E6%AF%8D%E5%B8%83%E5%B1%80/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -521,7 +563,7 @@ A flowchart is a schematic representation of an algorithm or process that tell h
                     </a>
                 </h3>
 
-                <div class="home-article-content markdown-body">
+                <div class="home-article-content keep-markdown-body">
                     
                         09 Square Root Approximation
 link：http://www.pyschools.com/quiz/view_question/s5-q9
@@ -531,7 +573,12 @@ Create a function that takes in a positiv...
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Mon Jan 24 2022 09:13:09 GMT+0800">2022-01-24</span></span>
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Sun Feb 13 2022 17:31:32 GMT+0800">
+                2022-02-13
+            </span>
+        </span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
@@ -548,7 +595,7 @@ Create a function that takes in a positiv...
         
     </div>
 
-    <a href="/2022/01/24/%E9%A2%98%E8%A7%A3/%E9%A2%98%E8%A7%A3-pyschools%E4%B8%ADwhile-9-13/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a class="read-more" href="/2022/01/24/%E9%A2%98%E8%A7%A3/%E9%A2%98%E8%A7%A3-pyschools%E4%B8%ADwhile-9-13/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -563,7 +610,7 @@ Create a function that takes in a positiv...
                     </a>
                 </h3>
 
-                <div class="home-article-content markdown-body">
+                <div class="home-article-content keep-markdown-body">
                     
                         
 
@@ -578,7 +625,12 @@ copy分深拷贝和浅拷贝，不一定会复制内存；clone一定会复制�
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sun Jan 23 2022 20:01:40 GMT+0800">2022-01-23</span></span>
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Wed Mar 22 2023 17:27:46 GMT+0800">
+                2023-03-22
+            </span>
+        </span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
@@ -595,7 +647,7 @@ copy分深拷贝和浅拷贝，不一定会复制内存；clone一定会复制�
         
     </div>
 
-    <a href="/2022/01/23/Deep%20Learning/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0v2-01-06/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a class="read-more" href="/2022/01/23/Deep%20Learning/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0v2-01-06/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -627,33 +679,34 @@ copy分深拷贝和浅拷贝，不一定会复制内存；clone一定会复制�
         </div>
 
         <div class="page-main-content-bottom">
-            <footer class="footer">
+            
+<footer class="footer">
     <div class="info-container">
         <div class="copyright-info info-item">
             &copy;
             
-              <span>2020</span>
-              -
+                <span>2020</span> -
             
-            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Caaaaa</a>
+            2023
+            
+                &nbsp;<i class="fas fa-heart icon-animate"></i>
+                &nbsp;<a href="/">Caaaaa</a>
+            
         </div>
         
-            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <script async 
+                    src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
             <div class="website-count info-item">
                 
-                    <span id="busuanzi_container_site_uv">
-                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
-                    </span>
+                    Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                 
                 
-                    <span id="busuanzi_container_site_pv">
-                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
-                    </span>
+                    Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
                 
             </div>
         
         <div class="theme-info info-item">
-            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
         </div>
         
         
@@ -676,10 +729,6 @@ copy分深拷贝和浅拷贝，不一定会复制内存；clone一定会复制�
             <i class="fas fa-search-minus"></i>
         </li>
 
-        <li class="tools-item tool-expand-width flex-center">
-            <i class="fas fa-arrows-alt-h"></i>
-        </li>
-
         <li class="tools-item tool-dark-light-toggle flex-center">
             <i class="fas fa-moon"></i>
         </li>
@@ -687,6 +736,10 @@ copy分深拷贝和浅拷贝，不一定会复制内存；clone一定会复制�
         <!-- rss -->
         
 
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
         
 
         <li class="tools-item tool-scroll-to-bottom flex-center">
@@ -699,20 +752,13 @@ copy分深拷贝和浅拷贝，不一定会复制内存；clone一定会复制�
             <i class="fas fa-cog fa-spin"></i>
         </li>
         
-            <li class="tools-item tool-scroll-to-top flex-center">
-                <i class="arrow-up fas fa-arrow-up"></i>
-                <span class="percent"></span>
-            </li>
-        
     </ul>
 </div>
 
     </div>
 
-    
-
-    <div class="image-viewer-container">
-    <img src="">
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
 </div>
 
 
@@ -733,7 +779,7 @@ copy分深拷贝和浅拷贝，不一定会复制内存；clone一定会复制�
                        class="search-input"
                 >
             </div>
-            <span class="popup-btn-close">
+            <span class="close-popup-btn">
                 <i class="fas fa-times"></i>
             </span>
         </div>
@@ -752,10 +798,12 @@ copy分深拷贝和浅拷贝，不一定会复制内存；clone一定会复制�
 
 
 
-<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/dark-light-toggle.js"></script>
 
 
-    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/local-search.js"></script>
 
 
 

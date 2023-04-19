@@ -2,8 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-	<link rel="dns-prefetch" href="//cdn.bootcss.com" />
-	<link rel="dns-prefetch" href="//cdn.mathjax.org" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="keywords" content="Hexo Theme Keep">
     <meta name="description" content="Hexo Theme Keep">
@@ -19,20 +17,23 @@
 <link rel="stylesheet" href="/css/style.css">
 
     <link rel="shortcut icon" href="/images/logo.png">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/regular.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/solid.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/brands.min.css">
     <script id="hexo-configurations">
-    let KEEP = window.KEEP || {};
-    KEEP.hexo_config = {"hostname":"caaaa-a.github.io","root":"/","language":"en","path":"search.json"};
-    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/logo.png","favicon":"/images/logo.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"To be a slash youth."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
-    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    let KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"caaaa-a.github.io","root":"/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/logo.png","favicon":"/images/logo.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"To be a slash youth."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"code_block":{},"side_tools":{},"pjax":{"enable":false},"lazyload":{"enable":false},"comment":{"enable":true,"use":"waline","valine":{"appid":null,"appkey":null,"placeholder":null},"waline":{"server_url":"https://caaaaa-4zm7-e0rssaizw-caaaa-a.vercel.app/","version":2}},"post":{"word_count":{"enable":true,"wordcount":true,"min2read":true},"author_label":{"enable":true,"auto":true,"custom_label_list":["Trainee","Engineer","Architect","CTO","BOSS"]}},"version":"3.6.1"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
   </script>
 <meta name="generator" content="Hexo 6.0.0"></head>
 
 
 <body>
 <div class="progress-bar-container">
-    
-        <span class="scroll-progress-bar"></span>
     
 
     
@@ -46,13 +47,14 @@
     <div class="page-main-content">
 
         <div class="page-main-content-top">
-            <header class="header-wrapper">
+            
+<header class="header-wrapper">
 
     <div class="header-content">
         <div class="left">
             
             <a class="logo-title" href="/">
-                Caaaaa
+               Caaaaa
             </a>
         </div>
 
@@ -162,31 +164,41 @@
 
                 
                     <div class="fade-in-down-animation">
-    <div class="article-content-container">
+    <div class="post-page-container">
+        <div class="article-content-container">
 
-        <div class="article-title">
-            <span class="title-hover-animation">Tensorfow</span>
-        </div>
+            <div class="article-title">
+                <span class="title-hover-animation">Tensorfow</span>
+            </div>
 
-        
-            <div class="article-header">
-                <div class="avatar">
-                    <img src="/images/logo.png">
-                </div>
-                <div class="info">
-                    <div class="author">
-                        <span class="name">Caaaaa</span>
-                        
-                            <span class="author-label">Lv5</span>
-                        
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/logo.png">
                     </div>
-                    <div class="meta-info">
-                        <div class="article-meta-info">
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">Caaaaa</span>
+                            
+                                <span class="author-label">Lv5</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            
+<div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;
+        
+            <i class="fa-regular fa-calendar-plus"></i>&nbsp;
+        
         <span class="pc">2022-05-26 09:57:36</span>
         <span class="mobile">2022-05-26 09:57</span>
     </span>
+    
+        <span class="article-update-date article-meta-item">
+        <i class="fas fa-file-pen"></i>&nbsp;
+        <span class="pc">2022-05-26 15:30:30</span>
+    </span>
+    
     
         <span class="article-categories article-meta-item">
             <i class="fas fa-folder"></i>&nbsp;
@@ -219,13 +231,15 @@
     
 </div>
 
+                        </div>
                     </div>
                 </div>
-            </div>
-        
+            
 
-        <div class="article-content markdown-body">
-            <h3 id="给指定某一层权重赋值"><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43309133/article/details/117071697" >给指定某一层权重赋值<i class="fas fa-external-link-alt"></i></a></h3>
+            <div class="article-content keep-markdown-body">
+                
+
+                <h3 id="给指定某一层权重赋值"><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43309133/article/details/117071697" >给指定某一层权重赋值<i class="fas fa-external-link-alt"></i></a></h3>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 给第一隐藏层赋值为例</span></span><br><span class="line">optimizer2 = tf.keras.optimizers.SGD(lr=<span class="number">1.0</span>)</span><br><span class="line">layer1 = model.layers[<span class="number">0</span>]</span><br><span class="line"><span class="comment"># theta1是网络原本带的权重 </span></span><br><span class="line">theta2 = [<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">85</span>,<span class="number">54</span>,<span class="number">41</span>] <span class="comment"># 自己定义的权重</span></span><br><span class="line">optimizer2.apply_gradients(<span class="built_in">zip</span>([theta1-theta2], layer1.trainable_variables))</span><br></pre></td></tr></table></figure>
 <p>tf.Variable是只读类型，但是可以通过使用assign方法可以直接赋值、加、减。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">v = tf.Variable(<span class="number">1.</span>)</span><br><span class="line">v.assign(<span class="number">2.</span>)</span><br><span class="line">v.assign_sub(<span class="number">0.5</span>)</span><br><span class="line">v.assign_add(<span class="number">0.5</span>)</span><br></pre></td></tr></table></figure>
@@ -267,77 +281,130 @@
 <li><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/chenhuabin/p/12012410.html" >TensorFlow2.0（11）：tf.keras建模三部曲<i class="fas fa-external-link-alt"></i></a>_—— <a class="link"   target="_blank" rel="noopener" href="https://github.com/ChenHuabin321/tensorflow2_tutorials" >全版<i class="fas fa-external-link-alt"></i></a></li>
 </ul>
 
-        </div>
+            </div>
 
-        
-            <div class="post-copyright-info">
-                <div class="article-copyright-info-container">
-    <ul>
-        <li>Post title：Tensorfow</li>
-        <li>Post author：Caaaaa</li>
-        <li>Create time：2022-05-26 09:57:36</li>
-        <li>
-            Post link：https://caaaa-a.github.io/2022/05/26/tools解决方案-Tensorflow/
+            
+                <div class="post-copyright-info">
+                    
+<div class="article-copyright-info-container">
+    <ul class="copyright-info-content">
+        <li class="post-title">
+            <span class="type">Post title</span>: <span class="content">Tensorfow</span>
         </li>
-        <li>
-            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        <li class="post-author">
+            <span class="type">Post author</span>: <span class="content">Caaaaa</span>
+        </li>
+        <li class="post-time">
+            <span class="type">Create time</span>: <span class="content">2022-05-26 09:57:36</span>
+        </li>
+        <li class="post-link">
+            <span class="type">Post link</span>: <span class="content">2022/05/26/tools解决方案-Tensorflow/</span>
+        </li>
+        <li class="post-license">
+            <span class="type">Copyright notice</span>: <span class="content">All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.</span>
         </li>
     </ul>
+    <div class="copy-copyright-info flex-center tooltip" data-content="Copy copyright info" data-offset-y="-2px">
+        <i class="fa-solid fa-copy"></i>
+    </div>
 </div>
 
-            </div>
-        
+                </div>
+            
 
-        
+            
 
-        
-            <div class="article-nav">
-                
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2022/07/09/Books/%E5%A6%82%E4%BD%95%E5%86%99%E5%87%BA%E5%A5%BD%E7%A8%8B%E5%BA%8F-2-%E4%BB%80%E4%B9%88%E6%98%AF%E5%A5%BD%E7%A8%8B%E5%BA%8F/"
-                        >
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                               rel="prev"
+                               href="/2022/07/09/Books/%E5%A6%82%E4%BD%95%E5%86%99%E5%87%BA%E5%A5%BD%E7%A8%8B%E5%BA%8F-2-%E4%BB%80%E4%B9%88%E6%98%AF%E5%A5%BD%E7%A8%8B%E5%BA%8F/"
+                            >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
-                            <span class="title flex-center">
+                                <span class="title flex-center">
                                 <span class="post-nav-title-item">如何写出好程序 —— 2 什么是好程序</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
-                        </a>
-                    </div>
-                
-                
-                    <div class="article-next">
-                        <a class="next"
-                           rel="next"
-                           href="/2022/05/25/tools%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-matplotlib/"
-                        >
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                               rel="next"
+                               href="/2022/05/25/tools%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-matplotlib/"
+                            >
                             <span class="title flex-center">
                                 <span class="post-nav-title-item">matplotlib</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
-                            <span class="right arrow-icon flex-center">
+                                <span class="right arrow-icon flex-center">
                               <i class="fas fa-chevron-right"></i>
                             </span>
-                        </a>
-                    </div>
-                
-            </div>
-        
+                            </a>
+                        </div>
+                    
+                </div>
+            
 
-        
-            <div class="comment-container">
-                <div class="comments-container">
-    <div id="comment-anchor"></div>
+            
+                <div class="comment-container">
+                    
+<div class="comments-container">
+    <div id="comments-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;Comments</i>
+        <i class="fas fa-comments"></i>&nbsp;Comments
     </div>
     
+        
+            
+
+    <div class="waline-comment-container">
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@waline/client@v2/dist/waline.css"/>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@waline/client@v2/dist/waline-meta.css"/>
+        <script  src="//cdn.jsdelivr.net/npm/@waline/client@v2/dist/waline.js"></script>
+        <div id="waline-comment"></div>
+        <script >
+          function loadWaline() {
+            Waline.init({
+              el: '#waline-comment',
+              serverURL: 'https://caaaaa-4zm7-e0rssaizw-caaaa-a.vercel.app/',
+              lang: 'en' || 'zh-CN',
+              comment: '.post-comments-count',
+              reaction: '' === 'true'
+            })
+          }
+
+          if ('false' === 'true') {
+            setTimeout(() => {
+              loadWaline()
+            }, 1000)
+          } else {
+            window.addEventListener('DOMContentLoaded', loadWaline)
+          }
+        </script>
+    </div>
+
+
 
         
     
+</div>
+
+                </div>
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%99%E6%8C%87%E5%AE%9A%E6%9F%90%E4%B8%80%E5%B1%82%E6%9D%83%E9%87%8D%E8%B5%8B%E5%80%BC"><span class="nav-text">给指定某一层权重赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tensorflow-unimplemented-cast-string-to-float-is-not-supported"><span class="nav-text">TensorFlow: Unimplemented: Cast string to float is not supported</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tensorflow2.0%E5%AF%B9%E4%B8%8D%E5%90%8C%E5%B1%82%E6%8C%87%E5%AE%9A%E5%AD%A6%E4%B9%A0%E7%8E%87"><span class="nav-text">Tensorflow2.0对不同层指定学习率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tensorflow2-%E5%8A%A0%E8%BD%BD%E5%88%AB%E4%BA%BA%E6%A8%A1%E5%9E%8B%E6%9D%83%E9%87%8D%E5%A4%B1%E8%B4%A5%E6%97%B6%E7%9A%84%E4%B8%80%E7%A7%8D%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E6%AF%8F%E4%B8%80%E5%B1%82%E5%88%86%E5%88%AB%E8%AE%BE%E7%BD%AE%E5%80%BC"><span class="nav-text">Tensorflow2 加载别人模型权重失败时的一种解决方法：每一层分别设置值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%9D%83%E9%87%8D%E5%88%9D%E5%A7%8B%E5%8C%96tensorflow-tf.layers.dense"><span class="nav-text">自定义权重初始化tensorflow tf.layers.dense</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tensor%E4%B8%8Enumpy%E7%9A%84ndarray%E8%BD%AC%E6%8D%A2"><span class="nav-text">Tensor与Numpy的ndarray转换</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#tensorflow---valueerror-failed-to-convert-a-numpy-array-to-a-tensor-unsupported-object-type-float"><span class="nav-text">Tensorflow - ValueError: Failed to convert a NumPy array to a Tensor (Unsupported object type float)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tensor%E8%BD%AC%E5%8C%96%E4%B8%BAndarray"><span class="nav-text">tensor转化为ndarray</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ndarray%E8%BD%AC%E5%8C%96%E4%B8%BAtensor"><span class="nav-text">ndarray转化为tensor</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#module-tf.keras.metrics"><span class="nav-text">Module: tf.keras.metrics</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E5%85%B3tensorflow2.0%E7%9A%84%E6%96%87%E7%AB%A0"><span class="nav-text">有关tensorflow2.0的文章</span></a></li></ol>
+    </div>
 </div>
 
             </div>
@@ -352,33 +419,34 @@
         </div>
 
         <div class="page-main-content-bottom">
-            <footer class="footer">
+            
+<footer class="footer">
     <div class="info-container">
         <div class="copyright-info info-item">
             &copy;
             
-              <span>2020</span>
-              -
+                <span>2020</span> -
             
-            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Caaaaa</a>
+            2023
+            
+                &nbsp;<i class="fas fa-heart icon-animate"></i>
+                &nbsp;<a href="/">Caaaaa</a>
+            
         </div>
         
-            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <script async 
+                    src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
             <div class="website-count info-item">
                 
-                    <span id="busuanzi_container_site_uv">
-                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
-                    </span>
+                    Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                 
                 
-                    <span id="busuanzi_container_site_pv">
-                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
-                    </span>
+                    Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
                 
             </div>
         
         <div class="theme-info info-item">
-            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
         </div>
         
         
@@ -394,15 +462,16 @@
     <ul class="tools-list">
         <!-- TOC aside toggle -->
         
-            <li class="tools-item page-aside-toggle">
-                <i class="fas fa-outdent"></i>
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
             </li>
         
 
         <!-- go comment -->
         
-            <li class="go-comment">
+            <li class="tools-item flex-center go-to-comments">
                 <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
             </li>
         
     </ul>
@@ -422,10 +491,6 @@
             <i class="fas fa-search-minus"></i>
         </li>
 
-        <li class="tools-item tool-expand-width flex-center">
-            <i class="fas fa-arrows-alt-h"></i>
-        </li>
-
         <li class="tools-item tool-dark-light-toggle flex-center">
             <i class="fas fa-moon"></i>
         </li>
@@ -433,6 +498,10 @@
         <!-- rss -->
         
 
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
         
 
         <li class="tools-item tool-scroll-to-bottom flex-center">
@@ -445,28 +514,13 @@
             <i class="fas fa-cog fa-spin"></i>
         </li>
         
-            <li class="tools-item tool-scroll-to-top flex-center">
-                <i class="arrow-up fas fa-arrow-up"></i>
-                <span class="percent"></span>
-            </li>
-        
     </ul>
 </div>
 
     </div>
 
-    
-        <aside class="page-aside">
-            <div class="post-toc-wrap">
-    <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%99%E6%8C%87%E5%AE%9A%E6%9F%90%E4%B8%80%E5%B1%82%E6%9D%83%E9%87%8D%E8%B5%8B%E5%80%BC"><span class="nav-text">给指定某一层权重赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tensorflow-unimplemented-cast-string-to-float-is-not-supported"><span class="nav-text">TensorFlow: Unimplemented: Cast string to float is not supported</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tensorflow2.0%E5%AF%B9%E4%B8%8D%E5%90%8C%E5%B1%82%E6%8C%87%E5%AE%9A%E5%AD%A6%E4%B9%A0%E7%8E%87"><span class="nav-text">Tensorflow2.0对不同层指定学习率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tensorflow2-%E5%8A%A0%E8%BD%BD%E5%88%AB%E4%BA%BA%E6%A8%A1%E5%9E%8B%E6%9D%83%E9%87%8D%E5%A4%B1%E8%B4%A5%E6%97%B6%E7%9A%84%E4%B8%80%E7%A7%8D%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E6%AF%8F%E4%B8%80%E5%B1%82%E5%88%86%E5%88%AB%E8%AE%BE%E7%BD%AE%E5%80%BC"><span class="nav-text">Tensorflow2 加载别人模型权重失败时的一种解决方法：每一层分别设置值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%9D%83%E9%87%8D%E5%88%9D%E5%A7%8B%E5%8C%96tensorflow-tf.layers.dense"><span class="nav-text">自定义权重初始化tensorflow tf.layers.dense</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tensor%E4%B8%8Enumpy%E7%9A%84ndarray%E8%BD%AC%E6%8D%A2"><span class="nav-text">Tensor与Numpy的ndarray转换</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#tensorflow---valueerror-failed-to-convert-a-numpy-array-to-a-tensor-unsupported-object-type-float"><span class="nav-text">Tensorflow - ValueError: Failed to convert a NumPy array to a Tensor (Unsupported object type float)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tensor%E8%BD%AC%E5%8C%96%E4%B8%BAndarray"><span class="nav-text">tensor转化为ndarray</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ndarray%E8%BD%AC%E5%8C%96%E4%B8%BAtensor"><span class="nav-text">ndarray转化为tensor</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#module-tf.keras.metrics"><span class="nav-text">Module: tf.keras.metrics</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E5%85%B3tensorflow2.0%E7%9A%84%E6%96%87%E7%AB%A0"><span class="nav-text">有关tensorflow2.0的文章</span></a></li></ol>
-    </div>
-</div>
-        </aside>
-    
-
-    <div class="image-viewer-container">
-    <img src="">
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
 </div>
 
 
@@ -487,7 +541,7 @@
                        class="search-input"
                 >
             </div>
-            <span class="popup-btn-close">
+            <span class="close-popup-btn">
                 <i class="fas fa-times"></i>
             </span>
         </div>
@@ -505,10 +559,12 @@
 
 
 
-<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/dark-light-toggle.js"></script>
 
 
-    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/local-search.js"></script>
 
 
 
@@ -517,7 +573,13 @@
 
 <div class="post-scripts">
     
-        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/post-helper.js"></script>
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/libs/anime.min.js"></script>
+        
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/toc.js"></script>
+        
     
 </div>
 

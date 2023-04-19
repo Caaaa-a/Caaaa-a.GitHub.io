@@ -2,8 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-	<link rel="dns-prefetch" href="//cdn.bootcss.com" />
-	<link rel="dns-prefetch" href="//cdn.mathjax.org" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="keywords" content="Hexo Theme Keep">
     <meta name="description" content="Hexo Theme Keep">
@@ -17,20 +15,23 @@
 <link rel="stylesheet" href="/css/style.css">
 
     <link rel="shortcut icon" href="/images/logo.png">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/regular.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/solid.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/brands.min.css">
     <script id="hexo-configurations">
-    let KEEP = window.KEEP || {};
-    KEEP.hexo_config = {"hostname":"caaaa-a.github.io","root":"/","language":"en","path":"search.json"};
-    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/logo.png","favicon":"/images/logo.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"To be a slash youth."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
-    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    let KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"caaaa-a.github.io","root":"/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/logo.png","favicon":"/images/logo.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"To be a slash youth."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"code_block":{},"side_tools":{},"pjax":{"enable":false},"lazyload":{"enable":false},"comment":{"enable":true,"use":"waline","valine":{"appid":null,"appkey":null,"placeholder":null},"waline":{"server_url":"https://caaaaa-4zm7-e0rssaizw-caaaa-a.vercel.app/","version":2}},"post":{"word_count":{"enable":true,"wordcount":true,"min2read":true},"author_label":{"enable":true,"auto":true,"custom_label_list":["Trainee","Engineer","Architect","CTO","BOSS"]}},"version":"3.6.1"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
   </script>
 <meta name="generator" content="Hexo 6.0.0"></head>
 
 
 <body>
 <div class="progress-bar-container">
-    
-        <span class="scroll-progress-bar"></span>
     
 
     
@@ -41,16 +42,17 @@
 
     
 
-    <div class="page-main-content">
+    <div class="page-main-content is-home">
 
         <div class="page-main-content-top">
-            <header class="header-wrapper">
+            
+<header class="header-wrapper">
 
     <div class="header-content">
         <div class="left">
             
             <a class="logo-title" href="/">
-                Caaaaa
+               Caaaaa
             </a>
         </div>
 
@@ -172,7 +174,7 @@
                     </a>
                 </h3>
 
-                <div class="home-article-content markdown-body">
+                <div class="home-article-content keep-markdown-body">
                     
                         AttributeError: module 'pymc3' has no attribute 'diagnostics'
 pip install pymc==3.7
@@ -182,7 +184,12 @@ AttributeError: 'int' object has no attri...
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Jul 28 2022 11:27:23 GMT+0800">2022-07-28</span></span>
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Wed Mar 22 2023 17:44:23 GMT+0800">
+                2023-03-22
+            </span>
+        </span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
@@ -199,7 +206,7 @@ AttributeError: 'int' object has no attri...
         
     </div>
 
-    <a href="/2022/07/28/python%E5%B0%8F%E8%AE%B0/python%E5%B0%8F%E8%AE%B0-%E8%BF%90%E8%A1%8C%E5%AE%89%E8%A3%85%E2%80%94%E2%80%94%E4%B8%80%E4%BA%9B%E6%8A%A5%E9%94%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a class="read-more" href="/2022/07/28/python%E5%B0%8F%E8%AE%B0/python%E5%B0%8F%E8%AE%B0-%E8%BF%90%E8%A1%8C%E5%AE%89%E8%A3%85%E2%80%94%E2%80%94%E4%B8%80%E4%BA%9B%E6%8A%A5%E9%94%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -214,7 +221,7 @@ AttributeError: 'int' object has no attri...
                     </a>
                 </h3>
 
-                <div class="home-article-content markdown-body">
+                <div class="home-article-content keep-markdown-body">
                     
                         方法
 
@@ -226,7 +233,12 @@ install.packages(‘包名’)
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Wed Jul 20 2022 16:41:19 GMT+0800">2022-07-20</span></span>
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Wed Jul 20 2022 17:19:04 GMT+0800">
+                2022-07-20
+            </span>
+        </span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
@@ -243,7 +255,7 @@ install.packages(‘包名’)
         
     </div>
 
-    <a href="/2022/07/20/R/R-install%20package/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a class="read-more" href="/2022/07/20/R/R-install%20package/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -258,7 +270,7 @@ install.packages(‘包名’)
                     </a>
                 </h3>
 
-                <div class="home-article-content markdown-body">
+                <div class="home-article-content keep-markdown-body">
                     
                         方法
 
@@ -272,7 +284,12 @@ install.packages(‘包名’)
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Wed Jul 20 2022 16:11:41 GMT+0800">2022-07-20</span></span>
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Wed Jul 20 2022 16:15:26 GMT+0800">
+                2022-07-20
+            </span>
+        </span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
@@ -289,7 +306,7 @@ install.packages(‘包名’)
         
     </div>
 
-    <a href="/2022/07/20/R/R-Rstudio%E9%85%8D%E7%BD%AE%E9%95%9C%E5%83%8F/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a class="read-more" href="/2022/07/20/R/R-Rstudio%E9%85%8D%E7%BD%AE%E9%95%9C%E5%83%8F/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -304,7 +321,7 @@ install.packages(‘包名’)
                     </a>
                 </h3>
 
-                <div class="home-article-content markdown-body">
+                <div class="home-article-content keep-markdown-body">
                     
                         步骤
 
@@ -324,7 +341,12 @@ R studio软件
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Wed Jul 20 2022 14:56:57 GMT+0800">2022-07-20</span></span>
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Wed Jul 20 2022 15:56:28 GMT+0800">
+                2022-07-20
+            </span>
+        </span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
@@ -341,7 +363,7 @@ R studio软件
         
     </div>
 
-    <a href="/2022/07/20/R/R-%E5%AE%89%E8%A3%85R%E8%AF%AD%E8%A8%80%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E5%8F%8ARStudio/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a class="read-more" href="/2022/07/20/R/R-%E5%AE%89%E8%A3%85R%E8%AF%AD%E8%A8%80%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E5%8F%8ARStudio/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -356,7 +378,7 @@ R studio软件
                     </a>
                 </h3>
 
-                <div class="home-article-content markdown-body">
+                <div class="home-article-content keep-markdown-body">
                     
                         假定你必须学习别人为你选择的语言。不过，你需要了解所有编程语言的整体格局，以及你所学的语言在其中的位置。
 Q：理解语言不就是学习并掌握它写程序吗？
@@ -367,7 +389,12 @@ A：不，并不仅仅是这样。了解一些语言的设计决策也很有用�
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Jul 12 2022 09:03:21 GMT+0800">2022-07-12</span></span>
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Wed Mar 22 2023 17:33:13 GMT+0800">
+                2023-03-22
+            </span>
+        </span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
@@ -384,7 +411,7 @@ A：不，并不仅仅是这样。了解一些语言的设计决策也很有用�
         
     </div>
 
-    <a href="/2022/07/12/Books/%E5%A6%82%E4%BD%95%E5%86%99%E5%87%BA%E5%A5%BD%E7%A8%8B%E5%BA%8F-4-%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a class="read-more" href="/2022/07/12/Books/%E5%A6%82%E4%BD%95%E5%86%99%E5%87%BA%E5%A5%BD%E7%A8%8B%E5%BA%8F-4-%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -399,7 +426,7 @@ A：不，并不仅仅是这样。了解一些语言的设计决策也很有用�
                     </a>
                 </h3>
 
-                <div class="home-article-content markdown-body">
+                <div class="home-article-content keep-markdown-body">
                     
                         假设这是第一次练习，你需要创建一个程序。
 1 究竟什么是程序
@@ -409,7 +436,12 @@ A：不，并不仅仅是这样。了解一些语言的设计决策也很有用�
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sun Jul 10 2022 00:00:24 GMT+0800">2022-07-10</span></span>
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Wed Mar 22 2023 17:33:16 GMT+0800">
+                2023-03-22
+            </span>
+        </span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
@@ -426,7 +458,7 @@ A：不，并不仅仅是这样。了解一些语言的设计决策也很有用�
         
     </div>
 
-    <a href="/2022/07/10/Books/%E5%A6%82%E4%BD%95%E5%86%99%E5%87%BA%E5%A5%BD%E7%A8%8B%E5%BA%8F-3-%E5%A6%82%E4%BD%95%E5%BC%80%E5%A7%8B/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a class="read-more" href="/2022/07/10/Books/%E5%A6%82%E4%BD%95%E5%86%99%E5%87%BA%E5%A5%BD%E7%A8%8B%E5%BA%8F-3-%E5%A6%82%E4%BD%95%E5%BC%80%E5%A7%8B/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -441,7 +473,7 @@ A：不，并不仅仅是这样。了解一些语言的设计决策也很有用�
                     </a>
                 </h3>
 
-                <div class="home-article-content markdown-body">
+                <div class="home-article-content keep-markdown-body">
                     
                         好程序
 好程序做它们应该做的事情，它必须是正确的。
@@ -454,7 +486,12 @@ someother：高效、可移植、灵活、可测试、内存效率高、可并�
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sat Jul 09 2022 23:40:24 GMT+0800">2022-07-09</span></span>
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Wed Mar 22 2023 17:33:21 GMT+0800">
+                2023-03-22
+            </span>
+        </span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
@@ -471,7 +508,7 @@ someother：高效、可移植、灵活、可测试、内存效率高、可并�
         
     </div>
 
-    <a href="/2022/07/09/Books/%E5%A6%82%E4%BD%95%E5%86%99%E5%87%BA%E5%A5%BD%E7%A8%8B%E5%BA%8F-2-%E4%BB%80%E4%B9%88%E6%98%AF%E5%A5%BD%E7%A8%8B%E5%BA%8F/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a class="read-more" href="/2022/07/09/Books/%E5%A6%82%E4%BD%95%E5%86%99%E5%87%BA%E5%A5%BD%E7%A8%8B%E5%BA%8F-2-%E4%BB%80%E4%B9%88%E6%98%AF%E5%A5%BD%E7%A8%8B%E5%BA%8F/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -486,7 +523,7 @@ someother：高效、可移植、灵活、可测试、内存效率高、可并�
                     </a>
                 </h3>
 
-                <div class="home-article-content markdown-body">
+                <div class="home-article-content keep-markdown-body">
                     
                         给指定某一层权重赋值
 123456# 给第一隐藏层赋值为例optimizer2 = tf.keras.optimizers.SGD(lr=1.0)layer1 = model.layers[0]# theta1是网络原本带的权重 theta2 = [...
@@ -495,7 +532,12 @@ someother：高效、可移植、灵活、可测试、内存效率高、可并�
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu May 26 2022 09:57:36 GMT+0800">2022-05-26</span></span>
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Thu May 26 2022 15:30:30 GMT+0800">
+                2022-05-26
+            </span>
+        </span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
@@ -512,7 +554,7 @@ someother：高效、可移植、灵活、可测试、内存效率高、可并�
         
     </div>
 
-    <a href="/2022/05/26/tools%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-Tensorflow/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a class="read-more" href="/2022/05/26/tools%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-Tensorflow/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -527,7 +569,7 @@ someother：高效、可移植、灵活、可测试、内存效率高、可并�
                     </a>
                 </h3>
 
-                <div class="home-article-content markdown-body">
+                <div class="home-article-content keep-markdown-body">
                     
                         图例
 matplotlib可以为可见对象（Artist，比如线条、形状）添加图例。官方建议使用pyplot模块的legend函数简便的创建图例，而不是使用底层的matplotlib.legend类构造图例。
@@ -539,7 +581,12 @@ handles：...
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Wed May 25 2022 20:29:03 GMT+0800">2022-05-25</span></span>
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Wed Jul 20 2022 14:59:20 GMT+0800">
+                2022-07-20
+            </span>
+        </span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
@@ -556,7 +603,7 @@ handles：...
         
     </div>
 
-    <a href="/2022/05/25/tools%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-matplotlib/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a class="read-more" href="/2022/05/25/tools%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-matplotlib/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -571,7 +618,7 @@ handles：...
                     </a>
                 </h3>
 
-                <div class="home-article-content markdown-body">
+                <div class="home-article-content keep-markdown-body">
                     
                         多层感知器分类器： MLPCLassifier
 1class sklearn.neural_network.MLPClassifier(hidden_layer_sizes=(100,), activation=&#x27;relu&#x27;, *...
@@ -580,7 +627,12 @@ handles：...
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu May 19 2022 22:37:03 GMT+0800">2022-05-19</span></span>
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Thu May 26 2022 15:27:10 GMT+0800">
+                2022-05-26
+            </span>
+        </span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
@@ -597,7 +649,7 @@ handles：...
         
     </div>
 
-    <a href="/2022/05/19/tools%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-sklearn/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a class="read-more" href="/2022/05/19/tools%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-sklearn/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -629,33 +681,34 @@ handles：...
         </div>
 
         <div class="page-main-content-bottom">
-            <footer class="footer">
+            
+<footer class="footer">
     <div class="info-container">
         <div class="copyright-info info-item">
             &copy;
             
-              <span>2020</span>
-              -
+                <span>2020</span> -
             
-            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Caaaaa</a>
+            2023
+            
+                &nbsp;<i class="fas fa-heart icon-animate"></i>
+                &nbsp;<a href="/">Caaaaa</a>
+            
         </div>
         
-            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <script async 
+                    src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
             <div class="website-count info-item">
                 
-                    <span id="busuanzi_container_site_uv">
-                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
-                    </span>
+                    Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                 
                 
-                    <span id="busuanzi_container_site_pv">
-                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
-                    </span>
+                    Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
                 
             </div>
         
         <div class="theme-info info-item">
-            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
         </div>
         
         
@@ -678,10 +731,6 @@ handles：...
             <i class="fas fa-search-minus"></i>
         </li>
 
-        <li class="tools-item tool-expand-width flex-center">
-            <i class="fas fa-arrows-alt-h"></i>
-        </li>
-
         <li class="tools-item tool-dark-light-toggle flex-center">
             <i class="fas fa-moon"></i>
         </li>
@@ -689,6 +738,10 @@ handles：...
         <!-- rss -->
         
 
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
         
 
         <li class="tools-item tool-scroll-to-bottom flex-center">
@@ -701,20 +754,13 @@ handles：...
             <i class="fas fa-cog fa-spin"></i>
         </li>
         
-            <li class="tools-item tool-scroll-to-top flex-center">
-                <i class="arrow-up fas fa-arrow-up"></i>
-                <span class="percent"></span>
-            </li>
-        
     </ul>
 </div>
 
     </div>
 
-    
-
-    <div class="image-viewer-container">
-    <img src="">
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
 </div>
 
 
@@ -735,7 +781,7 @@ handles：...
                        class="search-input"
                 >
             </div>
-            <span class="popup-btn-close">
+            <span class="close-popup-btn">
                 <i class="fas fa-times"></i>
             </span>
         </div>
@@ -754,10 +800,12 @@ handles：...
 
 
 
-<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/dark-light-toggle.js"></script>
 
 
-    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/local-search.js"></script>
 
 
 
