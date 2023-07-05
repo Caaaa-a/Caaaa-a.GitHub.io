@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Caaaaa">
+    
+    <title>
+        
+            Introduction to TLU and Perceptron |
+        
+        Caaaaa
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/regular.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/solid.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/brands.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"caaaa-a.github.io","root":"/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/logo.png","favicon":"/images/logo.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"To be a slash youth."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"code_block":{},"side_tools":{},"pjax":{"enable":false},"lazyload":{"enable":false},"comment":{"enable":true,"use":"waline","valine":{"appid":null,"appkey":null,"placeholder":null},"waline":{"server_url":"https://caaaaa-4zm7-e0rssaizw-caaaa-a.vercel.app/","version":2}},"post":{"word_count":{"enable":true,"wordcount":true,"min2read":true},"author_label":{"enable":true,"auto":true,"custom_label_list":["Trainee","Engineer","Architect","CTO","BOSS"]}},"version":"3.6.1"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
+  </script>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+               Caaaaa
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="https://caaaa-a.github.io/en/"
+                            >
+                                ENGLISH
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="https://caaaa-a.github.io/en/">ENGLISH</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            <div class="article-title">
+                <span class="title-hover-animation">Introduction to TLU and Perceptron</span>
+            </div>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/logo.png">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">Caaaaa</span>
+                            
+                                <span class="author-label">Lv5</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            
+<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        
+            <i class="fa-regular fa-calendar-plus"></i>&nbsp;
+        
+        <span class="pc">2022-05-19 22:21:56</span>
+        <span class="mobile">2022-05-19 22:21</span>
+    </span>
+    
+        <span class="article-update-date article-meta-item">
+        <i class="fas fa-file-pen"></i>&nbsp;
+        <span class="pc">2023-03-22 17:29:55</span>
+    </span>
+    
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Deep-Learning/">Deep Learning</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.5k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>6 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content keep-markdown-body">
+                
+
+                <h2 id="Threshold-Logic-Unit"><a href="#Threshold-Logic-Unit" class="headerlink" title="Threshold Logic Unit"></a>Threshold Logic Unit</h2><p>阈值逻辑单元 (TLU) 是机器学习模型的基本形式，由单个<strong>输入单元</strong>（和相应的权重）和<strong>激活函数</strong>组成。请注意，TLU 是 AI 神经元/计算单元的最基本形式，其知识将为机器学习和深度学习的高级主题奠定基础。TLU 基于在高水平上模仿生物神经元的功能。一个典型的神经元接收来自传入神经元的大量输入，每个输入都与权重相关。加权输入在接收神经元（传出）中进行调制，并且神经元相应地做出响应——触发/产生脉冲 (1) 或不触发/无脉冲 (0)。这是在 TLU 中通过激活函数实现的，该激活函数采用激活函数<code>a</code> 作为生成预测的输入<code>y</code>。定义了一个阈值<code>θ</code>，如果超过该阈值，模型将产生一个输出，否则没有输出。</p>
+<p>在 TLU 中，每个<em>输入</em> <code>xᵢ</code>都与一个<em>权重</em><code>wᵢ</code>相关联，其中计算加权输入的总和（输入权重的乘积）来决定激活 <em>a</em>。</p>
+<script type="math/tex; mode=display">
+a = \sum^N_{i=1} w_i·x_i</script><p>虽然输入保持不变，但权重是随机初始化的，并通过训练技术进行调整。对于 TLU，训练过程依赖于一对示例<code>xᵢ,yᵢ</code>，对应于任意数据点<code>xᵢ</code> 及其类<code>yᵢ</code><em>。</em>这种学习形式被称为<strong>监督学习</strong>，因为数据实例和目标都用于指导学习过程。最终输出或预测基于加权输入的总和</p>
+<p>$y = 1$  $if$  $a ≥ θ$   $otherwise$  $y=0$ 。</p>
+<h2 id="TLU-中的权重调整"><a href="#TLU-中的权重调整" class="headerlink" title="TLU 中的权重调整"></a>TLU 中的权重调整</h2><p>从学习模型的角度来看，数据点属于由一个或多个决策面划分的组。因此，学习模型的目标是完成特定任务，例如训练后的对象分类。在训练期间，模型识别一组参数或自由参数（例如权重），与输入结合使用，通过识别决策面来实现预期目标。在任何基于 ML 的模型中，识别使模型能够识别显着特征的自由参数都是至关重要的。</p>
+<p>TLU 的阈值被初始化为一个标量，用作基线或偏差，即在神经元触发之前要达到的基线。为了统一，阈值被视为具有恒定输入的权重，将其乘以<code>-1</code>与<code>xᵢ×wᵢ&gt; θ</code>相加到模型中进行训练，即<code>xᵢ×wᵢ+(-1)×θ=0</code>。因此，定义并重复应用学习规则，直到获得权重向量的正确设置。对权重向量的调整是给定实例输出的函数。在此基础上，调整参数——根据学习规则增加或减少。对于每个训练时期或制度，权重都会发生微小的变化。一个训练有素的模型应该能够正确分类新的例子。</p>
+<h2 id="一些技术说明"><a href="#一些技术说明" class="headerlink" title="一些技术说明"></a>一些技术说明</h2><p>在增加阈值的情况下，TLU 的动作要么是正的，要么是负的，由下式给出：$w⋅x ≥ 0 → y = 1$   or   $ w⋅x &lt; 0 → y = 0$ 。由于在训练过程中输入向量不受影响（保持不变），因此仅调整权重向量以与输入向量正确对齐。使用学习率 <strong>α (0&lt;α&lt;1)</strong> 来控制过程，形成一个更接近输入向量 <strong>x</strong> 的新向量 <strong>w`</strong>。根据决策规则，调整权重可以基于权重向量的加法或减法；由于两者都有可能，因此使用结合两者的学习规则。因此， <strong>w`= w - αx </strong>或<strong>w`= w + αx </strong>导致<strong>w`= w + α ( t - y`) x </strong>，其中<strong>( t - y`)</strong>用于决定调整方向（增加或减少）。这种关系可以用几种方式表示：</p>
+<ol>
+<li>在权重向量的变化方面：因为 δ<strong>w = w`- w</strong> 而且 <strong>w`</strong> = <strong>w + α ( t - y ) x</strong> ，所以 δ<strong>w</strong> = <strong>α( t - y )x</strong></li>
+<li>就权重向量的分量而言： $δw_i = α( t_i - y_i )x_i$  其中 $i = 1$ 到 $n+1$。</li>
+</ol>
+<h2 id="TLU-实施"><a href="#TLU-实施" class="headerlink" title="TLU 实施"></a>TLU 实施</h2><p>建立理论基础后，下一步是描述和实施模型的训练阶段。基本上，实现基于以下步骤：</p>
+<ol>
+<li>识别输入和相应的表示</li>
+<li>识别问题中的自由参数</li>
+<li>指定学习规则</li>
+<li>调整自由参数进行优化</li>
+<li>评估模型</li>
+</ol>
+<p><strong>感知器学习规则</strong>：这里的实现是基于感知器训练规则，它保证生成一个有效的权重向量来分离线性可分的数据。</p>
+<blockquote>
+<p><em>If two classes of vector X,Y are linearly separable, then application of the perceptron training algorithm will eventually result in a weight vector</em> <strong>w₀</strong> <em>such that</em> <strong>w₀</strong> <em>define a TLU whose decision hyperplane separate X and Y —</em> <a class="link"   target="_blank" rel="noopener" href="http://www.macs.hw.ac.uk/~yjc32/project/ref-NN/Gurney_et_al.pdf" >Gurney (1997)<i class="fas fa-external-link-alt"></i></a>*, pp. 43.</p>
+</blockquote>
+<p>A basic python <code>class</code> to implement the TLU:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#import relevant package(s)</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> npclass TLU(<span class="built_in">object</span>):    <span class="comment">#initialise the parameter(s) for class operationalisation</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, input_size</span>):</span></span><br><span class="line">        self.weights = np.zeros(input_size+<span class="number">1</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">activate_tlu</span>(<span class="params">self, x</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span> <span class="keyword">if</span> x&gt;= <span class="number">0</span> <span class="keyword">else</span> <span class="number">0</span>    </span><br><span class="line">   </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">predict_tlu</span>(<span class="params">self, row</span>):</span></span><br><span class="line">        <span class="comment"># this predicts individual row in a given dataset</span></span><br><span class="line">        xw = np.array(row).dot(self.weights)    </span><br><span class="line">        a = self.activate_tlu(xw)</span><br><span class="line">        <span class="keyword">return</span> a       </span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">train_tlu</span>(<span class="params">self, data, targets, epochs, lrate</span>):</span></span><br><span class="line">        <span class="comment">#training to identify the right setting for the weights</span></span><br><span class="line">        <span class="keyword">for</span> epoch <span class="keyword">in</span> <span class="built_in">range</span>(epochs):</span><br><span class="line">            <span class="keyword">for</span> row, t <span class="keyword">in</span> <span class="built_in">zip</span>(data, targets):</span><br><span class="line">                row = np.insert(row, <span class="number">0</span>,-<span class="number">1</span>) <span class="comment">#inserts the bias</span></span><br><span class="line">                pred = self.predict_tlu(row)</span><br><span class="line">                error = t - pred</span><br><span class="line">                <span class="comment"># adjust the weights vector ...</span></span><br><span class="line">                <span class="keyword">if</span> pred != t:</span><br><span class="line">                    <span class="keyword">for</span> r <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(self.weights)):</span><br><span class="line">                        self.weights[r] = self.weights[r] +   (lrate*error*row[r])</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="keyword">continue</span></span><br><span class="line">        <span class="keyword">return</span> self.weights </span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span>(<span class="string">&#x27;TLU Iteration!\n&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>Instantiate the <code>class object</code> for training and prediction:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">tlu_pred</span>(<span class="params">model,data,targets,epochs, lrate=<span class="number">0.2</span>,toPrint=<span class="literal">True</span></span>):</span></span><br><span class="line">    adj_w = model.train_tlu(data, targets, epochs, lrate) </span><br><span class="line">    <span class="keyword">if</span> toPrint:</span><br><span class="line">        <span class="built_in">print</span>(model)</span><br><span class="line">    <span class="keyword">return</span> adj_w</span><br></pre></td></tr></table></figure>
+<p><strong>Dataset</strong>: Irrespective of the problem to solve, the input needs to be transformed into numeric (usually real or binary values). Consider a basic input vectors: <code>x₁=[0011]</code> and <code>x₂=[0101]</code>. The free parameter to search is the <em>weights vector</em>, which is randomly initialised to kick-start the learning.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Logical AND Data:</span></span><br><span class="line">andData = np.array([[<span class="number">0</span>,<span class="number">0</span>],[<span class="number">0</span>,<span class="number">1</span>],[<span class="number">1</span>,<span class="number">0</span>],[<span class="number">1</span>,<span class="number">1</span>]])</span><br><span class="line">andTargets = np.array([<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>])</span><br><span class="line"><span class="comment"># Logical OR Data:</span></span><br><span class="line">orData = np.array([[<span class="number">0</span>,<span class="number">0</span>],[<span class="number">0</span>,<span class="number">1</span>],[<span class="number">1</span>,<span class="number">0</span>],[<span class="number">1</span>,<span class="number">1</span>]])</span><br><span class="line">orTargets = np.array([<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+<p>Class instantiation:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">model = TLU(input_size= <span class="number">2</span>)<span class="comment"># class instantiation ...</span></span><br><span class="line"><span class="comment">#AND Data:</span></span><br><span class="line">tlu_prediction(model, andData, andTargets, epochs=<span class="number">11</span>,lrate=<span class="number">0.3</span>)</span><br><span class="line"><span class="comment">#OR Data:</span></span><br><span class="line">tlu_prediction(model, orData, orTargets, epochs=<span class="number">11</span>,lrate=<span class="number">0.3</span>)</span><br></pre></td></tr></table></figure>
+<p>Sample outputs using <code>AND data</code>:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">TLU Iteration!</span><br><span class="line"></span><br><span class="line">Main Targets:  [<span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">1</span>] </span><br><span class="line"></span><br><span class="line">Main Inputs:  [[<span class="number">0</span> <span class="number">0</span>]</span><br><span class="line"> [<span class="number">0</span> <span class="number">1</span>]</span><br><span class="line"> [<span class="number">1</span> <span class="number">0</span>]</span><br><span class="line"> [<span class="number">1</span> <span class="number">1</span>]] </span><br><span class="line"></span><br><span class="line">Adjusted weights:  [<span class="number">0.9</span> <span class="number">0.6</span> <span class="number">0.3</span>]</span><br></pre></td></tr></table></figure>
+<p>Using the <code>OR data</code>:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">TLU Iteration!</span><br><span class="line"></span><br><span class="line">Main Targets:  [<span class="number">0</span> <span class="number">1</span> <span class="number">1</span> <span class="number">1</span>] </span><br><span class="line"></span><br><span class="line">Main Inputs:  [[<span class="number">0</span> <span class="number">0</span>]</span><br><span class="line"> [<span class="number">0</span> <span class="number">1</span>]</span><br><span class="line"> [<span class="number">1</span> <span class="number">0</span>]</span><br><span class="line"> [<span class="number">1</span> <span class="number">1</span>]] </span><br><span class="line"></span><br><span class="line">Adjusted weights:  [<span class="number">0.6</span> <span class="number">0.6</span> <span class="number">0.6</span>]</span><br></pre></td></tr></table></figure>
+<p>原文：<a class="link"   target="_blank" rel="noopener" href="https://medium.com/@isa.inuwa/introduction-to-tlu-and-perceptron-e0d9c351e6a6" >https://medium.com/@isa.inuwa/introduction-to-tlu-and-perceptron-e0d9c351e6a6<i class="fas fa-external-link-alt"></i></a></p>
+
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    
+<div class="article-copyright-info-container">
+    <ul class="copyright-info-content">
+        <li class="post-title">
+            <span class="type">Post title</span>: <span class="content">Introduction to TLU and Perceptron</span>
+        </li>
+        <li class="post-author">
+            <span class="type">Post author</span>: <span class="content">Caaaaa</span>
+        </li>
+        <li class="post-time">
+            <span class="type">Create time</span>: <span class="content">2022-05-19 22:21:56</span>
+        </li>
+        <li class="post-link">
+            <span class="type">Post link</span>: <span class="content">2022/05/19/Introduction-to-TLU-and-Perceptron/</span>
+        </li>
+        <li class="post-license">
+            <span class="type">Copyright notice</span>: <span class="content">All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.</span>
+        </li>
+    </ul>
+    <div class="copy-copyright-info flex-center tooltip" data-content="Copy copyright info" data-offset-y="-2px">
+        <i class="fa-solid fa-copy"></i>
+    </div>
+</div>
+
+                </div>
+            
+
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                               rel="prev"
+                               href="/2022/05/19/tools%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-sklearn/"
+                            >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                <span class="post-nav-title-item">sklearn</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                               rel="next"
+                               href="/2022/05/11/tools%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-torch/"
+                            >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">torch</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                                <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
+                <div class="comment-container">
+                    
+<div class="comments-container">
+    <div id="comments-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments"></i>&nbsp;Comments
+    </div>
+    
+        
+            
+
+    <div class="waline-comment-container">
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@waline/client@v2/dist/waline.css"/>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@waline/client@v2/dist/waline-meta.css"/>
+        <script  src="//cdn.jsdelivr.net/npm/@waline/client@v2/dist/waline.js"></script>
+        <div id="waline-comment"></div>
+        <script >
+          function loadWaline() {
+            Waline.init({
+              el: '#waline-comment',
+              serverURL: 'https://caaaaa-4zm7-e0rssaizw-caaaa-a.vercel.app/',
+              lang: 'en' || 'zh-CN',
+              comment: '.post-comments-count',
+              reaction: '' === 'true'
+            })
+          }
+
+          if ('false' === 'true') {
+            setTimeout(() => {
+              loadWaline()
+            }, 1000)
+          } else {
+            window.addEventListener('DOMContentLoaded', loadWaline)
+          }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+                </div>
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Threshold-Logic-Unit"><span class="nav-text">Threshold Logic Unit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TLU-%E4%B8%AD%E7%9A%84%E6%9D%83%E9%87%8D%E8%B0%83%E6%95%B4"><span class="nav-text">TLU 中的权重调整</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E6%8A%80%E6%9C%AF%E8%AF%B4%E6%98%8E"><span class="nav-text">一些技术说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TLU-%E5%AE%9E%E6%96%BD"><span class="nav-text">TLU 实施</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            
+<footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+                <span>2020</span> -
+            
+            2023
+            
+                &nbsp;<i class="fas fa-heart icon-animate"></i>
+                &nbsp;<a href="/">Caaaaa</a>
+            
+        </div>
+        
+            <script async 
+                    src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                
+                
+                    Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/dark-light-toggle.js"></script>
+
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/post-helper.js"></script>
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/libs/anime.min.js"></script>
+        
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/toc.js"></script>
+        
+    
+</div>
+
+
+
+</body>
+</html>

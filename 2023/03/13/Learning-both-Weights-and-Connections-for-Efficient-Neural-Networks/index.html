@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Caaaaa">
+    
+    <title>
+        
+            Learning both Weights and Connections for Efficient Neural Networks |
+        
+        Caaaaa
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/regular.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/solid.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/brands.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"caaaa-a.github.io","root":"/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/logo.png","favicon":"/images/logo.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"To be a slash youth."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"code_block":{},"side_tools":{},"pjax":{"enable":false},"lazyload":{"enable":false},"comment":{"enable":true,"use":"waline","valine":{"appid":null,"appkey":null,"placeholder":null},"waline":{"server_url":"https://caaaaa-4zm7-e0rssaizw-caaaa-a.vercel.app/","version":2}},"post":{"word_count":{"enable":true,"wordcount":true,"min2read":true},"author_label":{"enable":true,"auto":true,"custom_label_list":["Trainee","Engineer","Architect","CTO","BOSS"]}},"version":"3.6.1"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
+  </script>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+               Caaaaa
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="https://caaaa-a.github.io/en/"
+                            >
+                                ENGLISH
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="https://caaaa-a.github.io/en/">ENGLISH</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            <div class="article-title">
+                <span class="title-hover-animation">Learning both Weights and Connections for Efficient Neural Networks</span>
+            </div>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/logo.png">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">Caaaaa</span>
+                            
+                                <span class="author-label">Lv5</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            
+<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        
+            <i class="fa-regular fa-calendar-plus"></i>&nbsp;
+        
+        <span class="pc">2023-03-13 16:01:34</span>
+        <span class="mobile">2023-03-13 16:01</span>
+    </span>
+    
+        <span class="article-update-date article-meta-item">
+        <i class="fas fa-file-pen"></i>&nbsp;
+        <span class="pc">2023-03-14 12:04:26</span>
+    </span>
+    
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E5%89%AA%E6%9E%9D/">剪枝</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.4k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>4 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content keep-markdown-body">
+                
+
+                <p>链接：<a class="link"   target="_blank" rel="noopener" href="https://arxiv.org/pdf/1506.02626v3.pdf" >论文<i class="fas fa-external-link-alt"></i></a>  <a class="link"   target="_blank" rel="noopener" href="https://paperswithcode.com/paper/learning-both-weights-and-connections-for" >code<i class="fas fa-external-link-alt"></i></a></p>
+<p>这篇论文是 Han Song 在模型压缩方面很重要的论文。</p>
+<ol>
+<li><p>目的：减少存储量和计算量，使网络更适合在移动设备上运行</p>
+</li>
+<li><p>方法：简单地说是只学习重要的连接，修剪冗余的连接减少模型参数</p>
+</li>
+<li><p>步骤：train，学习哪些连接是重要的<br>　　　prune，剪去不重要的连接<br>   　　　retrain，finetune剩下的连接的参数<br>   　　　prune和retrain可以反复迭代进行</p>
+</li>
+<li><p>结果：AlexNet减少模型参数量61million-&gt;6.7million，没有精度损失<br>　　　VGG-16减少模型参数量138million-&gt;10.3million，没有精度损失</p>
+<blockquote>
+<p><strong>Lottery Ticket Hypothesis</strong>，翻译成<strong>彩票假设</strong>，它的核心思想是说传统的剪枝技术，虽然能够剪掉网络参数的90%以上，大幅减小模型尺寸，提升推理的效率同时也不咋影响精度，但是剪出来的稀疏的网络存在一个问题，就是很不好从头训练。这句话具体是说：<strong>如果现在得到了剪枝之后的网络，我们如果直接从大网络中继承权重去训练，那么就可以得到相似的性能。但是，如果是去从头训练这个网络，就无法得到相似的性能，而且训练过程不如上一种训练顺滑。</strong></p>
+</blockquote>
+</li>
+</ol>
+<h3 id="背景——为什么要剪枝？"><a href="#背景——为什么要剪枝？" class="headerlink" title="背景——为什么要剪枝？"></a>背景——为什么要剪枝？</h3><p>CNN模型虽然很好用，但是面临着模型比较大，在手机等移动设备上时，对能耗和网络带宽都是负担。因此需要剪枝去减小算力的消耗，节省资源。</p>
+<h3 id="论文细节"><a href="#论文细节" class="headerlink" title="论文细节"></a>论文细节</h3><h4 id="剪枝流程"><a href="#剪枝流程" class="headerlink" title="剪枝流程"></a>剪枝流程</h4><p>论文的剪枝方法包括三步，见图1，和卷积训练不同，<strong>模型学习的是连接的重要性</strong>，而不是权重（虽然权重大小表征了重要性）， 接着我们对那些比较小的权重连接进行剪枝，并移除在网络上的连接，这样是把一个 dense 网络变成了 sparse 网络，如图1右所示。最后对保留下来的权重连接进行再训练，这一步是比较关键的，如果不进行再训练，精度损失可能比较大。</p>
+<center><img src="/img/jz-paper1-image1.png" alt="image" width=80% /></center>
+
+<p>伪代码：</p>
+<center><img src="/img/jz-paper1-image2.png" alt="image" width=80% /></center>
+
+<h4 id="剪枝过程-Regularization-的选取"><a href="#剪枝过程-Regularization-的选取" class="headerlink" title="剪枝过程 Regularization 的选取"></a>剪枝过程 Regularization 的选取</h4><p>选择一个正确的正则项会你对剪枝和再训练性能有所影响，使用不同的正则方法会对pruning和retraining产生影响。L1和L2都可以用来做正则，惩罚模型的复杂度，L1正则会惩罚那些非零参数，导致更多的参数为零，这个特性就导致在剪枝后再训练之前的精度比L2好。但是留下来的连接却不如使用L2正则的好。<strong>实验发现，采用L2做正则项较好。</strong>即：</p>
+<ol>
+<li>在剪枝后，再训练之前：L1的精度比L2好。</li>
+<li>留下来的连接：使用L2正则更好。</li>
+</ol>
+<center><img src="/img/jz-paper1-image3.png" alt="image" width=80% /></center>
+
+<h4 id="Dropout-的影响"><a href="#Dropout-的影响" class="headerlink" title="Dropout 的影响"></a>Dropout 的影响</h4><p>Dropout 是一项常见的防止过拟合的技术。要注意的是，在retraining的时候，我们需要对Dropout ratio做出调整。因为网络中的很多连接都被剪枝剪下来了，模型容量变小，网络减小了过拟合，所以dropout的比例要变小。</p>
+<p>下面给出定量的估计。</p>
+<p>对于FC层来说，如果第 $i$ 层的神经元个数是 $N_i$，那么该层的连接数 $C_i$ 如公式1，dropout是作用于神经元的（dropout是将 $N_i$ 个神经元输出按照概率dropout掉）</p>
+<script type="math/tex; mode=display">
+C_i=N_iN_{i-1}\\D_r=D_o\sqrt{\frac{C_{ir}}{C_{io}}}</script><p>其中，下标 $r$ 表示 retraining，$o$ 表示初始模型。</p>
+<h4 id="Local-Pruning-and-Parameter-Co-adaptation"><a href="#Local-Pruning-and-Parameter-Co-adaptation" class="headerlink" title="Local Pruning and Parameter Co-adaptation"></a>Local Pruning and Parameter Co-adaptation</h4><p>再训练期间，<strong>最好保留从训练模型剪枝余下的连接的权重</strong>，而不是重新初始化剪枝后的层。其实这个也是绝大多数剪枝的操作。（这里其实后期的论文讨论还蛮多，到底是权重重要还是网络的架构重要）</p>
+<p>深层网络容易梯度消失，难以恢复精度。为了解决这一问题，我们在训练FC层的时候，可以将CONV的参数固定住。反之亦然。</p>
+<h4 id="Iterative-Pruning"><a href="#Iterative-Pruning" class="headerlink" title="Iterative Pruning"></a>Iterative Pruning</h4><p>迭代地进行多次剪枝配合重新训练效果会很好，多次迭代剪枝能达到9倍的压缩，而单步压缩只能达到5倍。</p>
+<h4 id="对神经元进行剪枝"><a href="#对神经元进行剪枝" class="headerlink" title="对神经元进行剪枝"></a>对神经元进行剪枝</h4><p>一些输入或者输出为零的 neurons 也会被剪枝.</p>
+<h4 id="FC层比conv的敏感度更低"><a href="#FC层比conv的敏感度更低" class="headerlink" title="FC层比conv的敏感度更低"></a>FC层比conv的敏感度更低</h4><p>FC层的参数量比较多，剪枝后的损失会更小，因此可以根据敏感度进行设置剪枝比率。</p>
+<h3 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h3><p>作者在caffe做了剪枝的实验，添加了mask来表示剪枝，它会忽略剪枝过的参数，pruning threshold 选择了和层权重标准差乘系数的方式。使用Caffe实现，需要加入一个mask来表示剪枝。剪枝的阈值，是该layer的权重标准差乘上某个超参数。最终在mnist和imagenet上的效果：</p>
+<center><img src="/img/jz-paper1-image4.png" alt="image" width=80% /></center>
+
+<center><img src="/img/jz-paper1-image5.png" alt="image" width=80% /></center>
+
+<p>最后是将剪枝过的层作为稀疏矩阵存储，其存储开销仅为原来的15.6%。存储相对索引而不是绝对索引，将FC层索引减少到5位存储，CONV层索引用8位存储。这样可以大大减少存储的大小，其实这样在预测阶段需要进行还原，可能耗时上得不偿失。</p>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ol>
+<li><a class="link"   target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/Ax82HFY4eLJbxWC8iPDVwA" >论文分享｜从零入门剪枝（一）<i class="fas fa-external-link-alt"></i></a></li>
+</ol>
+
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    
+<div class="article-copyright-info-container">
+    <ul class="copyright-info-content">
+        <li class="post-title">
+            <span class="type">Post title</span>: <span class="content">Learning both Weights and Connections for Efficient Neural Networks</span>
+        </li>
+        <li class="post-author">
+            <span class="type">Post author</span>: <span class="content">Caaaaa</span>
+        </li>
+        <li class="post-time">
+            <span class="type">Create time</span>: <span class="content">2023-03-13 16:01:34</span>
+        </li>
+        <li class="post-link">
+            <span class="type">Post link</span>: <span class="content">2023/03/13/Learning-both-Weights-and-Connections-for-Efficient-Neural-Networks/</span>
+        </li>
+        <li class="post-license">
+            <span class="type">Copyright notice</span>: <span class="content">All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.</span>
+        </li>
+    </ul>
+    <div class="copy-copyright-info flex-center tooltip" data-content="Copy copyright info" data-offset-y="-2px">
+        <i class="fa-solid fa-copy"></i>
+    </div>
+</div>
+
+                </div>
+            
+
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                               rel="prev"
+                               href="/2023/03/13/To-prune,-or-not-to-prune-exploring-the-efficacy-of-pruning-for-model-compression/"
+                            >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                <span class="post-nav-title-item">To prune, or not to prune exploring the efficacy of pruning for model compression</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                               rel="next"
+                               href="/2023/03/10/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9A%84%E5%89%AA%E6%9E%9D/"
+                            >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">神经网络中的剪枝</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                                <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
+                <div class="comment-container">
+                    
+<div class="comments-container">
+    <div id="comments-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments"></i>&nbsp;Comments
+    </div>
+    
+        
+            
+
+    <div class="waline-comment-container">
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@waline/client@v2/dist/waline.css"/>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@waline/client@v2/dist/waline-meta.css"/>
+        <script  src="//cdn.jsdelivr.net/npm/@waline/client@v2/dist/waline.js"></script>
+        <div id="waline-comment"></div>
+        <script >
+          function loadWaline() {
+            Waline.init({
+              el: '#waline-comment',
+              serverURL: 'https://caaaaa-4zm7-e0rssaizw-caaaa-a.vercel.app/',
+              lang: 'en' || 'zh-CN',
+              comment: '.post-comments-count',
+              reaction: '' === 'true'
+            })
+          }
+
+          if ('false' === 'true') {
+            setTimeout(() => {
+              loadWaline()
+            }, 1000)
+          } else {
+            window.addEventListener('DOMContentLoaded', loadWaline)
+          }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+                </div>
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E2%80%94%E2%80%94%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%89%AA%E6%9E%9D%EF%BC%9F"><span class="nav-text">背景——为什么要剪枝？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BA%E6%96%87%E7%BB%86%E8%8A%82"><span class="nav-text">论文细节</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%89%AA%E6%9E%9D%E6%B5%81%E7%A8%8B"><span class="nav-text">剪枝流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%89%AA%E6%9E%9D%E8%BF%87%E7%A8%8B-Regularization-%E7%9A%84%E9%80%89%E5%8F%96"><span class="nav-text">剪枝过程 Regularization 的选取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dropout-%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="nav-text">Dropout 的影响</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Local-Pruning-and-Parameter-Co-adaptation"><span class="nav-text">Local Pruning and Parameter Co-adaptation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Iterative-Pruning"><span class="nav-text">Iterative Pruning</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%B9%E7%A5%9E%E7%BB%8F%E5%85%83%E8%BF%9B%E8%A1%8C%E5%89%AA%E6%9E%9D"><span class="nav-text">对神经元进行剪枝</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#FC%E5%B1%82%E6%AF%94conv%E7%9A%84%E6%95%8F%E6%84%9F%E5%BA%A6%E6%9B%B4%E4%BD%8E"><span class="nav-text">FC层比conv的敏感度更低</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C"><span class="nav-text">实验结果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reference"><span class="nav-text">Reference</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            
+<footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+                <span>2020</span> -
+            
+            2023
+            
+                &nbsp;<i class="fas fa-heart icon-animate"></i>
+                &nbsp;<a href="/">Caaaaa</a>
+            
+        </div>
+        
+            <script async 
+                    src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                
+                
+                    Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/dark-light-toggle.js"></script>
+
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/post-helper.js"></script>
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/libs/anime.min.js"></script>
+        
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/toc.js"></script>
+        
+    
+</div>
+
+
+
+</body>
+</html>
