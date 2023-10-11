@@ -1,9 +1,10 @@
+https://caaaa-a.github.io/2023/10/11/python%E5%B0%8F%E8%AE%B0-%E5%B9%B6%E8%A1%8C%E4%B8%8E%E4%B8%B2%E8%A1%8C/
 https://caaaa-a.github.io/2023/04/24/python%E5%B0%8F%E8%AE%B0-dicom%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96/
 https://caaaa-a.github.io/about/index.html
 https://caaaa-a.github.io/2022/03/29/tools%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-numpy-and-pandas/
 https://caaaa-a.github.io/2023/03/22/%E4%BA%BF%E7%82%B9%E7%82%B9%E6%8A%A5%E9%94%99/
 https://caaaa-a.github.io/2023/04/24/python%E5%B0%8F%E8%AE%B0-%E5%A6%82%E4%BD%95%E4%BF%9D%E5%AD%98python%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C%E5%AE%8C%E6%AF%95%E5%90%8E%E7%9A%84%E5%8F%98%E9%87%8F/
-https://caaaa-a.github.io/2022/01/09/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80-%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/
+https://caaaa-a.github.io/2022/01/09/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80-%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/
 https://caaaa-a.github.io/2023/03/25/Implicit-Neural-Representations-with-Periodic-Activation-Functions/
 https://caaaa-a.github.io/2022/02/11/%E7%BC%96%E7%A8%8B%E6%80%9D%E7%BB%B4-%E6%B5%81%E7%A8%8B%E5%9B%BE%E4%B8%8E%E4%BC%AA%E4%BB%A3%E7%A0%81/
 https://caaaa-a.github.io/2022/07/28/python%E5%B0%8F%E8%AE%B0-%E8%BF%90%E8%A1%8C%E5%AE%89%E8%A3%85%E2%80%94%E2%80%94%E4%B8%80%E4%BA%9B%E6%8A%A5%E9%94%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/
@@ -32,7 +33,7 @@ https://caaaa-a.github.io/2022/04/27/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B0%
 https://caaaa-a.github.io/2022/04/16/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E5%88%A4%E5%88%AB%E6%A8%A1%E5%9E%8B%E5%92%8C%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/
 https://caaaa-a.github.io/2022/03/22/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0-%E5%88%86%E7%B1%BB%E4%BB%BB%E5%8A%A1%E5%8F%8A%E4%B8%80%E7%82%B9%E5%86%B3%E7%AD%96%E6%A0%91/
 https://caaaa-a.github.io/2022/01/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80-%E5%BE%AE%E7%A7%AF%E5%88%86/
-https://caaaa-a.github.io/2022/01/09/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80-%E5%85%AB%E5%A4%A7%E5%B8%B8%E8%A7%81%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%A1%8C%E5%88%97%E5%BC%8F%E5%8F%8A%E5%85%B6%E8%A7%A3%E6%B3%95/
+https://caaaa-a.github.io/2022/01/09/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80-%E5%85%AB%E5%A4%A7%E5%B8%B8%E8%A7%81%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%A1%8C%E5%88%97%E5%BC%8F%E5%8F%8A%E5%85%B6%E8%A7%A3%E6%B3%95/
 https://caaaa-a.github.io/2023/03/14/EagleEye-Fast-Sub-net-Evaluation-for-Efficient-Neural-Network-Pruning/
 https://caaaa-a.github.io/2023/03/15/ResRep-Lossless-CNN-Pruning-via-Decoupling-Remembering-and-Forgetting/
 https://caaaa-a.github.io/2023/03/15/Network-Pruning-That-Matters-A-Case-Study-On-Retraining-Variants/
@@ -90,11 +91,11 @@ https://caaaa-a.github.io/2022/02/09/%E7%88%AC%E8%99%AB-%E7%94%B5%E5%AD%90%E9%98
 https://caaaa-a.github.io/2022/02/24/%E9%A2%98%E8%A7%A3-four%207%20kyu%20in%20codewars/
 https://caaaa-a.github.io/2022/02/14/%E7%A0%94%E7%A9%B6%E5%88%9D%E6%88%90%E9%95%BF-%E5%A6%82%E4%BD%95%E5%81%9A%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E6%B1%87%E6%8A%A5%EF%BC%9F/
 https://caaaa-a.github.io/2022/02/18/%E9%A2%98%E8%A7%A3-Bonuses/
-https://caaaa-a.github.io/2022/02/22/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80-Bayesian%20Networks/
+https://caaaa-a.github.io/2022/02/22/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80-Bayesian%20Networks/
 https://caaaa-a.github.io/2022/02/19/%E9%A2%98%E8%A7%A3-Sums-of-Parts/
 https://caaaa-a.github.io/2022/02/19/%E9%A2%98%E8%A7%A3-Magnitude/
 https://caaaa-a.github.io/2022/02/18/%E9%A2%98%E8%A7%A3-Ugly-Number/
-https://caaaa-a.github.io/2022/02/05/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80-%E7%9F%A9%E9%98%B5%E6%B1%82%E5%AF%BC%E4%B8%8E%E5%88%86%E5%AD%90%E3%80%81%E5%88%86%E6%AF%8D%E5%B8%83%E5%B1%80/
+https://caaaa-a.github.io/2022/02/05/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80-%E7%9F%A9%E9%98%B5%E6%B1%82%E5%AF%BC%E4%B8%8E%E5%88%86%E5%AD%90%E3%80%81%E5%88%86%E6%AF%8D%E5%B8%83%E5%B1%80/
 https://caaaa-a.github.io/2022/01/24/%E9%A2%98%E8%A7%A3-pyschools%E4%B8%ADwhile-9-13/
 https://caaaa-a.github.io/2022/01/04/hello-world/
 https://caaaa-a.github.io/categories/index.html
